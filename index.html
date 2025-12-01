@@ -46,79 +46,76 @@
     <!-- Стили сайта -->
     <link rel="stylesheet" href="style.css" />
   </head>
-
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      function setupProgress(fillSelector, percentSelector, options) {
-        const fill = document.querySelector(fillSelector);
-        const percentEl = document.querySelector(percentSelector);
-  
-        if (!fill || !percentEl) return;
-  
-        const duration = (options && options.duration) || 6000;
-        const fps = 60;
-        const stepTime = 1000 / fps;
-        const steps = Math.round(duration / stepTime);
-  
-        function runProgressCycle() {
-          let currentStep = 0;
-  
-          const timer = setInterval(() => {
-            currentStep++;
-  
-            const progress = Math.min(
-              100,
-              Math.round((currentStep / steps) * 100)
-            );
-  
-            fill.style.width = progress + "%";
-            percentEl.textContent = progress + "%";
-  
-            if (progress >= 100) {
-              clearInterval(timer);
-  
-              setTimeout(() => {
-                fill.style.width = "0%";
-                percentEl.textContent = "0%";
-                runProgressCycle();
-              }, 700);
-            }
-          }, stepTime);
-        }
-  
-        runProgressCycle();
-      }
-  
-      // Прогресс в hero-карточке
-      setupProgress(".hero__progress-fill", ".hero__progress-percent", {
-        duration: 6000,
-      });
-  
-      // Прогресс в мини-карточке интерфейса
-      setupProgress(".ui__task-progress-fill", ".ui__task-progress-percent", {
-        duration: 5000,
-      });
-    });
-  </script>
   
   
   <body>
     <div class="page">
 
-
-
-
-
-
-
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          function setupProgress(fillSelector, percentSelector, options) {
+            const fill = document.querySelector(fillSelector);
+            const percentEl = document.querySelector(percentSelector);
+      
+            if (!fill || !percentEl) return;
+      
+            const duration = (options && options.duration) || 6000;
+            const fps = 60;
+            const stepTime = 1000 / fps;
+            const steps = Math.round(duration / stepTime);
+      
+            function runProgressCycle() {
+              let currentStep = 0;
+      
+              const timer = setInterval(() => {
+                currentStep++;
+      
+                const progress = Math.min(
+                  100,
+                  Math.round((currentStep / steps) * 100)
+                );
+      
+                fill.style.width = progress + "%";
+                percentEl.textContent = progress + "%";
+      
+                if (progress >= 100) {
+                  clearInterval(timer);
+      
+                  setTimeout(() => {
+                    fill.style.width = "0%";
+                    percentEl.textContent = "0%";
+                    runProgressCycle();
+                  }, 700);
+                }
+              }, stepTime);
+            }
+      
+            runProgressCycle();
+          }
+      
+          // Прогресс в hero-карточке
+          setupProgress(".hero__progress-fill", ".hero__progress-percent", {
+            duration: 6000,
+          });
+      
+          // Прогресс в мини-карточке интерфейса
+          setupProgress(".ui__task-progress-fill", ".ui__task-progress-percent", {
+            duration: 5000,
+          });
+        });
+      </script>
 
       <!-- ===== HEADER / НАВБАР ===== -->
       <header class="header">
         <div class="container header__inner">
           <div class="logo">
-            <img src="/assets/Logo.png" alt="Название программы" class="logo__img" />
+            <img
+              src="assets/Logo.png"
+              alt="Avenor Downloader"
+              class="logo__img"
+            />
           </div>
+          
           
 
           <nav class="nav">
@@ -128,9 +125,15 @@
             <a href="#faq" class="nav__link">FAQ</a>
           </nav>
 
-          <a href="#download" class="header__cta">
+          <a
+            href="https://github.com/AvenorDownloader/avenor-downloader/releases/latest/download/AvenorDownloader-Setup.exe"
+            class="header__cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Скачать
           </a>
+          
         </div>
       </header>
 
@@ -161,9 +164,15 @@
               </p>
 
               <div class="hero__actions">
-                <a href="#download" class="btn btn--primary">
+                <a
+                  href="https://github.com/AvenorDownloader/avenor-downloader/releases/latest/download/AvenorDownloader-Setup.exe"
+                  class="btn btn--primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Скачать для Windows
                 </a>
+              
                 <a href="#how" class="btn btn--ghost">
                   Как это работает?
                 </a>
@@ -234,7 +243,7 @@
               <article class="card">
                 <h3 class="card__title">Конвертация форматов</h3>
                 <p class="card__text">
-                  Скачался поломаный или недопустимый кодек? Возьми и тут же конвертируй его в: MP4, MOV, MKV, MP3, WAV и другие форматы. 
+                  Скачался «кривой» файл или неподходящий формат? Просто конвертируйте его в MP4, MOV, MKV, MP3, WAV и другие форматы. 
                 </p>
               </article>
               <article class="card">
@@ -246,6 +255,18 @@
                 </p>
               </article>
             </div>
+
+            <div class="trust-strip">
+              <p class="trust-strip__label">
+                Avenor Downloader уже выбирают для ежедневной работы с видео:
+              </p>
+              <div class="trust-strip__items">
+                <span class="trust-strip__pill">монтажёры</span>
+                <span class="trust-strip__pill">SMM-специалисты</span>
+                <span class="trust-strip__pill">создатели контента</span>
+              </div>
+            </div>
+        
           </div>
         </section>
 
@@ -281,10 +302,10 @@
               </div>
               <div class="step">
                 <div class="step__index">2</div>
-                <h3 class="step__title">Вставить ссылку</h3>
+                <h3 class="step__title">Вставьте ссылку</h3>
                 <p class="step__text">
-                  Скопируйте URL видео, нажмите всего одну кнопку и скаччивание тут-же начнётся.
-                </p>
+                  Скопируйте ссылку на видео, нажмите одну кнопку — и скачивание сразу начнётся.
+                </p>                
               </div>
               <div class="step">
                 <div class="step__index">3</div>
