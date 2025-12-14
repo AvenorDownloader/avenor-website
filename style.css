@@ -1226,3 +1226,122 @@ body {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+
+/* ===== SUPPORT ===== */
+.section--support {
+  padding-top: 64px;
+  padding-bottom: 80px;
+  position: relative;
+
+  /* аккуратный хвост фона перед футером */
+  background: linear-gradient(
+    180deg,
+    rgba(12, 12, 12, 0.95) 0%,
+    rgba(10, 10, 10, 0.98) 45%,
+    rgba(8, 8, 8, 1) 100%
+  );
+}
+
+
+.support{
+  display:grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 28px;
+  padding: 28px;
+  border-radius: 22px;
+  background: radial-gradient(1200px 600px at 30% 20%, rgba(146,216,60,.18), transparent 60%),
+              linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 18px 60px rgba(0,0,0,.35);
+  backdrop-filter: blur(10px);
+}
+
+.support .h2 { margin: 0 0 10px; }
+.support .muted { margin: 0 0 16px; opacity: .85; }
+
+.support__meta{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.support__chip{
+  display:inline-flex;
+  align-items:center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.support__dot{
+  width: 10px; height: 10px;
+  border-radius: 999px;
+  background: #92D83C;
+  box-shadow: 0 0 18px rgba(146,216,60,.55);
+}
+
+.support__link{
+  color: rgba(146,216,60,.95);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(146,216,60,.35);
+  padding-bottom: 2px;
+}
+.support__link:hover{ opacity: .9; }
+
+.support__form{ display:flex; flex-direction:column; gap: 14px; }
+
+.support__row{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.support__field{
+  display:flex;
+  flex-direction:column;
+  gap: 8px;
+}
+
+.support__field > span{
+  font-size: 13px;
+  opacity: .8;
+}
+
+.support__field input,
+.support__field textarea{
+  width: 100%;
+  border-radius: 14px;
+  padding: 12px 14px;
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.10);
+  color: rgba(255,255,255,.92);
+  outline: none;
+}
+
+.support__field input:focus,
+.support__field textarea:focus{
+  border-color: rgba(146,216,60,.45);
+  box-shadow: 0 0 0 4px rgba(146,216,60,.12);
+}
+
+.support__actions{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+
+.support__hint{
+  font-size: 12px;
+  opacity: .75;
+}
+
+@media (max-width: 900px){
+  .support{ grid-template-columns: 1fr; }
+  .support__row{ grid-template-columns: 1fr; }
+}

@@ -211,6 +211,7 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
             <a href="#why" class="nav__link">Почему Avenor</a>
             <a href="#how" class="nav__link">Как работает</a>
             <a href="#pricing" class="nav__link">Подписки</a>
+            <a href="#support" class="nav__link">Поддержка</a>
             <a href="#faq" class="nav__link">FAQ</a>
           </nav>
 
@@ -663,6 +664,99 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
 
 
 
+      <!-- ===== SUPPORT ===== -->
+      <section class="section section--support" id="support">
+        <div class="container">
+          <div class="support">
+            <div class="support__left">
+              <h2 class="h2">Поддержка</h2>
+              <p class="muted">
+                Опишите вопрос — мы ответим на почту. Обычно отвечаем в течение 12-24 часов.
+              </p>
+
+              <div class="support__meta">
+                <div class="support__chip">
+                  <span class="support__dot"></span>
+                  support@avenordownload.app
+                </div>
+                <a class="support__link" href="mailto:support@avenordownload.app">
+                  Написать напрямую
+                </a>
+              </div>
+            </div>
+
+            <form class="support__form" id="supportForm">
+              <div class="support__row">
+                <label class="support__field">
+                  <span>Ваш email</span>
+                  <input type="email" id="supportEmail" placeholder="you@example.com" required />
+                </label>
+
+                <label class="support__field">
+                  <span>Тема</span>
+                  <input type="text" id="supportSubject" placeholder="Например: не скачивается видео" required />
+                </label>
+              </div>
+
+              <label class="support__field">
+                <span>Сообщение</span>
+                <textarea id="supportMessage" rows="6" placeholder="Опишите проблему. Если можете — укажите ссылку и что выбрали в настройках." required></textarea>
+              </label>
+
+              <div class="support__actions">
+                <button type="submit" class="btn btn--primary">Отправить</button>
+                <button type="button" class="btn btn--ghost" id="supportCopyBtn">Скопировать email</button>
+                <span class="support__hint" id="supportHint">Откроется ваш почтовый клиент с заполненным письмом.</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        (function () {
+          const form = document.getElementById("supportForm");
+          const emailEl = document.getElementById("supportEmail");
+          const subjectEl = document.getElementById("supportSubject");
+          const messageEl = document.getElementById("supportMessage");
+          const copyBtn = document.getElementById("supportCopyBtn");
+          const hint = document.getElementById("supportHint");
+
+          function enc(v) { return encodeURIComponent(String(v || "").trim()); }
+
+          form?.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const from = emailEl?.value || "";
+            const subject = subjectEl?.value || "Support request";
+            const msg = messageEl?.value || "";
+
+            const body =
+      `От: ${from}
+
+      Сообщение:
+      ${msg}
+
+      ---
+      Avenor Downloader Support`;
+
+            const mailto = `mailto:support@avenordownload.app?subject=${enc(subject)}&body=${enc(body)}`;
+            window.location.href = mailto;
+
+            if (hint) hint.textContent = "Открылось письмо. Если окно не появилось — проверьте, настроен ли почтовый клиент.";
+          });
+
+          copyBtn?.addEventListener("click", async function () {
+            const addr = "support@avenordownload.app";
+            try {
+              await navigator.clipboard.writeText(addr);
+              if (hint) hint.textContent = "Email скопирован: " + addr;
+            } catch {
+              if (hint) hint.textContent = "Не удалось скопировать. Email: " + addr;
+            }
+          });
+        })();
+      </script>
 
 
 
@@ -684,9 +778,7 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
           <div class="footer__links">
             <a href="#" class="footer__link">Политика конфиденциальности</a>
             <a href="#" class="footer__link">Пользовательское соглашение</a>
-            <a href="mailto:support@avenor.dev" class="footer__link">
-              Поддержка
-            </a>
+            <a href="mailto:support@avenordownload.app" class="footer__link">Поддержка</a>
           </div>
         </div>
       </footer>
