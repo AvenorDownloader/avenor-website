@@ -672,6 +672,8 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
               <h2 class="h2">Поддержка</h2>
               <p class="muted">
                 Опишите вопрос — мы ответим на почту. Обычно отвечаем в течение 12-24 часов.
+
+                Если столкнулись с проблемами в Avenor Downloader, максимально подробно опишите эту проблему. Качество вашего описания проблемы поможет нам исправить её как можно быстрее!
               </p>
 
               <div class="support__meta">
@@ -679,9 +681,9 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
                   <span class="support__dot"></span>
                   support@avenordownload.app
                 </div>
-                <a class="support__link" href="mailto:support@avenordownload.app">
+                <a class="support__link" href="#" id="supportDirectLink">
                   Написать напрямую
-                </a>
+                </a>                
               </div>
             </div>
 
@@ -700,7 +702,7 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
 
               <label class="support__field">
                 <span>Сообщение</span>
-                <textarea id="supportMessage" rows="6" placeholder="Опишите проблему. Если можете — укажите ссылку и что выбрали в настройках." required></textarea>
+                <textarea id="supportMessage" rows="6" placeholder="Опишите вопрос или проблему максимально подробно." required></textarea>
               </label>
 
               <div class="support__actions">
@@ -721,6 +723,60 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
           const messageEl = document.getElementById("supportMessage");
           const copyBtn = document.getElementById("supportCopyBtn");
           const hint = document.getElementById("supportHint");
+          const directLink = document.getElementById("supportDirectLink");
+
+          directLink?.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const subject = "Avenor Support";
+            const body =
+            `Здравствуйте, команда Avenor!
+
+            У меня возникла проблема при использовании Avenor Downloader. Ниже — вся информация по шагам:
+
+            1) Ссылка на видео / файл:
+            (вставьте ссылку)
+
+            2) Платформа:
+            YouTube / Instagram / TikTok / Другое (укажите)
+
+            3) Что я выбрал в настройках:
+            – Тип загрузки: видео / аудио
+            – Качество: (например, 1080p, лучшее доступное)
+            – Формат: (MP4, MP3 и т.д.)
+            – Обрезка по времени: да / нет
+
+            4) Что происходит:
+            (опишите, что именно происходит — ошибка, зависание, неверный файл и т.д.)
+
+            5) Текст ошибки (если есть):
+            (скопируйте сообщение об ошибке или напишите “нет”)
+
+            6) Версия Avenor Downloader:
+            (например, v1.4.2)
+
+            7) Операционная система:
+            Windows 10 / Windows 11 / macOS (укажите версию)
+
+            Заранее спасибо!`
+
+            const gmailUrl =
+              `https://mail.google.com/mail/?view=cm&fs=1` +
+              `&to=support@avenordownload.app` +
+              `&su=${encodeURIComponent(subject)}` +
+              `&body=${encodeURIComponent(body)}`;
+
+            // Пытаемся mailto (на будущее, если пользователь настроит клиент)
+            const mailtoUrl =
+              `mailto:support@avenordownload.app?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            window.location.href = mailtoUrl;
+
+            setTimeout(() => {
+              window.open(gmailUrl, "_blank");
+            }, 300);
+          });
+
 
           function enc(v) { return encodeURIComponent(String(v || "").trim()); }
 
@@ -732,19 +788,33 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
             const msg = messageEl?.value || "";
 
             const body =
-      `От: ${from}
+          `От: ${from}
 
-      Сообщение:
-      ${msg}
+          Сообщение:
+          ${msg}
 
-      ---
-      Avenor Downloader Support`;
+          ---
+          Avenor Downloader Support`;
 
-            const mailto = `mailto:support@avenordownload.app?subject=${enc(subject)}&body=${enc(body)}`;
-            window.location.href = mailto;
+            const mailtoUrl =
+              `mailto:support@avenordownload.app?subject=${enc(subject)}&body=${enc(body)}`;
 
-            if (hint) hint.textContent = "Открылось письмо. Если окно не появилось — проверьте, настроен ли почтовый клиент.";
+            const gmailUrl =
+              `https://mail.google.com/mail/?view=cm&fs=1` +
+              `&to=support@avenordownload.app` +
+              `&su=${enc(subject)}` +
+              `&body=${enc(body)}`;
+
+            // 1) Пробуем mailto
+            window.location.href = mailtoUrl;
+
+            // 2) Если mailto не сработал — открываем Gmail (у тебя это точно сработает)
+            setTimeout(() => {
+              window.open(gmailUrl, "_blank");
+              if (hint) hint.textContent = "Открылся Gmail с заполненным письмом. Нажмите «Отправить».";
+            }, 300);
           });
+
 
           copyBtn?.addEventListener("click", async function () {
             const addr = "support@avenordownload.app";
