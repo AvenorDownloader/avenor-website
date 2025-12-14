@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Политика конфиденциальности — Avenor Downloader</title>
+    <meta
+      name="description"
+      content="Политика конфиденциальности Avenor Downloader — как мы обрабатываем и защищаем данные пользователей."
+    />
+
+    <!-- Шрифт Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+    <link rel="shortcut icon" href="assets/favicon-32.png" />
+
+    <!-- Стили сайта -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Фикс на случай, если где-то задан height:100vh и фон "режется" на длинных страницах -->
+    <style>
+      html,
+      body {
+        height: auto !important;
+        min-height: 100% !important;
+      }
+      body {
+        min-height: 100vh !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Верхний логотип по центру -->
+    <div class="legal-top">
+      <a class="legal-back" href="index.html" aria-label="Вернуться на главную">
+        ← На главную
+      </a>
+    
+      <a class="legal-logo" href="index.html" aria-label="Avenor">
+        <img src="assets/logo.png" alt="Avenor" />
+      </a>
+    </div>
+    
+
+    <main class="legal-page">
+      <section class="legal-card">
+        <h1 class="legal-title">Политика конфиденциальности</h1>
+        <p class="legal-meta"><strong>Дата последнего обновления:</strong> 14 декабря 2025 года</p>
+
+        <p class="legal-lead">
+          Avenor Downloader уважает вашу конфиденциальность и стремится защищать персональные данные
+          пользователей. Ниже описано, какие данные мы можем обрабатывать и для чего.
+        </p>
+
+        <div class="legal-sep"></div>
+
+        <h2 id="general">1. Общие положения</h2>
+        <p>
+          Настоящая Политика конфиденциальности описывает, какие данные мы собираем, как используем и
+          защищаем их при использовании сайта и программного обеспечения Avenor Downloader.
+        </p>
+        <p>Используя сайт, вы соглашаетесь с данной Политикой.</p>
+
+        <h2 id="data">2. Какие данные мы собираем</h2>
+        <p>Мы собираем только минимально необходимую информацию:</p>
+        <ul>
+          <li>Email (при обращении в поддержку или при работе с подпиской/лицензией).</li>
+          <li>Сообщения и вложения, которые вы отправляете в поддержку.</li>
+          <li>Технические данные (например, версия приложения, ОС, тип лицензии) — для диагностики и стабильности.</li>
+        </ul>
+        <p>
+          Мы <strong>не имеем доступа</strong> к скачиваемым файлам, ссылкам и содержимому вашего устройства. Обработка
+          выполняется локально на вашем компьютере.
+        </p>
+
+        <h2 id="payments">3. Платежи</h2>
+        <p>
+          Оплата подписок обрабатывается сторонними платёжными системами (например, Paddle или Stripe). Мы не храним
+          данные банковских карт.
+        </p>
+
+        <h2 id="use">4. Как мы используем данные</h2>
+        <p>Данные используются исключительно для:</p>
+        <ul>
+          <li>работы лицензии и управления подпиской;</li>
+          <li>предоставления поддержки пользователям;</li>
+          <li>улучшения стабильности и качества сервиса;</li>
+          <li>выполнения юридических обязательств.</li>
+        </ul>
+        <p>Мы не продаём и не передаём персональные данные третьим лицам.</p>
+
+        <h2 id="rights">5. Права пользователя</h2>
+        <p>
+          Вы можете запросить доступ, исправление или удаление ваших данных, написав в поддержку по адресу ниже.
+        </p>
+
+        <h2 id="changes">6. Изменения политики</h2>
+        <p>Мы можем обновлять Политику. Актуальная версия всегда доступна на сайте.</p>
+
+        <h2 id="contacts">7. Контакты</h2>
+        <p>
+          По вопросам конфиденциальности и данных вы можете связаться с нами:
+          <a class="accent-link" href="#" id="supportMailLink">support@avenordownload.app</a>
+        </p>
+      </section>
+    </main>
+
+    <!-- mailto + fallback на Gmail -->
+    <script>
+      (function () {
+        const email = "support@avenordownload.app";
+        const subject = "Avenor Privacy Request";
+        const body =
+          "Здравствуйте!\n\n" +
+          "Пожалуйста, опишите ваш запрос по конфиденциальности:\n\n" +
+          "— Тема (доступ/удаление/исправление данных):\n" +
+          "— Email, который вы использовали:\n" +
+          "— Дополнительные детали:\n\n" +
+          "Спасибо!";
+
+        const a = document.getElementById("supportMailLink");
+        if (!a) return;
+
+        a.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const mailto =
+            "mailto:" +
+            encodeURIComponent(email) +
+            "?subject=" +
+            encodeURIComponent(subject) +
+            "&body=" +
+            encodeURIComponent(body);
+
+          window.location.href = mailto;
+
+          // fallback: если протокол mailto не настроен — открываем Gmail Compose
+          setTimeout(function () {
+            const gmail =
+              "https://mail.google.com/mail/?view=cm&fs=1" +
+              "&to=" +
+              encodeURIComponent(email) +
+              "&su=" +
+              encodeURIComponent(subject) +
+              "&body=" +
+              encodeURIComponent(body);
+
+            window.open(gmail, "_blank");
+          }, 700);
+        });
+      })();
+    </script>
+  </body>
+</html>
