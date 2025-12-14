@@ -29,6 +29,7 @@
       rel="stylesheet"
     />
 
+    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 
     <!-- Favicon -->
     <link
@@ -102,6 +103,94 @@
           setupProgress(".ui__task-progress-fill", ".ui__task-progress-percent", {
             duration: 5000,
           });
+
+          if (window.Paddle) {
+            // Sandbox включается так (и только так)
+            window.Paddle.Environment.set("sandbox");
+            window.Paddle.Initialize({
+              token: "test_c0868f35313be3b2ba58cc5a3fe"
+            });
+          }
+
+
+          
+          // Плавные якоря с корректным позиционированием (по центру экрана)
+          function setupAnchorsCenterScroll() {
+            const header = document.querySelector(".header");
+
+            function getHeaderH() {
+              return header ? header.getBoundingClientRect().height : 0;
+            }
+
+            function scrollToTarget(el) {
+              if (!el) return;
+
+              // Стараемся центрировать "шапку" секции, если есть
+              const focusEl = el.querySelector?.(".section__head") || el;
+              const rect = focusEl.getBoundingClientRect();
+              const absoluteTop = window.scrollY + rect.top;
+
+              const headerH = getHeaderH();
+              // Держим заголовок секции в комфортной центральной зоне
+              const centerOffset = (window.innerHeight / 2) - (headerH / 2);
+
+              window.scrollTo({
+                top: Math.max(0, absoluteTop - centerOffset),
+                behavior: "smooth",
+              });
+            }
+
+            function handleAnchorClick(e) {
+              const a = e.currentTarget;
+              const href = a.getAttribute("href") || "";
+              if (!href.startsWith("#")) return;
+
+              const id = href.slice(1);
+              if (!id) return;
+
+              const target = document.getElementById(id);
+              if (!target) return;
+
+              e.preventDefault();
+              history.replaceState(null, "", "#" + id);
+              scrollToTarget(target);
+            }
+
+            // Только реальные навигационные якоря (не трогаем ссылки в футере "#")
+            const anchors = document.querySelectorAll(
+              '.nav__link[href^="#"], .hero__actions a[href^="#"]'
+            );
+            anchors.forEach((a) => a.addEventListener("click", handleAnchorClick));
+
+            // Если страница открылась уже с хэшем — тоже корректно позиционируем
+            if (location.hash && location.hash.length > 1) {
+              const id = location.hash.slice(1);
+              const target = document.getElementById(id);
+              if (target) {
+                // небольшой таймаут, чтобы отрендерилась шапка и высоты
+                setTimeout(() => scrollToTarget(target), 50);
+              }
+            }
+          }
+
+          setupAnchorsCenterScroll();
+
+document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              const priceId = btn.getAttribute("data-price-id");
+              if (!priceId || !window.Paddle?.Checkout?.open) return;
+
+              // Важно: здесь можно добавить customer email (если на сайте будет поле),
+              // и/или custom data для связи с аккаунтом Avenor.
+              window.Paddle.Checkout.open({
+                items: [{ priceId, quantity: 1 }],
+                settings: {
+                  displayMode: "overlay",
+                  theme: "dark"
+                }
+              });
+            });
+          });
         });
       </script>
 
@@ -121,7 +210,7 @@
           <nav class="nav">
             <a href="#why" class="nav__link">Почему Avenor</a>
             <a href="#how" class="nav__link">Как работает</a>
-            <a href="#ui" class="nav__link">Интерфейс</a>
+            <a href="#pricing" class="nav__link">Подписки</a>
             <a href="#faq" class="nav__link">FAQ</a>
           </nav>
 
@@ -183,24 +272,68 @@
               </p>
             </div>
 
-            <div class="hero__card">
-              <div class="hero__chip">Онлайн-видео → Файл за секунды</div>
-              <h2 class="hero__card-title">Вставь ссылку — забери файл</h2>
-              <ul class="hero__list">
-                <li>Поддержка YouTube, Instagram, TikTok и других платформ</li>
-                <li>Выбор качества: от 360p до 8K</li>
-                <li>Скачивание видео или только аудио</li>
-              </ul>
-              <div class="hero__progress">
-                <div class="hero__progress-bar">
-                  <div class="hero__progress-fill"></div>
-                </div>
-                <div class="hero__progress-meta">
-                  <span>Скачивание…</span>
-                  <span class="hero__progress-percent">0%</span>
-                </div>
-                
-              </div>
+                        <div class="hero__card hero__card--mockup">
+              <div class="ui__window">
+                              <div class="ui__window-top">
+                                <div class="ui__dots">
+                                  <span></span><span></span><span></span>
+                                </div>
+                                <span class="ui__window-title">Avenor Downloader</span>
+                              </div>
+
+                              <div class="ui__window-body">
+                                <!-- Вкладки программы -->
+                                <div class="ui__tabs">
+                                  <button class="ui__tab ui__tab--active">Скачать</button>
+                                  <button class="ui__tab">Сжать</button>
+                                  <button class="ui__tab">Конвертировать</button>
+                                </div>
+
+                                <!-- Основные контролы: Вставить ссылку + качество -->
+                                <div class="ui__controls">
+                                  <button class="ui__btn-main">Вставить ссылку</button>
+                                  <button class="ui__btn-secondary">
+                                    Лучшее
+                                    <span class="ui__caret">▾</span>
+                                  </button>
+                                </div>
+
+                                <!-- Фильтры списка задач -->
+                                <div class="ui__filters-row">
+                                  <div class="ui__filters">
+                                    <button class="ui__filter ui__filter--active">Все</button>
+                                    <button class="ui__filter">Видео</button>
+                                    <button class="ui__filter">Аудио</button>
+                                  </div>
+                                  <span class="ui__counter">39 элементов</span>
+                                </div>
+
+                                <!-- Карточка загрузки с превью и прогрессом -->
+                                <div class="ui__task">
+                                  <div class="ui__thumb"></div>
+
+                                  <div class="ui__task-content">
+                                    <div class="ui__task-title">
+                                      Sad Emotional Inspirational Travel...
+                                    </div>
+                                    <div class="ui__task-meta">
+                                      Готово · 1920×1080 · MP4
+                                    </div>
+
+                                    <div class="ui__task-progress">
+                                      <div class="ui__task-progress-bar">
+                                        <div class="ui__task-progress-fill"></div>
+                                      </div>
+                                      <span class="ui__task-progress-percent">0%</span>
+                                    </div>
+                                  </div>
+
+                                  <button class="ui__task-open">
+                                    Открыть в папке
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
             </div>
           </div>
         </section>
@@ -282,6 +415,8 @@
 
 
 
+        <div class="bg-slab bg-slab--deep">
+
         <!-- ===== КАК РАБОТАЕТ ===== -->
         <section class="section" id="how">
           <div class="container">
@@ -331,89 +466,81 @@
 
 
         <!-- ===== ИНТЕРФЕЙС / UI ===== -->
-        <section class="section" id="ui">
-          <div class="container ui">
-            <div class="ui__content">
-              <h2 class="section__title">Премиальный интерфейс без перегруза</h2>
+        
+
+
+        <section class="section section--pricing" id="pricing">
+          <div class="container">
+            <div class="section__head">
+              <h2 class="section__title">Подписки Avenor</h2>
               <p class="section__subtitle">
-                Тёмный фон, чистая типографика и аккуратные акценты
-                фирменным зелёным. Интерфейс, с которым приятно работать каждый день.
+                Бесплатный план — до 1080p. PRO открывает 4K/8K и расширенные лимиты.
               </p>
-              <ul class="ui__list">
-                <li>Фокус на контенте — никаких лишних элементов</li>
-                <li>Чёткая иерархия: главное — всегда под рукой</li>
-                <li>Плавные состояния кнопок и прогресса</li>
-                <li>Единый стиль для всех вкладок и карточек задач</li>
-              </ul>
             </div>
-            <div class="ui__preview">
-              <div class="ui__window">
-                <div class="ui__window-top">
-                  <div class="ui__dots">
-                    <span></span><span></span><span></span>
-                  </div>
-                  <span class="ui__window-title">Avenor Downloader</span>
+        
+            <div class="pricing">
+              <article class="pricing__card">
+                <div class="pricing__top">
+                  <h3 class="pricing__name">Free</h3>
+                  <p class="pricing__price">0$ <span class="pricing__period">навсегда</span></p>
                 </div>
-            
-                <div class="ui__window-body">
-                  <!-- Вкладки программы -->
-                  <div class="ui__tabs">
-                    <button class="ui__tab ui__tab--active">Скачать</button>
-                    <button class="ui__tab">Сжать</button>
-                    <button class="ui__tab">Конвертировать</button>
-                  </div>
-            
-                  <!-- Основные контролы: Вставить ссылку + качество -->
-                  <div class="ui__controls">
-                    <button class="ui__btn-main">Вставить ссылку</button>
-                    <button class="ui__btn-secondary">
-                      Лучшее
-                      <span class="ui__caret">▾</span>
-                    </button>
-                  </div>
-            
-                  <!-- Фильтры списка задач -->
-                  <div class="ui__filters-row">
-                    <div class="ui__filters">
-                      <button class="ui__filter ui__filter--active">Все</button>
-                      <button class="ui__filter">Видео</button>
-                      <button class="ui__filter">Аудио</button>
-                    </div>
-                    <span class="ui__counter">39 элементов</span>
-                  </div>
-            
-                  <!-- Карточка загрузки с превью и прогрессом -->
-                  <div class="ui__task">
-                    <div class="ui__thumb"></div>
-            
-                    <div class="ui__task-content">
-                      <div class="ui__task-title">
-                        Sad Emotional Inspirational Travel...
-                      </div>
-                      <div class="ui__task-meta">
-                        Готово · 1920×1080 · MP4
-                      </div>
-            
-                      <div class="ui__task-progress">
-                        <div class="ui__task-progress-bar">
-                          <div class="ui__task-progress-fill"></div>
-                        </div>
-                        <span class="ui__task-progress-percent">0%</span>
-                      </div>
-                    </div>
-            
-                    <button class="ui__task-open">
-                      Открыть в папке
-                    </button>
-                  </div>
+                <ul class="pricing__list">
+                  <li>Скачивание до 1080p</li>
+                  <li>История загрузок</li>
+                  <li>Базовые форматы</li>
+                </ul>
+                <a href="#download" class="btn btn--ghost btn--full">Скачать</a>
+              </article>
+        
+              <article class="pricing__card pricing__card--pro">
+                <div class="pricing__badge">Рекомендуем</div>
+                <div class="pricing__top">
+                  <h3 class="pricing__name">PRO Monthly</h3>
+                  <p class="pricing__price">
+                    <span class="pricing__amount" data-price-label="pro_monthly">$—</span>
+                    <span class="pricing__period">/ месяц</span>
+                  </p>
                 </div>
-              </div>
-            </div>           
+                <ul class="pricing__list">
+                  <li>4K/8K (если доступно у источника)</li>
+                  <li>Обрезка и PRO-функции</li>
+                  <li>Приоритетные лимиты</li>
+                </ul>
+                <button class="btn btn--primary btn--full"
+                        data-paddle-checkout
+                        data-price-id="pri_01kb03eq2kdvd8z70xqeyd2k0c">
+                  Оформить PRO
+                </button>
+                <p class="pricing__note">Оплата через Paddle. Отмена в любой момент.</p>
+              </article>
+        
+              <article class="pricing__card">
+                <div class="pricing__top">
+                  <h3 class="pricing__name">PRO Yearly</h3>
+                  <p class="pricing__price">
+                    <span class="pricing__amount" data-price-label="pro_yearly">$—</span>
+                    <span class="pricing__period">/ год</span>
+                  </p>
+                </div>
+                <ul class="pricing__list">
+                  <li>Всё из PRO</li>
+                  <li>Обычно выгоднее месяца</li>
+                  <li>Один платёж в год</li>
+                </ul>
+                <button class="btn btn--ghost btn--full"
+                        data-paddle-checkout
+                        data-price-id="pri_01kcad1tky9rs1kyn2012xgqwp">
+                  Оформить на год
+                </button>
+              </article>
+            </div>
+        
+            <div class="pricing__fineprint">
+              Продолжая, вы соглашаетесь с условиями и политикой конфиденциальности.
+            </div>
           </div>
         </section>
-
-
-
+        
 
 
 
@@ -501,6 +628,9 @@
 
 
 
+
+
+        </div>
 
 
         <!-- ===== ФИНАЛЬНЫЙ CTA / СКАЧАТЬ ===== -->
