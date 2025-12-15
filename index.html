@@ -105,11 +105,14 @@
           });
 
           if (window.Paddle) {
-            const isLocal =
+            const isSandbox =
               location.hostname === "localhost" ||
-              location.hostname === "127.0.0.1";
+              location.hostname === "127.0.0.1" ||
+              location.hostname.endsWith(".vercel.app") ||
+              location.hostname === "avenordownload.app";
 
-            if (isLocal) {
+
+            if (isSandbox) {
               window.Paddle.Environment.set("sandbox");
               window.Paddle.Initialize({
                 token: "test_c0868f35313be3b2ba58cc5a3fe",
