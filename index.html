@@ -206,6 +206,57 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
               });
             });
           });
+
+          // FAQ: показываем первые 4 вопроса, остальные — в "шторке"
+          (function setupFaqDrawer() {
+            const btn = document.querySelector(".faq__toggle");
+            const more = document.getElementById("faqMore");
+            if (!btn || !more) return;
+
+            const textEl = btn.querySelector(".faq__toggle-text");
+            const iconEl = btn.querySelector(".faq__toggle-icon");
+
+            // стартовое состояние
+            more.style.maxHeight = "0px";
+
+            function openDrawer() {
+              more.classList.add("is-open");
+              btn.classList.add("is-open");
+              btn.setAttribute("aria-expanded", "true");
+              if (textEl) textEl.textContent = "Скрыть вопросы";
+              if (iconEl) iconEl.textContent = "▴";
+              // даём браузеру применить классы перед измерением
+              requestAnimationFrame(() => {
+                more.style.maxHeight = more.scrollHeight + "px";
+              });
+            }
+
+            function closeDrawer() {
+              more.classList.remove("is-open");
+              btn.classList.remove("is-open");
+              btn.setAttribute("aria-expanded", "false");
+              if (textEl) textEl.textContent = "Показать ещё вопросы";
+              if (iconEl) iconEl.textContent = "▾";
+
+              // анимация закрытия
+              more.style.maxHeight = more.scrollHeight + "px";
+              requestAnimationFrame(() => {
+                more.style.maxHeight = "0px";
+              });
+            }
+
+            btn.addEventListener("click", () => {
+              const expanded = btn.getAttribute("aria-expanded") === "true";
+              expanded ? closeDrawer() : openDrawer();
+            });
+
+            // если внутри раскрыли details и контент стал выше — подстраиваем высоту
+            more.addEventListener("toggle", () => {
+              if (btn.getAttribute("aria-expanded") === "true") {
+                more.style.maxHeight = more.scrollHeight + "px";
+              }
+            }, true);
+          })();
         });
       </script>
 
@@ -284,7 +335,8 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
               </div>
 
               <p class="hero__meta">
-                Совместимо с Windows 10 / 11 · Поддержка 4K · Бесплатно с опцией PRO
+                Скачивая вы принимаете нашу <a href="privacy.html" class="footer__link">политику конфиденциальности</a>
+                и <a href="terms.html" class="footer__link">пользовательское соглашение</a>
               </p>
             </div>
 
@@ -399,8 +451,7 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
                 <h3 class="card__title">Премиальный интерфейс</h3>
                 <p class="card__text">
                   Тёмная тема, аккуратная типографика и визуальные акценты.
-                  Программа выглядит так, будто это официальный коммерческий
-                  продукт уровня топ-софта.
+                  Все в одном месте  удобно с хорошей поддержкой пользователя и без скрытых платежей.
                 </p>
               </article>
             </div>
@@ -431,8 +482,9 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
 
 
 
-        <div class="bg-slab bg-slab--deep">
+        
 
+        <div class="bg-slab bg-slab--mid">
         <!-- ===== КАК РАБОТАЕТ ===== -->
         <section class="section" id="how">
           <div class="container">
@@ -485,12 +537,16 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
         
 
 
-        <section class="section section--pricing" id="pricing">
+        
+        </div>
+
+        <div class="bg-slab bg-slab--dark">
+<section class="section section--pricing" id="pricing">
           <div class="container">
             <div class="section__head">
               <h2 class="section__title">Подписки Avenor</h2>
               <p class="section__subtitle">
-                Бесплатный план — до 1080p. PRO открывает 4K/8K и расширенные лимиты.
+                Бесплатный план — до 1080p. PRO открывает 2K/4K/8K и расширенные лимиты.
               </p>
             </div>
         
@@ -500,62 +556,186 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
                   <h3 class="pricing__name">Free</h3>
                   <p class="pricing__price">€0
                 </div>
-                <ul class="pricing__list">
-                  <li>Скачивание до 1080p</li>
-                  <li>10 скачиваний, 3 конвертаций/сжатий в день</li>
-                  <li>До 500 мб для конвертаций и сжатий</li>
-                  <li>2 устройства на одном email</li>
-                </ul>
                 <a href="#download" class="btn btn--ghost btn--full">Скачать</a>
+                <ul class="pricing__list">
+                  <li>Для старта и базовых задач</li>
+                  <li>До 1080p + дневные лимиты</li>
+                  <li>2 устройства на одном email</li>
+                </ul>                
+              </article>
+        
+              <article class="pricing__card pricing__card--outlined">
+                <div class="pricing__top">
+                  <h3 class="pricing__name">PRO Monthly</h3>
+                  <p class="pricing__price">
+                    <span class="pricing__amount" data-price-label="pro_monthly">€6.00</span>
+                    <span class="pricing__period">/ месяц</span>
+                  </p>
+                </div>
+                <button class="btn btn--ghost btn--full"
+                        data-paddle-checkout
+                        data-price-id="pri_01kb03eq2kdvd8z70xqeyd2k0c">
+                  Оформить PRO
+                </button>
+                <ul class="pricing__list">
+                  <li>Полный PRO на месяц</li>
+                  <li>4K/8K + безлимитные задачи</li>
+                  <li>Лучший вариант “попробовать PRO”</li>
+                </ul>
+                               
+        
               </article>
         
               <article class="pricing__card pricing__card--pro">
                 <div class="pricing__badge">Рекомендуем</div>
                 <div class="pricing__top">
-                  <h3 class="pricing__name">PRO Monthly</h3>
-                  <p class="pricing__price">
-                    <span class="pricing__amount" data-price-label="pro_monthly">€8.49</span>
-                    <span class="pricing__period">/ месяц</span>
-                  </p>
-                </div>
-                <ul class="pricing__list">
-                  <li>2K/4K/8K скачивание</li>
-                  <li>Неограниченное количество скачиваний, конвертаций и сжатий</li>
-                  <li>Неограниченнй вес файлов для конвертаций и сжатий</li>
-                  <li>2 устройства на одном email</li>
-                </ul>
-                <button class="btn btn--primary btn--full"
-                        data-paddle-checkout
-                        data-price-id="pri_01kb03eq2kdvd8z70xqeyd2k0c">
-                  Оформить PRO
-                </button>
-              </article>
-        
-              <article class="pricing__card">
-                <div class="pricing__top">
-                  <h3 class="pricing__name">PRO Yearly</h3>
+                  <h3 class="pricing__name">PRO Yearly</h3>              
                   <p class="pricing__price">
                     <span class="pricing__amount" data-price-label="pro_yearly">€39.00</span>
                     <span class="pricing__period">/ год • €3.25 в месяц</span>
                   </p>
                 </div>
+                <button class="btn btn--primary btn--full"
+                        data-paddle-checkout
+                        data-price-id="pri_01kchx2qbp66tvwr4zkf77mxbv">
+                  Оформить PRO
+                </button>
                 <ul class="pricing__list">
-                  <li>Всё из "PRO Monthly"</li>
-                  <li>Выгоднее чем "PRO Monthly" на 55%</li>
+                  <li>Самая выгодная цена на PRO</li>
+                  <li>Экономия ~55% vs Monthly</li>
                   <li>Один платёж в год</li>
-                </ul>
+                </ul>                               
+                
+              </article>
+              <article class="pricing__card pricing__card--outlined">
+                <div class="pricing__top">
+                  <h3 class="pricing__name">PRO STUDIO Yearly</h3>
+                  <p class="pricing__price">
+                    <span class="pricing__amount" data-price-label="pro_yearly">€60.00</span>
+                    <span class="pricing__period">/ год • €5.00 в месяц</span>
+                  </p>
+                </div>
                 <button class="btn btn--ghost btn--full"
                         data-paddle-checkout
-                        data-price-id="pri_01kcad1tky9rs1kyn2012xgqwp">
-                  Оформить на год
+                        data-price-id="pri_01kchx2qbp66tvwr4zkf77mxbv">
+                  Оформить PRO
                 </button>
+                <ul class="pricing__list">
+                  <li>Для студий и команд</li>
+                  <li>До 10 устройств на аккаунт</li>
+                  <li>Один платёж в год</li>
+                </ul>                               
               </article>
             </div>
-        
-            <div class="pricing__fineprint">
-              Продолжая, вы соглашаетесь с условиями и политикой конфиденциальности.
-            </div>
-          </div>
+            <div class="pricing-compare" aria-label="Сравнение тарифов">
+              <div class="pricing-compare__head">
+                <h3 class="pricing-compare__title">Сравнение функций</h3>
+                <p class="pricing-compare__subtitle">
+                  Все отличия по тарифам — в одной таблице, чтобы не приходилось искать вручную.
+                </p>
+              </div>
+            
+              <div class="pricing-compare__table">
+                <!-- HEADER -->
+                <div class="pc-row pc-row--head">
+                  <div class="pc-cell pc-cell--feature">Функции</div>
+                  <div class="pc-cell pc-cell--plan">Free</div>
+                  <div class="pc-cell pc-cell--plan">PRO Monthly</div>
+                  <div class="pc-cell pc-cell--plan pc-cell--recommended">PRO Yearly</div>
+                  <div class="pc-cell pc-cell--plan">PRO Studio</div>
+                </div>
+              
+                <div class="pc-row">
+                  <div class="pc-cell pc-cell--feature">Количество устройств</div>
+                  <div class="pc-cell">2</div>
+                  <div class="pc-cell">2</div>
+                  <div class="pc-cell pc-cell--recommended">2</div>
+                  <div class="pc-cell">10</div>
+                </div>
+              
+                <div class="pc-row">
+                  <div class="pc-cell pc-cell--feature">Максимальное качество скачивания</div>
+                  <div class="pc-cell">до 1080p</div>
+                  <div class="pc-cell">до 8K</div>
+                  <div class="pc-cell pc-cell--recommended">до 8K</div>
+                  <div class="pc-cell">до 8K</div>
+                </div>
+              
+                <div class="pc-row">
+                  <div class="pc-cell pc-cell--feature">Скачивания в день</div>
+                  <div class="pc-cell">10</div>
+                  <div class="pc-cell"><span class="pc-yes">Безлимит</span></div>
+                  <div class="pc-cell pc-cell--recommended"><span class="pc-yes">Безлимит</span></div>
+                  <div class="pc-cell"><span class="pc-yes">Безлимит</span></div>
+                </div>
+              
+                <div class="pc-row">
+                  <div class="pc-cell pc-cell--feature">Конвертация и сжатие</div>
+                  <div class="pc-cell">3 / день</div>
+                  <div class="pc-cell"><span class="pc-yes">Безлимит</span></div>
+                  <div class="pc-cell pc-cell--recommended"><span class="pc-yes">Безлимит</span></div>
+                  <div class="pc-cell"><span class="pc-yes">Безлимит</span></div>
+                </div>
+              
+                <div class="pc-row">
+                  <div class="pc-cell pc-cell--feature">Размер файлов для конвертации/сжатия</div>
+                  <div class="pc-cell">до 500 МБ</div>
+                  <div class="pc-cell"><span class="pc-yes">Без ограничений</span></div>
+                  <div class="pc-cell pc-cell--recommended"><span class="pc-yes">Без ограничений</span></div>
+                  <div class="pc-cell"><span class="pc-yes">Без ограничений</span></div>
+                </div>
+            
+              
+                <div class="pc-row">
+                  <div class="pc-cell pc-cell--feature">Пакетная загрузка (batch)</div>
+                  <div class="pc-cell"><span class="pc-cross">✕</span></div>
+                  <div class="pc-cell"><span class="pc-check">✓</span></div>
+                  <div class="pc-cell pc-cell--recommended"><span class="pc-check">✓</span></div>
+                  <div class="pc-cell"><span class="pc-check">✓</span></div>
+                </div>
+              
+                <div class="pc-row">
+                  <div class="pc-cell pc-cell--feature">Скачивание только аудио</div>
+                  <div class="pc-cell"><span class="pc-check">✓</span></div>
+                  <div class="pc-cell"><span class="pc-check">✓</span></div>
+                  <div class="pc-cell pc-cell--recommended"><span class="pc-check">✓</span></div>
+                  <div class="pc-cell"><span class="pc-check">✓</span></div>
+                </div>
+              
+                <div class="pc-row">
+                  <div class="pc-cell pc-cell--feature">Cookies.txt (приватный/возрастной контент)*</div>
+                  <div class="pc-cell"><span class="pc-cross">✕</span></div>
+                  <div class="pc-cell"><span class="pc-check">✓</span></div>
+                  <div class="pc-cell pc-cell--recommended"><span class="pc-check">✓</span></div>
+                  <div class="pc-cell"><span class="pc-check">✓</span></div>
+                </div>
+            
+              
+                <div class="pc-row">
+                  <div class="pc-cell pc-cell--feature">История загрузок</div>
+                  <div class="pc-cell"><span class="pc-check">✓</span></div>
+                  <div class="pc-cell"><span class="pc-check">✓</span></div>
+                  <div class="pc-cell pc-cell--recommended"><span class="pc-check">✓</span></div>
+                  <div class="pc-cell"><span class="pc-check">✓</span></div>
+                </div>
+              
+                <div class="pc-row">
+                  <div class="pc-cell pc-cell--feature">Приоритетная поддержка</div>
+                  <div class="pc-cell"><span class="pc-cross">✕</span></div>
+                  <div class="pc-cell"><span class="pc-cross">✕</span></div>
+                  <div class="pc-cell pc-cell--recommended"><span class="pc-check">✓</span></div>
+                  <div class="pc-cell"><span class="pc-check">✓</span></div>
+                </div>
+              
+                <div class="pc-row">
+                  <div class="pc-cell pc-cell--feature">Коммерческое использование</div>
+                  <div class="pc-cell"><span class="pc-cross">✕</span></div>
+                  <div class="pc-cell"><span class="pc-cross">✕</span></div>
+                  <div class="pc-cell pc-cell--recommended"><span class="pc-cross">✕</span></div>
+                  <div class="pc-cell"><span class="pc-check">✓</span></div>
+                </div>
+              </div>
+              
         </section>
         
 
@@ -577,62 +757,149 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
 
 
 
-        <!-- ===== FAQ ===== -->
+        
+        </div>
+
+        <div class="bg-slab bg-slab--mid">
+<!-- ===== FAQ ===== -->
         <section class="section" id="faq">
           <div class="container">
             <div class="section__head">
-              <h2 class="section__title">Частые вопросы</h2>
+              <h2 class="section__title">Часто задаваемые вопросы</h2>
             </div>
 
             <div class="faq">
               <details class="faq__item" open>
                 <summary class="faq__question">
+                  Что такое Avenor Downloader и чем он отличается от других загрузчиков?
+                </summary>
+                <p class="faq__answer">
+                  Avenor Downloader — это настольное приложение для скачивания, обрезки и конвертации видео и аудио с популярных платформ. В отличие от онлайн-сервисов и большинства аналогов, Avenor работает полностью локально на вашем компьютере, без загрузки файлов на сторонние серверы.
+                  Это означает:
+                  — отсутствие ограничений на размер файлов,
+                  — сохранение оригинального качества,
+                  — максимальную скорость загрузки,
+                  — полную приватность ваших данных.
+                </p>
+              </details>
+
+              <details class="faq__item">
+                <summary class="faq__question">
                   Какие платформы поддерживаются?
                 </summary>
                 <p class="faq__answer">
-                  Поддерживаются такие платформы как: YouTube, Instagram, TikTok, Facebook и Pinterest
+                  Avenor поддерживает большинство популярных видеоплатформ, включая YouTube, Instagram, TikTok, Facebook и Pinterest.
+Список регулярно расширяется, так как приложение использует обновляемый модуль загрузки, адаптирующийся под изменения платформ.
+                </p>
+              </details>
+
+
+              <details class="faq__item">
+                <summary class="faq__question">
+                  Почему видео в PRO-плане может весить больше?
+                </summary>
+                <p class="faq__answer">
+                  Потому что Avenor не ухудшает качество видео.
+В отличие от онлайн-сервисов, которые часто сжимают файл, Avenor сохраняет оригинальный битрейт, аудиодорожку и кодек, если это возможно. Больший размер — это цена за честное качество.
                 </p>
               </details>
 
               <details class="faq__item">
                 <summary class="faq__question">
-                  Можно ли скачивать в 4K?
+                  Можно ли скачивать только аудио?
                 </summary>
                 <p class="faq__answer">
-                  Да, если исходный ролик доступен в 4K. Поддержка высокого
-                  разрешения реализована через встроенный модуль скачивания.
+                  Да. Вы можете извлечь только аудиодорожку из видео и сохранить её в удобном формате (например, MP3).
+                  Это удобно для музыки, подкастов, лекций и интервью.
                 </p>
               </details>
 
-              <details class="faq__item">
-                <summary class="faq__question">
-                  На каких системах работает программа?
-                </summary>
-                <p class="faq__answer">
-                  Текущая версия поддерживает Windows 10 и Windows 11. Поддержка
-                  macOS находится в планах.
-                </p>
-              </details>
+              <!-- Показать/скрыть остальные вопросы -->
+              <button
+                class="faq__toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="faqMore"
+              >
+                <span class="faq__toggle-text">Показать ещё вопросы</span>
+                <span class="faq__toggle-icon" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="faq__more" id="faqMore">
 
               <details class="faq__item">
                 <summary class="faq__question">
-                  Нужна ли подписка, чтобы пользоваться Avenor?
+                  Безопасно ли использовать Avenor?
                 </summary>
                 <p class="faq__answer">
-                  Скачивание видео в 1080p и меньше - доступны в бесплатном плане. В более высоких разрешениях требуется подписка PRO.
+                  Да. Avenor:
+
+                  не встраивает рекламу,
+                  
+                  не устанавливает сторонние расширения,
+                  
+                  не передаёт ваши файлы третьим лицам,
+                  
+                  не собирает содержимое загружаемых видео.
+                  
+                  Приложение использует официальные и открытые инструменты обработки медиа.
                 </p>
               </details>
 
+
               <details class="faq__item">
                 <summary class="faq__question">
-                  Чем Avenor лучше онлайн-сервисов?
+                  Зачем нужны Cookies и как их использовать?
                 </summary>
                 <p class="faq__answer">
-                  Нет ограничений по размеру файлов, нет потери качества и
-                  раздражающей рекламы. Все операции идут локально на вашем
-                  компьютере, а файлы остаются только у вас.
+                  Cookies позволяют получать доступ к контенту, который:
+                  — доступен только авторизованным пользователям,
+                  — ограничен по региону или возрасту,
+                  — скрыт за приватными настройками аккаунта.
+                  
+                  Вы можете добавить cookies-файл, если понимаете, зачем он нужен. Для обычных публичных видео cookies не требуются.
                 </p>
               </details>
+
+
+              <details class="faq__item">
+                <summary class="faq__question">
+                  Сколько устройств можно использовать с одной подпиской?
+                </summary>
+                <p class="faq__answer">
+                  Одна PRO-подписка может быть активирована на 2/10 устройствах одновременно в зависимости от вашего тарифа.
+                  Это удобно, если вы используете Avenor, например, на рабочем и домашнем компьютере.
+                </p>
+              </details>
+
+
+              <details class="faq__item">
+                <summary class="faq__question">
+                  На каких операционных системах работает Avenor?
+                </summary>
+                <p class="faq__answer">
+                  На данный момент Avenor поддерживает:
+
+                  Windows 10
+                  
+                  Windows 11
+                  
+                  Версия для macOS находится в разработке.
+                </p>
+              </details>
+
+
+              <details class="faq__item">
+                <summary class="faq__question">
+                  Законно ли скачивать видео через Avenor?
+                </summary>
+                <p class="faq__answer">
+                  Ответственность за использование контента лежит на пользователе.
+                  Avenor — это инструмент, предназначенный для работы с собственными материалами, открытым контентом и контентом с разрешения правообладателя.
+                </p>
+              </details>
+
+              </div>
             </div>
           </div>
         </section>
@@ -647,7 +914,10 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
 
 
 
+        
         </div>
+
+
 
 
         <!-- ===== ФИНАЛЬНЫЙ CTA / СКАЧАТЬ ===== -->
@@ -670,7 +940,8 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
                   Скачать для Windows
                 </a>
                 <span class="section__cta-meta">
-                  Совместимо с Windows 10 / 11 · Локальная обработка файлов
+                  Скачивая вы принимаете нашу <a href="privacy.html" class="footer__link">политику конфиденциальности</a>
+                и <a href="terms.html" class="footer__link">пользовательское соглашение</a>
                 </span>
               </div>
             </div>
@@ -687,7 +958,7 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
             <div class="support__left">
               <h2 class="h2">Поддержка</h2>
               <p class="muted">
-                Опишите вопрос — мы ответим на почту. Обычно отвечаем в течение 12-24 часов.
+                Опишите вопрос — мы ответим на почту. Обычно отвечаем в течение 6 часов.
 
                 Если столкнулись с проблемами в Avenor Downloader, максимально подробно опишите эту проблему. Качество вашего описания проблемы поможет нам исправить её как можно быстрее!
               </p>
@@ -724,7 +995,6 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
               <div class="support__actions">
                 <button type="submit" class="btn btn--primary">Отправить</button>
                 <button type="button" class="btn btn--ghost" id="supportCopyBtn">Скопировать email</button>
-                <span class="support__hint" id="supportHint">Откроется ваш почтовый клиент с заполненным письмом.</span>
               </div>
             </form>
           </div>
