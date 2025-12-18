@@ -1720,3 +1720,233 @@ body {
 
 .pricing-compare__title { font-size: 15px; }
 .pricing-compare__subtitle { font-size: 12px; opacity: .85; }
+
+
+/* ===== LANG SWITCHER (header) ===== */
+.header__right{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lang{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.lang__btn{
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.35);
+  color: var(--text-main);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.lang__btn:hover{
+  background: rgba(255,255,255,.05);
+  border-color: rgba(146,216,60,.28);
+  transform: translateY(-1px);
+}
+
+.lang__flag{
+  font-size: 16px;
+  line-height: 1;
+}
+
+.lang__caret{
+  font-size: 11px;
+  opacity: .8;
+  line-height: 1;
+}
+
+.lang__menu{
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+
+  min-width: 120px;          /* было 66px — мало для флаг + код */
+  padding: 8px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(10,10,10,.92);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 50px rgba(0,0,0,.55);
+
+  display: none;
+  flex-direction: column;    /* вместо grid */
+  gap: 6px;
+  z-index: 50;
+}
+
+.lang.is-open .lang__menu{ display: flex; }
+
+
+.lang__item-flag{
+  width: 34px;           /* чуть шире/выше — ровнее выглядит */
+  height: 24px;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.05);
+}
+
+.lang__item:hover{
+  border-color: rgba(146,216,60,.28);
+  background: rgba(146,216,60,.10);
+}
+
+/* === Emoji flags fix (Windows/Chrome) === */
+.lang__flag,
+.lang__item {
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji",
+    "Segoe UI Symbol", system-ui, sans-serif !important;
+  font-variant-emoji: emoji;
+}
+
+/* === Language flags (Twemoji <img>) === */
+.lang__flag .flag-emoji,
+.lang__item .flag-emoji{
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.lang__flag{
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ===== Language dropdown: flag + code ===== */
+
+.lang__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lang__code{
+  font-size: 12px;
+  letter-spacing: .06em;
+  opacity: .95;
+}
+
+/* Сами emoji-картинки от Twemoji */
+.flag-emoji{
+  display: block;
+  margin: 0;
+}
+
+
+
+
+/* В кнопке сверху сделаем чуть крупнее */
+.lang__flag .flag-emoji {
+  width: 20px;
+  height: 20px;
+}
+
+/* Пункты меню: флаг + текст */
+.lang__item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+}
+
+.lang__item-flag .flag-emoji {
+  width: 20px;
+  height: 20px;
+}
+
+.lang__item-flag .flag-emoji{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.lang__item-text {
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+/* Кнопка (верх) */
+.lang__btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Контейнер под флаг в кнопке */
+.lang__flag{
+  width: 22px;          /* совпадает с .flag-emoji */
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 22px;
+}
+
+/* Пункты меню */
+.lang__item{
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(0,0,0,.18);
+  color: #fff;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+
+/* Контейнер под флаг в пункте меню */
+.lang__item-flag{
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 22px;
+
+  overflow: hidden;     /* КЛЮЧ: обрезаем картинку внутри пилюли */
+  padding: 0;
+  line-height: 0;
+  box-sizing: border-box;
+
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.05);
+}
+
+/* Код языка справа от флага */
+.lang__code{
+  font-size: 12px;
+  letter-spacing: .08em;
+  opacity: .95;
+  line-height: 1; /* чтобы текст не "плавал" по вертикали */
+}
