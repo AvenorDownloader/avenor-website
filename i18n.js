@@ -28,10 +28,11 @@
 
       hero_kicker: "Программа для работы с видео и аудио",
       hero_title_1: "Avenor Downloader —",
-      hero_title_accent: "умный загрузчик",
-      hero_title_2: "видео и аудио",
+      hero_title_accent: "больше, чем загрузчик",
+      hero_title_2: "",
       hero_subtitle:
-        "Скачивай, сжимай и конвертируй контент с YouTube, Instagram, TikTok и других платформ. Максимальное качество, удобный интерфейс и полный контроль над файлами.",
+        "Скачивайте контент и вырезайте нужные фрагменты ещё до загрузки. Максимальное качество, удобный интерфейс и полный контроль над каждым файлом.",
+      
       hero_btn_win: "Скачать для Windows",
       hero_btn_how: "Как это работает?",
       hero_meta_before: "Скачивая вы принимаете нашу",
@@ -51,9 +52,9 @@
       why_card3_t: "Конвертация форматов",
       why_card3_p:
         "Скачался «кривой» файл или неподходящий формат? Просто конвертируйте его в MP4, MOV, MKV, MP3, WAV и другие форматы.",
-      why_card4_t: "Премиальный интерфейс",
+      why_card4_t: "Создавайте клипы еще до загрузки",
       why_card4_p:
-        "Тёмная тема, аккуратная типографика и визуальные акценты. Все в одном месте, удобно с хорошей поддержкой пользователя и без скрытых платежей.",
+        "Точно выбирайте нужные фрагменты видео. Сохраняйте только важные моменты. Избавляйтесь от лишнего контента — быстро, удобно и без сторонних редакторов.",
       trust_label: "Avenor Downloader уже выбирают для ежедневной работы с видео:",
       trust_1: "монтажёры",
       trust_2: "SMM-специалисты",
@@ -72,7 +73,7 @@
 
       pricing_title: "Подписки Avenor",
       pricing_subtitle:
-        "Бесплатный план — до 1080p. PRO открывает 2K/4K/8K и расширенные лимиты.",
+        "PRO открывает 2K/4K/8K, безлимитные задачи и вкладку Фрагменты для создания клипов ещё до загрузки.",
 
       faq_title: "Часто задаваемые вопросы",
       faq_more_open: "Показать ещё вопросы",
@@ -94,6 +95,13 @@
       legal_back: "← На главную",
       privacy_title: "Политика конфиденциальности — Avenor Downloader",
       terms_title: "Пользовательское соглашение — Avenor Downloader",
+
+      pro_m_li_fragments: "Фрагменты (обрезка до загрузки)",
+      pro_y_li_fragments: "Фрагменты (обрезка до загрузки)",
+      studio_li_fragments: "Фрагменты для команд",
+
+      compare_fragments: "Фрагменты (обрезка до загрузки)",
+
     },
 
     en: {
@@ -110,10 +118,11 @@
 
       hero_kicker: "A tool for video and audio workflows",
       hero_title_1: "Avenor Downloader —",
-      hero_title_accent: "smart downloader",
-      hero_title_2: "for video and audio",
+      hero_title_accent: "more than a downloader",
+      hero_title_2: "",
       hero_subtitle:
-        "Download, compress and convert content from YouTube, Instagram, TikTok and other platforms. Maximum quality, clean UI and full control of files.",
+        "Download content and cut precise clips before you even start the download. Maximum quality, a clean UI, and full control over every file.",
+      
       hero_btn_win: "Download for Windows",
       hero_btn_how: "How it works?",
       hero_meta_before: "By downloading you accept our",
@@ -133,9 +142,10 @@
       why_card3_t: "Format conversion",
       why_card3_p:
         "Got an unsupported file? Convert to MP4, MOV, MKV, MP3, WAV and other formats.",
-      why_card4_t: "Premium interface",
+      why_card4_t: "Create clips before downloading",
       why_card4_p:
-        "Dark theme, clean typography and tasteful accents. Everything in one place with transparent behavior.",
+        "Pick exact video segments, save only the moments that matter, and skip the rest — fast, convenient, and without third-party editors.",
+
       trust_label: "Chosen for daily video work by:",
       trust_1: "editors",
       trust_2: "SMM specialists",
@@ -273,6 +283,13 @@
       support_subject_ph: "For example: video won't download",
       support_message_ph: "Describe your issue in as much detail as possible.",
 
+      pro_m_li_fragments: "Fragments (trim before download)",
+      pro_y_li_fragments: "Fragments (trim before download)",
+      studio_li_fragments: "Fragments for teams",
+
+      compare_fragments: "Fragments (trim before download)",
+
+
     },
 
     // Для ES/PT/DE/FR/UK — ставлю качественные короткие переводы основных UI-строк.
@@ -291,10 +308,11 @@
     
       hero_kicker: "Herramienta para trabajar con video y audio",
       hero_title_1: "Avenor Downloader —",
-      hero_title_accent: "descargador inteligente",
-      hero_title_2: "de video y audio",
+      hero_title_accent: "más que un descargador",
+      hero_title_2: "",
       hero_subtitle:
-        "Descarga, comprime y convierte contenido de YouTube, Instagram, TikTok y otras plataformas. Máxima calidad, interfaz limpia y control total de archivos.",
+        "Descarga contenido y recorta los fragmentos exactos antes de iniciar la descarga. Máxima calidad, interfaz limpia y control total de cada archivo.",
+      
       hero_btn_win: "Descargar para Windows",
       hero_btn_how: "¿Cómo funciona?",
       hero_meta_before: "Al descargar aceptas nuestra",
@@ -314,9 +332,10 @@
       why_card3_t: "Conversión de formatos",
       why_card3_p:
         "¿Formato incompatible? Convierte fácilmente a MP4, MOV, MKV, MP3, WAV y otros.",
-      why_card4_t: "Interfaz premium",
+      why_card4_t: "Crea clips antes de descargar",
       why_card4_p:
-        "Tema oscuro, tipografía cuidada y acentos visuales. Todo en un solo lugar, sin pagos ocultos.",
+        "Elige con precisión los fragmentos del video, guarda solo los momentos importantes y elimina lo innecesario — rápido, cómodo y sin editores externos.",
+
       trust_label: "Avenor Downloader ya es elegido para el trabajo diario por:",
       trust_1: "editores",
       trust_2: "especialistas en SMM",
@@ -455,6 +474,13 @@
       // ===== Support placeholders =====
       support_subject_ph: "Por ejemplo: el video no se descarga",
       support_message_ph: "Describe el problema con el mayor detalle posible.",
+
+      pro_m_li_fragments: "Fragmentos (recorta antes de descargar)",
+      pro_y_li_fragments: "Fragmentos (recorta antes de descargar)",
+      studio_li_fragments: "Fragmentos para equipos",
+
+      compare_fragments: "Fragmentos (recorte antes de descargar)",
+
     },
     
     pt: {
@@ -471,10 +497,11 @@
     
       hero_kicker: "Ferramenta para trabalhar com vídeo e áudio",
       hero_title_1: "Avenor Downloader —",
-      hero_title_accent: "downloader inteligente",
-      hero_title_2: "de vídeo e áudio",
+      hero_title_accent: "mais do que um downloader",
+      hero_title_2: "",
       hero_subtitle:
-        "Baixe, comprima e converta conteúdo do YouTube, Instagram, TikTok e outras plataformas. Máxima qualidade, interface limpa e controle total dos arquivos.",
+        "Baixe conteúdo e recorte clipes exatos antes mesmo de começar o download. Máxima qualidade, interface limpa e controle total de cada arquivo.",
+      
       hero_btn_win: "Baixar para Windows",
       hero_btn_how: "Como funciona?",
       hero_meta_before: "Ao baixar, você aceita nossa",
@@ -494,9 +521,9 @@
       why_card3_t: "Conversão de formatos",
       why_card3_p:
         "Formato incompatível? Converta facilmente para MP4, MOV, MKV, MP3, WAV e outros.",
-      why_card4_t: "Interface premium",
+      why_card4_t: "Crie clipes antes de baixar",
       why_card4_p:
-        "Tema escuro, tipografia limpa e detalhes visuais elegantes. Tudo em um só lugar, sem custos ocultos.",
+        "Escolha com precisão os trechos do vídeo, salve apenas os momentos importantes e elimine o restante — rápido, prático e sem editores externos.",
       trust_label: "Avenor Downloader já é escolhido para uso diário por:",
       trust_1: "editores",
       trust_2: "especialistas em SMM",
@@ -635,6 +662,13 @@
       // ===== Support placeholders =====
       support_subject_ph: "Por exemplo: o vídeo não baixa",
       support_message_ph: "Descreva o problema com o máximo de detalhes possível.",
+
+      pro_m_li_fragments: "Fragmentos (cortar antes de baixar)",
+      pro_y_li_fragments: "Fragmentos (cortar antes de baixar)",
+      studio_li_fragments: "Fragmentos para equipes",
+
+      compare_fragments: "Fragmentos (corte antes de baixar)",
+
     },
     
     de: {
@@ -651,10 +685,11 @@
     
       hero_kicker: "Tool für Video- und Audio-Workflows",
       hero_title_1: "Avenor Downloader —",
-      hero_title_accent: "smarter Downloader",
-      hero_title_2: "für Video und Audio",
+      hero_title_accent: "mehr als ein Downloader",
+      hero_title_2: "",
       hero_subtitle:
-        "Lade Inhalte von YouTube, Instagram, TikTok und anderen Plattformen herunter, komprimiere und konvertiere sie. Maximale Qualität, cleanes UI und volle Kontrolle über deine Dateien.",
+        "Lade Inhalte herunter und schneide exakte Clips, noch bevor der Download startet. Maximale Qualität, ein cleanes UI und volle Kontrolle über jede Datei.",      
+      
       hero_btn_win: "Für Windows herunterladen",
       hero_btn_how: "Wie funktioniert das?",
       hero_meta_before: "Mit dem Download akzeptierst du unsere",
@@ -674,9 +709,9 @@
       why_card3_t: "Formatkonvertierung",
       why_card3_p:
         "Datei im falschen Format? Konvertiere zu MP4, MOV, MKV, MP3, WAV und weiteren Formaten.",
-      why_card4_t: "Premium-Interface",
+      why_card4_t: "Clips vor dem Download erstellen",
       why_card4_p:
-        "Dark Mode, saubere Typografie und dezente Akzente. Alles an einem Ort, transparent und ohne versteckte Kosten.",
+        "Wähle präzise Videoausschnitte aus, speichere nur die wichtigen Momente und lass den Rest weg — schnell, bequem und ohne externe Editoren.",
       trust_label: "Für tägliche Videoarbeit gewählt von:",
       trust_1: "Editoren",
       trust_2: "SMM-Spezialisten",
@@ -815,6 +850,13 @@
       // ===== Support placeholders =====
       support_subject_ph: "Zum Beispiel: Video lässt sich nicht herunterladen",
       support_message_ph: "Beschreibe dein Problem so detailliert wie möglich.",
+
+      pro_m_li_fragments: "Fragmente (vor dem Download schneiden)",
+      pro_y_li_fragments: "Fragmente (vor dem Download schneiden)",
+      studio_li_fragments: "Fragmente für Teams",
+
+      compare_fragments: "Fragmente (Schnitt vor dem Download)",
+
     },
     
     fr: {
@@ -831,10 +873,11 @@
     
       hero_kicker: "Outil pour le travail vidéo et audio",
       hero_title_1: "Avenor Downloader —",
-      hero_title_accent: "téléchargeur intelligent",
-      hero_title_2: "vidéo et audio",
+      hero_title_accent: "bien plus qu’un téléchargeur",
+      hero_title_2: "",
       hero_subtitle:
-        "Téléchargez, compressez et convertissez du contenu depuis YouTube, Instagram, TikTok et d’autres plateformes. Qualité maximale, interface claire et contrôle total des fichiers.",
+        "Téléchargez du contenu et découpez des extraits précis avant même de lancer le téléchargement. Qualité maximale, interface claire et contrôle total de chaque fichier.",
+      
       hero_btn_win: "Télécharger pour Windows",
       hero_btn_how: "Comment ça marche ?",
       hero_meta_before: "En téléchargeant, vous acceptez notre",
@@ -854,9 +897,9 @@
       why_card3_t: "Conversion de formats",
       why_card3_p:
         "Format incompatible ? Convertissez facilement en MP4, MOV, MKV, MP3, WAV et autres.",
-      why_card4_t: "Interface premium",
+      why_card4_t: "Créez des clips avant le téléchargement",
       why_card4_p:
-        "Mode sombre, typographie soignée et accents visuels élégants. Tout au même endroit, sans frais cachés.",
+        "Choisissez précisément les extraits, ne gardez que les moments importants et ignorez le reste — rapide, pratique et sans éditeurs externes.",
       trust_label: "Avenor Downloader est déjà choisi pour le travail quotidien par :",
       trust_1: "monteurs",
       trust_2: "spécialistes SMM",
@@ -995,6 +1038,13 @@
       // ===== Support placeholders =====
       support_subject_ph: "Par exemple : la vidéo ne se télécharge pas",
       support_message_ph: "Décrivez le problème avec le plus de détails possible.",
+
+      pro_m_li_fragments: "Fragments (découper avant le téléchargement)",
+      pro_y_li_fragments: "Fragments (découper avant le téléchargement)",
+      studio_li_fragments: "Fragments pour les équipes",
+
+      compare_fragments: "Fragments (découpe avant le téléchargement)",
+
     },
     
     uk: {
@@ -1011,10 +1061,11 @@
     
       hero_kicker: "Інструмент для роботи з відео та аудіо",
       hero_title_1: "Avenor Downloader —",
-      hero_title_accent: "розумний завантажувач",
-      hero_title_2: "відео та аудіо",
+      hero_title_accent: "більше, ніж завантажувач",
+      hero_title_2: "",
       hero_subtitle:
-        "Завантажуйте, стискайте та конвертуйте контент з YouTube, Instagram, TikTok та інших платформ. Максимальна якість, зручний інтерфейс і повний контроль над файлами.",
+        "Завантажуйте контент і вирізайте потрібні фрагменти ще до початку завантаження. Максимальна якість, зручний інтерфейс і повний контроль над кожним файлом.",
+      
       hero_btn_win: "Завантажити для Windows",
       hero_btn_how: "Як це працює?",
       hero_meta_before: "Завантажуючи, ви приймаєте нашу",
@@ -1034,9 +1085,10 @@
       why_card3_t: "Конвертація форматів",
       why_card3_p:
         "Невідповідний формат? Легко конвертуйте у MP4, MOV, MKV, MP3, WAV та інші формати.",
-      why_card4_t: "Преміальний інтерфейс",
+      why_card4_t: "Створюйте кліпи ще до завантаження",
       why_card4_p:
-        "Темна тема, охайна типографіка та візуальні акценти. Усе в одному місці, без прихованих платежів.",
+        "Точно обирайте потрібні фрагменти відео, зберігайте лише важливі моменти та прибирайте зайве — швидко, зручно і без сторонніх редакторів.",
+
       trust_label: "Avenor Downloader вже обирають для щоденної роботи з відео:",
       trust_1: "монтажери",
       trust_2: "SMM-спеціалісти",
@@ -1175,6 +1227,14 @@
       // ===== Support placeholders =====
       support_subject_ph: "Наприклад: відео не завантажується",
       support_message_ph: "Опишіть проблему якомога детальніше.",
+
+
+      pro_m_li_fragments: "Фрагменти (обрізка до завантаження)",
+      pro_y_li_fragments: "Фрагменти (обрізка до завантаження)",
+      studio_li_fragments: "Фрагменти для команд",
+
+      compare_fragments: "Фрагменти (обрізка до завантаження)",
+
     },
     
   };

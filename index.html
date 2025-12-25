@@ -55,6 +55,8 @@
   <body>
     <div class="page">
 
+      <div id="snow" class="snow" aria-hidden="true"></div>
+
       <script>
         document.addEventListener("DOMContentLoaded", function () {
           function setupProgress(fillSelector, percentSelector, options) {
@@ -131,69 +133,8 @@
 
 
 
-          
-          // Плавные якоря с корректным позиционированием (по центру экрана)
-          function setupAnchorsCenterScroll() {
-            const header = document.querySelector(".header");
 
-            function getHeaderH() {
-              return header ? header.getBoundingClientRect().height : 0;
-            }
-
-            function scrollToTarget(el) {
-              if (!el) return;
-
-              // Стараемся центрировать "шапку" секции, если есть
-              const focusEl = el.querySelector?.(".section__head") || el;
-              const rect = focusEl.getBoundingClientRect();
-              const absoluteTop = window.scrollY + rect.top;
-
-              const headerH = getHeaderH();
-              // Держим заголовок секции в комфортной центральной зоне
-              const centerOffset = (window.innerHeight / 2) - (headerH / 2);
-
-              window.scrollTo({
-                top: Math.max(0, absoluteTop - centerOffset),
-                behavior: "smooth",
-              });
-            }
-
-            function handleAnchorClick(e) {
-              const a = e.currentTarget;
-              const href = a.getAttribute("href") || "";
-              if (!href.startsWith("#")) return;
-
-              const id = href.slice(1);
-              if (!id) return;
-
-              const target = document.getElementById(id);
-              if (!target) return;
-
-              e.preventDefault();
-              history.replaceState(null, "", "#" + id);
-              scrollToTarget(target);
-            }
-
-            // Только реальные навигационные якоря (не трогаем ссылки в футере "#")
-            const anchors = document.querySelectorAll(
-              '.nav__link[href^="#"], .hero__actions a[href^="#"]'
-            );
-            anchors.forEach((a) => a.addEventListener("click", handleAnchorClick));
-
-            // Если страница открылась уже с хэшем — тоже корректно позиционируем
-            if (location.hash && location.hash.length > 1) {
-              const id = location.hash.slice(1);
-              const target = document.getElementById(id);
-              if (target) {
-                // небольшой таймаут, чтобы отрендерилась шапка и высоты
-                setTimeout(() => scrollToTarget(target), 50);
-              }
-            }
-          }
-
-          setupAnchorsCenterScroll();
-
-document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
+          document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
             btn.addEventListener("click", () => {
               const priceId = btn.getAttribute("data-price-id");
               if (!priceId || !window.Paddle?.Checkout?.open) return;
@@ -260,6 +201,74 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
               }
             }, true);
           })();
+
+          // ===== Snow =====
+          function makeSnow(opts){
+            const root = document.getElementById("snow");
+            if (!root) return;
+
+            const o = Object.assign({
+              count: 60,           // сколько снежинок
+              sizeMin: 2,          // px
+              sizeMax: 4,          // px
+              opacityMin: 0.25,    // 0..1
+              opacityMax: 0.85,
+              blurMin: 0,          // px
+              blurMax: 1.2,
+              durMin: 8,           // sec (меньше = быстрее)
+              durMax: 18,
+              windMin: -8,         // vw (влево)
+              windMax: 8,          // vw (вправо)
+              drift: true,         // чтобы был “ветер”
+              respawnOnResize: true
+            }, opts || {});
+
+            root.innerHTML = "";
+
+            for (let i = 0; i < o.count; i++){
+              const flake = document.createElement("span");
+              flake.className = "snow__flake";
+
+              const s = (Math.random() * (o.sizeMax - o.sizeMin) + o.sizeMin).toFixed(2) + "px";
+              const a = (Math.random() * (o.opacityMax - o.opacityMin) + o.opacityMin).toFixed(2);
+              const b = (Math.random() * (o.blurMax - o.blurMin) + o.blurMin).toFixed(2) + "px";
+              const d = (Math.random() * (o.durMax - o.durMin) + o.durMin).toFixed(2) + "s";
+              const dl = (-Math.random() * o.durMax).toFixed(2) + "s"; // сразу “в процессе”
+              const x = (Math.random() * 100).toFixed(2) + "vw";
+              const drift = o.drift
+                ? ((Math.random() * (o.windMax - o.windMin) + o.windMin).toFixed(2) + "vw")
+                : "0vw";
+
+              flake.style.setProperty("--s", s);
+              flake.style.setProperty("--a", a);
+              flake.style.setProperty("--b", b);
+              flake.style.setProperty("--d", d);
+              flake.style.setProperty("--dl", dl);
+              flake.style.setProperty("--x", x);
+              flake.style.setProperty("--drift", drift);
+
+              root.appendChild(flake);
+            }
+
+            if (o.respawnOnResize){
+              let t;
+              window.addEventListener("resize", () => {
+                clearTimeout(t);
+                t = setTimeout(() => makeSnow(o), 200);
+              }, { passive: true });
+            }
+          }
+
+          // Пример: новогодний “заметённый” снег
+          makeSnow({
+            count: 110,
+            sizeMin: 2,
+            sizeMax: 7,
+            durMin: 6,
+            durMax: 16,
+            windMin: -10,
+            windMax: 10
+          });
         });
       </script>
 
@@ -278,10 +287,10 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
 
           <nav class="nav">
             <a href="#why" class="nav__link" data-i18n="nav_why">Почему Avenor</a>
-            <a href="#how" class="nav__link" data-i18n="nav_how">Как работает</a>
+            <a href="#faq" class="nav__link" data-i18n="nav_faq">FAQ</a>
             <a href="#pricing" class="nav__link" data-i18n="nav_pricing">Подписки</a>
             <a href="#support" class="nav__link" data-i18n="nav_support">Поддержка</a>
-            <a href="#faq" class="nav__link" data-i18n="nav_faq">FAQ</a>
+            
             
           </nav>
 
@@ -357,7 +366,7 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
                   >Скачать для Windows</a
                 >
 
-                <a href="#how" class="btn btn--ghost" data-i18n="hero_btn_how">Как это работает?</a>
+                <a href="#why" class="btn btn--ghost" data-i18n="hero_btn_how">Почему Avenor?</a>
               </div>
 
               <!-- meta с ссылками: делаю через куски + отдельные тексты ссылок -->
@@ -425,114 +434,206 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
                   </div>
                 </div>
               </div>
-            </div>            
+            </div>  
+          </div>
         </section>
 
+          <section class="why" id="why">
+          <div class="container">
+            <h2 class="why__title" data-i18n="why_title">Почему именно Avenor Downloader</h2>
+            <p class="why__subtitle" data-i18n="why_subtitle">
+              Не просто «ещё один загрузчик», а полноценный инструмент для работы с видео и аудио.
+            </p>
+        
+            <div class="why-rows">
+              <!-- 1) Скачивает отовсюду (текст слева, медиа справа) -->
+              <article class="why-row">
+                <div class="why-row__text">
+                  <h3 class="why-row__h" data-i18n="why_card1_t">Скачивает отовсюду</h3>
+                  <p class="why-row__p" data-i18n="why_card1_p">...</p>
+                </div>
+                <div class="why-row__media">
+                  <!-- Лучше GIF (простая вставка) -->
+                  <video
+                  class="why-media"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                >
+                  <source src="assets/vid/feature-download.webm" type="video/webm" />
+                  <source src="assets/vid/feature-download.mp4" type="video/mp4" />
+                </video>
+                
+                  <!-- Если захочешь видео вместо GIF — используй <video> (ниже в примечании) -->
+                </div>
+              </article>
+        
+              <!-- 2) Фрагменты (чтобы вкладка Фрагмент была в центре внимания) -->
+              <article class="why-row">
+                <div class="why-row__text">
+                  <h3 class="why-row__h" data-i18n="why_card4_t">Создавайте клипы еще до загрузки</h3>
+                  <p class="why-row__p" data-i18n="why_card4_p">...</p>
+                </div>
+                <div class="why-row__media">
+                  <video
+                    class="why-media"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                  >
+                    <source src="assets/vid/feature-fragments.webm" type="video/webm" />
+                    <source src="assets/vid/feature-fragments.mp4" type="video/mp4" />
+                  </video>
+                  
+                </div>
+              </article>
+        
+              <!-- 3) Сжатие -->
+              <article class="why-row">
+                <div class="why-row__text">
+                  <h3 class="why-row__h" data-i18n="why_card2_t">Сжатие размера видео</h3>
+                  <p class="why-row__p" data-i18n="why_card2_p">...</p>
+                </div>
+                <div class="why-row__media">
+                  <video
+                    class="why-media"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                  >
+                    <source src="assets/vid/feature-compress.webm" type="video/webm" />
+                    <source src="assets/vid/feature-compress.mp4" type="video/mp4" />
+                  </video>
+                
+                </div>
+              </article>
+        
+              <!-- 4) Конвертация -->
+              <article class="why-row">
+                <div class="why-row__text">
+                  <h3 class="why-row__h" data-i18n="why_card3_t">Конвертация форматов</h3>
+                  <p class="why-row__p" data-i18n="why_card3_p">...</p>
+                </div>
+                <div class="why-row__media">
+                  <video
+                    class="why-media"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                  >
+                    <source src="assets/vid/feature-convert.webm" type="video/webm" />
+                    <source src="assets/vid/feature-convert.mp4" type="video/mp4" />
+                  </video>
+                  
+                </div>
+              </article>
+            </div>
+        
+            <!-- твой trust/плашка “монтажёры / SMM / создатели” можно оставить ниже как есть -->
+          </div>
+        </section>
 
-
-
-
-
-
-
-
-
-        <!-- ===== ПОЧЕМУ AVENOR ===== -->
-        <section class="section" id="why">
+        <!-- ===== FAQ ===== -->
+        <section class="section section--faq" id="faq">
           <div class="container">
             <div class="section__head">
-              <h2 class="section__title" data-i18n="why_title">Почему именно Avenor Downloader</h2>
-              <p class="section__subtitle" data-i18n="why_subtitle">
-                Не просто «ещё один загрузчик», а полноценный инструмент для работы с видео и аудио.
-              </p>
+              <h2 class="section__title" data-i18n="faq_title">Часто задаваемые вопросы</h2>
             </div>
 
-            <div class="grid grid--4">
-              <article class="card">
-                <h3 class="card__title" data-i18n="why_card1_t">Скачивает отовсюду</h3>
-                <p class="card__text" data-i18n="why_card1_p">
-                  YouTube, Instagram, TikTok, Facebook, Pinterest и другие. Если ссылку можно открыть в браузере —
-                  Avenor почти всегда сможет её скачать.
+            <div class="faq">
+              <details class="faq__item" open>
+                <summary class="faq__question" data-i18n="faq_q1">
+                  Что такое Avenor Downloader и чем он отличается от других загрузчиков?
+                </summary>
+                <p class="faq__answer" data-i18n="faq_a1">
+                  Avenor Downloader — это настольное приложение для скачивания, обрезки и конвертации видео и аудио с популярных платформ.
+                  В отличие от онлайн-сервисов и большинства аналогов, Avenor работает полностью локально на вашем компьютере, без загрузки файлов
+                  на сторонние серверы. Это означает: — отсутствие ограничений на размер файлов, — сохранение оригинального качества, — максимальную
+                  скорость загрузки, — полную приватность ваших данных.
                 </p>
-              </article>
+              </details>
 
-              <article class="card">
-                <h3 class="card__title" data-i18n="why_card2_t">Сжатие размера видео</h3>
-                <p class="card__text" data-i18n="why_card2_p">
-                  Видео не лезет в Телеграм или на почту? Сожми его в пару кликов и отправь без потери качества.
+              <details class="faq__item">
+                <summary class="faq__question" data-i18n="faq_q2">Какие платформы поддерживаются?</summary>
+                <p class="faq__answer" data-i18n="faq_a2">
+                  Avenor поддерживает большинство популярных видеоплатформ, включая YouTube, Instagram, TikTok, Facebook и Pinterest.
+                  Список регулярно расширяется, так как приложение использует обновляемый модуль загрузки, адаптирующийся под изменения платформ.
                 </p>
-              </article>
+              </details>
 
-              <article class="card">
-                <h3 class="card__title" data-i18n="why_card3_t">Конвертация форматов</h3>
-                <p class="card__text" data-i18n="why_card3_p">
-                  Скачался «кривой» файл или неподходящий формат? Просто конвертируйте его в MP4, MOV, MKV, MP3, WAV и
-                  другие форматы.
+              <details class="faq__item">
+                <summary class="faq__question" data-i18n="faq_q3">Почему видео в PRO-плане может весить больше?</summary>
+                <p class="faq__answer" data-i18n="faq_a3">
+                  Потому что Avenor не ухудшает качество видео. В отличие от онлайн-сервисов, которые часто сжимают файл, Avenor сохраняет
+                  оригинальный битрейт, аудиодорожку и кодек, если это возможно. Больший размер — это цена за честное качество.
                 </p>
-              </article>
+              </details>
 
-              <article class="card">
-                <h3 class="card__title" data-i18n="why_card4_t">Премиальный интерфейс</h3>
-                <p class="card__text" data-i18n="why_card4_p">
-                  Тёмная тема, аккуратная типографика и визуальные акценты. Все в одном месте удобно с хорошей поддержкой
-                  пользователя и без скрытых платежей.
+              <details class="faq__item">
+                <summary class="faq__question" data-i18n="faq_q4">Можно ли скачивать только аудио?</summary>
+                <p class="faq__answer" data-i18n="faq_a4">
+                  Да. Вы можете извлечь только аудиодорожку из видео и сохранить её в удобном формате (например, MP3).
+                  Это удобно для музыки, подкастов, лекций и интервью.
                 </p>
-              </article>
-            </div>
+              </details>
 
-            <div class="trust-strip">
-              <p class="trust-strip__label" data-i18n="trust_label">
-                Avenor Downloader уже выбирают для ежедневной работы с видео:
-              </p>
-              <div class="trust-strip__items">
-                <span class="trust-strip__pill" data-i18n="trust_1">монтажёры</span>
-                <span class="trust-strip__pill" data-i18n="trust_2">SMM-специалисты</span>
-                <span class="trust-strip__pill" data-i18n="trust_3">создатели контента</span>
+              <button class="faq__toggle" type="button" aria-expanded="false" aria-controls="faqMore">
+                <span class="faq__toggle-text" data-i18n="faq_more_open">Показать ещё вопросы</span>
+                <span class="faq__toggle-icon" aria-hidden="true">▾</span>
+              </button>
+
+              <div class="faq__more" id="faqMore">
+                <details class="faq__item">
+                  <summary class="faq__question" data-i18n="faq_q5">Безопасно ли использовать Avenor?</summary>
+                  <p class="faq__answer" data-i18n="faq_a5">
+                    Да. Avenor: не встраивает рекламу, не устанавливает сторонние расширения, не передаёт ваши файлы третьим лицам,
+                    не собирает содержимое загружаемых видео. Приложение использует официальные и открытые инструменты обработки медиа.
+                  </p>
+                </details>
+
+                <details class="faq__item">
+                  <summary class="faq__question" data-i18n="faq_q6">Зачем нужны Cookies и как их использовать?</summary>
+                  <p class="faq__answer" data-i18n="faq_a6">
+                    Cookies позволяют получать доступ к контенту, который: — доступен только авторизованным пользователям, — ограничен по региону или возрасту,
+                    — скрыт за приватными настройками аккаунта. Вы можете добавить cookies-файл, если понимаете, зачем он нужен. Для обычных публичных видео cookies не требуются.
+                  </p>
+                </details>
+
+                <details class="faq__item">
+                  <summary class="faq__question" data-i18n="faq_q7">Сколько устройств можно использовать с одной подпиской?</summary>
+                  <p class="faq__answer" data-i18n="faq_a7">
+                    Одна PRO-подписка может быть активирована на 2/10 устройствах одновременно в зависимости от вашего тарифа.
+                    Это удобно, если вы используете Avenor, например, на рабочем и домашнем компьютере.
+                  </p>
+                </details>
+
+                <details class="faq__item">
+                  <summary class="faq__question" data-i18n="faq_q8">На каких операционных системах работает Avenor?</summary>
+                  <p class="faq__answer" data-i18n="faq_a8">
+                    На данный момент Avenor поддерживает: Windows 10, Windows 11. Версия для macOS находится в разработке.
+                  </p>
+                </details>
+
+                <details class="faq__item">
+                  <summary class="faq__question" data-i18n="faq_q9">Законно ли скачивать видео через Avenor?</summary>
+                  <p class="faq__answer" data-i18n="faq_a9">
+                    Ответственность за использование контента лежит на пользователе. Avenor — это инструмент, предназначенный для работы с собственными материалами,
+                    открытым контентом и контентом с разрешения правообладателя.
+                  </p>
+                </details>
               </div>
             </div>
           </div>
         </section>
 
-        <div class="bg-slab bg-slab--mid">
-
-
-
-        <!-- ===== КАК РАБОТАЕТ ===== -->
-          <section class="section" id="how">
-            <div class="container">
-              <div class="section__head">
-                <h2 class="section__title" data-i18n="how_title">Как это работает</h2>
-                <p class="section__subtitle" data-i18n="how_subtitle">Всего три шага — и нужный ролик уже на вашем диске.</p>
-              </div>
-
-              <div class="steps">
-                <div class="step">
-                  <div class="step__index">1</div>
-                  <h3 class="step__title" data-i18n="how_s1_t">Выберите параметры скачивания</h3>
-                  <p class="step__text" data-i18n="how_s1_p">Формат, качество, режим (видео или аудио) и папку скачивания.</p>
-                </div>
-
-                <div class="step">
-                  <div class="step__index">2</div>
-                  <h3 class="step__title" data-i18n="how_s2_t">Вставьте ссылку</h3>
-                  <p class="step__text" data-i18n="how_s2_p">
-                    Скопируйте ссылку на видео, нажмите одну кнопку — и скачивание сразу начнётся.
-                  </p>
-                </div>
-
-                <div class="step">
-                  <div class="step__index">3</div>
-                  <h3 class="step__title" data-i18n="how_s3_t">Наслаждайтесь результатом</h3>
-                  <p class="step__text" data-i18n="how_s3_p">
-                    Наглядный прогресс, статус задачи и история загрузок. Файлы всегда под контролем и в одном месте.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-
-        <div class="bg-slab bg-slab--dark">
           <section class="section section--pricing" id="pricing">
             <div class="container">
               <div class="section__head">
@@ -576,6 +677,7 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
                   <ul class="pricing__list">
                     <li data-i18n="pro_m_li_1">Полный PRO на месяц</li>
                     <li data-i18n="pro_m_li_2">4K/8K + безлимитные задачи</li>
+                    <li data-i18n="pro_m_li_fragments">Фрагменты (обрезка до загрузки)</li>
                     <li data-i18n="pro_m_li_3">Лучший вариант “попробовать PRO”</li>
                   </ul>
                 </article>
@@ -597,6 +699,7 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
                   >Оформить PRO</button>
           
                   <ul class="pricing__list">
+                    <li data-i18n="pro_y_li_fragments">Фрагменты (обрезка до загрузки)</li>
                     <li data-i18n="pro_y_li_1">Самая выгодная цена на PRO</li>
                     <li data-i18n="pro_y_li_2">Экономия ~55% vs Monthly</li>
                     <li data-i18n="pro_y_li_3">Один платёж в год</li>
@@ -619,6 +722,7 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
                   >Оформить PRO</button>
           
                   <ul class="pricing__list">
+                    <li data-i18n="studio_li_fragments">Фрагменты для команд</li>
                     <li data-i18n="studio_li_1">Для студий и команд</li>
                     <li data-i18n="studio_li_2">До 10 устройств на аккаунт</li>
                     <li data-i18n="studio_li_3">Один платёж в год</li>
@@ -690,7 +794,20 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
                     <div class="pc-cell pc-cell--recommended"><span class="pc-check">✓</span></div>
                     <div class="pc-cell"><span class="pc-check">✓</span></div>
                   </div>
-          
+
+
+                  <div class="pc-row">
+                    <div class="pc-cell pc-cell--feature">
+                      <span data-i18n="compare_fragments">Фрагменты (обрезка до загрузки)</span>
+                      <span class="pc-hint" title="Выбор In/Out по таймлайну до скачивания">i</span>
+                    </div>
+                  
+                    <div class="pc-cell"><span class="pc-cross">✕</span></div>
+                    <div class="pc-cell"><span class="pc-check">✓</span></div>
+                    <div class="pc-cell pc-cell--recommended"><span class="pc-check">✓</span></div>
+                    <div class="pc-cell"><span class="pc-check">✓</span></div>
+                  </div>
+                  
                   <div class="pc-row">
                     <div class="pc-cell pc-cell--feature" data-i18n="compare_audio_only">Скачивание только аудио</div>
                     <div class="pc-cell"><span class="pc-check">✓</span></div>
@@ -733,106 +850,7 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
                 </div>
               </div>
             </div>
-          </section>          
-        </div>
-
-        <div class="bg-slab bg-slab--mid">
-
-
-        <!-- ===== FAQ ===== -->
-          <section class="section" id="faq">
-            <div class="container">
-              <div class="section__head">
-                <h2 class="section__title" data-i18n="faq_title">Часто задаваемые вопросы</h2>
-              </div>
-          
-              <div class="faq">
-                <details class="faq__item" open>
-                  <summary class="faq__question" data-i18n="faq_q1">
-                    Что такое Avenor Downloader и чем он отличается от других загрузчиков?
-                  </summary>
-                  <p class="faq__answer" data-i18n="faq_a1">
-                    Avenor Downloader — это настольное приложение для скачивания, обрезки и конвертации видео и аудио с популярных платформ.
-                    В отличие от онлайн-сервисов и большинства аналогов, Avenor работает полностью локально на вашем компьютере, без загрузки файлов
-                    на сторонние серверы. Это означает: — отсутствие ограничений на размер файлов, — сохранение оригинального качества, — максимальную
-                    скорость загрузки, — полную приватность ваших данных.
-                  </p>
-                </details>
-          
-                <details class="faq__item">
-                  <summary class="faq__question" data-i18n="faq_q2">Какие платформы поддерживаются?</summary>
-                  <p class="faq__answer" data-i18n="faq_a2">
-                    Avenor поддерживает большинство популярных видеоплатформ, включая YouTube, Instagram, TikTok, Facebook и Pinterest.
-                    Список регулярно расширяется, так как приложение использует обновляемый модуль загрузки, адаптирующийся под изменения платформ.
-                  </p>
-                </details>
-          
-                <details class="faq__item">
-                  <summary class="faq__question" data-i18n="faq_q3">Почему видео в PRO-плане может весить больше?</summary>
-                  <p class="faq__answer" data-i18n="faq_a3">
-                    Потому что Avenor не ухудшает качество видео. В отличие от онлайн-сервисов, которые часто сжимают файл, Avenor сохраняет
-                    оригинальный битрейт, аудиодорожку и кодек, если это возможно. Больший размер — это цена за честное качество.
-                  </p>
-                </details>
-          
-                <details class="faq__item">
-                  <summary class="faq__question" data-i18n="faq_q4">Можно ли скачивать только аудио?</summary>
-                  <p class="faq__answer" data-i18n="faq_a4">
-                    Да. Вы можете извлечь только аудиодорожку из видео и сохранить её в удобном формате (например, MP3).
-                    Это удобно для музыки, подкастов, лекций и интервью.
-                  </p>
-                </details>
-          
-                <button class="faq__toggle" type="button" aria-expanded="false" aria-controls="faqMore">
-                  <span class="faq__toggle-text" data-i18n="faq_more_open">Показать ещё вопросы</span>
-                  <span class="faq__toggle-icon" aria-hidden="true">▾</span>
-                </button>
-          
-                <div class="faq__more" id="faqMore">
-                  <details class="faq__item">
-                    <summary class="faq__question" data-i18n="faq_q5">Безопасно ли использовать Avenor?</summary>
-                    <p class="faq__answer" data-i18n="faq_a5">
-                      Да. Avenor: не встраивает рекламу, не устанавливает сторонние расширения, не передаёт ваши файлы третьим лицам,
-                      не собирает содержимое загружаемых видео. Приложение использует официальные и открытые инструменты обработки медиа.
-                    </p>
-                  </details>
-          
-                  <details class="faq__item">
-                    <summary class="faq__question" data-i18n="faq_q6">Зачем нужны Cookies и как их использовать?</summary>
-                    <p class="faq__answer" data-i18n="faq_a6">
-                      Cookies позволяют получать доступ к контенту, который: — доступен только авторизованным пользователям, — ограничен по региону или возрасту,
-                      — скрыт за приватными настройками аккаунта. Вы можете добавить cookies-файл, если понимаете, зачем он нужен. Для обычных публичных видео cookies не требуются.
-                    </p>
-                  </details>
-          
-                  <details class="faq__item">
-                    <summary class="faq__question" data-i18n="faq_q7">Сколько устройств можно использовать с одной подпиской?</summary>
-                    <p class="faq__answer" data-i18n="faq_a7">
-                      Одна PRO-подписка может быть активирована на 2/10 устройствах одновременно в зависимости от вашего тарифа.
-                      Это удобно, если вы используете Avenor, например, на рабочем и домашнем компьютере.
-                    </p>
-                  </details>
-          
-                  <details class="faq__item">
-                    <summary class="faq__question" data-i18n="faq_q8">На каких операционных системах работает Avenor?</summary>
-                    <p class="faq__answer" data-i18n="faq_a8">
-                      На данный момент Avenor поддерживает: Windows 10, Windows 11. Версия для macOS находится в разработке.
-                    </p>
-                  </details>
-          
-                  <details class="faq__item">
-                    <summary class="faq__question" data-i18n="faq_q9">Законно ли скачивать видео через Avenor?</summary>
-                    <p class="faq__answer" data-i18n="faq_a9">
-                      Ответственность за использование контента лежит на пользователе. Avenor — это инструмент, предназначенный для работы с собственными материалами,
-                      открытым контентом и контентом с разрешения правообладателя.
-                    </p>
-                  </details>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-
+          </section>       
 
 
 
@@ -1010,11 +1028,11 @@ document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
 
             const body = `От: ${from}
 
-Сообщение:
-${msg}
+            Сообщение:
+            ${msg}
 
----
-Avenor Downloader Support`;
+            ---
+            Avenor Downloader Support`;
 
             const mailtoUrl = `mailto:support@avenordownload.app?subject=${enc(subject)}&body=${enc(body)}`;
 
@@ -1057,5 +1075,5 @@ Avenor Downloader Support`;
         </div>
       </footer>
     </div>
-  </body>
+</body>
 </html>
