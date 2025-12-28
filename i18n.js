@@ -102,6 +102,27 @@
 
       compare_fragments: "Фрагменты (обрезка до загрузки)",
 
+
+
+      refund_title: "Политика возвратов",
+
+      refund_text_html: `
+      <p>Запрос на возврат средств может быть подан в течение <strong>14 дней</strong> с момента первоначальной оплаты подписки при условии, что сервис не был существенно использован.</p>
+
+      <p>В связи с цифровой природой сервиса и немедленным предоставлением доступа к функциям подписки, возврат средств может быть отклонён, если сервис был активно использован, включая, но не ограничиваясь, загрузкой контента, конвертацией, пакетной обработкой или использованием PRO-функций.</p>
+
+      <p>В случае автоматического продления подписки запросы на возврат рассматриваются в индивидуальном порядке. Возврат средств после начала нового платёжного периода не гарантируется.</p>
+
+      <p>Возврат средств не осуществляется, если сервис функционирует в соответствии с описанием, а ограничения или проблемы вызваны сторонними платформами, изменениями внешних API или иными факторами, не зависящими от Avenor Downloader.</p>
+
+      <p>Все платежи обрабатываются системой <strong>Paddle</strong>, выступающей в роли Merchant of Record. Одобренные возвраты осуществляются через Paddle в соответствии с их политикой возвратов и применимым законодательством.</p>
+
+      <p>Avenor Downloader оставляет за собой право рассматривать запросы на возврат по своему усмотрению в рамках применимого законодательства о защите прав потребителей и отказывать в возврате в случае злоупотреблений, нарушения настоящего соглашения или неправомерного использования сервиса.</p>
+
+      <p>Настоящая политика возвратов не ограничивает законные права потребителей, предусмотренные применимым законодательством.</p>
+      `,
+
+
     },
 
     en: {
@@ -288,6 +309,26 @@
       studio_li_fragments: "Fragments for teams",
 
       compare_fragments: "Fragments (trim before download)",
+
+
+
+      refund_title: "Refund Policy",
+      refund_text_html: `
+      <p>Refund requests may be submitted within <strong>14 days</strong> of the initial subscription purchase, provided that the service has not been substantially used.</p>
+
+      <p>Due to the nature of digital services and immediate access to subscription features, refunds may be refused if the service has been actively used, including but not limited to content downloads, conversions, batch processing, or access to PRO features.</p>
+
+      <p>In the case of automatic subscription renewals, refund requests are reviewed on a case-by-case basis. No refunds are guaranteed once a new billing period has started.</p>
+
+      <p>Refunds are not provided where the service operates as described, and any limitations, restrictions, or compatibility issues are caused by third-party platforms, changes to external APIs, or factors outside of Avenor Downloader’s control.</p>
+
+      <p>All payments are processed by <strong>Paddle</strong> as the Merchant of Record. Any approved refunds are issued via Paddle in accordance with their refund policies and applicable laws.</p>
+
+      <p>Avenor Downloader reserves the right to assess refund requests at its sole discretion, in accordance with applicable consumer protection laws, and to refuse refunds in cases of abuse, violation of these Terms, or misuse of the service.</p>
+
+      <p>This refund policy does not affect any statutory rights that may apply under local consumer protection laws.</p>
+      `,
+
 
 
     },
@@ -481,6 +522,25 @@
 
       compare_fragments: "Fragmentos (recorte antes de descargar)",
 
+
+      refund_title: "Política de reembolsos",
+      refund_text_html: `
+      <p>Las solicitudes de reembolso pueden enviarse dentro de los <strong>14 días</strong> posteriores a la compra inicial de la suscripción, siempre que el servicio no se haya utilizado de forma sustancial.</p>
+
+      <p>Debido a la naturaleza de los servicios digitales y al acceso inmediato a las funciones de la suscripción, el reembolso puede rechazarse si el servicio se ha utilizado activamente, incluyendo, entre otros, descargas de contenido, conversiones, procesamiento por lotes o acceso a funciones PRO.</p>
+
+      <p>En caso de renovaciones automáticas, las solicitudes de reembolso se revisan caso por caso. No se garantiza el reembolso una vez iniciado un nuevo período de facturación.</p>
+
+      <p>No se otorgan reembolsos cuando el servicio funciona según lo descrito y las limitaciones, restricciones o problemas de compatibilidad se deban a plataformas de terceros, cambios en APIs externas o factores fuera del control de Avenor Downloader.</p>
+
+      <p>Todos los pagos son procesados por <strong>Paddle</strong> como Merchant of Record. Cualquier reembolso aprobado se emite a través de Paddle conforme a sus políticas y a la legislación aplicable.</p>
+
+      <p>Avenor Downloader se reserva el derecho de evaluar las solicitudes de reembolso a su sola discreción, conforme a las leyes de protección al consumidor aplicables, y de rechazar reembolsos en caso de abuso, incumplimiento de estos términos o uso indebido del servicio.</p>
+
+      <p>Esta política de reembolsos no afecta los derechos legales que puedan aplicarse según la normativa local de protección al consumidor.</p>
+      `,
+
+
     },
     
     pt: {
@@ -668,6 +728,25 @@
       studio_li_fragments: "Fragmentos para equipes",
 
       compare_fragments: "Fragmentos (corte antes de baixar)",
+
+
+      refund_title: "Política de reembolso",
+      refund_text_html: `
+      <p>Solicitações de reembolso podem ser enviadas dentro de <strong>14 dias</strong> após a compra inicial da assinatura, desde que o serviço não tenha sido usado de forma substancial.</p>
+
+      <p>Devido à natureza dos serviços digitais e ao acesso imediato aos recursos da assinatura, o reembolso pode ser recusado se o serviço tiver sido utilizado ativamente, incluindo, entre outros, downloads de conteúdo, conversões, processamento em lote ou acesso a recursos PRO.</p>
+
+      <p>No caso de renovações automáticas, as solicitações de reembolso são analisadas caso a caso. Não há garantia de reembolso após o início de um novo período de cobrança.</p>
+
+      <p>Não há reembolso quando o serviço funciona conforme descrito e quaisquer limitações, restrições ou problemas de compatibilidade forem causados por plataformas de terceiros, alterações em APIs externas ou fatores fora do controle do Avenor Downloader.</p>
+
+      <p>Todos os pagamentos são processados pela <strong>Paddle</strong> como Merchant of Record. Quaisquer reembolsos aprovados serão emitidos via Paddle de acordo com suas políticas e com a legislação aplicável.</p>
+
+      <p>O Avenor Downloader reserva-se o direito de avaliar solicitações de reembolso a seu exclusivo critério, de acordo com as leis de proteção ao consumidor aplicáveis, e de recusar reembolsos em casos de abuso, violação destes termos ou uso indevido do serviço.</p>
+
+      <p>Esta política de reembolso não afeta quaisquer direitos legais que possam se aplicar conforme as leis locais de proteção ao consumidor.</p>
+      `,
+
 
     },
     
@@ -857,6 +936,26 @@
 
       compare_fragments: "Fragmente (Schnitt vor dem Download)",
 
+
+
+      refund_title: "Rückerstattungsrichtlinie",
+      refund_text_html: `
+      <p>Rückerstattungsanfragen können innerhalb von <strong>14 Tagen</strong> nach dem erstmaligen Abschluss des Abonnements gestellt werden, sofern der Dienst nicht wesentlich genutzt wurde.</p>
+
+      <p>Aufgrund der digitalen Natur des Dienstes und des sofortigen Zugriffs auf Abonnementfunktionen kann eine Rückerstattung abgelehnt werden, wenn der Dienst aktiv genutzt wurde, einschließlich, aber nicht beschränkt auf Inhaltsdownloads, Konvertierungen, Batch-Verarbeitung oder den Zugriff auf PRO-Funktionen.</p>
+
+      <p>Bei automatischen Verlängerungen werden Rückerstattungsanfragen im Einzelfall geprüft. Eine Rückerstattung ist nicht garantiert, sobald ein neuer Abrechnungszeitraum begonnen hat.</p>
+
+      <p>Es erfolgt keine Rückerstattung, wenn der Dienst wie beschrieben funktioniert und Einschränkungen, Beschränkungen oder Kompatibilitätsprobleme durch Drittplattformen, Änderungen externer APIs oder Faktoren außerhalb der Kontrolle von Avenor Downloader verursacht werden.</p>
+
+      <p>Alle Zahlungen werden von <strong>Paddle</strong> als Merchant of Record verarbeitet. Genehmigte Rückerstattungen werden über Paddle gemäß deren Richtlinien und dem anwendbaren Recht ausgezahlt.</p>
+
+      <p>Avenor Downloader behält sich das Recht vor, Rückerstattungsanfragen nach eigenem Ermessen im Rahmen der geltenden Verbraucherschutzgesetze zu prüfen und Rückerstattungen bei Missbrauch, Verstoß gegen diese Bedingungen oder missbräuchlicher Nutzung des Dienstes abzulehnen.</p>
+
+      <p>Diese Rückerstattungsrichtlinie berührt keine gesetzlichen Rechte, die nach lokalem Verbraucherschutzrecht gelten können.</p>
+      `,
+
+
     },
     
     fr: {
@@ -1044,6 +1143,27 @@
       studio_li_fragments: "Fragments pour les équipes",
 
       compare_fragments: "Fragments (découpe avant le téléchargement)",
+
+
+
+
+      refund_title: "Politique de remboursement",
+      refund_text_html: `
+      <p>Les demandes de remboursement peuvent être soumises dans un délai de <strong>14 jours</strong> suivant l’achat initial de l’abonnement, à condition que le service n’ait pas été utilisé de manière substantielle.</p>
+
+      <p>En raison de la nature des services numériques et de l’accès immédiat aux fonctionnalités de l’abonnement, un remboursement peut être refusé si le service a été utilisé activement, notamment (sans s’y limiter) les téléchargements de contenu, les conversions, le traitement par lot ou l’accès aux fonctionnalités PRO.</p>
+
+      <p>En cas de renouvellement automatique, les demandes de remboursement sont examinées au cas par cas. Aucun remboursement n’est garanti une fois qu’une nouvelle période de facturation a commencé.</p>
+
+      <p>Aucun remboursement n’est accordé lorsque le service fonctionne comme décrit et que les limitations, restrictions ou problèmes de compatibilité sont causés par des plateformes tierces, des changements d’API externes ou des facteurs échappant au contrôle d’Avenor Downloader.</p>
+
+      <p>Tous les paiements sont traités par <strong>Paddle</strong> en tant que Merchant of Record. Tout remboursement approuvé est effectué via Paddle conformément à leurs politiques et au droit applicable.</p>
+
+      <p>Avenor Downloader se réserve le droit d’évaluer les demandes de remboursement à sa seule discrétion, conformément aux lois applicables de protection des consommateurs, et de refuser les remboursements en cas d’abus, de violation des présentes conditions ou d’utilisation abusive du service.</p>
+
+      <p>Cette politique de remboursement n’affecte pas les droits légaux pouvant s’appliquer en vertu des lois locales de protection des consommateurs.</p>
+      `,
+
 
     },
     
@@ -1234,6 +1354,25 @@
       studio_li_fragments: "Фрагменти для команд",
 
       compare_fragments: "Фрагменти (обрізка до завантаження)",
+
+
+      refund_title: "Політика повернення коштів",
+      refund_text_html: `
+      <p>Запит на повернення коштів може бути поданий протягом <strong>14 днів</strong> з моменту первинної оплати підписки за умови, що сервіс не був суттєво використаний.</p>
+
+      <p>З огляду на цифрову природу сервісу та негайний доступ до функцій підписки, повернення коштів може бути відхилене, якщо сервіс активно використовувався, зокрема (але не обмежуючись) завантаженням контенту, конвертацією, пакетною обробкою або доступом до PRO-функцій.</p>
+
+      <p>У разі автоматичного продовження підписки запити на повернення коштів розглядаються індивідуально. Повернення коштів після початку нового платіжного періоду не гарантується.</p>
+
+      <p>Повернення коштів не здійснюється, якщо сервіс працює відповідно до опису, а обмеження або проблеми спричинені сторонніми платформами, змінами зовнішніх API або іншими факторами поза контролем Avenor Downloader.</p>
+
+      <p>Усі платежі обробляються системою <strong>Paddle</strong>, яка виступає як Merchant of Record. Схвалені повернення здійснюються через Paddle відповідно до їхніх правил та чинного законодавства.</p>
+
+      <p>Avenor Downloader залишає за собою право розглядати запити на повернення коштів на власний розсуд у межах застосовного законодавства про захист прав споживачів та відмовляти у поверненні у випадках зловживань, порушення цих умов або неправомірного використання сервісу.</p>
+
+      <p>Ця політика повернення коштів не обмежує законні права споживачів, передбачені місцевим законодавством про захист прав споживачів.</p>
+      `,
+
 
     },
     
