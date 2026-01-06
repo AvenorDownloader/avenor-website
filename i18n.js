@@ -122,7 +122,13 @@
       <p>Настоящая политика возвратов не ограничивает законные права потребителей, предусмотренные применимым законодательством.</p>
       `,
 
-
+      included_title: "Что входит в Avenor PRO",
+      included_li_1: "Скачивание видео и аудио с поддерживаемых платформ",
+      included_li_2: "Обрезка и создание фрагментов ещё до загрузки",
+      included_li_3: "Конвертация видео и аудио (MP4, MKV, MP3, WAV и др.)",
+      included_li_4: "Повышенное качество и расширенные лимиты в PRO-планах",
+      included_li_5: "Вся обработка выполняется локально на вашем устройстве",
+      
     },
 
     en: {
@@ -329,8 +335,13 @@
       <p>This refund policy does not affect any statutory rights that may apply under local consumer protection laws.</p>
       `,
 
-
-
+      included_title: "What you get with Avenor PRO",
+      included_li_1: "Download video and audio from supported platforms",
+      included_li_2: "Trim and create video fragments before downloading",
+      included_li_3: "Convert video and audio formats (MP4, MKV, MP3, WAV, etc.)",
+      included_li_4: "Higher quality and increased limits with PRO plans",
+      included_li_5: "All processing is performed locally on the user’s device",
+      
     },
 
     // Для ES/PT/DE/FR/UK — ставлю качественные короткие переводы основных UI-строк.
@@ -540,7 +551,13 @@
       <p>Esta política de reembolsos no afecta los derechos legales que puedan aplicarse según la normativa local de protección al consumidor.</p>
       `,
 
-
+      included_title: "Qué incluye Avenor PRO",
+      included_li_1: "Descarga de video y audio desde plataformas compatibles",
+      included_li_2: "Recorte y creación de fragmentos antes de la descarga",
+      included_li_3: "Conversión de formatos de video y audio (MP4, MKV, MP3, WAV, etc.)",
+      included_li_4: "Mayor calidad y límites ampliados en los planes PRO",
+      included_li_5: "Todo el procesamiento se realiza localmente en el dispositivo del usuario",
+      
     },
     
     pt: {
@@ -747,7 +764,13 @@
       <p>Esta política de reembolso não afeta quaisquer direitos legais que possam se aplicar conforme as leis locais de proteção ao consumidor.</p>
       `,
 
-
+      included_title: "O que está incluído no Avenor PRO",
+      included_li_1: "Download de vídeo e áudio de plataformas compatíveis",
+      included_li_2: "Corte e criação de fragmentos antes do download",
+      included_li_3: "Conversão de formatos de vídeo e áudio (MP4, MKV, MP3, WAV, etc.)",
+      included_li_4: "Qualidade superior e limites aumentados nos planos PRO",
+      included_li_5: "Todo o processamento é feito localmente no dispositivo do usuário",
+      
     },
     
     de: {
@@ -955,7 +978,13 @@
       <p>Diese Rückerstattungsrichtlinie berührt keine gesetzlichen Rechte, die nach lokalem Verbraucherschutzrecht gelten können.</p>
       `,
 
-
+      included_title: "Ce qui est inclus dans Avenor PRO",
+      included_li_1: "Téléchargement de vidéos et d’audio depuis des plateformes prises en charge",
+      included_li_2: "Découpage et création de fragments avant le téléchargement",
+      included_li_3: "Conversion des formats vidéo et audio (MP4, MKV, MP3, WAV, etc.)",
+      included_li_4: "Qualité supérieure et limites étendues avec les offres PRO",
+      included_li_5: "Tout le traitement est effectué localement sur l’appareil de l’utilisateur",
+      
     },
     
     fr: {
@@ -1163,7 +1192,13 @@
 
       <p>Cette politique de remboursement n’affecte pas les droits légaux pouvant s’appliquer en vertu des lois locales de protection des consommateurs.</p>
       `,
-
+      included_title: "Ce qui est inclus dans Avenor PRO",
+      included_li_1: "Téléchargement de vidéos et d’audio depuis des plateformes prises en charge",
+      included_li_2: "Découpage et création de fragments avant le téléchargement",
+      included_li_3: "Conversion des formats vidéo et audio (MP4, MKV, MP3, WAV, etc.)",
+      included_li_4: "Qualité supérieure et limites étendues avec les offres PRO",
+      included_li_5: "Tout le traitement est effectué localement sur l’appareil de l’utilisateur",
+      
 
     },
     
@@ -1373,7 +1408,13 @@
       <p>Ця політика повернення коштів не обмежує законні права споживачів, передбачені місцевим законодавством про захист прав споживачів.</p>
       `,
 
-
+      included_title: "Що входить до Avenor PRO",
+      included_li_1: "Завантаження відео та аудіо з підтримуваних платформ",
+      included_li_2: "Обрізка та створення фрагментів ще до завантаження",
+      included_li_3: "Конвертація відео та аудіо форматів (MP4, MKV, MP3, WAV тощо)",
+      included_li_4: "Підвищена якість та розширені ліміти у PRO-планах",
+      included_li_5: "Уся обробка виконується локально на пристрої користувача",
+      
     },
     
   };
