@@ -102,6 +102,14 @@
 
       compare_fragments: "Фрагменты (обрезка до загрузки)",
 
+      included_title: "Что входит в Avenor PRO",
+      included_li_1: "Скачивание видео и аудио с поддерживаемых платформ",
+      included_li_2: "Обрезка и создание фрагментов ещё до загрузки",
+      included_li_3: "Конвертация видео и аудио (MP4, MKV, MP3, WAV и др.)",
+      included_li_4: "Повышенное качество и расширенные лимиты в PRO-планах",
+      included_li_5: "Вся обработка выполняется локально на вашем устройстве",
+
+
     },
 
     en: {
@@ -288,6 +296,16 @@
       studio_li_fragments: "Fragments for teams",
 
       compare_fragments: "Fragments (trim before download)",
+
+
+
+      included_title: "What you get with Avenor PRO",
+      included_li_1: "Download video and audio from supported platforms",
+      included_li_2: "Trim and create video fragments before downloading",
+      included_li_3: "Convert video and audio formats (MP4, MKV, MP3, WAV, etc.)",
+      included_li_4: "Higher quality and increased limits with PRO plans",
+      included_li_5: "All processing is performed locally on the user’s device",
+
 
 
     },
@@ -481,6 +499,16 @@
 
       compare_fragments: "Fragmentos (recorte antes de descargar)",
 
+
+
+      included_title: "Qué incluye Avenor PRO",
+      included_li_1: "Descarga de video y audio desde plataformas compatibles",
+      included_li_2: "Recorte y creación de fragmentos antes de la descarga",
+      included_li_3: "Conversión de formatos de video y audio (MP4, MKV, MP3, WAV, etc.)",
+      included_li_4: "Mayor calidad y límites ampliados en los planes PRO",
+      included_li_5: "Todo el procesamiento se realiza localmente en el dispositivo del usuario",
+
+
     },
     
     pt: {
@@ -668,6 +696,14 @@
       studio_li_fragments: "Fragmentos para equipes",
 
       compare_fragments: "Fragmentos (corte antes de baixar)",
+
+
+      included_title: "O que está incluído no Avenor PRO",
+      included_li_1: "Download de vídeo e áudio de plataformas compatíveis",
+      included_li_2: "Corte e criação de fragmentos antes do download",
+      included_li_3: "Conversão de formatos de vídeo e áudio (MP4, MKV, MP3, WAV, etc.)",
+      included_li_4: "Qualidade superior e limites aumentados nos planos PRO",
+      included_li_5: "Todo o processamento é feito localmente no dispositivo do usuário",
 
     },
     
@@ -857,6 +893,15 @@
 
       compare_fragments: "Fragmente (Schnitt vor dem Download)",
 
+
+
+      included_title: "Was in Avenor PRO enthalten ist",
+      included_li_1: "Download von Video- und Audiodateien von unterstützten Plattformen",
+      included_li_2: "Zuschneiden und Erstellen von Fragmenten vor dem Download",
+      included_li_3: "Konvertierung von Video- und Audioformaten (MP4, MKV, MP3, WAV usw.)",
+      included_li_4: "Höhere Qualität und erweiterte Limits in PRO-Tarifen",
+      included_li_5: "Die gesamte Verarbeitung erfolgt lokal auf dem Gerät des Nutzers",
+
     },
     
     fr: {
@@ -1044,6 +1089,15 @@
       studio_li_fragments: "Fragments pour les équipes",
 
       compare_fragments: "Fragments (découpe avant le téléchargement)",
+
+
+
+      included_title: "Ce qui est inclus dans Avenor PRO",
+      included_li_1: "Téléchargement de vidéos et d’audio depuis des plateformes prises en charge",
+      included_li_2: "Découpage et création de fragments avant le téléchargement",
+      included_li_3: "Conversion des formats vidéo et audio (MP4, MKV, MP3, WAV, etc.)",
+      included_li_4: "Qualité supérieure et limites étendues avec les offres PRO",
+      included_li_5: "Tout le traitement est effectué localement sur l’appareil de l’utilisateur",
 
     },
     
@@ -1234,6 +1288,15 @@
       studio_li_fragments: "Фрагменти для команд",
 
       compare_fragments: "Фрагменти (обрізка до завантаження)",
+
+
+
+      included_title: "Що входить до Avenor PRO",
+      included_li_1: "Завантаження відео та аудіо з підтримуваних платформ",
+      included_li_2: "Обрізка та створення фрагментів ще до завантаження",
+      included_li_3: "Конвертація відео та аудіо форматів (MP4, MKV, MP3, WAV тощо)",
+      included_li_4: "Підвищена якість та розширені ліміти у PRO-планах",
+      included_li_5: "Уся обробка виконується локально на пристрої користувача",
 
     },
     
