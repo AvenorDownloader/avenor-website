@@ -91,6 +91,7 @@
 
       footer_privacy: "Политика конфиденциальности",
       footer_terms: "Пользовательское соглашение",
+      footer_refund: "Политика возвратов",
 
       legal_back: "← На главную",
       privacy_title: "Политика конфиденциальности — Avenor Downloader",
@@ -129,6 +130,9 @@
       included_li_4: "Повышенное качество и расширенные лимиты в PRO-планах",
       included_li_5: "Вся обработка выполняется локально на вашем устройстве",
       
+
+
+
     },
 
     en: {
@@ -208,6 +212,7 @@
 
       footer_privacy: "Privacy Policy",
       footer_terms: "Terms of Service",
+      footer_refund: "Refund Policy",
 
       legal_back: "← Back to home",
       privacy_title: "Privacy Policy — Avenor Downloader",
@@ -424,7 +429,8 @@
     
       footer_privacy: "Política de privacidad",
       footer_terms: "Términos de servicio",
-    
+      footer_refund: "Política de reembolsos",
+
       legal_back: "← Volver al inicio",
       privacy_title: "Política de privacidad — Avenor Downloader",
       terms_title: "Términos de servicio — Avenor Downloader",
@@ -637,7 +643,8 @@
     
       footer_privacy: "Política de Privacidade",
       footer_terms: "Termos de Serviço",
-    
+      footer_refund: "Política de reembolso",
+
       legal_back: "← Voltar para a página inicial",
       privacy_title: "Política de Privacidade — Avenor Downloader",
       terms_title: "Termos de Serviço — Avenor Downloader",
@@ -850,7 +857,8 @@
     
       footer_privacy: "Datenschutzerklärung",
       footer_terms: "Nutzungsbedingungen",
-    
+      footer_refund: "Rückerstattungsrichtlinie",
+
       legal_back: "← Zur Startseite",
       privacy_title: "Datenschutzerklärung — Avenor Downloader",
       terms_title: "Nutzungsbedingungen — Avenor Downloader",
@@ -1064,7 +1072,8 @@
     
       footer_privacy: "Politique de confidentialité",
       footer_terms: "Conditions d’utilisation",
-    
+      footer_refund: "Politique de remboursement",
+
       legal_back: "← Retour à l’accueil",
       privacy_title: "Politique de confidentialité — Avenor Downloader",
       terms_title: "Conditions d’utilisation — Avenor Downloader",
@@ -1280,7 +1289,8 @@
     
       footer_privacy: "Політика конфіденційності",
       footer_terms: "Умови використання",
-    
+      footer_refund: "Політика повернення коштів",
+
       legal_back: "← На головну",
       privacy_title: "Політика конфіденційності — Avenor Downloader",
       terms_title: "Умови використання — Avenor Downloader",
@@ -1485,15 +1495,22 @@
   }
 
   function fixInternalLinks(lang) {
-    // privacy/terms и возвраты на index — добавляем ?lang=
-    document.querySelectorAll('a[href$="privacy.html"], a[href$="terms.html"], a[href$="index.html"]').forEach((a) => {
-      const href = a.getAttribute("href");
-      if (!href) return;
-      // Не трогаем внешние ссылки
-      if (/^https?:\/\//i.test(href)) return;
-      a.setAttribute("href", withLang(href, lang));
-    });
+    // Добавляем ?lang= ко всем ссылкам на legal-страницы и на index
+    document
+      .querySelectorAll(
+        'a[href*="privacy.html"], a[href*="terms.html"], a[href*="refund.html"], a[href*="index.html"]'
+      )
+      .forEach((a) => {
+        const href = a.getAttribute("href");
+        if (!href) return;
+  
+        // Не трогаем внешние ссылки
+        if (/^https?:\/\//i.test(href)) return;
+  
+        a.setAttribute("href", withLang(href, lang));
+      });
   }
+  
 
   function setupLangDropdown(currentLang) {
     const root = document.querySelector("[data-lang]");
