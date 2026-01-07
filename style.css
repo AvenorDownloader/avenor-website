@@ -2175,3 +2175,73 @@ body {
   margin-bottom: 12px;
   opacity: 0.9;
 }
+
+
+
+
+/* ===== OS DOWNLOAD BUTTONS ===== */
+
+.hero__actions--os {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn--os {
+  min-width: 210px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* macOS button (glass + green outline) */
+.btn--mac {
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  border: 1px solid rgba(146, 216, 60, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(146, 216, 60, 0.12),
+    0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.btn--mac:hover {
+  background: rgba(146, 216, 60, 0.12);
+  border-color: rgba(146, 216, 60, 0.75);
+  transform: translateY(-1px);
+  box-shadow:
+    0 16px 40px rgba(146, 216, 60, 0.25);
+}
+
+.os-icon {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.os-icon-img{
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: contain;
+  opacity: .95;
+  /* если SVG монохромный и корректно сделан — можно будет подкрашивать через filter */
+}
+
+/* Чуть ровнее по вертикали внутри кнопки */
+.btn--os{
+  gap: 10px;
+}
+
+
+/* FIX: Windows icon on green primary button */
+.btn--primary .os-icon-img{
+  filter: brightness(0) saturate(100%); /* делает иконку чёрной */
+  opacity: 1;
+}
+
+/* чтобы в macOS-кнопке иконка оставалась светлой */
+.btn--mac .os-icon-img{
+  filter: brightness(0) invert(1);
+  opacity: .95;
+}

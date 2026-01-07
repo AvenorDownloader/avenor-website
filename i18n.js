@@ -19,6 +19,8 @@
       meta_desc:
         "Avenor Downloader — программа для скачивания, обрезки и конвертации видео и аудио с YouTube, Instagram, TikTok и других платформ.",
 
+
+        
       nav_why: "Почему Avenor",
       nav_how: "Как работает",
       nav_pricing: "Подписки",
@@ -34,11 +36,19 @@
         "Скачивайте контент и вырезайте нужные фрагменты ещё до загрузки. Максимальное качество, удобный интерфейс и полный контроль над каждым файлом.",
       
       hero_btn_win: "Скачать для Windows",
+      hero_btn_mac: "Скачать для macOS",
       hero_btn_how: "Как это работает?",
       hero_meta_before: "Скачивая вы принимаете нашу",
       hero_meta_privacy: "политику конфиденциальности",
       hero_meta_and: "и",
       hero_meta_terms: "пользовательское соглашение",
+
+
+      // ===== UI mockup (макет приложения) =====
+      ui_tab_download: "Скачать",
+      ui_tab_compress: "Сжать",
+      ui_tab_convert: "Конвертировать",
+      ui_tab_fragments: "Фрагмент",
 
       why_title: "Почему именно Avenor Downloader",
       why_subtitle:
@@ -155,6 +165,7 @@
         "Download content and cut precise clips before you even start the download. Maximum quality, a clean UI, and full control over every file.",
       
       hero_btn_win: "Download for Windows",
+      hero_btn_mac: "Download for macOS",
       hero_btn_how: "How it works?",
       hero_meta_before: "By downloading you accept our",
       hero_meta_privacy: "Privacy Policy",
@@ -220,6 +231,8 @@
 
             // ===== UI mockup (макет приложения) =====
       ui_tab_download: "Download",
+      ui_tab_fragments: "Fragment",
+
       ui_tab_compress: "Compress",
       ui_tab_convert: "Convert",
       ui_paste_link: "Paste link",
@@ -371,6 +384,8 @@
         "Descarga contenido y recorta los fragmentos exactos antes de iniciar la descarga. Máxima calidad, interfaz limpia y control total de cada archivo.",
       
       hero_btn_win: "Descargar para Windows",
+      hero_btn_mac: "Descargar para macOS",
+
       hero_btn_how: "¿Cómo funciona?",
       hero_meta_before: "Al descargar aceptas nuestra",
       hero_meta_privacy: "Política de privacidad",
@@ -437,6 +452,8 @@
     
       // ===== UI mockup =====
       ui_tab_download: "Descargar",
+      ui_tab_fragments: "Fragmento",
+
       ui_tab_compress: "Comprimir",
       ui_tab_convert: "Convertir",
       ui_paste_link: "Pegar enlace",
@@ -586,6 +603,8 @@
         "Baixe conteúdo e recorte clipes exatos antes mesmo de começar o download. Máxima qualidade, interface limpa e controle total de cada arquivo.",
       
       hero_btn_win: "Baixar para Windows",
+      hero_btn_mac: "Baixar para macOS",
+
       hero_btn_how: "Como funciona?",
       hero_meta_before: "Ao baixar, você aceita nossa",
       hero_meta_privacy: "Política de Privacidade",
@@ -651,6 +670,7 @@
     
       // ===== UI mockup =====
       ui_tab_download: "Baixar",
+      ui_tab_fragments: "Fragmento",
       ui_tab_compress: "Comprimir",
       ui_tab_convert: "Converter",
       ui_paste_link: "Colar link",
@@ -800,6 +820,8 @@
         "Lade Inhalte herunter und schneide exakte Clips, noch bevor der Download startet. Maximale Qualität, ein cleanes UI und volle Kontrolle über jede Datei.",      
       
       hero_btn_win: "Für Windows herunterladen",
+      hero_btn_mac: "Für macOS herunterladen",
+
       hero_btn_how: "Wie funktioniert das?",
       hero_meta_before: "Mit dem Download akzeptierst du unsere",
       hero_meta_privacy: "Datenschutzerklärung",
@@ -865,6 +887,8 @@
     
       // ===== UI mockup =====
       ui_tab_download: "Download",
+      ui_tab_fragments: "Fragment",
+
       ui_tab_compress: "Komprimieren",
       ui_tab_convert: "Konvertieren",
       ui_paste_link: "Link einfügen",
@@ -1015,6 +1039,8 @@
         "Téléchargez du contenu et découpez des extraits précis avant même de lancer le téléchargement. Qualité maximale, interface claire et contrôle total de chaque fichier.",
       
       hero_btn_win: "Télécharger pour Windows",
+      hero_btn_mac: "Télécharger pour macOS",
+
       hero_btn_how: "Comment ça marche ?",
       hero_meta_before: "En téléchargeant, vous acceptez notre",
       hero_meta_privacy: "Politique de confidentialité",
@@ -1080,6 +1106,8 @@
     
       // ===== UI mockup =====
       ui_tab_download: "Télécharger",
+      ui_tab_fragments: "Fragment",
+
       ui_tab_compress: "Compresser",
       ui_tab_convert: "Convertir",
       ui_paste_link: "Coller le lien",
@@ -1231,6 +1259,8 @@
         "Завантажуйте контент і вирізайте потрібні фрагменти ще до початку завантаження. Максимальна якість, зручний інтерфейс і повний контроль над кожним файлом.",
       
       hero_btn_win: "Завантажити для Windows",
+      hero_btn_mac: "Завантажити для macOS",
+
       hero_btn_how: "Як це працює?",
       hero_meta_before: "Завантажуючи, ви приймаєте нашу",
       hero_meta_privacy: "Політику конфіденційності",
@@ -1297,6 +1327,8 @@
     
       // ===== UI mockup =====
       ui_tab_download: "Завантаження",
+      ui_tab_fragments: "Фрагмент",
+
       ui_tab_compress: "Стиснення",
       ui_tab_convert: "Конвертація",
       ui_paste_link: "Вставити посилання",
@@ -1461,8 +1493,17 @@
       const key = el.getAttribute("data-i18n");
       if (!key) return;
       const v = dict[key];
-      if (typeof v === "string") el.textContent = v;
+      if (typeof v !== "string") return;
+    
+      // Если внутри есть узел для текста — меняем только его
+      const target = el.querySelector("[data-i18n-text]");
+      if (target) {
+        target.textContent = v;
+      } else {
+        el.textContent = v;
+      }
     });
+    
 
     document.querySelectorAll("[data-i18n-html]").forEach((el) => {
       const key = el.getAttribute("data-i18n-html");
