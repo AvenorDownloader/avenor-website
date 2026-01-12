@@ -28,13 +28,15 @@
       nav_faq: "FAQ",
       cta_download: "Скачать",
 
-      hero_kicker: "Программа для работы с видео и аудио",
+      hero_kicker: "УНИКАЛЬНАЯ ФУНКЦИЯ: ФРАГМЕНТ ДО СКАЧИВАНИЯ",
       hero_title_1: "Avenor Downloader —",
-      hero_title_accent: "больше, чем загрузчик",
+      hero_title_accent: "вырезай фрагмент ДО скачивания",
       hero_title_2: "",
       hero_subtitle:
-        "Скачивайте контент и вырезайте нужные фрагменты ещё до загрузки. Максимальное качество, удобный интерфейс и полный контроль над каждым файлом.",
+        "Скачивай видео и аудио с YouTube, TikTok, Instagram и других платформ. Выбирай In/Out и сохраняй только нужный фрагмент — быстро и локально.",
       
+
+        
       hero_btn_win: "Скачать для Windows",
       hero_btn_mac: "Скачать для macOS",
       hero_btn_how: "Как это работает?",
@@ -42,7 +44,10 @@
       hero_meta_privacy: "политику конфиденциальности",
       hero_meta_and: "и",
       hero_meta_terms: "пользовательское соглашение",
-
+      hero_badge_clip: "Фрагмент до скачивания",
+      hero_badge_local: "Работает локально (приватно)",
+      hero_badge_free: "Free-план доступен",
+      
 
       // ===== UI mockup (макет приложения) =====
       ui_tab_download: "Скачать",
@@ -157,12 +162,12 @@
       nav_faq: "FAQ",
       cta_download: "Download",
 
-      hero_kicker: "A tool for video and audio workflows",
+      hero_kicker: "UNIQUE FEATURE: CLIP BEFORE DOWNLOAD",
       hero_title_1: "Avenor Downloader —",
-      hero_title_accent: "more than a downloader",
+      hero_title_accent: "cut clips BEFORE downloading",
       hero_title_2: "",
       hero_subtitle:
-        "Download content and cut precise clips before you even start the download. Maximum quality, a clean UI, and full control over every file.",
+        "Select In/Out points and download only the clip you need — fast and local.",
       
       hero_btn_win: "Download for Windows",
       hero_btn_mac: "Download for macOS",
@@ -171,7 +176,10 @@
       hero_meta_privacy: "Privacy Policy",
       hero_meta_and: "and",
       hero_meta_terms: "Terms of Service",
-
+      hero_badge_clip: "Clip before download",
+      hero_badge_local: "Runs locally (private)",
+      hero_badge_free: "Free plan available",
+      
       why_title: "Why Avenor Downloader",
       why_subtitle:
         "Not just another downloader — a complete tool for video & audio work.",
@@ -376,12 +384,12 @@
       nav_faq: "FAQ",
       cta_download: "Descargar",
     
-      hero_kicker: "Herramienta para trabajar con video y audio",
+      hero_kicker: "FUNCIÓN ÚNICA: RECORTA ANTES DE DESCARGAR",
       hero_title_1: "Avenor Downloader —",
-      hero_title_accent: "más que un descargador",
+      hero_title_accent: "recorta clips ANTES de descargar",
       hero_title_2: "",
       hero_subtitle:
-        "Descarga contenido y recorta los fragmentos exactos antes de iniciar la descarga. Máxima calidad, interfaz limpia y control total de cada archivo.",
+        "Descarga video y audio de YouTube, TikTok, Instagram y más. Define puntos In/Out y guarda solo el fragmento que necesitas — rápido y local.",
       
       hero_btn_win: "Descargar para Windows",
       hero_btn_mac: "Descargar para macOS",
@@ -412,7 +420,10 @@
       trust_1: "editores",
       trust_2: "especialistas en SMM",
       trust_3: "creadores de contenido",
-    
+      hero_badge_clip: "Recorte antes de descargar",
+      hero_badge_local: "Funciona localmente (privado)",
+      hero_badge_free: "Plan gratuito disponible",
+      
       how_title: "Cómo funciona",
       how_subtitle: "Solo tres pasos y el archivo estará en tu disco.",
       how_s1_t: "Elige los parámetros de descarga",
@@ -595,12 +606,12 @@
       nav_faq: "FAQ",
       cta_download: "Baixar",
     
-      hero_kicker: "Ferramenta para trabalhar com vídeo e áudio",
+      hero_kicker: "RECURSO ÚNICO: CORTE ANTES DO DOWNLOAD",
       hero_title_1: "Avenor Downloader —",
-      hero_title_accent: "mais do que um downloader",
+      hero_title_accent: "corte trechos ANTES do download",
       hero_title_2: "",
       hero_subtitle:
-        "Baixe conteúdo e recorte clipes exatos antes mesmo de começar o download. Máxima qualidade, interface limpa e controle total de cada arquivo.",
+        "Baixe vídeos e áudios do YouTube, TikTok, Instagram e muito mais. Defina os pontos In/Out e salve apenas o trecho necessário — rápido e local.",
       
       hero_btn_win: "Baixar para Windows",
       hero_btn_mac: "Baixar para macOS",
@@ -630,7 +641,10 @@
       trust_1: "editores",
       trust_2: "especialistas em SMM",
       trust_3: "criadores de conteúdo",
-    
+      hero_badge_clip: "Corte antes do download",
+      hero_badge_local: "Funciona localmente (privado)",
+      hero_badge_free: "Plano gratuito disponível",
+      
       how_title: "Como funciona",
       how_subtitle: "Apenas três passos e o arquivo estará no seu computador.",
       how_s1_t: "Escolha as configurações de download",
@@ -812,12 +826,12 @@
       nav_faq: "FAQ",
       cta_download: "Download",
     
-      hero_kicker: "Tool für Video- und Audio-Workflows",
+      hero_kicker: "EINZIGARTIGE FUNKTION: CLIP VOR DEM DOWNLOAD",
       hero_title_1: "Avenor Downloader —",
-      hero_title_accent: "mehr als ein Downloader",
+      hero_title_accent: "Clips VOR dem Download schneiden",
       hero_title_2: "",
       hero_subtitle:
-        "Lade Inhalte herunter und schneide exakte Clips, noch bevor der Download startet. Maximale Qualität, ein cleanes UI und volle Kontrolle über jede Datei.",      
+        "Lade Video- und Audiodateien von YouTube, TikTok, Instagram und mehr herunter. Setze In/Out-Punkte und speichere nur den benötigten Ausschnitt — schnell und lokal.",      
       
       hero_btn_win: "Für Windows herunterladen",
       hero_btn_mac: "Für macOS herunterladen",
@@ -866,7 +880,12 @@
       faq_title: "Häufig gestellte Fragen",
       faq_more_open: "Mehr Fragen anzeigen",
       faq_more_close: "Fragen ausblenden",
-    
+
+      
+      hero_badge_clip: "Clip vor dem Download",
+      hero_badge_local: "Läuft lokal (privat)",
+      hero_badge_free: "Kostenloser Plan verfügbar",
+      
       support_title: "Support",
       support_p:
         "Beschreibe dein Anliegen — wir antworten per E-Mail. In der Regel innerhalb von 6 Stunden.\n\nWenn du Probleme mit Avenor Downloader hast, beschreibe sie bitte so detailliert wie möglich, damit wir sie schneller beheben können.",
@@ -1031,12 +1050,12 @@
       nav_faq: "FAQ",
       cta_download: "Télécharger",
     
-      hero_kicker: "Outil pour le travail vidéo et audio",
+      hero_kicker: "FONCTION UNIQUE : EXTRAIT AVANT LE TÉLÉCHARGEMENT",
       hero_title_1: "Avenor Downloader —",
-      hero_title_accent: "bien plus qu’un téléchargeur",
+      hero_title_accent: "découpez des extraits AVANT le téléchargement",
       hero_title_2: "",
       hero_subtitle:
-        "Téléchargez du contenu et découpez des extraits précis avant même de lancer le téléchargement. Qualité maximale, interface claire et contrôle total de chaque fichier.",
+        "Téléchargez des vidéos et de l’audio depuis YouTube, TikTok, Instagram et plus encore. Définissez les points In/Out et enregistrez uniquement l’extrait nécessaire — rapide et local.",
       
       hero_btn_win: "Télécharger pour Windows",
       hero_btn_mac: "Télécharger pour macOS",
@@ -1066,7 +1085,10 @@
       trust_1: "monteurs",
       trust_2: "spécialistes SMM",
       trust_3: "créateurs de contenu",
-    
+      hero_badge_clip: "Extrait avant le téléchargement",
+      hero_badge_local: "Fonctionne localement (privé)",
+      hero_badge_free: "Plan gratuit disponible",
+
       how_title: "Comment ça marche",
       how_subtitle: "Trois étapes — et le fichier est sur votre disque.",
       how_s1_t: "Choisissez les paramètres de téléchargement",
@@ -1251,12 +1273,12 @@
       nav_faq: "FAQ",
       cta_download: "Завантажити",
     
-      hero_kicker: "Інструмент для роботи з відео та аудіо",
+      hero_kicker: "УНІКАЛЬНА ФУНКЦІЯ: ФРАГМЕНТ ДО ЗАВАНТАЖЕННЯ",
       hero_title_1: "Avenor Downloader —",
-      hero_title_accent: "більше, ніж завантажувач",
+      hero_title_accent: "вирізай фрагмент ДО завантаження",
       hero_title_2: "",
       hero_subtitle:
-        "Завантажуйте контент і вирізайте потрібні фрагменти ще до початку завантаження. Максимальна якість, зручний інтерфейс і повний контроль над кожним файлом.",
+        "Завантажуй відео та аудіо з YouTube, TikTok, Instagram та інших платформ. Обирай точки In/Out і зберігай лише потрібний фрагмент — швидко та локально.",
       
       hero_btn_win: "Завантажити для Windows",
       hero_btn_mac: "Завантажити для macOS",
@@ -1287,7 +1309,10 @@
       trust_1: "монтажери",
       trust_2: "SMM-спеціалісти",
       trust_3: "креатори контенту",
-    
+      hero_badge_clip: "Фрагмент до завантаження",
+      hero_badge_local: "Працює локально (приватно)",
+      hero_badge_free: "Free-план доступний",
+      
       how_title: "Як це працює",
       how_subtitle: "Усього три кроки — і файл уже на вашому диску.",
       how_s1_t: "Оберіть параметри завантаження",

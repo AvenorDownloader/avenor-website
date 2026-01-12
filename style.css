@@ -235,6 +235,34 @@ body {
   margin: 0 0 24px;
 }
 
+
+/* HERO badges (trust pills) */
+.hero__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 18px;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.9);
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+  white-space: nowrap;
+}
+
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
@@ -245,6 +273,42 @@ body {
 .hero__meta {
   font-size: 12px;
   color: var(--text-muted);
+}
+
+/* Primary hero badge */
+.hero__badge--primary {
+  color: #0b1a05;
+  background: linear-gradient(135deg, #9BE15D, #7ED957);
+  border: none;
+  font-weight: 600;
+  box-shadow:
+    0 8px 24px rgba(158, 225, 93, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+}
+
+.hero__badge:not(.hero__badge--primary) {
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+
+/* ===== HERO micro animation ===== */
+.hero-anim {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.hero-anim.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* optional: чуть быстрее для бейджей */
+.hero-anim--fast {
+  transition-duration: 0.45s;
 }
 
 /* HERO карточка справа */

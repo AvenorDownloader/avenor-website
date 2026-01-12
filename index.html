@@ -278,16 +278,23 @@
             }
           }
 
-          // Пример: новогодний “заметённый” снег
-          makeSnow({
-            count: 110,
-            sizeMin: 2,
-            sizeMax: 7,
-            durMin: 6,
-            durMax: 16,
-            windMin: -10,
-            windMax: 10
-          });
+          // ===== HERO micro animation =====
+          (function heroIntroAnimation() {
+            const items = document.querySelectorAll(".hero-anim");
+            if (!items.length) return;
+
+            items.forEach((el, i) => {
+              // каскадная задержка
+              el.style.transitionDelay = `${i * 80}ms`;
+
+              // рендер-фрейм, чтобы transition сработал корректно
+              requestAnimationFrame(() => {
+                el.classList.add("is-visible");
+              });
+            });
+          })();
+
+
         });
       </script>
 
@@ -361,21 +368,29 @@
         <section class="hero" id="top">
           <div class="container hero__inner">
             <div class="hero__content">
-              <p class="hero__kicker" data-i18n="hero_kicker">Программа для работы с видео и аудио</p>
+              <p class="hero__kicker hero-anim" data-i18n="hero_kicker">Программа для работы с видео и аудио</p>
 
               <!-- Разбил заголовок на части для точного перевода -->
-              <h1 class="hero__title">
+              <h1 class="hero__title hero-anim">
                 <span data-i18n="hero_title_1">Avenor Downloader —</span>
                 <span class="hero__accent" data-i18n="hero_title_accent">умный загрузчик</span>
                 <span data-i18n="hero_title_2">видео и аудио</span>
               </h1>
 
-              <p class="hero__subtitle" data-i18n="hero_subtitle">
+              <p class="hero__subtitle hero-anim" data-i18n="hero_subtitle">
                 Скачивай, сжимай и конвертируй контент с YouTube, Instagram, TikTok и других платформ.
                 Максимальное качество, удобный интерфейс и полный контроль над файлами.
               </p>
 
-              <div class="hero__actions hero__actions--os">
+              <div class="hero__badges hero-anim hero-anim--fast">
+                <span class="hero__badge hero__badge--primary" data-i18n="hero_badge_clip"></span>
+                <span class="hero__badge" data-i18n="hero_badge_local"></span>
+                <span class="hero__badge" data-i18n="hero_badge_free"></span>
+                
+              </div>
+              
+
+              <div class="hero__actions hero__actions--os hero-anim hero-anim--fast">
                 <a
                   href="https://github.com/AvenorDownloader/avenor-downloader/releases/latest/download/AvenorDownloader-Setup.exe"
                   class="btn btn--primary btn--os"
@@ -402,7 +417,7 @@
               
 
               <!-- meta с ссылками: делаю через куски + отдельные тексты ссылок -->
-              <p class="hero__meta">
+              <p class="hero__meta hero-anim hero-anim--fast">
                 <span data-i18n="hero_meta_before">Скачивая вы принимаете нашу</span>
                 <a href="privacy.html" class="footer__link" data-i18n="hero_meta_privacy">политику конфиденциальности</a>
                 <span data-i18n="hero_meta_and">и</span>
