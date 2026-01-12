@@ -7,7 +7,7 @@
     },
     {
       "source": "/download/mac",
-      "destination": "https://download.avenordownload.app/latest/AvenorDownloader-mac.dmg",
+      "destination": "https://download.avenordownload.app/latest/AvenorDownloader-mac-v1.dmg",
       "permanent": false
     }
   ]
