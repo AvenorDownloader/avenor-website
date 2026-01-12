@@ -2,12 +2,12 @@
   "redirects": [
     {
       "source": "/download/win",
-      "destination": "https://github.com/AvenorDownloader/avenor-downloader/releases/download/v1.3.1/AvenorDownloader-Setup.exe",
+      "destination": "https://download.avenordownload.app/latest/AvenorDownloader-Setup.exe",
       "permanent": false
     },
     {
       "source": "/download/mac",
-      "destination": "https://github.com/AvenorDownloader/avenor-downloader/releases/download/v1.3.1/AvenorDownloader-1.3.0-mac.dmg",
+      "destination": "https://download.avenordownload.app/latest/AvenorDownloader-mac.dmg",
       "permanent": false
     }
   ]
