@@ -167,12 +167,30 @@
 
                 // ВАЖНО: на успехе закрываем “галочку” и вручную кидаем на thanks
                 events: {
-                  completed: (data) => {
-                    // на всякий случай чуть подождём, чтобы Paddle успел закрыть overlay
-                    setTimeout(() => {
-                      window.location.href = "https://avenordownload.app/thanks.html";
-                    }, 150);
+                  loaded: (e) => console.log("[PADDLE] loaded", e),
+                  ready: (e) => console.log("[PADDLE] ready", e),
+                  opened: (e) => console.log("[PADDLE] opened", e),
+                  closed: (e) => console.log("[PADDLE] closed", e),
+
+                  // разные варианты "успеха" (у разных сборок Paddle v2 имя отличается)
+                  completed: (e) => {
+                    console.log("[PADDLE] completed", e);
+                    setTimeout(() => (window.location.href = "/thanks.html"), 150);
                   },
+                  success: (e) => {
+                    console.log("[PADDLE] success", e);
+                    setTimeout(() => (window.location.href = "/thanks.html"), 150);
+                  },
+                  checkoutCompleted: (e) => {
+                    console.log("[PADDLE] checkoutCompleted", e);
+                    setTimeout(() => (window.location.href = "/thanks.html"), 150);
+                  },
+                  transactionCompleted: (e) => {
+                    console.log("[PADDLE] transactionCompleted", e);
+                    setTimeout(() => (window.location.href = "/thanks.html"), 150);
+                  },
+
+                  error: (e) => console.log("[PADDLE] error", e),
                 },
               });
             });
