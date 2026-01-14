@@ -3,27 +3,435 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Avenor — Оплата прошла</title>
+    <title>Avenor — Спасибо за покупку</title>
+
+    <!-- Font (matches site styling). If you already load Montserrat globally on the site, you can remove this. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root{
+        --bg0:#0b0b0e;
+        --bg1:#101115;
+        --card: rgba(255,255,255,.06);
+        --card2: rgba(255,255,255,.08);
+        --stroke: rgba(255,255,255,.10);
+        --stroke2: rgba(255,255,255,.14);
+        --text:#F2F3F5;
+        --muted: rgba(242,243,245,.72);
+        --muted2: rgba(242,243,245,.55);
+
+        /* Avenor accent */
+        --accent:#92D83C;
+        --accent2:#B9FF5C;
+
+        --radius: 22px;
+        --shadow: 0 26px 70px rgba(0,0,0,.55);
+        --shadow2: 0 14px 40px rgba(0,0,0,.48);
+      }
+
+      *{box-sizing:border-box}
+      html,body{height:100%}
+      body{
+        margin:0;
+        font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        color:var(--text);
+        background:
+          radial-gradient(900px 520px at 18% 12%, rgba(146,216,60,.18), transparent 60%),
+          radial-gradient(760px 520px at 82% 28%, rgba(185,255,92,.12), transparent 55%),
+          radial-gradient(980px 680px at 65% 92%, rgba(146,216,60,.10), transparent 58%),
+          linear-gradient(180deg, var(--bg0), var(--bg1));
+        overflow-x:hidden;
+      }
+
+      /* subtle grain */
+      body::before{
+        content:"";
+        position:fixed;
+        inset:0;
+        pointer-events:none;
+        background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.14'/%3E%3C/svg%3E");
+        mix-blend-mode:overlay;
+        opacity:.25;
+      }
+
+      a{color:inherit}
+      .wrap{
+        min-height:100%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding:44px 18px 56px;
+        position:relative;
+      }
+
+      .back{
+        position:fixed;
+        right:18px;
+        top:18px;
+        z-index:5;
+        display:inline-flex;
+        gap:10px;
+        align-items:center;
+        padding:12px 14px;
+        border-radius:14px;
+        text-decoration:none;
+        background: rgba(255,255,255,.06);
+        border:1px solid rgba(255,255,255,.14);
+        box-shadow: var(--shadow2);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        transition: transform .18s ease, background .18s ease, border-color .18s ease;
+      }
+      .back:hover{
+        transform: translateY(-1px);
+        background: rgba(255,255,255,.08);
+        border-color: rgba(255,255,255,.22);
+      }
+      .back .dot{
+        width:10px;height:10px;border-radius:999px;
+        background: linear-gradient(180deg, var(--accent2), var(--accent));
+        box-shadow: 0 0 0 6px rgba(146,216,60,.12);
+      }
+
+      .card{
+        width:min(980px, 100%);
+        border-radius: calc(var(--radius) + 6px);
+        background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.045));
+        border: 1px solid var(--stroke);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        overflow:hidden;
+        position:relative;
+      }
+
+      .card::after{
+        content:"";
+        position:absolute;
+        inset:-220px -260px auto auto;
+        width:620px;
+        height:620px;
+        background: radial-gradient(circle at 40% 35%, rgba(146,216,60,.14), transparent 72%);
+        filter: blur(14px);
+        opacity:.9;
+        pointer-events:none;
+      }
+
+
+      .head{
+        padding:34px 34px 16px;
+      }
+      .brand{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        margin-bottom:18px;
+      }
+
+      .brandLogo{
+        height: 35px;         /* подгони если нужно */
+        width: auto;
+        display:block;
+        opacity: .98;
+        filter: drop-shadow(0 10px 25px rgba(0,0,0,.35));
+      }
+
+
+      h1{
+        margin:0;
+        font-size: clamp(26px, 3.2vw, 38px);
+        line-height:1.15;
+        letter-spacing:-.2px;
+      }
+      .sub{
+        margin:10px 0 0;
+        color:var(--muted);
+        font-size: 14.5px;
+        line-height:1.6;
+        max-width: 70ch;
+      }
+
+      .grid{
+        display:grid;
+        grid-template-columns: 1.05fr .95fr;
+        gap:16px;
+        padding: 0 34px 34px;
+      }
+
+      @media (max-width: 900px){
+        .grid{grid-template-columns:1fr; padding:0 18px 26px;}
+        .head{padding:26px 18px 12px;}
+        .back{right:12px; top:12px;}
+      }
+
+      .panel{
+        border-radius: var(--radius);
+        background: rgba(0,0,0,.18);
+        border: 1px solid var(--stroke);
+        padding:20px 20px 18px;
+      }
+      .panel h2{
+        margin:0 0 12px;
+        font-size:16px;
+        font-weight:700;
+        letter-spacing:.2px;
+      }
+
+      .pill{
+        display:inline-flex;
+        align-items:center;
+        gap:8px;
+        padding:8px 10px;
+        border-radius:999px;
+        background: rgba(146,216,60,.10);
+        border:1px solid rgba(146,216,60,.24);
+        color: rgba(242,243,245,.92);
+        font-size: 12.5px;
+        font-weight:600;
+      }
+      .pill i{
+        width:8px;height:8px;border-radius:999px;
+        background: linear-gradient(180deg, var(--accent2), var(--accent));
+        box-shadow: 0 0 0 5px rgba(146,216,60,.10);
+      }
+
+      .kv{
+        margin-top:14px;
+        display:grid;
+        gap:10px;
+      }
+      .row{
+        display:flex;
+        justify-content:space-between;
+        gap:16px;
+        padding:10px 12px;
+        border-radius:14px;
+        background: rgba(255,255,255,.04);
+        border:1px solid rgba(255,255,255,.08);
+      }
+      .row .k{color:var(--muted2); font-size:12.5px; font-weight:600;}
+      .row .v{font-size:12.8px; font-weight:600; text-align:right;}
+      .row .v code{
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size:12.3px;
+        color: rgba(242,243,245,.95);
+        background: rgba(0,0,0,.35);
+        border:1px solid rgba(255,255,255,.10);
+        padding:2px 7px;
+        border-radius: 999px;
+      }
+
+      .accentLine{
+        height:1px;
+        background: linear-gradient(90deg, transparent, rgba(146,216,60,.60), transparent);
+        margin: 16px 0 14px;
+        opacity:.8;
+      }
+
+      .steps{
+        margin:0;
+        padding-left: 18px;
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 13.5px;
+      }
+      .steps li{margin:6px 0}
+      .steps b{color: rgba(242,243,245,.92); font-weight:700}
+
+      .hint{
+        margin:12px 0 0;
+        color: var(--muted2);
+        font-size: 12.8px;
+        line-height:1.6;
+      }
+
+      /* video block in the same "brand" style as the site sections */
+      .how{
+        display:grid;
+        grid-template-columns: 1fr;
+        gap:14px;
+      }
+      .videoFrame{
+        width:100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 18px;
+        overflow:hidden;
+        background: rgba(255,255,255,.05);
+        border:1px solid rgba(255,255,255,.12);
+        box-shadow: 0 18px 44px rgba(0,0,0,.45);
+        position:relative;
+      }
+      .videoFrame::before{
+        content:"";
+        position:absolute;
+        inset:0;
+        background:
+          radial-gradient(300px 220px at 20% 10%, rgba(146,216,60,.18), transparent 60%),
+          radial-gradient(280px 220px at 88% 22%, rgba(185,255,92,.12), transparent 55%);
+        pointer-events:none;
+      }
+
+      /* Hide controls (WebKit) */
+      .videoFrame video::-webkit-media-controls { display:none !important; }
+      .videoFrame video::-webkit-media-controls-enclosure { display:none !important; }
+
+      .videoFrame iframe,
+      .videoFrame video{
+        width:100%;
+        height:100%;
+        border:0;
+        display:block;
+        background: transparent;
+      }
+
+      .support{
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+      }
+      .support a{
+        color: rgba(242,243,245,.95);
+        text-decoration:none;
+        border-bottom: 1px dashed rgba(146,216,60,.55);
+      }
+      .support a:hover{border-bottom-color: rgba(185,255,92,.9);}
+
+      .footer{
+        padding: 0 34px 28px;
+        color: rgba(242,243,245,.55);
+        font-size: 12.3px;
+      }
+      @media (max-width: 900px){
+        .footer{padding: 0 18px 24px;}
+      }
+    </style>
   </head>
-  <body style="font-family: Arial; padding: 24px;">
-    <h1>Спасибо! Оплата принята.</h1>
-    <p>
-      Мы активируем PRO для email, который вы указали при оплате.
-    </p>
 
-    <h3>Что делать дальше</h3>
-    <ol>
-      <li>Откройте приложение Avenor Downloader.</li>
-      <li>Перейдите в Settings → Account.</li>
-      <li>Введите свой email и нажмите “Refresh / Sync license”.</li>
-    </ol>
+  <body>
+    <!-- Back button (side) -->
+    <a class="back" href="/index.html" aria-label="Вернуться на сайт">
+      <span class="dot" aria-hidden="true"></span>
+      <span style="font-weight:700; font-size:13px;">Вернуться на сайт</span>
+    </a>
 
-    <p style="margin-top:16px;">
-      Если PRO не включился в течение пары минут — напишите в поддержку.
-    </p>
+    <main class="wrap">
+      <section class="card" role="region" aria-label="Успешная покупка">
+        <div class="head">
+          <div class="brand" aria-label="Avenor">
+            <img class="brandLogo" src="assets/Logo.png" alt="Avenor Downloader" />
+          </div>
+          
 
-    <p>
-      <a href="/index.html">Вернуться на сайт</a>
-    </p>
+          <h1>Спасибо за покупку</h1>
+          <p class="sub">
+            Оплата прошла успешно. Мы активировали PRO для email, который вы указали при оплате.
+          </p>
+        </div>
+
+        <div class="grid">
+          <!-- Left: Purchase details -->
+          <div class="panel">
+            <h2>Детали покупки</h2>
+            <div class="pill" title="Статус платежа">
+              <i></i> Оплата принята
+            </div>
+
+            <div class="kv" aria-label="Purchase details">
+              <div class="row">
+                <div class="k">Тариф</div>
+                <div class="v" id="planName">—</div>
+              </div>
+              <div class="row">
+                <div class="k">Email</div>
+                <div class="v"><code id="customerEmail">—</code></div>
+              </div>
+              <div class="row">
+                <div class="k">ID заказа</div>
+                <div class="v"><code id="orderId">—</code></div>
+              </div>
+            </div>
+
+            <div class="accentLine" role="presentation"></div>
+
+            <h2>Как применить тариф в программе</h2>
+            <ol class="steps">
+              <li>Откройте <b>Avenor Downloader</b>.</li>
+              <li>Перейдите в <b>Settings → Account</b>.</li>
+              <li>Введите <b>тот же email</b>, который использовали при оплате.</li>
+              <li>Нажмите <b>Refresh / Sync license</b>.</li>
+            </ol>
+
+            <p class="hint">
+              Обычно лицензия подтягивается за 10–60 секунд. Если не подтянулась — проверьте, что email введён без ошибок.
+            </p>
+          </div>
+
+          <!-- Right: Video + Support -->
+          <div class="how">
+            <div class="panel">
+              <h2>Быстрая инструкция (видео)</h2>
+
+              <!-- Replace with your screen-record video or embed.
+                   Option A: <video src="..." controls></video>
+                   Option B: <iframe src="..." allowfullscreen></iframe>
+              -->
+              <div class="videoFrame" aria-label="Видео-инструкция">
+                <video autoplay muted loop playsinline preload="metadata" aria-label="Как применить PRO в программе">
+                  <source src="{{HOWTO_VIDEO_SRC}}" type="video/mp4" />
+                </video>                
+              </div>
+
+              <p class="hint">
+                Подставьте сюда короткую запись экрана (10–20 сек), как вы вводите email и нажимаете Refresh / Sync.
+              </p>
+            </div>
+
+            <div class="panel support">
+              <h2>Поддержка</h2>
+              <div style="color:var(--muted); font-size:13.5px; line-height:1.7;">
+                Если есть вопросы или лицензия не подгрузилась на ваш логин — напишите нам:
+              </div>
+              <div style="font-weight:700;">
+                <a href="mailto:support@avenordownload.app">support@avenordownload.app</a>
+              </div>
+              <div class="hint">
+                В письме желательно указать email покупки и ID заказа (если есть) — так мы быстрее поможем.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+          © Avenor Downloader. Если вы попали на эту страницу случайно — вернитесь на сайт и скачайте приложение.
+        </div>
+      </section>
+    </main>
+
+
+    <script>
+      (function () {
+        const qs = new URLSearchParams(location.search);
+    
+        // Ожидаемые параметры в URL:
+        // ?plan=PRO%20Yearly&email=test%40mail.com&order=123456789
+        const plan = qs.get("plan") || qs.get("plan_name") || "";
+        const email = qs.get("email") || qs.get("customer_email") || "";
+        const order = qs.get("order") || qs.get("order_id") || qs.get("transaction_id") || "";
+    
+        const planEl = document.getElementById("planName");
+        const emailEl = document.getElementById("customerEmail");
+        const orderEl = document.getElementById("orderId");
+    
+        if (planEl && plan) planEl.textContent = plan;
+        if (emailEl && email) emailEl.textContent = email;
+        if (orderEl && order) orderEl.textContent = order;
+      })();
+    </script>
+    
   </body>
 </html>
