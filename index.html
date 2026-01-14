@@ -145,9 +145,51 @@
 
               // страховка: если прилетит completed-событие — тоже редирект
               eventCallback: (e) => {
-                if (e?.name === "checkout.completed") {
-                  window.location.href = "/thanks.html";
-                }
+                if (e?.name !== "checkout.completed") return;
+
+                // 1) Берём ранее выбранный план
+                let planName = "PRO";
+                let priceId = "";
+                try {
+                  const raw = sessionStorage.getItem("avenor_checkout_plan");
+                  if (raw) {
+                    const obj = JSON.parse(raw);
+                    planName = obj?.planName || planName;
+                    priceId = obj?.priceId || "";
+                  }
+                } catch {}
+
+                // 2) Пытаемся вытащить email / orderId из события (поля могут отличаться)
+                const d = e?.data || e || {};
+
+                const email =
+                  d?.customer?.email ||
+                  d?.checkout?.customer?.email ||
+                  d?.data?.customer?.email ||
+                  "";
+
+                const orderId =
+                  d?.transaction?.id ||
+                  d?.data?.transaction?.id ||
+                  d?.transaction_id ||
+                  d?.data?.transaction_id ||
+                  d?.order?.id ||
+                  "";
+
+                // 3) Сохраняем данные для thanks.html
+                sessionStorage.setItem(
+                  "avenor_thanks",
+                  JSON.stringify({
+                    planName,
+                    priceId,
+                    email,
+                    orderId,
+                    ts: Date.now(),
+                  })
+                );
+
+                // 4) Редирект
+                window.location.href = "/thanks.html";
               },
             });
           } else {
@@ -159,16 +201,31 @@
               const priceId = btn.getAttribute("data-price-id");
               if (!priceId || !window.Paddle?.Checkout?.open) return;
 
+              // 1) Сохраняем выбранный тариф заранее (самый надёжный способ)
+              const card = btn.closest(".pricing__card");
+              const planName =
+                card?.querySelector(".pricing__name")?.textContent?.trim() ||
+                btn.textContent?.trim() ||
+                "PRO";
+
+              sessionStorage.setItem(
+                "avenor_checkout_plan",
+                JSON.stringify({ priceId, planName, ts: Date.now() })
+              );
+
               window.Paddle.Checkout.open({
                 items: [{ priceId, quantity: 1 }],
                 settings: {
                   displayMode: "overlay",
                   theme: "dark",
+
+                  // можно оставить, но на данные НЕ рассчитываем
                   successUrl: `${location.origin}/thanks.html`,
                 },
               });
             });
           });
+
 
 
           // FAQ: показываем первые 4 вопроса, остальные — в "шторке"

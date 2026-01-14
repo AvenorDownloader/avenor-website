@@ -414,23 +414,43 @@
 
 
     <script>
-      (function () {
-        const qs = new URLSearchParams(location.search);
-    
-        // Ожидаемые параметры в URL:
-        // ?plan=PRO%20Yearly&email=test%40mail.com&order=123456789
-        const plan = qs.get("plan") || qs.get("plan_name") || "";
-        const email = qs.get("email") || qs.get("customer_email") || "";
-        const order = qs.get("order") || qs.get("order_id") || qs.get("transaction_id") || "";
-    
-        const planEl = document.getElementById("planName");
-        const emailEl = document.getElementById("customerEmail");
-        const orderEl = document.getElementById("orderId");
-    
-        if (planEl && plan) planEl.textContent = plan;
-        if (emailEl && email) emailEl.textContent = email;
-        if (orderEl && order) orderEl.textContent = order;
-      })();
+        (function () {
+          const planEl = document.getElementById("planName");
+          const emailEl = document.getElementById("customerEmail");
+          const orderEl = document.getElementById("orderId");
+
+          // 1) Основной путь — данные из sessionStorage (после оплаты)
+          try {
+            const raw = sessionStorage.getItem("avenor_thanks");
+            if (raw) {
+              const obj = JSON.parse(raw);
+
+              if (planEl && obj.planName) planEl.textContent = obj.planName;
+              if (emailEl && obj.email) emailEl.textContent = obj.email;
+              if (orderEl && obj.orderId) orderEl.textContent = obj.orderId;
+
+              // чтобы при случайном открытии thanks.html не показывались старые данные
+              sessionStorage.removeItem("avenor_thanks");
+              sessionStorage.removeItem("avenor_checkout_plan");
+              return;
+            }
+          } catch {}
+
+          // 2) Фоллбек — если вдруг когда-то будешь передавать через URL
+          const qs = new URLSearchParams(location.search);
+          const plan = qs.get("plan") || qs.get("plan_name") || "";
+          const email = qs.get("email") || qs.get("customer_email") || "";
+          const order =
+            qs.get("order") ||
+            qs.get("order_id") ||
+            qs.get("transaction_id") ||
+            "";
+
+          if (planEl && plan) planEl.textContent = plan;
+          if (emailEl && email) emailEl.textContent = email;
+          if (orderEl && order) orderEl.textContent = order;
+        })();
+
     </script>
     
   </body>
