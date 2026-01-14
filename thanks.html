@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Avenor — Спасибо за покупку</title>
+    <title>Avenor — Спасибо за покупку!</title>
 
     <!-- Font (matches site styling). If you already load Montserrat globally on the site, you can remove this. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -144,17 +144,21 @@
 
       h1{
         margin:0;
+        text-align:center;
         font-size: clamp(26px, 3.2vw, 38px);
         line-height:1.15;
         letter-spacing:-.2px;
       }
+
       .sub{
-        margin:10px 0 0;
+        margin:10px auto 0;
+        text-align:center;
         color:var(--muted);
         font-size: 14.5px;
         line-height:1.6;
         max-width: 70ch;
       }
+
 
       .grid{
         display:grid;
@@ -309,10 +313,52 @@
       @media (max-width: 900px){
         .footer{padding: 0 18px 24px;}
       }
+
+
+      /* ===== Celebration (emoji confetti) ===== */
+      .celebrate{
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 9999;
+        overflow: hidden;
+        opacity: 0;
+        transition: opacity .6s ease;
+      }
+      .celebrate.is-on{ opacity: 1; }
+      .celebrate.is-off{ opacity: 0; }
+
+      .celebrate__p{
+        position: absolute;
+        top: -10vh;
+        left: 0;
+        font-size: var(--pSize, 18px);
+        transform: translate3d(var(--pX, 0px), -10vh, 0) rotate(var(--pR0, 0deg));
+        filter: drop-shadow(0 14px 18px rgba(0,0,0,.45));
+        opacity: var(--pA, .9);
+        animation: celebrate-fall var(--pDur, 2.8s) linear var(--pDelay, 0s) forwards;
+        will-change: transform, opacity;
+        user-select: none;
+      }
+
+      @keyframes celebrate-fall{
+        0%{
+          transform: translate3d(var(--pX, 0px), -12vh, 0) rotate(var(--pR0, 0deg));
+          opacity: 0;
+        }
+        8%{ opacity: var(--pA, .9); }
+        100%{
+          transform: translate3d(calc(var(--pX, 0px) + var(--pDrift, 0px)), 112vh, 0) rotate(var(--pR1, 360deg));
+          opacity: 0;
+        }
+      }
+
     </style>
   </head>
 
   <body>
+
+    <div id="celebrate" class="celebrate" aria-hidden="true"></div>
     <!-- Back button (side) -->
     <a class="back" href="/index.html" aria-label="Вернуться на сайт">
       <span class="dot" aria-hidden="true"></span>
@@ -327,7 +373,7 @@
           </div>
           
 
-          <h1>Спасибо за покупку</h1>
+          <h1>Спасибо за покупку!</h1>
           <p class="sub">
             Оплата прошла успешно. Мы активировали PRO для email, который вы указали при оплате.
           </p>
@@ -385,10 +431,6 @@
                   <source src="{{HOWTO_VIDEO_SRC}}" type="video/mp4" />
                 </video>                
               </div>
-
-              <p class="hint">
-                Подставьте сюда короткую запись экрана (10–20 сек), как вы вводите email и нажимаете Refresh / Sync.
-              </p>
             </div>
 
             <div class="panel support">
@@ -397,10 +439,16 @@
                 Если есть вопросы или лицензия не подгрузилась на ваш логин — напишите нам:
               </div>
               <div style="font-weight:700;">
-                <a href="mailto:support@avenordownload.app">support@avenordownload.app</a>
+                <a
+                  id="supportEmailLink"
+                  href="mailto:support@avenordownload.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >support@avenordownload.app</a>
+
               </div>
               <div class="hint">
-                В письме желательно указать email покупки и ID заказа (если есть) — так мы быстрее поможем.
+                В письме обьязательно указать email покупки, ID заказа и квитанцию об оплате.
               </div>
             </div>
           </div>
@@ -451,6 +499,139 @@
           if (orderEl && order) orderEl.textContent = order;
         })();
 
+
+        (function celebrateOnce(){
+          const root = document.getElementById("celebrate");
+          if (!root) return;
+
+          // Если хочешь запускать только при реальной покупке — можно включить проверку:
+          // const hadThanks = !!sessionStorage.getItem("avenor_thanks");
+          // if (!hadThanks) return;
+
+          const EMOJIS = ["🎉","✨","💚","🟩","⭐","🥳","🎊"];
+          const DURATION_MS = 5200;        // общий показ (≈5 сек)
+          const SPAWN_FOR_MS = 3200;       // сколько времени спавним частицы
+          const SPAWN_EVERY_MS = 60;       // частота (меньше = больше частиц)
+          const MAX_PARTICLES = 200;       // предохранитель
+
+          let spawned = 0;
+          let alive = true;
+
+          root.classList.add("is-on");
+
+          function rand(min, max){ return Math.random() * (max - min) + min; }
+
+          function spawnOne(){
+            if (!alive) return;
+            if (spawned >= MAX_PARTICLES) return;
+
+            const p = document.createElement("span");
+            p.className = "celebrate__p";
+            p.textContent = EMOJIS[Math.floor(Math.random() * EMOJIS.length)];
+
+            const vw = window.innerWidth;
+            const x = rand(0, vw);
+            const size = rand(16, 26);            // размер эмодзи
+            const dur = rand(2.4, 3.6);           // длительность падения
+            const delay = rand(0, 0.25);          // небольшая рассинхронизация
+            const drift = rand(-120, 120);        // “ветер” по X
+            const a = rand(0.75, 0.98);           // непрозрачность
+            const r0 = rand(-40, 40);
+            const r1 = rand(260, 520);
+
+            p.style.setProperty("--pX", x + "px");
+            p.style.setProperty("--pSize", size + "px");
+            p.style.setProperty("--pDur", dur + "s");
+            p.style.setProperty("--pDelay", delay + "s");
+            p.style.setProperty("--pDrift", drift + "px");
+            p.style.setProperty("--pA", a.toFixed(2));
+            p.style.setProperty("--pR0", r0.toFixed(1) + "deg");
+            p.style.setProperty("--pR1", r1.toFixed(1) + "deg");
+
+            root.appendChild(p);
+            spawned++;
+
+            // чистим после анимации
+            const ttl = (dur + delay) * 1000 + 200;
+            setTimeout(() => p.remove(), ttl);
+          }
+
+          // Спавним пачками
+          const timer = setInterval(() => {
+            // 1–3 частицы за тик, чтобы было “празднично”, но не лагало
+            const count = Math.floor(rand(1, 4));
+            for (let i = 0; i < count; i++) spawnOne();
+          }, SPAWN_EVERY_MS);
+
+          // Останавливаем спавн
+          setTimeout(() => {
+            alive = false;
+            clearInterval(timer);
+          }, SPAWN_FOR_MS);
+
+          // Плавно затухаем и чистим DOM
+          setTimeout(() => {
+            root.classList.add("is-off");
+            setTimeout(() => {
+              root.classList.remove("is-on", "is-off");
+              root.innerHTML = "";
+            }, 700);
+          }, DURATION_MS);
+        })();
+
+
+        (function supportGmailCompose(){
+          const a = document.getElementById("supportEmailLink");
+          if (!a) return;
+
+          a.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const to = "support@avenordownload.app";
+
+            // Можно подтянуть данные покупки, если они есть на странице
+            const plan = (document.getElementById("planName")?.textContent || "").trim();
+            const email = (document.getElementById("customerEmail")?.textContent || "").trim();
+            const order = (document.getElementById("orderId")?.textContent || "").trim();
+
+            const subject = "Avenor Support";
+            const body =
+              `Здравствуйте, команда Avenor!
+
+              Нужна помощь.
+
+              Тариф: ${plan || "—"}
+              Email покупки: ${email || "—"}
+              ID заказа: ${order || "—"}
+
+              Опишите проблему с оплатой / активацией PRO:
+              1) Что именно не работает (PRO не активировался / статус FREE / ошибка Sync / другое):
+              2) Email, на который покупали тариф (и какой email вводите в приложении сейчас):
+              3) Что вы сделали в приложении (шаги: Settings → Account → Refresh / Sync):
+              4) Сколько времени прошло после оплаты:
+              5) Версия Avenor и ОС (например v1.4.2, Windows 11):
+              6) Текст ошибки или скриншот (если есть):
+
+
+              Спасибо!`;
+
+            const gmailUrl =
+              "https://mail.google.com/mail/?view=cm&fs=1" +
+              `&to=${encodeURIComponent(to)}` +
+              `&su=${encodeURIComponent(subject)}` +
+              `&body=${encodeURIComponent(body)}`;
+
+            // Пытаемся открыть Gmail в новой вкладке
+            const w = window.open(gmailUrl, "_blank", "noopener,noreferrer");
+
+            // Если попап заблокировали — fallback на mailto
+            if (!w) {
+              window.location.href =
+                `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            }
+          });
+        })();
+      </script>
     </script>
     
   </body>
