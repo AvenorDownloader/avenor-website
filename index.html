@@ -158,18 +158,26 @@
               const priceId = btn.getAttribute("data-price-id");
               if (!priceId || !window.Paddle?.Checkout?.open) return;
 
-              // Важно: здесь можно добавить customer email (если на сайте будет поле),
-              // и/или custom data для связи с аккаунтом Avenor.
               window.Paddle.Checkout.open({
                 items: [{ priceId, quantity: 1 }],
                 settings: {
                   displayMode: "overlay",
                   theme: "dark",
-                  successUrl: "https://avenordownload.app/thanks.html"
-                }
+                },
+
+                // ВАЖНО: на успехе закрываем “галочку” и вручную кидаем на thanks
+                events: {
+                  completed: (data) => {
+                    // на всякий случай чуть подождём, чтобы Paddle успел закрыть overlay
+                    setTimeout(() => {
+                      window.location.href = "https://avenordownload.app/thanks.html";
+                    }, 150);
+                  },
+                },
               });
             });
           });
+
 
           // FAQ: показываем первые 4 вопроса, остальные — в "шторке"
           (function setupFaqDrawer() {
