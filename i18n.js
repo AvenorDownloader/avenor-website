@@ -52,6 +52,15 @@
       
 
       // ===== UI mockup (макет приложения) =====
+
+      ui_fragments_title: "Фрагменты",
+      ui_fragments_count: "Кол-во",
+      ui_in: "In",
+      ui_out: "Out",
+      ui_dur: "Dur",
+      ui_add_fragment: "Добавить фрагмент",
+      ui_download_all: "Скачать все фрагменты",
+
       ui_tab_download: "Скачать",
       ui_tab_compress: "Сжать",
       ui_tab_convert: "Конвертировать",
@@ -241,7 +250,17 @@
       privacy_title: "Privacy Policy — Avenor Downloader",
       terms_title: "Terms of Service — Avenor Downloader",
 
-            // ===== UI mockup (макет приложения) =====
+      // ===== UI mockup (макет приложения) =====
+
+
+      ui_fragments_title: "Fragments",
+      ui_fragments_count: "Count",
+      ui_in: "In",
+      ui_out: "Out",
+      ui_dur: "Dur",
+      ui_add_fragment: "Add fragment",
+      ui_download_all: "Download all fragments",
+
       ui_tab_download: "Download",
       ui_tab_fragments: "Fragment",
 
@@ -472,6 +491,15 @@
       ui_tab_download: "Descargar",
       ui_tab_fragments: "Fragmento",
 
+
+      ui_fragments_title: "Fragmentos",
+      ui_fragments_count: "Cantidad",
+      ui_in: "In",
+      ui_out: "Out",
+      ui_dur: "Dur",
+      ui_add_fragment: "Añadir fragmento",
+      ui_download_all: "Descargar todos los fragmentos",
+
       ui_tab_compress: "Comprimir",
       ui_tab_convert: "Convertir",
       ui_paste_link: "Pegar enlace",
@@ -692,6 +720,15 @@
       terms_title: "Termos de Serviço — Avenor Downloader",
     
       // ===== UI mockup =====
+
+      ui_fragments_title: "Fragmentos",
+      ui_fragments_count: "Qtd",
+      ui_in: "In",
+      ui_out: "Out",
+      ui_dur: "Dur",
+      ui_add_fragment: "Adicionar fragmento",
+      ui_download_all: "Baixar todos os fragmentos",
+
       ui_tab_download: "Baixar",
       ui_tab_fragments: "Fragmento",
       ui_tab_compress: "Comprimir",
@@ -918,6 +955,16 @@
       terms_title: "Nutzungsbedingungen — Avenor Downloader",
     
       // ===== UI mockup =====
+
+
+      ui_fragments_title: "Fragmente",
+      ui_fragments_count: "Anzahl",
+      ui_in: "In",
+      ui_out: "Out",
+      ui_dur: "Dauer",
+      ui_add_fragment: "Fragment hinzufügen",
+      ui_download_all: "Alle Fragmente herunterladen",
+
       ui_tab_download: "Download",
       ui_tab_fragments: "Fragment",
 
@@ -1144,6 +1191,15 @@
       terms_title: "Conditions d’utilisation — Avenor Downloader",
     
       // ===== UI mockup =====
+
+      ui_fragments_title: "Fragments",
+      ui_fragments_count: "Nombre",
+      ui_in: "In",
+      ui_out: "Out",
+      ui_dur: "Durée",
+      ui_add_fragment: "Ajouter un fragment",
+      ui_download_all: "Télécharger tous les fragments",
+
       ui_tab_download: "Télécharger",
       ui_tab_fragments: "Fragment",
 
@@ -1370,6 +1426,15 @@
       terms_title: "Умови використання — Avenor Downloader",
     
       // ===== UI mockup =====
+
+      ui_fragments_title: "Фрагменти",
+      ui_fragments_count: "К-сть",
+      ui_in: "In",
+      ui_out: "Out",
+      ui_dur: "Трив.",
+      ui_add_fragment: "Додати фрагмент",
+      ui_download_all: "Завантажити всі фрагменти",
+      
       ui_tab_download: "Завантаження",
       ui_tab_fragments: "Фрагмент",
 

@@ -422,6 +422,11 @@
       <!-- ===== HERO БЛОК ===== -->
       <main>
         <section class="hero" id="top">
+          <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+            <source src="assets/vid/hero-demo.webm" type="video/webm" />
+            <source src="assets/vid/hero-demo.mp4" type="video/mp4" />
+          </video>
+          
           <div class="container hero__inner">
             <div class="hero__content">
               <p class="hero__kicker hero-anim" data-i18n="hero_kicker">Программа для работы с видео и аудио</p>
@@ -493,11 +498,12 @@
                 <div class="ui__window-body">
                   <!-- Tabs -->
                   <div class="ui__tabs">
-                    <button class="ui__tab ui__tab--active" data-i18n="ui_tab_download">Скачать</button>
-                    <button class="ui__tab" data-i18n="ui_tab_fragments">Фрагмент</button>
+                    <button class="ui__tab" data-i18n="ui_tab_download">Скачать</button>
+                    <button class="ui__tab ui__tab--active" data-i18n="ui_tab_fragments">Фрагмент</button>
                     <button class="ui__tab" data-i18n="ui_tab_compress">Сжать</button>
                     <button class="ui__tab" data-i18n="ui_tab_convert">Конвертировать</button>
                   </div>
+                  
             
                   <!-- Controls -->
                   <div class="ui__controls">
@@ -507,35 +513,116 @@
                       <span class="ui__caret">▾</span>
                     </button>
                   </div>
-            
-                  <!-- Filters -->
-                  <div class="ui__filters-row">
-                    <div class="ui__filters">
-                      <button class="ui__filter ui__filter--active" data-i18n="ui_filter_all">Все</button>
-                      <button class="ui__filter" data-i18n="ui_filter_video">Видео</button>
-                      <button class="ui__filter" data-i18n="ui_filter_audio">Аудио</button>
-                    </div>
-                    <span class="ui__counter" data-i18n="ui_items_count">39 элементов</span>
-                  </div>
-            
-                  <!-- Task -->
-                  <div class="ui__task">
-                    <div class="ui__thumb"></div>
-            
-                    <div class="ui__task-content">
-                      <div class="ui__task-title">Sad Emotional Inspirational Travel...</div>
-                      <div class="ui__task-meta" data-i18n="ui_task_meta">Готово · 1920×1080 · MP4</div>
-            
-                      <div class="ui__task-progress">
-                        <div class="ui__task-progress-bar">
-                          <div class="ui__task-progress-fill"></div>
+
+
+                  <!-- ===== Fragments mockup ===== -->
+                  <div class="ui__frag" data-frag-demo>
+                    <div class="ui__frag-top">
+                      <div class="ui__frag-player">
+                        <video
+                          class="ui__frag-player-video"
+                          src="assets/demo-video.mp4"
+                          autoplay
+                          muted
+                          loop
+                          playsinline
+                          preload="metadata"
+                        ></video>
+                      </div>
+                      
+
+                      <div class="ui__frag-side">
+                        <div class="ui__frag-side-head">
+                          <span class="ui__frag-side-title" data-i18n="ui_fragments_title">Фрагменты</span>
+                          <span class="ui__frag-side-count">
+                            <span data-i18n="ui_fragments_count">Кол-во</span>
+                            <span class="ui__frag-count-num" data-frag-count>0</span>
+                          </span>
                         </div>
-                        <span class="ui__task-progress-percent">0%</span>
+
+                        <div class="ui__frag-clips" data-frag-list>
+                          <!-- клипы добавим анимацией -->
+                          <div class="ui__frag-clip" data-clip="1">
+                            <div class="ui__frag-clip-thumb">
+                              <video
+                                class="ui__frag-thumb-video"
+                                src="assets/demo-video.mp4"
+                                autoplay
+                                muted
+                                loop
+                                playsinline
+                              ></video>
+                            </div>
+                            
+                            <div class="ui__frag-clip-text">
+                              <div class="ui__frag-clip-title">Clip 01</div>
+                              <div class="ui__frag-clip-meta">
+                                <span data-frag-clip1>00:03:12 → 00:11:26</span>
+                                <span class="ui__frag-clip-dot">•</span>
+                                <span data-i18n="ui_dur">Dur</span>:
+                                <span data-frag-dur1>00:08:14</span>
+                              </div>
+                            </div>
+                            <div class="ui__frag-clip-x">×</div>
+                          </div>
+
+                          <div class="ui__frag-clip" data-clip="2">
+                            <div class="ui__frag-clip-thumb">
+                              <video
+                                class="ui__frag-thumb-video"
+                                src="assets/demo-video.mp4"
+                                autoplay
+                                muted
+                                loop
+                                playsinline
+                              ></video>
+                            </div>
+                            
+                            <div class="ui__frag-clip-text">
+                              <div class="ui__frag-clip-title">Clip 02</div>
+                              <div class="ui__frag-clip-meta">
+                                <span data-frag-clip2>00:11:40 → 00:14:02</span>
+                                <span class="ui__frag-clip-dot">•</span>
+                                <span data-i18n="ui_dur">Dur</span>:
+                                <span data-frag-dur2>00:02:22</span>
+                              </div>
+                            </div>
+                            <div class="ui__frag-clip-x">×</div>
+                          </div>
+                        </div>
                       </div>
                     </div>
-            
-                    <button class="ui__task-open" data-i18n="ui_open_folder">Открыть в папке</button>
+
+                    <div class="ui__frag-timeline">
+                      <div class="ui__frag-track" data-frag-track>
+                        <div class="ui__frag-range" data-frag-range></div>
+                        <div class="ui__frag-handle ui__frag-handle--in" data-frag-in></div>
+                        <div class="ui__frag-handle ui__frag-handle--out" data-frag-out></div>
+                      </div>
+
+                      <div class="ui__frag-times">
+                        <div class="ui__frag-time">
+                          <span data-i18n="ui_in">In</span>
+                          <span data-frag-in-t>00:03:12</span>
+                        </div>
+
+                        <div class="ui__frag-time ui__frag-time--center">
+                          <span data-i18n="ui_dur">Dur</span>
+                          <span data-frag-dur-t>00:08:14</span>
+                        </div>
+
+                        <div class="ui__frag-time">
+                          <span data-i18n="ui_out">Out</span>
+                          <span data-frag-out-t>00:11:26</span>
+                        </div>
+                      </div>
+
+                      <button class="ui__frag-add" type="button" data-i18n="ui_add_fragment">Добавить фрагмент</button>
+                    </div>
+
+                    <button class="ui__frag-download" type="button" data-i18n="ui_download_all">Скачать все фрагменты</button>
                   </div>
+
                 </div>
               </div>
             </div>  
@@ -646,109 +733,27 @@
         </section>
 
         <!-- ===== FAQ ===== -->
-        <section class="section section--faq" id="faq">
-          <div class="container">
-            <div class="section__head">
-              <h2 class="section__title" data-i18n="faq_title">Часто задаваемые вопросы</h2>
-            </div>
 
-            <div class="faq">
-              <details class="faq__item" open>
-                <summary class="faq__question" data-i18n="faq_q1">
-                  Что такое Avenor Downloader и чем он отличается от других загрузчиков?
-                </summary>
-                <p class="faq__answer" data-i18n="faq_a1">
-                  Avenor Downloader — это настольное приложение для скачивания, обрезки и конвертации видео и аудио с популярных платформ.
-                  В отличие от онлайн-сервисов и большинства аналогов, Avenor работает полностью локально на вашем компьютере, без загрузки файлов
-                  на сторонние серверы. Это означает: — отсутствие ограничений на размер файлов, — сохранение оригинального качества, — максимальную
-                  скорость загрузки, — полную приватность ваших данных.
-                </p>
-              </details>
-
-              <details class="faq__item">
-                <summary class="faq__question" data-i18n="faq_q2">Какие платформы поддерживаются?</summary>
-                <p class="faq__answer" data-i18n="faq_a2">
-                  Avenor поддерживает большинство популярных видеоплатформ, включая YouTube, Instagram, TikTok, Facebook и Pinterest.
-                  Список регулярно расширяется, так как приложение использует обновляемый модуль загрузки, адаптирующийся под изменения платформ.
-                </p>
-              </details>
-
-              <details class="faq__item">
-                <summary class="faq__question" data-i18n="faq_q3">Почему видео в PRO-плане может весить больше?</summary>
-                <p class="faq__answer" data-i18n="faq_a3">
-                  Потому что Avenor не ухудшает качество видео. В отличие от онлайн-сервисов, которые часто сжимают файл, Avenor сохраняет
-                  оригинальный битрейт, аудиодорожку и кодек, если это возможно. Больший размер — это цена за честное качество.
-                </p>
-              </details>
-
-              <details class="faq__item">
-                <summary class="faq__question" data-i18n="faq_q4">Можно ли скачивать только аудио?</summary>
-                <p class="faq__answer" data-i18n="faq_a4">
-                  Да. Вы можете извлечь только аудиодорожку из видео и сохранить её в удобном формате (например, MP3).
-                  Это удобно для музыки, подкастов, лекций и интервью.
-                </p>
-              </details>
-
-              <button class="faq__toggle" type="button" aria-expanded="false" aria-controls="faqMore">
-                <span class="faq__toggle-text" data-i18n="faq_more_open">Показать ещё вопросы</span>
-                <span class="faq__toggle-icon" aria-hidden="true">▾</span>
-              </button>
-
-              <div class="faq__more" id="faqMore">
-                <details class="faq__item">
-                  <summary class="faq__question" data-i18n="faq_q5">Безопасно ли использовать Avenor?</summary>
-                  <p class="faq__answer" data-i18n="faq_a5">
-                    Да. Avenor: не встраивает рекламу, не устанавливает сторонние расширения, не передаёт ваши файлы третьим лицам,
-                    не собирает содержимое загружаемых видео. Приложение использует официальные и открытые инструменты обработки медиа.
-                  </p>
-                </details>
-
-                <details class="faq__item">
-                  <summary class="faq__question" data-i18n="faq_q6">Зачем нужны Cookies и как их использовать?</summary>
-                  <p class="faq__answer" data-i18n="faq_a6">
-                    Cookies позволяют получать доступ к контенту, который: — доступен только авторизованным пользователям, — ограничен по региону или возрасту,
-                    — скрыт за приватными настройками аккаунта. Вы можете добавить cookies-файл, если понимаете, зачем он нужен. Для обычных публичных видео cookies не требуются.
-                  </p>
-                </details>
-
-                <details class="faq__item">
-                  <summary class="faq__question" data-i18n="faq_q7">Сколько устройств можно использовать с одной подпиской?</summary>
-                  <p class="faq__answer" data-i18n="faq_a7">
-                    Одна PRO-подписка может быть активирована на 2/10 устройствах одновременно в зависимости от вашего тарифа.
-                    Это удобно, если вы используете Avenor, например, на рабочем и домашнем компьютере.
-                  </p>
-                </details>
-
-                <details class="faq__item">
-                  <summary class="faq__question" data-i18n="faq_q8">На каких операционных системах работает Avenor?</summary>
-                  <p class="faq__answer" data-i18n="faq_a8">
-                    На данный момент Avenor поддерживает: Windows 10, Windows 11. Версия для macOS находится в разработке.
-                  </p>
-                </details>
-
-                <details class="faq__item">
-                  <summary class="faq__question" data-i18n="faq_q9">Законно ли скачивать видео через Avenor?</summary>
-                  <p class="faq__answer" data-i18n="faq_a9">
-                    Ответственность за использование контента лежит на пользователе. Avenor — это инструмент, предназначенный для работы с собственными материалами,
-                    открытым контентом и контентом с разрешения правообладателя.
-                  </p>
-                </details>
-              </div>
-            </div>
+        <section class="section section--pro-bg">
+          <video class="pro-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+            <source src="assets/vid/pro-ui-demo.webm" type="video/webm" />
+            <source src="assets/vid/pro-ui-demo.mp4" type="video/mp4" />
+          </video>
+        
+          <div class="features-included">
+            <h2 data-i18n="included_title"></h2>
+        
+            <ul class="features-list">
+              <li data-i18n="included_li_1"></li>
+              <li data-i18n="included_li_2"></li>
+              <li data-i18n="included_li_3"></li>
+              <li data-i18n="included_li_4"></li>
+              <li data-i18n="included_li_5"></li>
+            </ul>
           </div>
         </section>
-
-        <section class="features-included">
-          <h2 data-i18n="included_title"></h2>
         
-          <ul class="features-list">
-            <li data-i18n="included_li_1"></li>
-            <li data-i18n="included_li_2"></li>
-            <li data-i18n="included_li_3"></li>
-            <li data-i18n="included_li_4"></li>
-            <li data-i18n="included_li_5"></li>
-          </ul>
-        </section>
+
         
         
 
@@ -973,7 +978,12 @@
 
 
         <!-- ===== ФИНАЛЬНЫЙ CTA / СКАЧАТЬ ===== -->
-        <section class="section section--cta" id="download">
+        <section class="section section--cta section--cta-video" id="download">
+          <video class="cta-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+            <source src="assets/vid/cta-demo.webm" type="video/webm">
+            <source src="assets/vid/cta-demo.mp4" type="video/mp4">
+          </video>
+          
           <div class="container section__cta-inner">
             <div class="section__cta-content">
               <h2 class="section__title" data-i18n="cta_title">Попробуйте Avenor Downloader бесплатно</h2>
@@ -1016,6 +1026,98 @@
           </div>
         </section>
       </main>
+      <section class="section section--faq" id="faq">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title" data-i18n="faq_title">Часто задаваемые вопросы</h2>
+          </div>
+
+          <div class="faq">
+            <details class="faq__item" open>
+              <summary class="faq__question" data-i18n="faq_q1">
+                Что такое Avenor Downloader и чем он отличается от других загрузчиков?
+              </summary>
+              <p class="faq__answer" data-i18n="faq_a1">
+                Avenor Downloader — это настольное приложение для скачивания, обрезки и конвертации видео и аудио с популярных платформ.
+                В отличие от онлайн-сервисов и большинства аналогов, Avenor работает полностью локально на вашем компьютере, без загрузки файлов
+                на сторонние серверы. Это означает: — отсутствие ограничений на размер файлов, — сохранение оригинального качества, — максимальную
+                скорость загрузки, — полную приватность ваших данных.
+              </p>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question" data-i18n="faq_q2">Какие платформы поддерживаются?</summary>
+              <p class="faq__answer" data-i18n="faq_a2">
+                Avenor поддерживает большинство популярных видеоплатформ, включая YouTube, Instagram, TikTok, Facebook и Pinterest.
+                Список регулярно расширяется, так как приложение использует обновляемый модуль загрузки, адаптирующийся под изменения платформ.
+              </p>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question" data-i18n="faq_q3">Почему видео в PRO-плане может весить больше?</summary>
+              <p class="faq__answer" data-i18n="faq_a3">
+                Потому что Avenor не ухудшает качество видео. В отличие от онлайн-сервисов, которые часто сжимают файл, Avenor сохраняет
+                оригинальный битрейт, аудиодорожку и кодек, если это возможно. Больший размер — это цена за честное качество.
+              </p>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question" data-i18n="faq_q4">Можно ли скачивать только аудио?</summary>
+              <p class="faq__answer" data-i18n="faq_a4">
+                Да. Вы можете извлечь только аудиодорожку из видео и сохранить её в удобном формате (например, MP3).
+                Это удобно для музыки, подкастов, лекций и интервью.
+              </p>
+            </details>
+
+            <button class="faq__toggle" type="button" aria-expanded="false" aria-controls="faqMore">
+              <span class="faq__toggle-text" data-i18n="faq_more_open">Показать ещё вопросы</span>
+              <span class="faq__toggle-icon" aria-hidden="true">▾</span>
+            </button>
+
+            <div class="faq__more" id="faqMore">
+              <details class="faq__item">
+                <summary class="faq__question" data-i18n="faq_q5">Безопасно ли использовать Avenor?</summary>
+                <p class="faq__answer" data-i18n="faq_a5">
+                  Да. Avenor: не встраивает рекламу, не устанавливает сторонние расширения, не передаёт ваши файлы третьим лицам,
+                  не собирает содержимое загружаемых видео. Приложение использует официальные и открытые инструменты обработки медиа.
+                </p>
+              </details>
+
+              <details class="faq__item">
+                <summary class="faq__question" data-i18n="faq_q6">Зачем нужны Cookies и как их использовать?</summary>
+                <p class="faq__answer" data-i18n="faq_a6">
+                  Cookies позволяют получать доступ к контенту, который: — доступен только авторизованным пользователям, — ограничен по региону или возрасту,
+                  — скрыт за приватными настройками аккаунта. Вы можете добавить cookies-файл, если понимаете, зачем он нужен. Для обычных публичных видео cookies не требуются.
+                </p>
+              </details>
+
+              <details class="faq__item">
+                <summary class="faq__question" data-i18n="faq_q7">Сколько устройств можно использовать с одной подпиской?</summary>
+                <p class="faq__answer" data-i18n="faq_a7">
+                  Одна PRO-подписка может быть активирована на 2/10 устройствах одновременно в зависимости от вашего тарифа.
+                  Это удобно, если вы используете Avenor, например, на рабочем и домашнем компьютере.
+                </p>
+              </details>
+
+              <details class="faq__item">
+                <summary class="faq__question" data-i18n="faq_q8">На каких операционных системах работает Avenor?</summary>
+                <p class="faq__answer" data-i18n="faq_a8">
+                  На данный момент Avenor поддерживает: Windows 10, Windows 11. Версия для macOS находится в разработке.
+                </p>
+              </details>
+
+              <details class="faq__item">
+                <summary class="faq__question" data-i18n="faq_q9">Законно ли скачивать видео через Avenor?</summary>
+                <p class="faq__answer" data-i18n="faq_a9">
+                  Ответственность за использование контента лежит на пользователе. Avenor — это инструмент, предназначенный для работы с собственными материалами,
+                  открытым контентом и контентом с разрешения правообладателя.
+                </p>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       <!-- ===== SUPPORT ===== -->
       <section class="section section--support" id="support">
@@ -1208,5 +1310,118 @@
         </div>
       </footer>
     </div>
+
+
+
+    <script>
+      (() => {
+        const root = document.querySelector("[data-frag-demo]");
+        if (!root) return;
+      
+        // элементы
+        const track = root.querySelector("[data-frag-track]");
+        const clip1 = root.querySelector('[data-clip="1"]');
+        const clip2 = root.querySelector('[data-clip="2"]');
+        const addBtn = root.querySelector(".ui__frag-add");
+        const dlBtn  = root.querySelector(".ui__frag-download");
+        const countEl = root.querySelector("[data-frag-count]");
+      
+        const inT  = root.querySelector("[data-frag-in-t]");
+        const outT = root.querySelector("[data-frag-out-t]");
+        const durT = root.querySelector("[data-frag-dur-t]");
+      
+        // стартовые состояния
+        function resetUI() {
+          root.style.setProperty("--in", 18);
+          root.style.setProperty("--out", 62);
+      
+          clip1.classList.remove("is-visible");
+          clip2.classList.remove("is-visible");
+      
+          addBtn.classList.remove("is-pulse");
+      
+          dlBtn.classList.remove("is-downloading");
+          dlBtn.style.setProperty("--p", 0);
+          dlBtn.setAttribute("data-pct", "");
+      
+          countEl.textContent = "0";
+      
+          inT.textContent = "00:03:12";
+          outT.textContent = "00:11:26";
+          durT.textContent = "00:08:14";
+        }
+      
+        // утилита: плавная анимация числа
+        function tween(from, to, ms, onUpdate) {
+          return new Promise((resolve) => {
+            const t0 = performance.now();
+            function frame(t) {
+              const k = Math.min(1, (t - t0) / ms);
+              // easeInOut
+              const e = k < 0.5 ? 2*k*k : 1 - Math.pow(-2*k + 2, 2)/2;
+              const v = from + (to - from) * e;
+              onUpdate(v);
+              if (k < 1) requestAnimationFrame(frame);
+              else resolve();
+            }
+            requestAnimationFrame(frame);
+          });
+        }
+      
+        // маленькие “псевдо таймкоды” под демо
+        const state = {
+          step: 0,
+          clipCount: 0
+        };
+      
+        async function runCycle() {
+          resetUI();
+      
+          // Step 1: двигаем in/out (под Clip 01)
+          await tween(18, 24, 650, (v) => root.style.setProperty("--in", v.toFixed(2)));
+          await tween(62, 70, 650, (v) => root.style.setProperty("--out", v.toFixed(2)));
+      
+          // Пульс кнопки "Добавить фрагмент"
+          addBtn.classList.add("is-pulse");
+          await new Promise(r => setTimeout(r, 220));
+          addBtn.classList.remove("is-pulse");
+      
+          // Появляется Clip 01
+          clip1.classList.add("is-visible");
+          countEl.textContent = "1";
+      
+          // Step 2: чуть подвинем диапазон под Clip 02
+          await new Promise(r => setTimeout(r, 420));
+          await tween(24, 58, 700, (v) => root.style.setProperty("--in", v.toFixed(2)));
+          await tween(70, 86, 700, (v) => root.style.setProperty("--out", v.toFixed(2)));
+      
+          addBtn.classList.add("is-pulse");
+          await new Promise(r => setTimeout(r, 220));
+          addBtn.classList.remove("is-pulse");
+      
+          // Появляется Clip 02
+          clip2.classList.add("is-visible");
+          countEl.textContent = "2";
+      
+          // Step 3: "Скачать все фрагменты" (прогресс на кнопке)
+          await new Promise(r => setTimeout(r, 520));
+          dlBtn.classList.add("is-downloading");
+      
+          // прогресс 0..100
+          for (let p = 0; p <= 100; p += 2) {
+            dlBtn.style.setProperty("--p", p);
+            dlBtn.setAttribute("data-pct", p + "%");
+            await new Promise(r => setTimeout(r, 18));
+          }
+      
+          // F -> H: сразу сброс и повтор
+          await new Promise(r => setTimeout(r, 500));
+          runCycle();
+        }
+      
+        runCycle();
+      })();
+      </script>
+      
 </body>
 </html>
