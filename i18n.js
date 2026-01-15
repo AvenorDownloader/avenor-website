@@ -19,7 +19,9 @@
       meta_desc:
         "Avenor Downloader — программа для скачивания, обрезки и конвертации видео и аудио с YouTube, Instagram, TikTok и других платформ.",
 
-
+        site_notice:
+        "Сайт работает в тестовом режиме. Оплата тарифов временно недоступна — мы ожидаем подтверждение платёжной системы. Пожалуйста, следите за обновлениями.",
+      
         
       nav_why: "Почему Avenor",
       nav_how: "Как работает",
@@ -161,7 +163,9 @@
       nav_support: "Support",
       nav_faq: "FAQ",
       cta_download: "Download",
-
+      site_notice:
+      "The website is currently in test mode. Paid plans are temporarily unavailable while we await payment system approval. Please stay tuned for updates.",
+    
       hero_kicker: "UNIQUE FEATURE: CLIP BEFORE DOWNLOAD",
       hero_title_1: "Avenor Downloader —",
       hero_title_accent: "cut clips BEFORE downloading",
@@ -384,6 +388,9 @@
       nav_faq: "FAQ",
       cta_download: "Descargar",
     
+      site_notice:
+      "El sitio está en modo de prueba. Los planes de pago no están disponibles temporalmente mientras esperamos la aprobación del sistema de pagos.",
+    
       hero_kicker: "FUNCIÓN ÚNICA: RECORTA ANTES DE DESCARGAR",
       hero_title_1: "Avenor Downloader —",
       hero_title_accent: "recorta clips ANTES de descargar",
@@ -605,6 +612,8 @@
       nav_support: "Suporte",
       nav_faq: "FAQ",
       cta_download: "Baixar",
+      site_notice:
+      "O site está em modo de teste. Os planos pagos estão temporariamente indisponíveis enquanto aguardamos a aprovação do sistema de pagamento.",
     
       hero_kicker: "RECURSO ÚNICO: CORTE ANTES DO DOWNLOAD",
       hero_title_1: "Avenor Downloader —",
@@ -841,6 +850,10 @@
       hero_meta_privacy: "Datenschutzerklärung",
       hero_meta_and: "und",
       hero_meta_terms: "Nutzungsbedingungen",
+    
+
+      site_notice:
+      "Die Website befindet sich derzeit im Testmodus. Bezahlte Tarife sind vorübergehend nicht verfügbar, während wir auf die Freigabe des Zahlungssystems warten.",
     
       why_title: "Warum Avenor Downloader",
       why_subtitle:
@@ -1089,6 +1102,10 @@
       hero_badge_local: "Fonctionne localement (privé)",
       hero_badge_free: "Plan gratuit disponible",
 
+
+      site_notice:
+      "Le site est actuellement en mode test. Les offres payantes sont temporairement indisponibles en attente de la validation du système de paiement.",
+    
       how_title: "Comment ça marche",
       how_subtitle: "Trois étapes — et le fichier est sur votre disque.",
       how_s1_t: "Choisissez les paramètres de téléchargement",
@@ -1272,6 +1289,8 @@
       nav_support: "Підтримка",
       nav_faq: "FAQ",
       cta_download: "Завантажити",
+      site_notice:
+      "Сайт наразі працює в тестовому режимі. Платні тарифи тимчасово недоступні — ми очікуємо підтвердження платіжної системи.",
     
       hero_kicker: "УНІКАЛЬНА ФУНКЦІЯ: ФРАГМЕНТ ДО ЗАВАНТАЖЕННЯ",
       hero_title_1: "Avenor Downloader —",

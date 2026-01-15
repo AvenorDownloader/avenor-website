@@ -194,6 +194,28 @@ body {
   background: #a9f044;
 }
 
+
+.site-notice {
+  background: linear-gradient(90deg, #ff9f1c, #ffb703);
+  color: #1a1a1a;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  line-height: 1.4;
+}
+
+.site-notice span {
+  opacity: 0.95;
+}
+
+@media (max-width: 640px) {
+  .site-notice {
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+}
+
 /* ===== HERO ===== */
 
 .hero {
