@@ -134,26 +134,24 @@
             duration: 5000,
           });
 
-          const PADDLE_MODE = "sandbox"; 
-          // когда Paddle одобрит Live — поменяешь на "production"
+          // ===== Paddle (LIVE) =====
+          const PADDLE_ENV = "production"; // "sandbox" или "production"
 
-          const PADDLE_TOKEN_SANDBOX = "test_c0868f35313be3b2ba58cc5a3fe";
-          const PADDLE_TOKEN_PROD = "live_XXXXXXXXXXXX"; // позже вставишь live токен
+          // ВАЖНО: токены НЕ путай местами
+          const PADDLE_TOKEN_SANDBOX = "test_XXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+          const PADDLE_TOKEN_PROD    = "live_3b49a2cdb0ce243817e7bf610ae"; // твой live токен
 
-          // ===== Paddle init (обязательно ДО Checkout.open) =====
           if (window.Paddle) {
-            const isSandbox = PADDLE_MODE === "sandbox";
+            const isSandbox = PADDLE_ENV === "sandbox";
 
             window.Paddle.Environment.set(isSandbox ? "sandbox" : "production");
 
             window.Paddle.Initialize({
               token: isSandbox ? PADDLE_TOKEN_SANDBOX : PADDLE_TOKEN_PROD,
 
-              // страховка: если прилетит completed-событие — тоже редирект
               eventCallback: (e) => {
                 if (e?.name !== "checkout.completed") return;
 
-                // 1) Берём ранее выбранный план
                 let planName = "PRO";
                 let priceId = "";
                 try {
@@ -165,9 +163,7 @@
                   }
                 } catch {}
 
-                // 2) Пытаемся вытащить email / orderId из события (поля могут отличаться)
                 const d = e?.data || e || {};
-
                 const email =
                   d?.customer?.email ||
                   d?.checkout?.customer?.email ||
@@ -182,25 +178,18 @@
                   d?.order?.id ||
                   "";
 
-                // 3) Сохраняем данные для thanks.html
                 sessionStorage.setItem(
                   "avenor_thanks",
-                  JSON.stringify({
-                    planName,
-                    priceId,
-                    email,
-                    orderId,
-                    ts: Date.now(),
-                  })
+                  JSON.stringify({ planName, priceId, email, orderId, ts: Date.now() })
                 );
 
-                // 4) Редирект
                 window.location.href = "/thanks.html";
               },
             });
           } else {
             console.warn("[PADDLE] Paddle.js not loaded");
           }
+
 
           document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
             btn.addEventListener("click", () => {
@@ -793,7 +782,7 @@
           
                   <button class="btn btn--ghost btn--full"
                     data-paddle-checkout
-                    data-price-id="pri_01kb03eq2kdvd8z70xqeyd2k0c"
+                    data-price-id="pri_01kfgx39syjshy5cagk9cnr5te"
                     data-i18n="btn_get_pro"
                   >Оформить PRO</button>
           
@@ -817,7 +806,7 @@
           
                   <button class="btn btn--primary btn--full"
                     data-paddle-checkout
-                    data-price-id="pri_01kcad1tky9rs1kyn2012xgqwp"
+                    data-price-id="pri_01kfgx9xssck9qg4085hmxd1he"
                     data-i18n="btn_get_pro"
                   >Оформить PRO</button>
           
@@ -840,7 +829,7 @@
           
                   <button class="btn btn--ghost btn--full"
                     data-paddle-checkout
-                    data-price-id="pri_01kchx2qbp66tvwr4zkf77mxbv"
+                    data-price-id="pri_01kfgxc5v9wqw64zwgqde39cac"
                     data-i18n="btn_get_pro"
                   >Оформить PRO</button>
           
