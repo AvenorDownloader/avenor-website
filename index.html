@@ -73,12 +73,6 @@
   
   <body>
     <div class="page">
-      <!-- ===== SITE NOTICE (TEST MODE) ===== -->
-      <div class="site-notice" role="status">
-        <span data-i18n="site_notice">
-          Site is in test mode. Payments are temporarily unavailable.
-        </span>
-      </div>
 
       <div id="snow" class="snow" aria-hidden="true"></div>
 
@@ -149,7 +143,7 @@
             window.Paddle.Initialize({
               token: isSandbox ? PADDLE_TOKEN_SANDBOX : PADDLE_TOKEN_PROD,
 
-              eventCallback: (e) => {
+              eventCallback: async (e) => {
                 if (e?.name !== "checkout.completed") return;
 
                 let planName = "PRO";
@@ -177,6 +171,21 @@
                   d?.data?.transaction_id ||
                   d?.order?.id ||
                   "";
+
+              // 1) дергаем серверную функцию, которая запишет лицензию в Supabase
+              try {
+                  await fetch("https://yyyzviatxbwlfdfbbimf.supabase.co/functions/v1/confirm-purchase", {
+                    method: "POST",
+                    headers: { "content-type": "application/json" },
+                    body: JSON.stringify({
+                      email,
+                      transaction_id: orderId,
+                      price_id: priceId,
+                    }),
+                  });
+                } catch (err) {
+                  console.warn("[confirm-purchase] failed", err);
+                }
 
                 sessionStorage.setItem(
                   "avenor_thanks",
