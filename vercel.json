@@ -3,8 +3,7 @@
     {
       "source": "/download/win",
       "destination": "https://download.avenordownload.app/latest/AvenorDownloader-Setup.exe",
-      "permanent": false,
-      "cleanUrls": true
+      "permanent": false
     },
     {
       "source": "/download/mac",
