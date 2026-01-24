@@ -1588,12 +1588,26 @@
   function setHtmlMeta(lang) {
     document.documentElement.setAttribute("lang", lang);
     const dict = T[lang] || T.en;
-
-    if (dict.meta_title) document.title = dict.meta_title;
-
+  
+    const page = document.body?.dataset?.page || "";
+  
+    // page-specific meta (не ломаем SEO страницам)
+    const title =
+      page === "clip-youtube-video"
+        ? (dict.meta_title_clip_youtube || dict.meta_title)
+        : dict.meta_title;
+  
+    const descText =
+      page === "clip-youtube-video"
+        ? (dict.meta_desc_clip_youtube || dict.meta_desc)
+        : dict.meta_desc;
+  
+    if (title) document.title = title;
+  
     const desc = document.querySelector('meta[name="description"]');
-    if (desc && dict.meta_desc) desc.setAttribute("content", dict.meta_desc);
+    if (desc && descText) desc.setAttribute("content", descText);
   }
+  
 
   function applyI18n(lang) {
     const dict = T[lang] || T.en;
