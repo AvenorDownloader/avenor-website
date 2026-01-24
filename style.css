@@ -2836,3 +2836,45 @@ body {
   z-index: 2;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === SEO content === */
+.seo-content {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+
+
+
+.seo-text {
+  padding: 80px 0;
+  background: #0e0e0e;
+}
+
+.seo-text h2 {
+  margin-top: 32px;
+}
+
+.seo-text p,
+.seo-text li {
+  max-width: 820px;
+  opacity: 0.85;
+}
