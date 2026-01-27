@@ -11,7 +11,7 @@
       content="width=device-width, initial-scale=1.0"
     />
 
-    <title>Avenor Downloader — скачивание YouTube, TikTok, Instagram</title>
+    <title>Avenor Downloader — Обрезка YouTube видео до скачивания (Clip before download)</title>
     <meta
       name="description"
       content="Avenor Downloader — программа для скачивания, обрезки и конвертации видео и аудио с YouTube, Instagram, TikTok и других платформ."
@@ -339,22 +339,6 @@
               }, { passive: true });
             }
           }
-
-          // ===== HERO micro animation =====
-          (function heroIntroAnimation() {
-            const items = document.querySelectorAll(".hero-anim");
-            if (!items.length) return;
-
-            items.forEach((el, i) => {
-              // каскадная задержка
-              el.style.transitionDelay = `${i * 80}ms`;
-
-              // рендер-фрейм, чтобы transition сработал корректно
-              requestAnimationFrame(() => {
-                el.classList.add("is-visible");
-              });
-            });
-          })();
 
 
         });
