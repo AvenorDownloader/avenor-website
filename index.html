@@ -1285,7 +1285,8 @@
       <footer class="footer">
         <div class="container footer__inner">
           <div class="footer__brand">
-            <span>© Avenor, 2025</span>
+            <span id="siteCopyright">© Avenor, 2025</span>
+
           </div>
           <div class="footer__links">
             <a href="privacy.html" class="footer__link" data-i18n="footer_privacy">Политика конфиденциальности</a>
@@ -1297,7 +1298,17 @@
       </footer>
     </div>
 
-
+    <script>
+      (function () {
+        const START_YEAR = 2025;
+        const y = new Date().getFullYear();
+        const yr = (y === START_YEAR) ? String(y) : `${START_YEAR}–${y}`;
+    
+        const el = document.getElementById("siteCopyright");
+        if (el) el.textContent = `© Avenor, ${yr}`;
+      })();
+    </script>
+    
 
     <script>
       (() => {
