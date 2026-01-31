@@ -216,6 +216,7 @@
 
       clip_how_btn: "Скачать Avenor",
       clip_use_title: "Для кого подходит Avenor Downloader",
+      platforms_title: "Качай контент с 100+ платформ",
 
       clip_faq_title: "Частые вопросы про обрезку YouTube видео",
       clip_faq_subtitle: "Короткие ответы на самые популярные вопросы перед скачиванием.",
@@ -436,6 +437,7 @@
       free_li_1: "For getting started and basic tasks",
       free_li_2: "Up to 1080p + daily limits",
       free_li_3: "2 devices per email",
+      platforms_title: "Download content from 100+ platforms",
 
       per_month: "/ month",
       btn_get_pro: "Get PRO",
@@ -624,7 +626,8 @@
       faq_title: "Preguntas frecuentes",
       faq_more_open: "Mostrar más preguntas",
       faq_more_close: "Ocultar preguntas",
-    
+      platforms_title: "Descarga contenido de más de 100 plataformas",
+
       support_title: "Soporte",
       support_p:
         "Describe tu problema y te responderemos por correo. Normalmente en un plazo de 6 horas.\n\nSi tienes problemas con Avenor Downloader, descríbelos con el mayor detalle posible para que podamos solucionarlos más rápido.",
@@ -856,7 +859,8 @@
       faq_title: "Perguntas frequentes",
       faq_more_open: "Mostrar mais perguntas",
       faq_more_close: "Ocultar perguntas",
-    
+      platforms_title: "Baixe conteúdo de mais de 100 plataformas",
+
       support_title: "Suporte",
       support_p:
         "Descreva seu problema e responderemos por e-mail. Normalmente em até 6 horas.\n\nSe você encontrar problemas no Avenor Downloader, descreva-os com o máximo de detalhes para que possamos corrigi-los mais rapidamente.",
@@ -1087,7 +1091,8 @@
       faq_more_open: "Mehr Fragen anzeigen",
       faq_more_close: "Fragen ausblenden",
 
-      
+      platforms_title: "Lade Inhalte von über 100 Plattformen herunter",
+
       hero_badge_clip: "Clip vor dem Download",
       hero_badge_local: "Läuft lokal (privat)",
       hero_badge_free: "Kostenloser Plan verfügbar",
@@ -1305,6 +1310,7 @@
       hero_badge_local: "Fonctionne localement (privé)",
       hero_badge_free: "Plan gratuit disponible",
 
+      platforms_title: "Téléchargez du contenu depuis plus de 100 plateformes",
 
       site_notice:
       "Le site est actuellement en mode test. Les offres payantes sont temporairement indisponibles en attente de la validation du système de paiement.",
@@ -1543,7 +1549,8 @@
       hero_badge_clip: "Фрагмент до завантаження",
       hero_badge_local: "Працює локально (приватно)",
       hero_badge_free: "Free-план доступний",
-      
+      platforms_title: "Завантажуй контент із 100+ платформ",
+
       how_title: "Як це працює",
       how_subtitle: "Усього три кроки — і файл уже на вашому диску.",
       how_s1_t: "Оберіть параметри завантаження",
