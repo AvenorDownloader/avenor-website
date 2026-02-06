@@ -1,0 +1,231 @@
+window.__AV_SEO_DICT_EN = {
+  yt_page_title: "Clip YouTube Video — Avenor Downloader",
+  yt_page_desc:
+    "Clip YouTube videos before download. Avenor Downloader for Windows and macOS: precise In/Out, original quality, conversion and audio — all locally on your PC.",
+
+  yt_bc_home: "Home",
+  yt_bc_current: "Clip YouTube Video",
+
+  yt_ld_breadcrumb_home: "Avenor Downloader",
+  yt_ld_breadcrumb_page: "Clip YouTube Video",
+  yt_ld_app_name: "Avenor Downloader",
+  yt_ld_app_desc:
+    "Desktop app for clipping YouTube videos before download, saving quality, and converting audio/video.",
+
+  yt_nav_how: "How to clip",
+  yt_nav_features: "Features",
+  yt_nav_pricing: "Pricing",
+  yt_nav_faq: "FAQ",
+  yt_nav_download: "Download",
+
+  yt_kicker: "Clip YouTube videos before download — no quality loss",
+  yt_h1: "Clip YouTube Videos Before Download",
+  yt_h1_line1: "Clip YouTube Videos",
+  yt_h1_line2: "before download",
+  yt_subtitle:
+    "Set precise In/Out points, download only the segment you need, and keep original quality. Everything runs locally.",
+  yt_b1: "• Precise In/Out before downloading",
+  yt_b2: "• Original quality preserved",
+  yt_b3: "• Files stay on your PC",
+  yt_btn_win: "Download for Windows",
+  yt_btn_mac: "Download for macOS",
+  yt_meta_before: "By downloading, you agree to the",
+  yt_meta_privacy: "Privacy Policy",
+  yt_meta_and: "and",
+  yt_meta_terms: "Terms of Service",
+
+  ui_window_title: "Avenor Downloader",
+  ui_tab_download: "Download",
+  ui_tab_fragments: "Clip",
+  ui_tab_compress: "Compress",
+  ui_tab_convert: "Convert",
+  ui_paste_link: "Paste Link",
+  ui_best_quality: "Best",
+  ui_filter_all: "All",
+  ui_filter_video: "Video",
+  ui_filter_audio: "Audio",
+  ui_elements: "items",
+  ui_task_title_1: "How to Spend 14 Days in Japan - A Japan Travel Itinerary",
+  ui_task_title_2: "Switzerland’s Most Beautiful Mountain Villages — You’ll Want to Move Here Tomorrow",
+  ui_status_done: "Done",
+  ui_open_folder: "Open Folder",
+
+  yt_mock_paste: "Paste link",
+  yt_mock_quality: "Best",
+  yt_mock_frag_h: "Clips (before download)",
+  yt_mock_frag_p: "Set In/Out on the timeline and save only the part you need.",
+  yt_mock_audio_h: "Audio",
+  yt_mock_audio_p: "Extract audio and save it in a convenient format.",
+
+  yt_how_title: "How to clip a YouTube video",
+  yt_how_subtitle: "Three steps — and only the needed fragment is saved.",
+  yt_how_1_t: "Copy the link",
+  yt_how_1_p: "Copy the video URL from your browser or app.",
+  yt_how_2_t: "Paste into Avenor",
+  yt_how_2_p: "Click paste — Avenor will pick up the video.",
+  yt_how_3_t: "Set In/Out",
+  yt_how_3_p: "Choose the start and end before downloading.",
+  yt_how_4_t: "Save the fragment",
+  yt_how_4_p: "Download only the selected part in your chosen quality.",
+  yt_how_cta_h: "Download Avenor Downloader",
+  yt_how_cta_p: "Free for Windows and macOS.",
+  yt_how_cta_btn: "Download",
+
+  yt_features_title: "Why <span class='text-accent'>Avenor</span> is better for clipping",
+  yt_f1_t: "Local and private",
+  yt_f1_p: "Clipping and downloading happen on your PC.",
+  yt_f2_t: "Precise boundaries",
+  yt_f2_p: "Set In/Out before download with frame-level accuracy.",
+  yt_f3_t: "No quality loss",
+  yt_f3_p: "Original video quality is preserved.",
+  yt_f4_t: "Conversion and compression",
+  yt_f4_p: "Convert or compress the clipped fragment right away.",
+
+  yt_faq_title: "FAQ",
+  yt_q1: "Can I clip a video before downloading?",
+  yt_a1:
+    "Yes. Avenor lets you set In/Out points first and downloads only the selected segment.",
+  yt_q2: "Do I need PRO to clip?",
+  yt_a2:
+    "Clipping is available in Free. PRO unlocks 4K/8K, unlimited tasks, and advanced features.",
+  yt_q3: "Is quality preserved after clipping?",
+  yt_a3:
+    "Yes. Avenor keeps original quality without recompression.",
+  yt_q4: "What formats are supported?",
+  yt_a4:
+    "Download video in MP4, MKV, WebM and audio in MP3, M4A, WAV. Conversion is also available.",
+  yt_q5: "Can I clip long videos or playlists?",
+  yt_a5:
+    "Yes. Avenor works with long videos, and PRO enables batch workflows.",
+  yt_q6: "How do I clip private or age‑restricted videos?",
+  yt_a6:
+    "Use cookies import (Netscape format). If you can watch it in your browser, Avenor can clip it.",
+
+  yt_cta_title: "Clip YouTube videos with Avenor",
+  yt_cta_subtitle: "Fast, convenient, and without shady sites. Try it free.",
+
+  yt_related_title: "Useful pages",
+  yt_related_1: "SEO: Download YouTube Video",
+  yt_related_2: "RU main: Download YouTube Video",
+  yt_related_3: "EN main: Download YouTube Video",
+
+  yt_footer_privacy: "Privacy Policy",
+  yt_footer_terms: "Terms of Service",
+  yt_footer_refund: "Refund Policy",
+
+  reviews_title: "User Reviews",
+  reviews_subtitle: "Short and sweet — why people choose Avenor.",
+  review_1_name: "Alex",
+  review_1_date: "2 days ago",
+  review_1_text:
+    "Great app, especially love the ability to trim videos before downloading. Saves a ton of time!",
+  review_2_name: "Maria",
+  review_2_date: "1 week ago",
+  review_2_text:
+    "Simple and intuitive interface. Downloads fast, 4K quality actually works without issues.",
+  review_3_name: "John",
+  review_3_date: "2 weeks ago",
+  review_3_text:
+    "Good program, but would like more audio conversion formats. Otherwise everything is super.",
+  review_4_name: "Helen",
+  review_4_date: "3 weeks ago",
+  review_4_text:
+    "I use it for work, need to download footage often. Avenor handles it perfectly, no glitches.",
+  review_5_name: "Daniel",
+  review_5_date: "1 month ago",
+  review_5_text:
+    "Finally found software that doesn't require a bunch of extra steps. Paste link — get file.",
+  review_6_name: "Sarah",
+  review_6_date: "1 month ago",
+  review_6_text:
+    "Sometimes small delays at start, but download speed makes up for it. Recommended.",
+  review_7_name: "Michael",
+  review_7_date: "2 months ago",
+  review_7_text:
+    "Best downloader for Windows. No ads, viruses or other junk. Pure functionality.",
+  review_8_name: "Olga",
+  review_8_date: "2 months ago",
+  review_8_text:
+    "Was skeptical at first, but the free version convinced me. Bought PRO for 8K and no regrets.",
+  review_9_name: "David",
+  review_9_date: "3 months ago",
+  review_9_text:
+    "Works stably, updates regularly. Support responds quickly if questions arise.",
+  review_10_name: "Anna",
+  review_10_date: "4 months ago",
+  review_10_text:
+    "Convenient for downloading playlists. Waiting for macOS version to install on my second laptop.",
+
+  pricing_title: "Avenor Plans",
+  pricing_subtitle: "Free plan — up to 1080p. PRO unlocks 2K/4K/8K and higher limits.",
+
+  plan_free: "Free",
+  plan_pro_monthly_short: "PRO Monthly",
+  plan_pro_yearly_short: "PRO Yearly",
+  plan_studio_short: "PRO Studio",
+  pricing_btn_download: "Download",
+  free_li_1: "For getting started and basic tasks",
+  free_li_2: "Up to 1080p + daily limits",
+  free_li_3: "2 devices per email",
+
+  plan_pro_monthly: "PRO Monthly",
+  per_month: "/ month",
+  btn_get_pro: "Get PRO",
+  pro_m_li_1: "Full PRO access for 1 month",
+  pro_m_li_2: "4K/8K + unlimited tasks",
+  pro_m_li_fragments: "Clips (before download)",
+  pro_m_li_3: "Best way to try PRO",
+
+  badge_recommended: "Recommended",
+  plan_pro_yearly: "PRO Yearly",
+  per_year_month_equiv: "/ year • €3.25 / month",
+  pro_y_li_fragments: "Clips (before download)",
+  pro_y_li_1: "Best value PRO price",
+  pro_y_li_2: "Save ~55% vs Monthly",
+  pro_y_li_3: "One annual payment",
+  pro_payment_once: "One-time payment forever",
+
+  plan_pro_lifetime: "PRO Lifetime",
+  per_lifetime: "/ lifetime",
+
+  plan_studio_monthly: "PRO STUDIO Monthly",
+  per_month_studio: "/ month",
+
+  plan_studio_yearly: "PRO STUDIO Yearly",
+  per_year_month_equiv_studio: "/ year • €5.00 / month",
+  studio_li_fragments: "Clips for teams",
+  studio_li_1: "For studios and teams",
+  studio_li_2: "Up to 10 devices per account",
+  studio_li_3: "One annual payment",
+
+  plan_studio_lifetime: "PRO STUDIO Lifetime",
+  per_lifetime_studio: "/ lifetime",
+
+  compare_title: "Feature comparison",
+  compare_subtitle: "All plan differences in one table — no need to dig around.",
+  compare_col_features: "Features",
+  compare_devices: "Number of devices",
+  compare_quality: "Max download quality",
+  compare_quality_free: "up to 1080p",
+  compare_quality_pro: "up to 8K",
+  compare_downloads_day: "Downloads per day",
+  unlimited: "Unlimited",
+  compare_convert_compress: "Conversion and compression",
+  compare_limit_3_day: "3 / day",
+  compare_file_size: "Max file size for conversion/compression",
+  compare_file_size_free: "up to 500 MB",
+  no_limits: "No limits",
+  compare_batch: "Batch download",
+  compare_fragments: "Clips (before download)",
+  hint_fragments: "Select In/Out on timeline before downloading",
+  compare_audio_only: "Audio-only download",
+  compare_cookies: "Cookies.txt (private/age-restricted content)*",
+  compare_history: "Download history",
+  compare_priority_support: "Priority support",
+  compare_commercial: "Commercial use",
+
+  nav_aria_label: "Navigation",
+  pricing_compare_aria_label: "Pricing Comparison",
+  cta_aria_label: "Download Avenor",
+  related_aria_label: "Related Pages"
+};
