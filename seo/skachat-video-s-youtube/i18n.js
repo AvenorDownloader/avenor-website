@@ -4,10 +4,20 @@
   const supported = ["ru", "en"];
 
   function getLang() {
+    const p = (location.pathname || "/").toLowerCase();
+  
+    // Язык из URL: /ru/... /en/...
+    const m = p.match(/^\/(ru|en)(\/|$)/);
+    if (m && supported.includes(m[1])) return m[1];
+  
+    // fallback: localStorage
     const saved = (localStorage.getItem(STORAGE_KEY) || "").toLowerCase();
     if (supported.includes(saved)) return saved;
+  
+    // fallback: по умолчанию
     return "ru";
   }
+  
 
   function getDict(lang) {
     if (lang === "en") return window.__AV_SEO_DICT_EN || {};
@@ -87,6 +97,9 @@
   }
   
   function buildJsonLd(dict) {
+    const homeUrl = location.origin + "/";
+    const pageUrl = location.origin + location.pathname.replace(/\/$/, "");
+
     // 1) Breadcrumbs
     setJsonLd("ld-breadcrumb", {
       "@context": "https://schema.org",
@@ -96,13 +109,15 @@
           "@type": "ListItem",
           "position": 1,
           "name": dict.yt_ld_breadcrumb_home || "Avenor Downloader",
-          "item": "https://avenordownload.app/"
+          "item": homeUrl
+
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": dict.yt_ld_breadcrumb_page || dict.yt_h1 || "Download",
-          "item": "https://avenordownload.app/skachat-video-s-youtube"
+          "item": pageUrl
+
         }
       ]
     });
@@ -181,10 +196,20 @@
     document.querySelectorAll("[data-lang-btn]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const v = String(btn.getAttribute("data-lang-btn") || "").toLowerCase();
-        window.AVSeoSetLang?.(v);
-        syncLangButtons();
+        if (!supported.includes(v)) return;
+    
+        // сохраняем
+        localStorage.setItem(STORAGE_KEY, v);
+    
+        // берём "slug" без языка
+        const parts = location.pathname.split("/").filter(Boolean);
+        const rest = (parts[0] && supported.includes(parts[0])) ? parts.slice(1) : parts;
+    
+        // редирект на правильный URL
+        location.href = `/${v}/${rest.join("/")}`;
       });
     });
+    
   
     syncLangButtons();
 
