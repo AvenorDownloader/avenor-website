@@ -17,6 +17,12 @@ window.__AV_SEO_DICT_RU = {
   yt_bc_home: "Главная",
   yt_bc_current: "Скачать видео с YouTube",
 
+  // JSON-LD
+  yt_ld_breadcrumb_home: "Avenor Downloader",
+  yt_ld_breadcrumb_page: "Скачать видео с YouTube",
+  yt_ld_app_name: "Avenor Downloader",
+  yt_ld_app_desc: "Бесплатная программа для скачивания видео с YouTube в 4K/8K. Поддержка плейлистов, субтитров, конвертация в MP3. Без рекламы.",
+
   // Hero
   yt_kicker: "Скачивание YouTube-видео в 1 клик — без сайтов-посредников",
   yt_h1: "Скачать видео с YouTube в максимальном качестве",
@@ -202,9 +208,9 @@ window.__AV_SEO_DICT_RU = {
   pro_y_li_1: "Самая выгодная цена на PRO",
   pro_y_li_2: "Экономия ~55% vs Monthly",
   pro_y_li_3: "Один платёж в год",
+  pro_payment_once: "Оплата один раз и навсегда",
   
-  plan_pro_lifetime: "PRO STUDIO Lifetime",
-  plan_pro_lifetime_real: "PRO Lifetime",
+  plan_pro_lifetime: "PRO Lifetime",
   per_lifetime: "/ навсегда",
   
   plan_studio_monthly: "PRO STUDIO Monthly",

@@ -123,27 +123,26 @@
     });
   
     // 2) FAQ (берём существующие ключи)
-    setJsonLd("ld-faq", {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
+    const faqItems = [
+      { q: dict.yt_q1, a: dict.yt_a1 },
+      { q: dict.yt_q2, a: dict.yt_a2 },
+      { q: dict.yt_q3, a: dict.yt_a3 },
+      { q: dict.yt_q4, a: dict.yt_a4 },
+      { q: dict.yt_q5, a: dict.yt_a5 },
+      { q: dict.yt_q6, a: dict.yt_a6 },
+    ].filter(item => item.q && item.a);
+
+    if (faqItems.length > 0) {
+      setJsonLd("ld-faq", {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqItems.map(item => ({
           "@type": "Question",
-          "name": dict.yt_q1,
-          "acceptedAnswer": { "@type": "Answer", "text": dict.yt_a1 }
-        },
-        {
-          "@type": "Question",
-          "name": dict.yt_q2,
-          "acceptedAnswer": { "@type": "Answer", "text": dict.yt_a2 }
-        },
-        {
-          "@type": "Question",
-          "name": dict.yt_q3,
-          "acceptedAnswer": { "@type": "Answer", "text": dict.yt_a3 }
-        }
-      ]
-    });
+          "name": item.q,
+          "acceptedAnswer": { "@type": "Answer", "text": item.a }
+        }))
+      });
+    }
   
     // 3) SoftwareApplication
     setJsonLd("ld-app", {

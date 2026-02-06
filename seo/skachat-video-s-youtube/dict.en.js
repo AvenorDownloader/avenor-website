@@ -9,6 +9,12 @@ window.__AV_SEO_DICT_EN = {
   yt_bc_home: "Home",
   yt_bc_current: "Download YouTube Video",
 
+  // JSON-LD
+  yt_ld_breadcrumb_home: "Avenor Downloader",
+  yt_ld_breadcrumb_page: "Download YouTube Video",
+  yt_ld_app_name: "Avenor Downloader",
+  yt_ld_app_desc: "Free software to download YouTube videos in 4K/8K. Supports playlists, subtitles, MP3 conversion. No ads.",
+
   // Nav
   yt_nav_how: "How it works",
   yt_nav_features: "Features",
@@ -132,7 +138,7 @@ window.__AV_SEO_DICT_EN = {
   reviews_title: "User Reviews",
   reviews_subtitle: "Short and sweet — why people choose Avenor.",
 
-  review_1_name: "Alexey",
+  review_1_name: "Alex",
   review_1_date: "2 days ago",
   review_1_text: "Great app, especially love the ability to trim videos before downloading. Saves a ton of time!",
 
@@ -144,11 +150,11 @@ window.__AV_SEO_DICT_EN = {
   review_3_date: "2 weeks ago",
   review_3_text: "Good program, but would like more audio conversion formats. Otherwise everything is super.",
 
-  review_4_name: "Elena",
+  review_4_name: "Helen",
   review_4_date: "3 weeks ago",
   review_4_text: "I use it for work, need to download footage often. Avenor handles it perfectly, no glitches.",
 
-  review_5_name: "Dmitry",
+  review_5_name: "Daniel",
   review_5_date: "1 month ago",
   review_5_text: "Finally found software that doesn't require a bunch of extra steps. Paste link — get file.",
 
@@ -212,9 +218,8 @@ window.__AV_SEO_DICT_EN = {
   per_lifetime_studio: "/ lifetime",
   pro_y_li_2: "Save ~55% vs Monthly",
   pro_y_li_3: "One annual payment",
+  pro_payment_once: "One-time payment forever",
 
-  plan_studio_yearly: "PRO STUDIO Yearly",
-  per_year_month_equiv_studio: "/ year • €5.00 / month",
   studio_li_fragments: "Clips for teams",
   studio_li_1: "For studios and teams",
   studio_li_2: "Up to 10 devices per account",
