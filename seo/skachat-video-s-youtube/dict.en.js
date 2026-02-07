@@ -186,6 +186,8 @@ window.__AV_SEO_DICT_EN = {
   plan_pro_monthly_short: "PRO Monthly",
   plan_pro_yearly_short: "PRO Yearly",
   plan_studio_short: "PRO Studio",
+  plan_studio_monthly_short: "PRO Studio Monthly",
+  plan_studio_yearly_short: "PRO Studio Yearly",
   pricing_btn_download: "Download",
   free_li_1: "For getting started and basic tasks",
   free_li_2: "Up to 1080p + daily limits",
@@ -203,27 +205,36 @@ window.__AV_SEO_DICT_EN = {
   plan_pro_yearly: "PRO Yearly",
   per_year_month_equiv: "/ year • €2.41 / month",
   pro_y_li_fragments: "Clips (before download)",
-  pro_y_li_1: "Best value PRO price",
+  per_year: "/ year",
+  pro_y_li_1: "€2.4 / month",
   
   plan_pro_lifetime: "PRO Lifetime",
   per_lifetime: "/ lifetime",
+  pro_life_li_1: "Full PRO access",
+  pro_life_li_2: "Best value",
 
   plan_studio_monthly: "PRO STUDIO Monthly",
   per_month_studio: "/ month",
+  studio_m_li_1: "Commercial use",
+  studio_m_li_2: "For studios and teams",
 
   plan_studio_yearly: "PRO STUDIO Yearly",
   per_year_month_equiv_studio: "/ year • €4.08 / month",
 
   plan_studio_lifetime: "PRO STUDIO Lifetime",
   per_lifetime_studio: "/ lifetime",
-  pro_y_li_2: "Save ~55% vs Monthly",
-  pro_y_li_3: "One annual payment",
+  pro_y_li_2: "Full PRO access",
+  pro_y_li_3: "Save 25%",
   pro_payment_once: "One-time payment forever",
 
   studio_li_fragments: "Clips for teams",
   studio_li_1: "For studios and teams",
   studio_li_2: "Up to 10 devices per account",
   studio_li_3: "One annual payment",
+  studio_y_li_1: "€4 / month",
+  studio_y_li_2: "Commercial use",
+  studio_life_li_1: "Commercial use",
+  studio_life_li_2: "Best for teams",
 
   // ===== COMPARISON TABLE =====
   compare_title: "Feature comparison",

@@ -188,6 +188,8 @@ window.__AV_SEO_DICT_RU = {
   plan_pro_monthly_short: "PRO Monthly",
   plan_pro_yearly_short: "PRO Yearly",
   plan_studio_short: "PRO Studio",
+  plan_studio_monthly_short: "PRO Studio Monthly",
+  plan_studio_yearly_short: "PRO Studio Yearly",
   pricing_btn_download: "Скачать",
   free_li_1: "Для старта и базовых задач",
   free_li_2: "До 1080p + дневные лимиты",
@@ -204,17 +206,22 @@ window.__AV_SEO_DICT_RU = {
   badge_recommended: "Рекомендуем",
   plan_pro_yearly: "PRO Yearly",
   per_year_month_equiv: "/ год • €2.41 в месяц",
+  per_year: "/ год",
   pro_y_li_fragments: "Фрагменты (обрезка до загрузки)",
-  pro_y_li_1: "Самая выгодная цена на PRO",
-  pro_y_li_2: "Экономия ~55% vs Monthly",
-  pro_y_li_3: "Один платёж в год",
+  pro_y_li_1: "2.4€ в месяц",
+  pro_y_li_2: "Полный PRO-доступ",
+  pro_y_li_3: "Экономия 25%",
   pro_payment_once: "Оплата один раз и навсегда",
   
   plan_pro_lifetime: "PRO Lifetime",
   per_lifetime: "/ навсегда",
+  pro_life_li_1: "Полный PRO-доступ",
+  pro_life_li_2: "Best value",
   
   plan_studio_monthly: "PRO STUDIO Monthly",
   per_month_studio: "/ месяц",
+  studio_m_li_1: "Коммерческое использование",
+  studio_m_li_2: "Для студий и команд",
 
   plan_studio_yearly: "PRO STUDIO Yearly",
   per_year_month_equiv_studio: "/ год • €4.08 в месяц",
@@ -222,9 +229,13 @@ window.__AV_SEO_DICT_RU = {
   studio_li_1: "Для студий и команд",
   studio_li_2: "До 10 устройств на аккаунт",
   studio_li_3: "Один платёж в год",
+  studio_y_li_1: "4€ в месяц",
+  studio_y_li_2: "Коммерческое использование",
   
   plan_studio_lifetime: "PRO STUDIO Lifetime",
   per_lifetime_studio: "/ навсегда",
+  studio_life_li_1: "Коммерческое использование",
+  studio_life_li_2: "Best for teams",
 
   // ===== COMPARISON TABLE =====
   compare_title: "Сравнение функций",

@@ -1438,6 +1438,26 @@ main > section:not(.hero):not(#reviews):not(.section--pricing):not(.features):no
   letter-spacing: -0.03em;
   display: flex;
   align-items: baseline;
+  flex-wrap: wrap;
+  column-gap: 6px;
+  row-gap: 4px;
+}
+
+.pricing__old {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.pricing__arrow {
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.pricing__amount {
+  font-size: 36px;
+  font-weight: 800;
 }
 
 .pricing__period {
@@ -1446,6 +1466,7 @@ main > section:not(.hero):not(#reviews):not(.section--pricing):not(.features):no
   color: var(--text-muted);
   margin-left: 2px;
   letter-spacing: normal;
+  white-space: nowrap;
 }
 
 .pricing__btn-wrapper {
@@ -1500,6 +1521,7 @@ main > section:not(.hero):not(#reviews):not(.section--pricing):not(.features):no
   border: 1px solid var(--border-subtle);
   overflow: hidden;
   backdrop-filter: blur(10px);
+  --pc-cols: 7;
 }
 
 .pricing-compare__head {
@@ -1549,7 +1571,7 @@ main > section:not(.hero):not(#reviews):not(.section--pricing):not(.features):no
 /* Grid rows */
 .pc-row {
   display: grid;
-  grid-template-columns: minmax(220px, 1.8fr) repeat(6, 1fr);
+  grid-template-columns: minmax(220px, 1.8fr) repeat(var(--pc-cols, 7), 1fr);
   min-width: 980px;
   transition: background 0.15s ease;
 }
