@@ -100,6 +100,36 @@
       pricing_title: "Подписки Avenor",
       pricing_subtitle:
         "PRO открывает 2K/4K/8K, безлимитные задачи и вкладку Фрагменты для создания клипов ещё до загрузки.",
+      pricing_compare_aria_label: "Сравнение тарифов",
+
+      yt_btn_win: "Скачать для Windows",
+      yt_btn_mac: "Скачать для macOS",
+
+      plan_free: "Free",
+      plan_pro_monthly: "PRO Monthly",
+      plan_pro_yearly: "PRO Yearly",
+      plan_pro_lifetime: "PRO Lifetime",
+      plan_studio_monthly: "PRO STUDIO Monthly",
+      plan_studio_yearly: "PRO STUDIO Yearly",
+      plan_studio_lifetime: "PRO STUDIO Lifetime",
+      plan_pro_monthly_short: "PRO Monthly",
+      plan_pro_yearly_short: "PRO Yearly",
+      plan_studio_monthly_short: "PRO Studio Monthly",
+      plan_studio_yearly_short: "PRO Studio Yearly",
+
+      per_year: "/ год",
+      per_month_studio: "/ месяц",
+      per_lifetime: "/ навсегда",
+      per_lifetime_studio: "/ навсегда",
+
+      pro_life_li_1: "Полный PRO-доступ",
+      pro_life_li_2: "Лучшая цена",
+      studio_m_li_1: "Коммерческое использование",
+      studio_m_li_2: "Для студий и команд",
+      studio_y_li_1: "4€ в месяц",
+      studio_y_li_2: "Коммерческое использование",
+      studio_life_li_1: "Коммерческое использование",
+      studio_life_li_2: "Лучший выбор для команд",
 
       faq_title: "Часто задаваемые вопросы",
       faq_more_open: "Показать ещё вопросы",
@@ -128,6 +158,7 @@
       studio_li_fragments: "Фрагменты для команд",
 
       compare_fragments: "Фрагменты (обрезка до загрузки)",
+      hint_fragments: "Выбор In/Out по таймлайну до скачивания",
 
       clip_hero_kicker: "Обрезка YouTube видео до скачивания",
       clip_hero_title_1: "Обрежьте",
@@ -384,6 +415,7 @@
       pricing_title: "Avenor Plans",
       pricing_subtitle:
         "Free plan up to 1080p. PRO unlocks 2K/4K/8K and higher limits.",
+      pricing_compare_aria_label: "Pricing comparison",
 
       faq_title: "Frequently asked questions",
       faq_more_open: "Show more questions",
@@ -433,6 +465,21 @@
       ui_open_folder: "Open folder",
 
       // ===== Pricing cards =====
+      yt_btn_win: "Download for Windows",
+      yt_btn_mac: "Download for macOS",
+
+      plan_free: "Free",
+      plan_pro_monthly: "PRO Monthly",
+      plan_pro_yearly: "PRO Yearly",
+      plan_pro_lifetime: "PRO Lifetime",
+      plan_studio_monthly: "PRO STUDIO Monthly",
+      plan_studio_yearly: "PRO STUDIO Yearly",
+      plan_studio_lifetime: "PRO STUDIO Lifetime",
+      plan_pro_monthly_short: "PRO Monthly",
+      plan_pro_yearly_short: "PRO Yearly",
+      plan_studio_monthly_short: "PRO Studio Monthly",
+      plan_studio_yearly_short: "PRO Studio Yearly",
+
       pricing_btn_download: "Download",
       free_li_1: "For getting started and basic tasks",
       free_li_2: "Up to 1080p + daily limits",
@@ -440,6 +487,10 @@
       platforms_title: "Download content from 100+ platforms",
 
       per_month: "/ month",
+      per_month_studio: "/ month",
+      per_year: "/ year",
+      per_lifetime: "/ lifetime",
+      per_lifetime_studio: "/ lifetime",
       btn_get_pro: "Get PRO",
 
       pro_m_li_1: "Full PRO for one month",
@@ -457,6 +508,14 @@
       studio_li_1: "For studios and teams",
       studio_li_2: "Up to 10 devices per account",
       studio_li_3: "One payment per year",
+      studio_m_li_1: "Commercial use",
+      studio_m_li_2: "For studios and teams",
+      studio_y_li_1: "€4 / month",
+      studio_y_li_2: "Commercial use",
+      studio_life_li_1: "Commercial use",
+      studio_life_li_2: "Best for teams",
+      pro_life_li_1: "Full PRO access",
+      pro_life_li_2: "Best value",
 
       // ===== Comparison table =====
       compare_title: "Feature comparison",
@@ -522,6 +581,7 @@
       studio_li_fragments: "Fragments for teams",
 
       compare_fragments: "Fragments (trim before download)",
+      hint_fragments: "Select In/Out on the timeline before download",
 
 
 
@@ -622,6 +682,7 @@
       pricing_title: "Planes de Avenor",
       pricing_subtitle:
         "Plan gratuito hasta 1080p. PRO desbloquea 2K/4K/8K y límites ampliados.",
+      pricing_compare_aria_label: "Comparación de planes",
     
       faq_title: "Preguntas frecuentes",
       faq_more_open: "Mostrar más preguntas",
@@ -671,12 +732,31 @@
       ui_open_folder: "Abrir carpeta",
     
       // ===== Pricing cards =====
+      yt_btn_win: "Descargar para Windows",
+      yt_btn_mac: "Descargar para macOS",
+
+      plan_free: "Free",
+      plan_pro_monthly: "PRO Monthly",
+      plan_pro_yearly: "PRO Yearly",
+      plan_pro_lifetime: "PRO Lifetime",
+      plan_studio_monthly: "PRO STUDIO Monthly",
+      plan_studio_yearly: "PRO STUDIO Yearly",
+      plan_studio_lifetime: "PRO STUDIO Lifetime",
+      plan_pro_monthly_short: "PRO Monthly",
+      plan_pro_yearly_short: "PRO Yearly",
+      plan_studio_monthly_short: "PRO Studio Monthly",
+      plan_studio_yearly_short: "PRO Studio Yearly",
+
       pricing_btn_download: "Descargar",
       free_li_1: "Para comenzar y tareas básicas",
       free_li_2: "Hasta 1080p + límites diarios",
       free_li_3: "2 dispositivos por correo",
     
       per_month: "/ mes",
+      per_month_studio: "/ mes",
+      per_year: "/ año",
+      per_lifetime: "/ de por vida",
+      per_lifetime_studio: "/ de por vida",
       btn_get_pro: "Obtener PRO",
     
       pro_m_li_1: "PRO completo por un mes",
@@ -694,6 +774,14 @@
       studio_li_1: "Para estudios y equipos",
       studio_li_2: "Hasta 10 dispositivos por cuenta",
       studio_li_3: "Un solo pago al año",
+      studio_m_li_1: "Uso comercial",
+      studio_m_li_2: "Para estudios y equipos",
+      studio_y_li_1: "4€ / mes",
+      studio_y_li_2: "Uso comercial",
+      studio_life_li_1: "Uso comercial",
+      studio_life_li_2: "Ideal para equipos",
+      pro_life_li_1: "Acceso PRO completo",
+      pro_life_li_2: "Mejor precio",
     
       // ===== Comparison table =====
       compare_title: "Comparación de funciones",
@@ -760,6 +848,7 @@
       studio_li_fragments: "Fragmentos para equipos",
 
       compare_fragments: "Fragmentos (recorte antes de descargar)",
+      hint_fragments: "Selecciona In/Out en la línea de tiempo antes de descargar",
 
 
       refund_title: "Política de reembolsos",
@@ -855,6 +944,7 @@
       pricing_title: "Planos Avenor",
       pricing_subtitle:
         "Plano gratuito até 1080p. PRO desbloqueia 2K/4K/8K e limites ampliados.",
+      pricing_compare_aria_label: "Comparação de planos",
     
       faq_title: "Perguntas frequentes",
       faq_more_open: "Mostrar mais perguntas",
@@ -903,12 +993,31 @@
       ui_open_folder: "Abrir pasta",
     
       // ===== Pricing cards =====
+      yt_btn_win: "Baixar para Windows",
+      yt_btn_mac: "Baixar para macOS",
+
+      plan_free: "Free",
+      plan_pro_monthly: "PRO Monthly",
+      plan_pro_yearly: "PRO Yearly",
+      plan_pro_lifetime: "PRO Lifetime",
+      plan_studio_monthly: "PRO STUDIO Monthly",
+      plan_studio_yearly: "PRO STUDIO Yearly",
+      plan_studio_lifetime: "PRO STUDIO Lifetime",
+      plan_pro_monthly_short: "PRO Monthly",
+      plan_pro_yearly_short: "PRO Yearly",
+      plan_studio_monthly_short: "PRO Studio Monthly",
+      plan_studio_yearly_short: "PRO Studio Yearly",
+
       pricing_btn_download: "Baixar",
       free_li_1: "Para começar e tarefas básicas",
       free_li_2: "Até 1080p + limites diários",
       free_li_3: "2 dispositivos por e-mail",
     
       per_month: "/ mês",
+      per_month_studio: "/ mês",
+      per_year: "/ ano",
+      per_lifetime: "/ vitalício",
+      per_lifetime_studio: "/ vitalício",
       btn_get_pro: "Obter PRO",
     
       pro_m_li_1: "PRO completo por um mês",
@@ -926,6 +1035,14 @@
       studio_li_1: "Para estúdios e equipes",
       studio_li_2: "Até 10 dispositivos por conta",
       studio_li_3: "Pagamento único anual",
+      studio_m_li_1: "Uso comercial",
+      studio_m_li_2: "Para estúdios e equipes",
+      studio_y_li_1: "4€ / mês",
+      studio_y_li_2: "Uso comercial",
+      studio_life_li_1: "Uso comercial",
+      studio_life_li_2: "Melhor para equipes",
+      pro_life_li_1: "Acesso PRO completo",
+      pro_life_li_2: "Melhor custo-benefício",
     
       // ===== Comparison table =====
       compare_title: "Comparação de recursos",
@@ -992,6 +1109,7 @@
       studio_li_fragments: "Fragmentos para equipes",
 
       compare_fragments: "Fragmentos (corte antes de baixar)",
+      hint_fragments: "Selecione In/Out na linha do tempo antes de baixar",
 
 
       refund_title: "Política de reembolso",
@@ -1086,6 +1204,7 @@
       pricing_title: "Avenor Pläne",
       pricing_subtitle:
         "Gratis-Plan bis 1080p. PRO schaltet 2K/4K/8K und höhere Limits frei.",
+      pricing_compare_aria_label: "Preisvergleich",
     
       faq_title: "Häufig gestellte Fragen",
       faq_more_open: "Mehr Fragen anzeigen",
@@ -1141,12 +1260,31 @@
       ui_open_folder: "Ordner öffnen",
     
       // ===== Pricing cards =====
+      yt_btn_win: "Für Windows herunterladen",
+      yt_btn_mac: "Für macOS herunterladen",
+
+      plan_free: "Free",
+      plan_pro_monthly: "PRO Monthly",
+      plan_pro_yearly: "PRO Yearly",
+      plan_pro_lifetime: "PRO Lifetime",
+      plan_studio_monthly: "PRO STUDIO Monthly",
+      plan_studio_yearly: "PRO STUDIO Yearly",
+      plan_studio_lifetime: "PRO STUDIO Lifetime",
+      plan_pro_monthly_short: "PRO Monthly",
+      plan_pro_yearly_short: "PRO Yearly",
+      plan_studio_monthly_short: "PRO Studio Monthly",
+      plan_studio_yearly_short: "PRO Studio Yearly",
+
       pricing_btn_download: "Download",
       free_li_1: "Zum Einstieg und für Basisaufgaben",
       free_li_2: "Bis 1080p + tägliche Limits",
       free_li_3: "2 Geräte pro E-Mail",
     
       per_month: "/ Monat",
+      per_month_studio: "/ Monat",
+      per_year: "/ Jahr",
+      per_lifetime: "/ lebenslang",
+      per_lifetime_studio: "/ lebenslang",
       btn_get_pro: "PRO holen",
     
       pro_m_li_1: "Volles PRO für einen Monat",
@@ -1164,6 +1302,14 @@
       studio_li_1: "Für Studios und Teams",
       studio_li_2: "Bis zu 10 Geräte pro Account",
       studio_li_3: "Eine Zahlung pro Jahr",
+      studio_m_li_1: "Kommerzielle Nutzung",
+      studio_m_li_2: "Für Studios und Teams",
+      studio_y_li_1: "4€ / Monat",
+      studio_y_li_2: "Kommerzielle Nutzung",
+      studio_life_li_1: "Kommerzielle Nutzung",
+      studio_life_li_2: "Am besten für Teams",
+      pro_life_li_1: "Voller PRO-Zugriff",
+      pro_life_li_2: "Bestes Preis-Leistungs-Verhältnis",
     
       // ===== Comparison table =====
       compare_title: "Funktionsvergleich",
@@ -1230,6 +1376,7 @@
       studio_li_fragments: "Fragmente für Teams",
 
       compare_fragments: "Fragmente (Schnitt vor dem Download)",
+      hint_fragments: "In/Out auf der Timeline vor dem Download wählen",
 
 
 
@@ -1329,6 +1476,7 @@
       pricing_title: "Offres Avenor",
       pricing_subtitle:
         "Plan gratuit jusqu’à 1080p. PRO débloque 2K/4K/8K et des limites étendues.",
+      pricing_compare_aria_label: "Comparaison des offres",
     
       faq_title: "Questions fréquentes",
       faq_more_open: "Afficher plus de questions",
@@ -1377,12 +1525,31 @@
       ui_open_folder: "Ouvrir le dossier",
     
       // ===== Pricing cards =====
+      yt_btn_win: "Télécharger pour Windows",
+      yt_btn_mac: "Télécharger pour macOS",
+
+      plan_free: "Free",
+      plan_pro_monthly: "PRO Monthly",
+      plan_pro_yearly: "PRO Yearly",
+      plan_pro_lifetime: "PRO Lifetime",
+      plan_studio_monthly: "PRO STUDIO Monthly",
+      plan_studio_yearly: "PRO STUDIO Yearly",
+      plan_studio_lifetime: "PRO STUDIO Lifetime",
+      plan_pro_monthly_short: "PRO Monthly",
+      plan_pro_yearly_short: "PRO Yearly",
+      plan_studio_monthly_short: "PRO Studio Monthly",
+      plan_studio_yearly_short: "PRO Studio Yearly",
+
       pricing_btn_download: "Télécharger",
       free_li_1: "Pour débuter et les tâches simples",
       free_li_2: "Jusqu’à 1080p + limites quotidiennes",
       free_li_3: "2 appareils par e-mail",
     
       per_month: "/ mois",
+      per_month_studio: "/ mois",
+      per_year: "/ an",
+      per_lifetime: "/ à vie",
+      per_lifetime_studio: "/ à vie",
       btn_get_pro: "Obtenir PRO",
     
       pro_m_li_1: "PRO complet pour un mois",
@@ -1400,6 +1567,14 @@
       studio_li_1: "Pour les studios et les équipes",
       studio_li_2: "Jusqu’à 10 appareils par compte",
       studio_li_3: "Un seul paiement par an",
+      studio_m_li_1: "Usage commercial",
+      studio_m_li_2: "Pour studios et équipes",
+      studio_y_li_1: "4€ / mois",
+      studio_y_li_2: "Usage commercial",
+      studio_life_li_1: "Usage commercial",
+      studio_life_li_2: "Idéal pour les équipes",
+      pro_life_li_1: "Accès PRO complet",
+      pro_life_li_2: "Meilleur prix",
     
       // ===== Comparison table =====
       compare_title: "Comparaison des fonctionnalités",
@@ -1466,6 +1641,7 @@
       studio_li_fragments: "Fragments pour les équipes",
 
       compare_fragments: "Fragments (découpe avant le téléchargement)",
+      hint_fragments: "Choisissez In/Out sur la timeline avant le téléchargement",
 
 
 
@@ -1565,6 +1741,7 @@
       pricing_title: "Плани Avenor",
       pricing_subtitle:
         "Безкоштовний план — до 1080p. PRO відкриває 2K/4K/8K та розширені ліміти.",
+      pricing_compare_aria_label: "Порівняння тарифів",
     
       faq_title: "Поширені запитання",
       faq_more_open: "Показати більше запитань",
@@ -1613,12 +1790,31 @@
       ui_open_folder: "Відкрити папку",
     
       // ===== Pricing cards =====
+      yt_btn_win: "Завантажити для Windows",
+      yt_btn_mac: "Завантажити для macOS",
+
+      plan_free: "Free",
+      plan_pro_monthly: "PRO Monthly",
+      plan_pro_yearly: "PRO Yearly",
+      plan_pro_lifetime: "PRO Lifetime",
+      plan_studio_monthly: "PRO STUDIO Monthly",
+      plan_studio_yearly: "PRO STUDIO Yearly",
+      plan_studio_lifetime: "PRO STUDIO Lifetime",
+      plan_pro_monthly_short: "PRO Monthly",
+      plan_pro_yearly_short: "PRO Yearly",
+      plan_studio_monthly_short: "PRO Studio Monthly",
+      plan_studio_yearly_short: "PRO Studio Yearly",
+
       pricing_btn_download: "Завантажити",
       free_li_1: "Для початку та базових задач",
       free_li_2: "До 1080p + денні ліміти",
       free_li_3: "2 пристрої на e-mail",
     
       per_month: "/ місяць",
+      per_month_studio: "/ місяць",
+      per_year: "/ рік",
+      per_lifetime: "/ назавжди",
+      per_lifetime_studio: "/ назавжди",
       btn_get_pro: "Отримати PRO",
     
       pro_m_li_1: "Повний PRO на один місяць",
@@ -1636,6 +1832,14 @@
       studio_li_1: "Для студій та команд",
       studio_li_2: "До 10 пристроїв на акаунт",
       studio_li_3: "Один платіж на рік",
+      studio_m_li_1: "Комерційне використання",
+      studio_m_li_2: "Для студій і команд",
+      studio_y_li_1: "4€ / місяць",
+      studio_y_li_2: "Комерційне використання",
+      studio_life_li_1: "Комерційне використання",
+      studio_life_li_2: "Найкраще для команд",
+      pro_life_li_1: "Повний доступ PRO",
+      pro_life_li_2: "Найкраща ціна",
     
       // ===== Comparison table =====
       compare_title: "Порівняння можливостей",
@@ -1703,6 +1907,7 @@
       studio_li_fragments: "Фрагменти для команд",
 
       compare_fragments: "Фрагменти (обрізка до завантаження)",
+      hint_fragments: "Вибір In/Out на таймлайні до завантаження",
 
 
       refund_title: "Політика повернення коштів",
@@ -1803,6 +2008,20 @@
       if (!key) return;
       const v = dict[key];
       if (typeof v === "string") el.setAttribute("placeholder", v);
+    });
+
+    document.querySelectorAll("[data-i18n-title]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-title");
+      if (!key) return;
+      const v = dict[key];
+      if (typeof v === "string") el.setAttribute("title", v);
+    });
+
+    document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-aria-label");
+      if (!key) return;
+      const v = dict[key];
+      if (typeof v === "string") el.setAttribute("aria-label", v);
     });
 
         // дать доступ внешнему JS (например, FAQ toggle)
