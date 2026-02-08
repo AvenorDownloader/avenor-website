@@ -1890,6 +1890,10 @@ main > section:not(.hero):not(#reviews):not(.section--pricing):not(.features):no
   border-top: 3px solid var(--accent);
 }
 
+.pricing-compare:not([data-tier-view="studio"]) .pc-row--commercial {
+  display: none;
+}
+
 .pc-check {
   color: var(--accent);
   width: 20px;
