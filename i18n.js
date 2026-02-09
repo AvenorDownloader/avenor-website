@@ -2045,21 +2045,10 @@
   }
 
   function fixInternalLinks(lang) {
-    // Добавляем ?lang= ко всем ссылкам на legal-страницы и на index
-    document
-      .querySelectorAll(
-        'a[href*="privacy.html"], a[href*="terms.html"], a[href*="refund.html"], a[href*="index.html"]'
-      )
-      .forEach((a) => {
-        const href = a.getAttribute("href");
-        if (!href) return;
-  
-        // Не трогаем внешние ссылки
-        if (/^https?:\/\//i.test(href)) return;
-  
-        a.setAttribute("href", withLang(href, lang));
-      });
+    // ✅ больше не добавляем ?lang=, язык хранится в localStorage + /ru/ в SEO URL
+    return;
   }
+  
   
 
   function setupLangDropdown(currentLang) {
@@ -2190,9 +2179,13 @@
         const lang = (item.getAttribute("data-set-lang") || "").toLowerCase();
         if (!SUPPORTED.includes(lang)) return;
 
+        setStoredLang(lang);
+
         const u = new URL(location.href);
-        u.searchParams.set("lang", lang);
-        location.href = u.toString(); // перезагрузка по ТЗ
+        u.searchParams.delete("lang");
+        u.pathname = buildLangPath(lang);
+        location.href = u.toString(); // полный reload как и было
+        
       });
     });
 
@@ -2204,15 +2197,56 @@
   }
 
 
-  const lang = getParamLang() || browserLang();
-
-  // Если параметра не было — ставим его через reload (строго по твоему ТЗ: перезагрузка)
-  if (!getParamLang()) {
-    const u = new URL(location.href);
-    u.searchParams.set("lang", lang);
-    location.replace(u.toString());
-    return;
+  function getStoredLang() {
+    try {
+      const v = (localStorage.getItem("lang") || "").toLowerCase();
+      return SUPPORTED.includes(v) ? v : null;
+    } catch {
+      return null;
+    }
   }
+  
+  function setStoredLang(lang) {
+    try { localStorage.setItem("lang", lang); } catch {}
+  }
+  
+  function getPathLang() {
+    // /ru/clip-youtube-video  -> ru
+    // /clip-youtube-video     -> null (значит default)
+    const parts = location.pathname.split("/").filter(Boolean);
+    const first = (parts[0] || "").toLowerCase();
+    return SUPPORTED.includes(first) ? first : null;
+  }
+  
+  function stripLangPrefix(pathname) {
+    const parts = pathname.split("/").filter(Boolean);
+    const first = (parts[0] || "").toLowerCase();
+    if (SUPPORTED.includes(first)) parts.shift();
+    return "/" + parts.join("/");
+  }
+  
+  function buildLangPath(lang) {
+    const base = stripLangPrefix(location.pathname); // без /ru
+    if (lang === "en") return base || "/";           // EN без префикса
+    return "/" + lang + (base === "/" ? "" : base);  // /ru + путь
+  }
+  
+  // 1) Определяем язык (приоритет: /ru/ -> ?lang= -> localStorage -> браузер)
+  const pathLang = getPathLang();
+  const paramLang = getParamLang();
+  const lang = pathLang || paramLang || getStoredLang() || browserLang();
+  
+  // 2) Если пришли по старому виду ?lang=ru без /ru/ — делаем 301-подобный replace на чистый URL
+  if (!pathLang && paramLang) {
+    const clean = new URL(location.href);
+    clean.searchParams.delete("lang");
+    clean.pathname = buildLangPath(paramLang);
+    location.replace(clean.toString());
+  } else {
+    // запоминаем выбранный язык
+    setStoredLang(lang);
+  }
+  
 
   function runAfterDomReady(fn) {
     if (document.readyState === "loading") {
