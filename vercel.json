@@ -1,4 +1,9 @@
 {
+  "version": 2,
+
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+
   "redirects": [
     {
       "source": "/download/win",
@@ -10,9 +15,5 @@
       "destination": "https://download.avenordownload.app/latest/AvenorDownloader-mac-v1.dmg",
       "permanent": false
     }
-  ],
-  "rewrites": [
-    { "source": "/clip-youtube-video", "destination": "/clip-youtube-video.html" },
-    { "source": "/clip-youtube-video/", "destination": "/clip-youtube-video.html" }
   ]
 }
