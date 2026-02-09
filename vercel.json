@@ -1,9 +1,9 @@
 {
   "version": 2,
-
-  "buildCommand": "npm run build",
+  "buildCommand": "echo \"skip build\"",
   "outputDirectory": "dist",
-
+  "cleanUrls": true,
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/download/win",
