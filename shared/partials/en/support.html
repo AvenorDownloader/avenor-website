@@ -1,0 +1,68 @@
+      <section class="section section--support" id="support">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title" data-i18n="support_title">Need help?</h2>
+            <p class="section__subtitle" data-i18n="support_subtitle">
+              Describe the problem and we will help you resolve it as soon as possible.
+            </p>
+          </div>
+
+          <div class="support">
+            <div class="support__info">
+              <p class="support__hint" id="supportHint" data-i18n="support_hint">
+                It helps to attach the video link, specify the platform and the app version.
+              </p>
+
+              <p class="support__direct">
+                <button type="button" class="btn btn--ghost" id="supportDirectLink" data-i18n="support_direct">
+                  Write directly
+                </button>
+              </p>
+            </div>
+
+            <form class="support__form" id="supportForm">
+              <div class="support__row">
+                <label class="support__field">
+                  <span data-i18n="support_email_label">Your email</span>
+                  <input
+                    type="email"
+                    id="supportEmail"
+                    placeholder="you@example.com"
+                    required
+                    data-i18n-placeholder="support_email_ph"
+                  />
+                </label>
+
+                <label class="support__field">
+                  <span data-i18n="support_subject_label">Subject</span>
+                  <input
+                    type="text"
+                    id="supportSubject"
+                    placeholder="For example: video won't download"
+                    required
+                    data-i18n-placeholder="support_subject_ph"
+                  />
+                </label>
+              </div>
+
+              <label class="support__field">
+                <span data-i18n="support_message_label">Message</span>
+                <textarea
+                  id="supportMessage"
+                  rows="6"
+                  placeholder="Describe your issue in as much detail as possible."
+                  required
+                  data-i18n-placeholder="support_message_ph"
+                ></textarea>
+              </label>
+
+              <div class="support__actions">
+                <button type="submit" class="btn btn--primary" data-i18n="support_send">Send</button>
+                <button type="button" class="btn btn--ghost" id="supportCopyBtn" data-i18n="support_copy">
+                  Copy email
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>

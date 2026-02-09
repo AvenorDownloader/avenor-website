@@ -12,7 +12,21 @@
     }
   ],
   "rewrites": [
-    { "source": "/clip-youtube-video", "destination": "/clip-youtube-video.html" },
-    { "source": "/clip-youtube-video/", "destination": "/clip-youtube-video.html" }
+    {
+      "source": "/ru/skachat-video-s-youtube",
+      "destination": "/ru/skachat-video-s-youtube/index.html"
+    },
+    {
+      "source": "/ru/skachat-video-s-youtube/",
+      "destination": "/ru/skachat-video-s-youtube/index.html"
+    },
+    {
+      "source": "/en/skachat-video-s-youtube",
+      "destination": "/en/skachat-video-s-youtube/index.html"
+    },
+    {
+      "source": "/en/skachat-video-s-youtube/",
+      "destination": "/en/skachat-video-s-youtube/index.html"
+    }
   ]
 }

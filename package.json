@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "build": "node tools/build-pages.js",
+    "dev": "node tools/build-pages.js --watch"
+  },
   "dependencies": {
     "@vercel/speed-insights": "^1.3.1"
   }
