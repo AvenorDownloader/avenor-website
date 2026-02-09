@@ -104,6 +104,8 @@
 
       yt_btn_win: "Скачать для Windows",
       yt_btn_mac: "Скачать для macOS",
+      yt_btn_mac_soon: "Скоро для macOS",
+      mac_unavailable_tooltip: "Версия для macOS временно недоступна. Оставьте email — мы сообщим о релизе.",
 
       plan_free: "Free",
       plan_pro_monthly: "PRO Monthly",
@@ -467,6 +469,8 @@
       // ===== Pricing cards =====
       yt_btn_win: "Download for Windows",
       yt_btn_mac: "Download for macOS",
+      yt_btn_mac_soon: "Coming soon for macOS",
+      mac_unavailable_tooltip: "The macOS version is temporarily unavailable. Leave your email — we’ll notify you when it’s ready.",
 
       plan_free: "Free",
       plan_pro_monthly: "PRO Monthly",
