@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "build": "node tools/build-pages.js",
-    "dev": "node tools/build-pages.js --watch"
+    "build": "echo \"no build\"",
+    "dev": "npx serve ."
   },
   "dependencies": {
     "@vercel/speed-insights": "^1.3.1"
