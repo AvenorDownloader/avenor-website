@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{{ meta.title }}</title>
+    <meta name="description" content="{{ meta.description }}" />
+
+    {# Общие стили/иконки как на главной #}
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/style.css" />
+
+    {# Твой i18n.js можно подключать, если нужно менять UI-тексты #}
+    <script defer src="/i18n.js"></script>
+
+    {# canonical + hreflang (важно для SEO) #}
+    <link rel="canonical" href="{{ canonical }}" />
+    {% for a in alternates %}
+      <link rel="alternate" hreflang="{{ a.hreflang }}" href="{{ a.href }}" />
+    {% endfor %}
+  </head>
+
+  <body>
+    <div class="page">
+      {# Минимальный SEO-хедер (можно потом заменить на твой полноценный) #}
+      <header class="header">
+        <div class="container header__inner">
+          <div class="logo">
+            <a href="/"><img src="/assets/Logo.png" alt="Avenor Downloader" class="logo__img" /></a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" style="min-height: auto; padding-top: 110px;">
+          <div class="container hero__inner">
+            <div class="hero__content">
+              <h1 class="hero__title">
+                {{ meta.h1 }}
+              </h1>
+              <p class="hero__subtitle">
+                {{ meta.lead }}
+              </p>
+
+              <div class="hero__actions hero__actions--os">
+                <a href="/download/win" class="btn btn--primary btn--os" target="_blank" rel="noopener noreferrer">
+                  <img class="os-icon-img" src="/assets/icons/windows.svg" alt="" aria-hidden="true">
+                  <span>Download for Windows</span>
+                </a>
+                <a href="/download/mac" class="btn btn--mac btn--os" target="_blank" rel="noopener noreferrer">
+                  <img class="os-icon-img" src="/assets/icons/apple.svg" alt="" aria-hidden="true">
+                  <span>Download for macOS</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer__inner">
+          <div class="footer__brand">
+            <span>© Avenor</span>
+          </div>
+          <div class="footer__links">
+            <a href="/privacy.html" class="footer__link">Privacy</a>
+            <a href="/terms.html" class="footer__link">Terms</a>
+            <a href="/refund.html" class="footer__link">Refund</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

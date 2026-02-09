@@ -1,9 +1,15 @@
 {
   "scripts": {
-    "build": "echo \"no build\"",
-    "dev": "npx serve ."
+    "dev": "npx serve .",
+    "build": "node seo/build.js",
+    "preview": "npx serve dist"
   },
   "dependencies": {
     "@vercel/speed-insights": "^1.3.1"
+  },
+  "devDependencies": {
+    "chokidar": "^3.6.0",
+    "nunjucks": "^3.2.4",
+    "vite": "^7.3.1"
   }
 }

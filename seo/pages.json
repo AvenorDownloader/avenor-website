@@ -1,0 +1,30 @@
+{
+  "languages": ["ru", "en", "es", "pt", "de", "fr", "uk"],
+  "defaultLang": "en",
+
+  "global": {
+    "siteName": "Avenor Downloader",
+    "baseUrl": "https://avenordownload.app",
+    "assetsPrefix": ""
+  },
+
+  "pages": [
+    {
+      "slug": "clip-youtube-video",
+      "translations": {
+        "en": {
+          "title": "Clip YouTube Video — Avenor Downloader",
+          "description": "Clip YouTube videos before download. Precise In/Out, original quality, conversion and audio — all locally on your PC.",
+          "h1": "Clip YouTube Video Before Download",
+          "lead": "Choose In/Out and download only what you need — in original quality."
+        },
+        "ru": {
+          "title": "Обрезать YouTube видео — Avenor Downloader",
+          "description": "Обрезайте YouTube-видео до скачивания: точные In/Out, оригинальное качество, конвертация и аудио — всё локально на ПК.",
+          "h1": "Обрезать YouTube видео до скачивания",
+          "lead": "Выберите In/Out и скачайте только нужный фрагмент — без потери качества."
+        }
+      }
+    }
+  ]
+}

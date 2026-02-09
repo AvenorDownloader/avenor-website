@@ -1,7 +1,7 @@
 {
   "version": 2,
   "buildCommand": "npm run build",
-  "outputDirectory": ".",
+  "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
@@ -15,5 +15,9 @@
       "destination": "https://download.avenordownload.app/latest/AvenorDownloader-mac-v1.dmg",
       "permanent": false
     }
+  ],
+  "rewrites": [
+    { "source": "/:slug", "destination": "/:slug.html" },
+    { "source": "/:lang/:slug", "destination": "/:lang/:slug.html" }
   ]
 }
