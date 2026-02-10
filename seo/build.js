@@ -117,6 +117,44 @@ function main() {
 
   const { languages, defaultLang, global, pages } = pagesCfg;
 
+  // 1.8) Create localized index.html for language roots
+  console.log("[LANG-INDEX] Generating localized index.html...");
+  const indexHtmlPath = path.join(distDir, "index.html");
+  if (fs.existsSync(indexHtmlPath)) {
+    let indexContent = fs.readFileSync(indexHtmlPath, "utf8");
+
+    for (const lang of languages) {
+      if (lang === defaultLang) continue; // Skip default lang
+
+      const langDir = path.join(distDir, lang);
+      ensureDir(langDir);
+
+      const langIndex = path.join(langDir, "index.html");
+
+      // Fix relative paths to absolute
+      let newContent = indexContent
+        .replace(/src="i18n.js"/g, 'src="/i18n.js"')
+        .replace(/href="style.css"/g, 'href="/style.css"');
+
+      // Update lang attribute
+      newContent = newContent.replace(/<html lang="[^"]*">/i, `<html lang="${lang}">`);
+
+      // Inject script
+      const script = `<script>try{localStorage.setItem("lang","${lang}");}catch(e){}</script>`;
+
+      if (newContent.includes('src="/i18n.js"')) {
+        newContent = newContent.replace('<script defer src="/i18n.js"></script>', `${script}\n    <script defer src="/i18n.js"></script>`);
+      } else {
+        newContent = newContent.replace('</head>', `${script}\n</head>`);
+      }
+
+      fs.writeFileSync(langIndex, newContent, "utf8");
+      console.log(`[LANG-INDEX] Created dist/${lang}/index.html`);
+    }
+  } else {
+    console.warn("[LANG-INDEX] Warning: dist/index.html not found, skipping localized index generation.");
+  }
+
   // 2) render SEO pages
   for (const page of pages) {
     const slug = page.slug;
