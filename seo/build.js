@@ -1,15 +1,10 @@
+// seo/build.js
+console.log("=== BUILD.JS START ===", __filename);
+
 const fs = require("fs");
 const path = require("path");
 const nunjucks = require("nunjucks");
-
-const root = process.cwd();
-const seoDir = path.join(root, "seo");
-const distDir = path.join(root, "dist");
-
-const cfgPath = path.join(seoDir, "pages.json");
-const pagesCfg = JSON.parse(fs.readFileSync(cfgPath, "utf8"));
-
-nunjucks.configure(path.join(seoDir, "templates"), { autoescape: true });
+const { writeSitemapAndRobots } = require("./sitemap");
 
 function ensureDir(p) {
   fs.mkdirSync(p, { recursive: true });
@@ -21,7 +16,6 @@ function writeFile(p, content) {
 }
 
 function buildHreflangs(baseUrl, slug, langs, defaultLang) {
-  // x-default -> defaultLang (обычно EN)
   const out = [];
   for (const l of langs) {
     const href = l === defaultLang ? `${baseUrl}/${slug}` : `${baseUrl}/${l}/${slug}`;
@@ -29,18 +23,39 @@ function buildHreflangs(baseUrl, slug, langs, defaultLang) {
   }
   out.push({
     hreflang: "x-default",
-    href: `${baseUrl}/${defaultLang === "en" ? "" : defaultLang + "/"}${slug}`.replace(/\/\//g, "/").replace("https:/", "https://")
+    href: `${baseUrl}/${defaultLang === "en" ? "" : defaultLang + "/"}${slug}`
+      .replace(/\/\//g, "/")
+      .replace("https:/", "https://"),
   });
   return out;
 }
 
-function build() {
-  // clean dist
+function main() {
+  // ЖЁСТКО стабилизируем root
+  const root = path.resolve(__dirname, ".."); // корень проекта
+  const seoDir = __dirname;                  // .../seo
+  const distDir = path.join(root, "dist");   // .../dist
+
+  console.log("[PATH] root   =", root);
+  console.log("[PATH] seoDir =", seoDir);
+  console.log("[PATH] distDir=", distDir);
+
+  // ВАЖНО: чтобы все относительные пути в других местах не “уезжали”
+  process.chdir(root);
+  console.log("[CWD] =", process.cwd());
+
+  const cfgPath = path.join(seoDir, "pages.json");
+  const pagesCfg = JSON.parse(fs.readFileSync(cfgPath, "utf8"));
+
+  nunjucks.configure(path.join(seoDir, "templates"), { autoescape: true });
+
+  // 1) clean dist
   fs.rmSync(distDir, { recursive: true, force: true });
   ensureDir(distDir);
 
   const { languages, defaultLang, global, pages } = pagesCfg;
 
+  // 2) render SEO pages
   for (const page of pages) {
     const slug = page.slug;
 
@@ -63,63 +78,37 @@ function build() {
         meta: t,
         canonical,
         alternates,
-        global
+        global,
       });
 
       writeFile(outFile, html);
     }
   }
 
-  // копируем статические файлы (главная и legal) — чтобы dist был самодостаточным
-  const staticFiles = [
-    "index.html",
-    "style.css",
-    "i18n.js",
-    "privacy.html",
-    "terms.html",
-    "refund.html",
-    "thanks.html",
-    "robots.txt",
-    "sitemap.xml",
-    "favicon.ico",
-    "favicon.png"
-  ];  
-  for (const f of staticFiles) {
-    const src = path.join(root, f);
-    if (fs.existsSync(src)) {
-      fs.copyFileSync(src, path.join(distDir, f));
-    }
+  console.log("✅ SEO pages build done -> dist/");
+
+  // 3) sitemap + robots (ОДИН РАЗ)
+  console.log("[SITEMAP] generating into:", distDir);
+  writeSitemapAndRobots({ root, distDir });
+  console.log("[SITEMAP] done");
+
+  // 4) hard check
+  const sm = path.join(distDir, "sitemap.xml");
+  const rb = path.join(distDir, "robots.txt");
+
+  console.log("[CHECK] sitemap exists?", fs.existsSync(sm), sm);
+  console.log("[CHECK] robots exists?", fs.existsSync(rb), rb);
+
+  if (!fs.existsSync(sm) || !fs.existsSync(rb)) {
+    throw new Error("Sitemap/robots not created in dist.");
   }
 
-  // ✅ favicons: если лежат в /public, продублируем в корень dist (нужно для /favicon.ico)
-  const favCandidates = [
-    path.join(root, "favicon.ico"),
-    path.join(root, "favicon.png"),
-    path.join(root, "public", "favicon.ico"),
-    path.join(root, "public", "favicon.png"),
-  ];
-
-  for (const srcFav of favCandidates) {
-    if (!fs.existsSync(srcFav)) continue;
-
-    const base = path.basename(srcFav); // favicon.ico / favicon.png
-    const dst = path.join(distDir, base);
-
-    // перезаписываем, чтобы гарантированно было
-    fs.copyFileSync(srcFav, dst);
-  }
-
-  // копируем папки assets/ и public/ если есть
-  const dirsToCopy = ["assets", "public"];
-  for (const d of dirsToCopy) {
-    const srcDir = path.join(root, d);
-    const dstDir = path.join(distDir, d);
-    if (!fs.existsSync(srcDir)) continue;
-
-    fs.cpSync(srcDir, dstDir, { recursive: true });
-  }
-
-  console.log("✅ SEO build done -> dist/");
+  console.log("✅ BUILD OK");
 }
 
-build();
+try {
+  main();
+} catch (e) {
+  console.error("❌ BUILD FAILED:", e);
+  process.exit(1);
+}
