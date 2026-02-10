@@ -96,6 +96,11 @@ function main() {
   const sm = path.join(distDir, "sitemap.xml");
   const rb = path.join(distDir, "robots.txt");
 
+  const srcIndex = path.join(root, "index.html");
+  const dstIndex = path.join(distDir, "index.html");
+  if (fs.existsSync(srcIndex)) fs.copyFileSync(srcIndex, dstIndex);
+
+
   console.log("[CHECK] sitemap exists?", fs.existsSync(sm), sm);
   console.log("[CHECK] robots exists?", fs.existsSync(rb), rb);
 
