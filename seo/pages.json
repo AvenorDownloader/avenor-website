@@ -5,7 +5,13 @@
   "global": {
     "siteName": "Avenor Downloader",
     "baseUrl": "https://avenordownload.app",
-    "assetsPrefix": ""
+    "assetsPrefix": "",
+    "pricing": {
+      "free": { "price": "€0", "period": "forever", "id": "free" },
+      "monthly": { "price": "€14.90", "period": "month", "id": "pro_monthly" },
+      "yearly": { "price": "€29.90", "period": "year", "id": "pro_yearly" },
+      "lifetime": { "price": "€49.90", "period": "one-time", "id": "pro_lifetime" }
+    }
   },
 
   "pages": [
@@ -34,6 +40,8 @@
           "description": "Download YouTube videos locally on your PC. Choose quality, clip In/Out, keep privacy. Windows + macOS desktop app.",
           "h1": "Download YouTube Videos in Original Quality",
           "lead": "Download locally on your PC. Choose quality, clip In/Out, keep privacy.",
+          "heroBadges": ["Clip before download", "Works locally (private)", "Original quality"],
+          "pricingEmbed": true,
           "sections": [
             {
               "type": "what_is",
@@ -141,6 +149,8 @@
           "description": "Скачивайте YouTube видео локально на ПК. Выбирайте качество, обрезайте In/Out, сохраняйте конфиденциальность. Десктопное приложение для Windows и macOS.",
           "h1": "Скачать YouTube видео в оригинальном качестве",
           "lead": "Скачивайте локально на ПК. Выбирайте качество, обрезайте In/Out, сохраняйте конфиденциальность.",
+          "heroBadges": ["Обрезка до скачивания", "Работает локально (приватно)", "Оригинальное качество"],
+          "pricingEmbed": true,
           "sections": [
             {
               "type": "what_is",

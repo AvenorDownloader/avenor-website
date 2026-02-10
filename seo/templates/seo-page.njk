@@ -1,3 +1,188 @@
+{% set ui = {
+  en: {
+    nav_features: "Features",
+    nav_how: "How it works",
+    nav_pricing: "Pricing",
+    nav_faq: "FAQ",
+    faq_title: "Frequently Asked Questions",
+    footer_legal: "Legal",
+    footer_privacy: "Privacy Policy",
+    footer_terms: "Terms of Service",
+    footer_refund: "Refund Policy",
+    footer_support: "Support",
+    download_win: "Download for Windows",
+    download_mac: "Download for macOS",
+    pricing_title: "Simple, transparent pricing",
+    pricing_subtitle: "Start for free, upgrade for more power.",
+    pricing_month: "month",
+    pricing_year: "year",
+    pricing_forever: "forever",
+    pricing_one_time: "one-time",
+    pricing_btn_free: "Download Free",
+    pricing_btn_pro: "Get PRO",
+    plan_free: "Free",
+    plan_pro_monthly: "PRO Monthly",
+    plan_pro_yearly: "PRO Yearly",
+    plan_lifetime: "Lifetime",
+    badge_flexible: "Most Flexible",
+    badge_best_value: "Best Value",
+    feat_1080p: "Download up to 1080p",
+    feat_5_downloads: "5 downloads / day",
+    feat_basic_speed: "Basic speed",
+    feat_8k: "Up to 8K Quality",
+    feat_unlimited: "Unlimited Downloads",
+    feat_turbo: "Turbo Speed",
+    feat_clip: "Clip & Convert",
+    feat_one_time: "One-time payment",
+    feat_all_pro: "All PRO features",
+    feat_updates: "Lifetime updates"
+  },
+  ru: {
+    nav_features: "Возможности",
+    nav_how: "Как это работает",
+    nav_pricing: "Цены",
+    nav_faq: "FAQ",
+    faq_title: "Часто задаваемые вопросы",
+    footer_legal: "Юридическая информация",
+    footer_privacy: "Политика конфиденциальности",
+    footer_terms: "Условия использования",
+    footer_refund: "Политика возврата",
+    footer_support: "Поддержка",
+    download_win: "Скачать для Windows",
+    download_mac: "Скачать для macOS",
+    pricing_title: "Простые и прозрачные цены",
+    pricing_subtitle: "Начните бесплатно, обновитесь для большей мощности.",
+    pricing_month: "мес",
+    pricing_year: "год",
+    pricing_forever: "навсегда",
+    pricing_one_time: "разово",
+    pricing_btn_free: "Скачать бесплатно",
+    pricing_btn_pro: "Купить PRO",
+    plan_free: "Free",
+    plan_pro_monthly: "PRO Monthly",
+    plan_pro_yearly: "PRO Yearly",
+    plan_lifetime: "Lifetime",
+    badge_flexible: "Популярный выбор",
+    badge_best_value: "Выгодный выбор",
+    feat_1080p: "Скачивание до 1080p",
+    feat_5_downloads: "5 загрузок в день",
+    feat_basic_speed: "Базовая скорость",
+    feat_8k: "Качество до 8K",
+    feat_unlimited: "Безлимитные загрузки",
+    feat_turbo: "Турбо скорость",
+    feat_clip: "Обрезка и конвертация",
+    feat_one_time: "Единоразовый платеж",
+    feat_all_pro: "Все функции PRO",
+    feat_updates: "Вечные обновления"
+  },
+  es: {
+    nav_features: "Características",
+    nav_how: "Cómo funciona",
+    nav_pricing: "Precios",
+    nav_faq: "FAQ",
+    footer_legal: "Legal",
+    footer_privacy: "Política de privacidad",
+    footer_terms: "Términos de servicio",
+    footer_refund: "Política de reembolso",
+    footer_support: "Soporte",
+    download_win: "Descargar para Windows",
+    download_mac: "Descargar para macOS",
+    pricing_title: "Precios simples y transparentes",
+    pricing_subtitle: "Comienza gratis, mejora para más potencia.",
+    pricing_month: "mes",
+    pricing_year: "año",
+    pricing_forever: "para siempre",
+    pricing_one_time: "pago único",
+    pricing_btn_free: "Descargar gratis",
+    pricing_btn_pro: "Obtener PRO"
+  },
+  pt: {
+    nav_features: "Recursos",
+    nav_how: "Como funciona",
+    nav_pricing: "Preços",
+    nav_faq: "FAQ",
+    footer_legal: "Legal",
+    footer_privacy: "Política de privacidade",
+    footer_terms: "Termos de serviço",
+    footer_refund: "Política de reembolso",
+    footer_support: "Suporte",
+    download_win: "Baixar para Windows",
+    download_mac: "Baixar para macOS",
+    pricing_title: "Preços simples e transparentes",
+    pricing_subtitle: "Comece grátis, faça upgrade para mais poder.",
+    pricing_month: "mês",
+    pricing_year: "ano",
+    pricing_forever: "para sempre",
+    pricing_one_time: "pagamento único",
+    pricing_btn_free: "Baixar grátis",
+    pricing_btn_pro: "Obter PRO"
+  },
+  de: {
+    nav_features: "Funktionen",
+    nav_how: "Wie es funktioniert",
+    nav_pricing: "Preise",
+    nav_faq: "FAQ",
+    footer_legal: "Rechtliches",
+    footer_privacy: "Datenschutz",
+    footer_terms: "Nutzungsbedingungen",
+    footer_refund: "Rückerstattung",
+    footer_support: "Support",
+    download_win: "Download für Windows",
+    download_mac: "Download für macOS",
+    pricing_title: "Einfache, transparente Preise",
+    pricing_subtitle: "Starten Sie kostenlos, upgraden Sie für mehr Leistung.",
+    pricing_month: "Monat",
+    pricing_year: "Jahr",
+    pricing_forever: "für immer",
+    pricing_one_time: "einmalig",
+    pricing_btn_free: "Kostenlos herunterladen",
+    pricing_btn_pro: "PRO holen"
+  },
+  fr: {
+    nav_features: "Fonctionnalités",
+    nav_how: "Comment ça marche",
+    nav_pricing: "Tarifs",
+    nav_faq: "FAQ",
+    footer_legal: "Légal",
+    footer_privacy: "Politique de confidentialité",
+    footer_terms: "Conditions d'utilisation",
+    footer_refund: "Politique de remboursement",
+    footer_support: "Support",
+    download_win: "Télécharger pour Windows",
+    download_mac: "Télécharger pour macOS",
+    pricing_title: "Tarifs simples et transparents",
+    pricing_subtitle: "Commencez gratuitement, passez à la vitesse supérieure.",
+    pricing_month: "mois",
+    pricing_year: "an",
+    pricing_forever: "pour toujours",
+    pricing_one_time: "une fois",
+    pricing_btn_free: "Télécharger gratuitement",
+    pricing_btn_pro: "Obtenir PRO"
+  },
+  uk: {
+    nav_features: "Можливості",
+    nav_how: "Як це працює",
+    nav_pricing: "Ціни",
+    nav_faq: "FAQ",
+    footer_legal: "Юридична інформація",
+    footer_privacy: "Політика конфіденційності",
+    footer_terms: "Умови використання",
+    footer_refund: "Політика повернення",
+    footer_support: "Підтримка",
+    download_win: "Завантажити для Windows",
+    download_mac: "Завантажити для macOS",
+    pricing_title: "Прості та прозорі ціни",
+    pricing_subtitle: "Почніть безкоштовно, оновіться для більшої потужності.",
+    pricing_month: "міс",
+    pricing_year: "рік",
+    pricing_forever: "назавжди",
+    pricing_one_time: "разово",
+    pricing_btn_free: "Завантажити безкоштовно",
+    pricing_btn_pro: "Купити PRO"
+  }
+} %}
+{% set t_ui = ui[lang] or ui['en'] %}
+
 <!DOCTYPE html>
 <html lang="{{ lang }}">
   <head>
@@ -16,6 +201,8 @@
     <meta property="og:site_name" content="{{ global.siteName }}" />
     {% if meta.ogImage %}
     <meta property="og:image" content="{{ global.baseUrl }}{{ global.assetsPrefix }}{{ meta.ogImage }}" />
+    {% else %}
+    <meta property="og:image" content="{{ global.baseUrl }}/assets/og/youtube2.png" />
     {% endif %}
 
     {# JSON-LD structured data #}
@@ -24,7 +211,7 @@
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "Avenor Downloader",
-      "description": "Desktop application for downloading YouTube videos in original quality",
+      "description": "{{ meta.description }}",
       "url": "{{ global.baseUrl }}",
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": ["Windows 10", "Windows 11", "macOS 10.14+", "macOS 11+", "macOS 12+"],
@@ -64,7 +251,6 @@
     </script>
     {% endif %}
 
-    {# Общие стили/иконки как на главной #}
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="apple-touch-icon" href="/favicon.png">
@@ -74,124 +260,421 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="/style.css" />
+    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 
-    {# canonical + hreflang (важно для SEO) #}
+    {# canonical + hreflang #}
     <link rel="canonical" href="{{ canonical }}" />
     {% for a in alternates %}
       <link rel="alternate" hreflang="{{ a.hreflang }}" href="{{ a.href }}" />
     {% endfor %}
+
+    <style>
+      /* Extra styles for SEO page specific elements if needed */
+      .seo-page section {
+        padding: 4rem 0;
+      }
+      .seo-page .hero {
+        padding-top: 8rem; /* Account for fixed header */
+        padding-bottom: 4rem;
+        min-height: auto;
+      }
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+      .step-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 1.5rem;
+        position: relative;
+      }
+      .step-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.1);
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+        line-height: 1;
+      }
+      .step-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #fff;
+      }
+      .step-desc {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.5;
+      }
+      
+      /* Benefits grid reuse existing features classes or create simple one */
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+      .benefit-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        padding: 1.5rem;
+      }
+      .benefit-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #fff;
+      }
+      .benefit-desc {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      /* Two column text+image */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+      @media (max-width: 768px) {
+        .two-col { grid-template-columns: 1fr; }
+        .hero .two-col { display: flex; flex-direction: column-reverse; }
+      }
+      .text-content h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(90deg, #fff 0%, #a5a5a5 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .text-content p {
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+      }
+
+      /* Language switcher specific for static page */
+      .lang__menu a {
+        display: block;
+        padding: 8px 16px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+      .lang__menu a:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      
+      /* FAQ Accordion */
+      .faq-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 1rem;
+      }
+      .faq-summary {
+        padding: 1rem 0;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1.1rem;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .faq-summary::-webkit-details-marker { display: none; }
+      .faq-summary::after {
+        content: '+';
+        font-size: 1.5rem;
+        font-weight: 300;
+      }
+      details[open] .faq-summary::after { content: '-'; }
+      .faq-answer {
+        padding-bottom: 1.5rem;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+      }
+    </style>
   </head>
 
   <body>
-    <div class="page">
-      {# Минимальный SEO-хедер (можно потом заменить на твой полноценный) #}
+    <div class="page seo-page">
+      <div id="snow" class="snow" aria-hidden="true"></div>
+
+      <!-- HEADER -->
       <header class="header">
         <div class="container header__inner">
           <div class="logo">
             <a href="/"><img src="/assets/Logo.png" alt="Avenor Downloader" class="logo__img" /></a>
           </div>
+
+          <nav class="nav">
+            <a href="#benefits" class="nav__link">{{ t_ui.nav_features }}</a>
+            <a href="#how-it-works" class="nav__link">{{ t_ui.nav_how }}</a>
+            {% if meta.pricingEmbed %}
+            <a href="#pricing" class="nav__link">{{ t_ui.nav_pricing }}</a>
+            {% endif %}
+            <a href="#faq" class="nav__link">{{ t_ui.nav_faq }}</a>
+          </nav>
+
+          <div class="header__right">
+            <div class="lang">
+              <button class="lang__btn" type="button">
+                <span class="lang__flag">🌐</span>
+                <span class="lang__code">{{ lang | upper }}</span>
+                <span class="lang__caret">▾</span>
+              </button>
+              <div class="lang__menu">
+                {% for a in alternates %}
+                <a href="{{ a.href }}" class="lang__item">{{ a.hreflang | upper }}</a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
         </div>
       </header>
 
-      <main class="page seo-page">
-        <section class="hero">
-          <div class="container hero__inner">
-            <div class="hero__content">
-              <h1 class="hero__title">
-                {{ meta.h1 }}
-              </h1>
-              <p class="hero__subtitle">
-                {{ meta.lead }}
-              </p>
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+          <source src="/assets/vid/hero-demo.webm" type="video/webm" />
+          <source src="/assets/vid/hero-demo.mp4" type="video/mp4" />
+        </video>
+        
+        <div class="container hero__inner two-col">
+          <div class="hero__content">
+            <h1 class="hero__title">
+              {{ meta.h1 }}
+            </h1>
 
-              <div class="hero__actions hero__actions--os">
-                <a href="/download/win" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
-                  <img class="os-icon-img" src="/assets/icons/windows.svg" alt="" aria-hidden="true">
-                  <span>Download for Windows</span>
-                </a>
-                <a href="/download/mac" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
-                  <img class="os-icon-img" src="/assets/icons/apple.svg" alt="" aria-hidden="true">
-                  <span>Download for macOS</span>
-                </a>
+            <p class="hero__subtitle">
+              {{ meta.lead }}
+            </p>
+
+            {% if meta.heroBadges %}
+            <div class="hero__badges">
+              {% for badge in meta.heroBadges %}
+              <span class="hero__badge hero__badge--primary">{{ badge }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+
+            <div class="hero__actions hero__actions--os">
+              <a href="/download/win" class="btn btn--primary btn--os">
+                <img class="os-icon-img" src="/assets/icons/windows.svg" alt="" aria-hidden="true">
+                <span>{{ t_ui.download_win }}</span>
+              </a>
+              <a href="/download/mac" class="btn btn--mac btn--os">
+                <img class="os-icon-img" src="/assets/icons/apple.svg" alt="" aria-hidden="true">
+                <span>{{ t_ui.download_mac }}</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero__visual">
+             <!-- Use a static image for reliability on SEO pages -->
+             <img src="/assets/mockup.png" alt="Avenor Interface" style="max-width: 100%; height: auto; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));" />
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTIONS -->
+      {% for section in meta.sections %}
+        
+        {% if section.type == 'benefits' %}
+        <section class="section" id="benefits">
+          <div class="container">
+            <h2 class="section__title">{{ section.title }}</h2>
+            <div class="benefits-grid">
+              {% for item in section.items %}
+              <div class="benefit-card">
+                <h3 class="benefit-title">{{ item.title }}</h3>
+                <p class="benefit-desc">{{ item.description }}</p>
               </div>
+              {% endfor %}
             </div>
           </div>
         </section>
 
-        {# Additional sections if they exist #}
-        {% if meta.sections %}
-          {% for section in meta.sections %}
-            <section class="section section--alt">
-              <div class="container">
-                <div class="section__head">
-                  <h2 class="section__title">{{ section.title }}</h2>
-                </div>
-                
-                {% if section.type == "what_is" or section.type == "clip_feature" or section.type == "quality_formats" or section.type == "privacy_safety" or section.type == "platforms" %}
-                  <div class="section__content">
-                    <p>{{ section.content }}</p>
-                  </div>
-                {% elif section.type == "benefits" and section.items %}
-                  <div class="section__content">
-                    <div class="hero__badges">
-                      {% for item in section.items %}
-                        <div class="hero__badge">
-                          <strong>{{ item.title }}:</strong> {{ item.description }}
-                        </div>
-                      {% endfor %}
-                    </div>
-                  </div>
-                {% elif section.type == "how_it_works" and section.steps %}
-                  <div class="section__content">
-                    <ol class="steps-list">
-                      {% for step in section.steps %}
-                        <li class="step-item">
-                          <h3 class="step-item__title">{{ step.title }}</h3>
-                          <p class="step-item__description">{{ step.description }}</p>
-                        </li>
-                      {% endfor %}
-                    </ol>
-                  </div>
-                {% endif %}
+        {% elif section.type == 'how_it_works' %}
+        <section class="section" id="how-it-works">
+          <div class="container">
+            <h2 class="section__title">{{ section.title }}</h2>
+            <div class="steps-grid">
+              {% for step in section.steps %}
+              <div class="step-card">
+                <span class="step-number">{{ loop.index }}</span>
+                <h3 class="step-title">{{ step.title }}</h3>
+                <p class="step-desc">{{ step.description }}</p>
               </div>
-            </section>
-          {% endfor %}
-        {% endif %}
-
-        {# FAQ section if it exists #}
-        {% if meta.faq %}
-          <section class="section section--faq">
-            <div class="container">
-              <div class="section__head">
-                <h2 class="section__title">FAQ</h2>
-              </div>
-              <div class="section__content">
-                {% for item in meta.faq %}
-                  <details class="hero__badge">
-                    <summary><strong>{{ item.question }}</strong></summary>
-                    <div style="margin-top: 1rem;">
-                      <p>{{ item.answer }}</p>
-                    </div>
-                  </details>
-                {% endfor %}
-              </div>
+              {% endfor %}
             </div>
-          </section>
-        {% endif %}
-      </main>
+          </div>
+        </section>
 
+        {% else %}
+        <!-- Generic Text/Content Block -->
+        <section class="section">
+          <div class="container">
+             {% if section.title %}
+             <h2 class="section__title" style="margin-bottom: 1.5rem;">{{ section.title }}</h2>
+             {% endif %}
+             <div class="text-content">
+               <p>{{ section.content }}</p>
+             </div>
+          </div>
+        </section>
+        {% endif %}
+
+      {% endfor %}
+
+      <!-- PRICING -->
+      {% if meta.pricingEmbed %}
+      <section class="section pricing" id="pricing">
+        <div class="container">
+          <h2 class="section__title">{{ t_ui.pricing_title }}</h2>
+          <p class="section__subtitle">{{ t_ui.pricing_subtitle }}</p>
+          
+          <div class="pricing__grid">
+            <!-- Free Plan -->
+            <div class="pricing__card">
+              <div class="pricing__header">
+                <h3 class="pricing__name">{{ t_ui.plan_free }}</h3>
+                <div class="pricing__price">{{ global.pricing.free.price }}<span class="pricing__period">/ {{ t_ui.pricing_forever }}</span></div>
+              </div>
+              <ul class="pricing__features">
+                <li>{{ t_ui.feat_1080p }}</li>
+                <li>{{ t_ui.feat_5_downloads }}</li>
+                <li>{{ t_ui.feat_basic_speed }}</li>
+              </ul>
+              <a href="/download/win" class="btn btn--secondary btn--full">{{ t_ui.pricing_btn_free }}</a>
+            </div>
+
+            <!-- Pro Monthly -->
+            <div class="pricing__card pricing__card--popular">
+              <div class="pricing__badge">{{ t_ui.badge_flexible }}</div>
+              <div class="pricing__header">
+                <h3 class="pricing__name">{{ t_ui.plan_pro_monthly }}</h3>
+                <div class="pricing__price">{{ global.pricing.monthly.price }}<span class="pricing__period">/ {{ t_ui.pricing_month }}</span></div>
+              </div>
+              <ul class="pricing__features">
+                <li>{{ t_ui.feat_8k }}</li>
+                <li>{{ t_ui.feat_unlimited }}</li>
+                <li>{{ t_ui.feat_turbo }}</li>
+                <li>{{ t_ui.feat_clip }}</li>
+              </ul>
+              <button class="btn btn--primary btn--full" data-paddle-checkout data-price-id="{{ global.pricing.monthly.id }}">{{ t_ui.pricing_btn_pro }}</button>
+            </div>
+            
+             <!-- Pro Yearly -->
+            <div class="pricing__card">
+              <div class="pricing__header">
+                <h3 class="pricing__name">{{ t_ui.plan_pro_yearly }}</h3>
+                <div class="pricing__price">{{ global.pricing.yearly.price }}<span class="pricing__period">/ {{ t_ui.pricing_year }}</span></div>
+              </div>
+              <ul class="pricing__features">
+                <li>{{ t_ui.feat_8k }}</li>
+                <li>{{ t_ui.feat_unlimited }}</li>
+                <li>{{ t_ui.feat_turbo }}</li>
+                <li>{{ t_ui.feat_clip }}</li>
+              </ul>
+              <button class="btn btn--primary btn--full" data-paddle-checkout data-price-id="{{ global.pricing.yearly.id }}">{{ t_ui.pricing_btn_pro }}</button>
+            </div>
+
+            <!-- Pro Lifetime -->
+            <div class="pricing__card">
+               <div class="pricing__badge">{{ t_ui.badge_best_value }}</div>
+              <div class="pricing__header">
+                <h3 class="pricing__name">{{ t_ui.plan_lifetime }}</h3>
+                <div class="pricing__price">{{ global.pricing.lifetime.price }}<span class="pricing__period">/ {{ t_ui.pricing_one_time }}</span></div>
+              </div>
+              <ul class="pricing__features">
+                <li>{{ t_ui.feat_one_time }}</li>
+                <li>{{ t_ui.feat_all_pro }}</li>
+                <li>{{ t_ui.feat_updates }}</li>
+              </ul>
+              <button class="btn btn--primary btn--full" data-paddle-checkout data-price-id="{{ global.pricing.lifetime.id }}">{{ t_ui.pricing_btn_pro }}</button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      {% endif %}
+
+      <!-- FAQ -->
+      {% if meta.faq %}
+      <section class="section faq" id="faq">
+        <div class="container">
+          <h2 class="section__title">{{ t_ui.faq_title }}</h2>
+          <div class="faq__list" style="max-width: 800px; margin: 0 auto;">
+            {% for item in meta.faq %}
+            <div class="faq-item">
+              <details>
+                <summary class="faq-summary">{{ item.question }}</summary>
+                <div class="faq-answer">{{ item.answer }}</div>
+              </details>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+      {% endif %}
+
+      <!-- FOOTER -->
       <footer class="footer">
         <div class="container footer__inner">
-          <div class="footer__brand">
-            <span>© Avenor</span>
-          </div>
-          <div class="footer__links">
-            <a href="/privacy.html" class="footer__link">Privacy</a>
-            <a href="/terms.html" class="footer__link">Terms</a>
-            <a href="/refund.html" class="footer__link">Refund</a>
+          <div class="footer__top">
+            <div class="footer__col">
+              <img src="/assets/Logo.png" alt="Avenor" class="footer__logo" style="height: 32px;">
+              <p class="footer__desc">
+                {{ global.siteName }} © 2024
+              </p>
+            </div>
+            <div class="footer__col">
+              <h4 class="footer__title">{{ t_ui.footer_legal }}</h4>
+              <a href="/privacy.html" class="footer__link">{{ t_ui.footer_privacy }}</a>
+              <a href="/terms.html" class="footer__link">{{ t_ui.footer_terms }}</a>
+              <a href="/refund.html" class="footer__link">{{ t_ui.footer_refund }}</a>
+            </div>
+            <div class="footer__col">
+               <h4 class="footer__title">{{ t_ui.footer_support }}</h4>
+               <a href="mailto:support@avenordownload.app" class="footer__link">support@avenordownload.app</a>
+            </div>
           </div>
         </div>
       </footer>
     </div>
+    
+    <script>
+      // Simple interaction for language menu if not using hover
+      document.querySelector('.lang__btn').addEventListener('click', function() {
+        this.parentNode.classList.toggle('active');
+      });
+      
+      // Paddle init if needed
+      const PADDLE_TOKEN_PROD = "live_3b49a2cdb0ce243817e7bf610ae"; 
+      if (window.Paddle) {
+         window.Paddle.Environment.set("production");
+         window.Paddle.Initialize({ token: PADDLE_TOKEN_PROD });
+         
+         document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              const priceId = btn.getAttribute("data-price-id");
+              if (!priceId) return;
+              window.Paddle.Checkout.open({
+                items: [{ priceId, quantity: 1 }],
+                settings: { displayMode: "overlay", theme: "dark" }
+              });
+            });
+         });
+      }
+    </script>
   </body>
 </html>

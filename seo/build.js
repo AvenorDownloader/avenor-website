@@ -160,8 +160,16 @@ function main() {
     const slug = page.slug;
 
     for (const lang of languages) {
-      const t = page.translations?.[lang] || page.translations?.[defaultLang];
-      if (!t) continue;
+      // Logic: Merge defaultLang content with specific lang content
+      // This ensures that if a field (like heroBadges or pricingEmbed) is missing in translation,
+      // it falls back to the default language value.
+      const baseContent = page.translations?.[defaultLang] || {};
+      const specificContent = page.translations?.[lang] || {};
+      
+      // If we have absolutely no content for this page in either lang or default, skip
+      if (Object.keys(baseContent).length === 0 && Object.keys(specificContent).length === 0) continue;
+
+      const t = { ...baseContent, ...specificContent };
 
       const outDirForLang = lang === defaultLang ? distDir : path.join(distDir, lang);
       const outFile = path.join(outDirForLang, slug + ".html");
