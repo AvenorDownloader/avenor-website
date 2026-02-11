@@ -46,7 +46,8 @@
             {
               "type": "what_is",
               "title": "What is Avenor YouTube Downloader",
-              "content": "Avenor YouTube Downloader is a desktop application for Windows and macOS that lets you download YouTube videos directly to your computer. Unlike online services, everything happens locally on your PC — no uploads to external servers, no privacy risks, and no quality loss."
+              "id": "what-is",
+              "content": "<p>Avenor YouTube Downloader is a desktop application for Windows and macOS that lets you download YouTube videos directly to your computer.</p><p>Unlike online services, everything happens locally on your PC — no uploads to external servers, no privacy risks, and no quality loss.</p>"
             },
             {
               "type": "benefits",
@@ -77,12 +78,14 @@
             {
               "type": "clip_feature",
               "title": "Clip YouTube videos before download",
-              "content": "Found the perfect moment in a 2-hour podcast? Need just a highlight from a gaming stream? Avenor's unique clip feature lets you set precise In/Out points before downloading. No need to download the entire video and then trim it — save time and storage space by downloading only what you need."
+              "id": "clip-feature",
+              "content": "<p>Found the perfect moment in a 2-hour podcast? Need just a highlight from a gaming stream?</p><p>Avenor's unique clip feature lets you set precise In/Out points before downloading.</p><p>No need to download the entire video and then trim it — save time and storage space by downloading only what you need.</p>"
             },
             {
               "type": "quality_formats",
               "title": "Quality & formats",
-              "content": "Avenor supports all available YouTube qualities: 4K, 1440p, 1080p, 720p, 480p, 360p, and more. When the original video is available in high quality, you'll get it exactly as uploaded. Choose between MP4 format for video or MP3 for audio-only downloads."
+              "id": "quality-formats",
+              "content": "<p>Avenor supports all available YouTube qualities. When the original video is available in high quality, you'll get it exactly as uploaded.</p><ul><li>8K, 4K, 1440p, 1080p, 720p, 480p, 360p</li><li>MP4 video or MP3 audio-only</li></ul><p>Choose the format that works best for your needs.</p>"
             },
             {
               "type": "how_it_works",
@@ -109,12 +112,14 @@
             {
               "type": "privacy_safety",
               "title": "Privacy & safety",
-              "content": "Your privacy is our priority. Avenor YouTube Downloader works entirely on your computer — we never upload your videos to our servers, don't process them remotely, and don't collect personal information. Downloaded videos are saved directly to your chosen folder, giving you complete control over your content."
+              "id": "privacy-safety",
+              "content": "<p>Your privacy is our priority. Avenor YouTube Downloader works entirely on your computer — we never upload your videos to our servers, don't process them remotely, and don't collect personal information.</p><h3>Why local processing matters</h3><ul><li>No uploads to external servers</li><li>No account required</li><li>Full control over your content</li></ul><p>Downloaded videos are saved directly to your chosen folder.</p>"
             },
             {
               "type": "platforms",
               "title": "Windows & macOS support",
-              "content": "Avenor YouTube Downloader is available for both Windows and macOS. Whether you're using Windows 10/11 or macOS 10.14+, you'll get the same clean interface and full functionality. Download the version for your operating system and start downloading YouTube videos today."
+              "id": "platforms",
+              "content": "<p>Avenor YouTube Downloader is available for both Windows and macOS.</p><p>Whether you're using Windows 10/11 or macOS 10.14+, you'll get the same clean interface and full functionality.</p><p>Download the version for your operating system and start downloading YouTube videos today.</p>"
             }
           ],
           "faq": [

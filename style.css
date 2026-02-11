@@ -4,6 +4,208 @@ html {
   scroll-padding-top: 90px; /* учитываем липкую шапку */
 }
 
+/* ===== SEO PAGES (scoped) ===== */
+.seo-page .section { padding: 4rem 0; }
+.seo-page .hero { padding-top: 8rem; padding-bottom: 4rem; min-height: auto; }
+
+.seo-page .glass {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius-lg);
+}
+
+.seo-page .seo-card {
+  padding: 24px;
+  border-radius: var(--radius-lg);
+}
+
+.seo-page .seo-rich p {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  font-size: 1rem;
+  margin: 0 0 1rem;
+}
+.seo-page .seo-rich ul { margin: 0 0 1rem 1.25rem; padding: 0; }
+.seo-page .seo-rich li {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  margin: 0.25rem 0;
+}
+.seo-page .seo-rich h3 {
+  font-size: 1.25rem;
+  margin: 1.25rem 0 0.75rem;
+}
+
+.seo-page .seo-toc {
+  padding: 18px;
+  border-radius: var(--radius-lg);
+}
+.seo-page .seo-toc__title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.seo-page .seo-toc__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+.seo-page .seo-toc__list a {
+  display: inline-block;
+  padding: 10px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.seo-page .seo-toc__list a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+@media (max-width: 768px) {
+  .seo-page .seo-toc__list { grid-template-columns: 1fr; }
+}
+
+.seo-page .steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.seo-page .step-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 1.5rem;
+  position: relative;
+}
+.seo-page .step-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  line-height: 1;
+}
+.seo-page .step-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+.seo-page .step-desc {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+.seo-page .benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.seo-page .benefit-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.seo-page .benefit-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+.seo-page .benefit-desc {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.seo-page .two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .seo-page .two-col { grid-template-columns: 1fr; }
+  .seo-page .hero .two-col { display: flex; flex-direction: column-reverse; }
+}
+
+.seo-page .lang__menu a {
+  display: block;
+  padding: 8px 16px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.seo-page .lang__menu a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.seo-page .faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
+}
+.seo-page .faq-summary {
+  padding: 1rem 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.seo-page .faq-summary::-webkit-details-marker { display: none; }
+.seo-page .faq-summary::after {
+  content: '+';
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.seo-page details[open] .faq-summary::after { content: '-'; }
+.seo-page .faq-answer {
+  padding-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+/* Pricing list compatibility on SEO pages */
+.seo-page .pricing__features {
+  margin: 1px 0 16px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+.seo-page .pricing__features li {
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 20px;
+  display: flex;
+  align-items: flex-start;
+}
+.seo-page .pricing__features li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2392d83c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+}
 *,
 *::before,
 *::after {

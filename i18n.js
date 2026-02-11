@@ -2163,10 +2163,11 @@
       if (!root.contains(e.target)) close();
     });
 
-    // Надёжнее в UI: pointerdown
-    btn?.addEventListener("pointerdown", (e) => {
+    // Надёжнее в UI: click (pointerdown иногда конфликтует)
+    btn?.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
+      console.log("[i18n] Lang button clicked. Current state:", root.classList.contains("is-open"));
       root.classList.contains("is-open") ? close() : open();
     });
 
@@ -2175,8 +2176,21 @@
     });
 
     list.forEach((item) => {
-      item.addEventListener("click", () => {
+      item.addEventListener("click", (e) => {
+        // Если это ссылка <a>, пусть переходит сама, но мы закроем меню
+        // Однако, если мы хотим SPA-redirect (на index.html), то preventDefault
+        
+        const isLink = item.tagName === "A";
         const lang = (item.getAttribute("data-set-lang") || "").toLowerCase();
+        
+        // Если это ссылка, не перехватываем навигацию, но сохраняем язык
+        if (isLink) {
+           setStoredLang(lang);
+           // Не preventDefault, пусть переходит
+           return;
+        }
+
+        // Иначе (кнопка) - ручной редирект
         if (!SUPPORTED.includes(lang)) return;
 
         setStoredLang(lang);
@@ -2185,7 +2199,6 @@
         u.searchParams.delete("lang");
         u.pathname = buildLangPath(lang);
         location.href = u.toString(); // полный reload как и было
-        
       });
     });
 

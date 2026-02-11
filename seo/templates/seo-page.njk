@@ -4,6 +4,7 @@
     nav_how: "How it works",
     nav_pricing: "Pricing",
     nav_faq: "FAQ",
+    toc_title: "On this page",
     faq_title: "Frequently Asked Questions",
     footer_legal: "Legal",
     footer_privacy: "Privacy Policy",
@@ -36,12 +37,30 @@
     feat_one_time: "One-time payment",
     feat_all_pro: "All PRO features",
     feat_updates: "Lifetime updates"
+    ,compare_title: "Feature comparison"
+    ,compare_subtitle: "All plan differences in one table."
+    ,compare_col_features: "Features"
+    ,compare_devices: "Devices"
+    ,compare_quality: "Max download quality"
+    ,compare_downloads_day: "Downloads per day"
+    ,compare_convert_compress: "Convert & compress"
+    ,compare_file_size: "File size limit for convert/compress"
+    ,compare_batch: "Batch downloads"
+    ,compare_fragments: "Fragments (clip before download)"
+    ,compare_audio_only: "Audio-only download"
+    ,compare_cookies: "Cookies.txt (private/age content)*"
+    ,compare_history: "Download history"
+    ,compare_priority_support: "Priority support"
+    ,compare_commercial: "Commercial use"
+    ,unlimited: "Unlimited"
+    ,no_limits: "No limits"
   },
   ru: {
     nav_features: "Возможности",
     nav_how: "Как это работает",
     nav_pricing: "Цены",
     nav_faq: "FAQ",
+    toc_title: "На этой странице",
     faq_title: "Часто задаваемые вопросы",
     footer_legal: "Юридическая информация",
     footer_privacy: "Политика конфиденциальности",
@@ -74,12 +93,30 @@
     feat_one_time: "Единоразовый платеж",
     feat_all_pro: "Все функции PRO",
     feat_updates: "Вечные обновления"
+    ,compare_title: "Сравнение функций"
+    ,compare_subtitle: "Все отличия по тарифам — в одной таблице."
+    ,compare_col_features: "Функции"
+    ,compare_devices: "Количество устройств"
+    ,compare_quality: "Максимальное качество скачивания"
+    ,compare_downloads_day: "Скачивания в день"
+    ,compare_convert_compress: "Конвертация и сжатие"
+    ,compare_file_size: "Размер файлов для конвертации/сжатия"
+    ,compare_batch: "Пакетная загрузка (batch)"
+    ,compare_fragments: "Фрагменты (обрезка до загрузки)"
+    ,compare_audio_only: "Скачивание только аудио"
+    ,compare_cookies: "Cookies.txt (приватный/возрастной контент)*"
+    ,compare_history: "История загрузок"
+    ,compare_priority_support: "Приоритетная поддержка"
+    ,compare_commercial: "Коммерческое использование"
+    ,unlimited: "Безлимит"
+    ,no_limits: "Без ограничений"
   },
   es: {
     nav_features: "Características",
     nav_how: "Cómo funciona",
     nav_pricing: "Precios",
     nav_faq: "FAQ",
+    toc_title: "En esta página",
     footer_legal: "Legal",
     footer_privacy: "Política de privacidad",
     footer_terms: "Términos de servicio",
@@ -101,6 +138,7 @@
     nav_how: "Como funciona",
     nav_pricing: "Preços",
     nav_faq: "FAQ",
+    toc_title: "Nesta página",
     footer_legal: "Legal",
     footer_privacy: "Política de privacidade",
     footer_terms: "Termos de serviço",
@@ -122,6 +160,7 @@
     nav_how: "Wie es funktioniert",
     nav_pricing: "Preise",
     nav_faq: "FAQ",
+    toc_title: "Auf dieser Seite",
     footer_legal: "Rechtliches",
     footer_privacy: "Datenschutz",
     footer_terms: "Nutzungsbedingungen",
@@ -143,6 +182,7 @@
     nav_how: "Comment ça marche",
     nav_pricing: "Tarifs",
     nav_faq: "FAQ",
+    toc_title: "Sur cette page",
     footer_legal: "Légal",
     footer_privacy: "Politique de confidentialité",
     footer_terms: "Conditions d'utilisation",
@@ -164,6 +204,7 @@
     nav_how: "Як це працює",
     nav_pricing: "Ціни",
     nav_faq: "FAQ",
+    toc_title: "На цій сторінці",
     footer_legal: "Юридична інформація",
     footer_privacy: "Політика конфіденційності",
     footer_terms: "Умови використання",
@@ -211,7 +252,7 @@
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "Avenor Downloader",
-      "description": "{{ meta.description }}",
+      "description": {{ meta.description | dump | safe }},
       "url": "{{ global.baseUrl }}",
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": ["Windows 10", "Windows 11", "macOS 10.14+", "macOS 11+", "macOS 12+"],
@@ -239,10 +280,10 @@
         {% for item in meta.faq %}
         {
           "@type": "Question",
-          "name": "{{ item.question }}",
+          "name": {{ item.question | dump | safe }},
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "{{ item.answer }}"
+            "text": {{ item.answer | dump | safe }}
           }
         }{% if not loop.last %},{% endif %}
         {% endfor %}
@@ -259,6 +300,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
+    <script defer src="/i18n.js"></script>
     <link rel="stylesheet" href="/style.css" />
     <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 
@@ -268,140 +310,7 @@
       <link rel="alternate" hreflang="{{ a.hreflang }}" href="{{ a.href }}" />
     {% endfor %}
 
-    <style>
-      /* Extra styles for SEO page specific elements if needed */
-      .seo-page section {
-        padding: 4rem 0;
-      }
-      .seo-page .hero {
-        padding-top: 8rem; /* Account for fixed header */
-        padding-bottom: 4rem;
-        min-height: auto;
-      }
-      .steps-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
-      }
-      .step-card {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        border-radius: 16px;
-        padding: 1.5rem;
-        position: relative;
-      }
-      .step-number {
-        font-size: 3rem;
-        font-weight: 700;
-        color: rgba(255, 255, 255, 0.1);
-        position: absolute;
-        top: 0.5rem;
-        right: 1rem;
-        line-height: 1;
-      }
-      .step-title {
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-        color: #fff;
-      }
-      .step-desc {
-        font-size: 0.95rem;
-        color: rgba(255, 255, 255, 0.7);
-        line-height: 1.5;
-      }
-      
-      /* Benefits grid reuse existing features classes or create simple one */
-      .benefits-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-        margin-top: 2rem;
-      }
-      .benefit-card {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        border-radius: 12px;
-        padding: 1.5rem;
-      }
-      .benefit-title {
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-        color: #fff;
-      }
-      .benefit-desc {
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 0.95rem;
-        line-height: 1.5;
-      }
-
-      /* Two column text+image */
-      .two-col {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-        align-items: center;
-      }
-      @media (max-width: 768px) {
-        .two-col { grid-template-columns: 1fr; }
-        .hero .two-col { display: flex; flex-direction: column-reverse; }
-      }
-      .text-content h2 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-        background: linear-gradient(90deg, #fff 0%, #a5a5a5 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .text-content p {
-        color: rgba(255, 255, 255, 0.8);
-        line-height: 1.6;
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
-      }
-
-      /* Language switcher specific for static page */
-      .lang__menu a {
-        display: block;
-        padding: 8px 16px;
-        color: #fff;
-        text-decoration: none;
-        font-size: 0.9rem;
-      }
-      .lang__menu a:hover {
-        background: rgba(255, 255, 255, 0.1);
-      }
-      
-      /* FAQ Accordion */
-      .faq-item {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        margin-bottom: 1rem;
-      }
-      .faq-summary {
-        padding: 1rem 0;
-        cursor: pointer;
-        font-weight: 600;
-        font-size: 1.1rem;
-        list-style: none;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .faq-summary::-webkit-details-marker { display: none; }
-      .faq-summary::after {
-        content: '+';
-        font-size: 1.5rem;
-        font-weight: 300;
-      }
-      details[open] .faq-summary::after { content: '-'; }
-      .faq-answer {
-        padding-bottom: 1.5rem;
-        color: rgba(255, 255, 255, 0.8);
-        line-height: 1.6;
-      }
-    </style>
+    
   </head>
 
   <body>
@@ -425,15 +334,15 @@
           </nav>
 
           <div class="header__right">
-            <div class="lang">
-              <button class="lang__btn" type="button">
-                <span class="lang__flag">🌐</span>
-                <span class="lang__code">{{ lang | upper }}</span>
-                <span class="lang__caret">▾</span>
+            <div class="lang" data-lang>
+              <button class="lang__btn" type="button" data-lang-btn aria-expanded="false" aria-label="Language">
+                <span class="lang__flag" data-lang-flag>🌐</span>
+                <span class="lang__code" data-lang-code>{{ lang | upper }}</span>
+                <span class="lang__caret" aria-hidden="true">▾</span>
               </button>
-              <div class="lang__menu">
+              <div class="lang__menu" data-lang-menu role="menu" aria-label="Choose language">
                 {% for a in alternates %}
-                <a href="{{ a.href }}" class="lang__item">{{ a.hreflang | upper }}</a>
+                <a href="{{ a.href }}" class="lang__item" data-set-lang="{{ a.hreflang }}"></a>
                 {% endfor %}
               </div>
             </div>
@@ -485,20 +394,49 @@
         </div>
       </section>
 
+      <section class="section">
+        <div class="container">
+          <div class="seo-toc glass">
+            <div class="seo-toc__title">{{ t_ui.toc_title }}</div>
+            <nav class="seo-toc__list">
+              {% for section in meta.sections %}
+                {% if section.type == 'benefits' %}
+                  <a href="#benefits">{{ section.title }}</a>
+                {% elif section.type == 'how_it_works' %}
+                  <a href="#how-it-works">{{ section.title }}</a>
+                {% else %}
+                  {% if section.id and section.title %}
+                    <a href="#{{ section.id }}">{{ section.title }}</a>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+              {% if meta.pricingEmbed %}
+                <a href="#pricing">{{ t_ui.nav_pricing }}</a>
+              {% endif %}
+              {% if meta.faq %}
+                <a href="#faq">{{ t_ui.nav_faq }}</a>
+              {% endif %}
+            </nav>
+          </div>
+        </div>
+      </section>
+
       <!-- SECTIONS -->
       {% for section in meta.sections %}
         
         {% if section.type == 'benefits' %}
         <section class="section" id="benefits">
           <div class="container">
-            <h2 class="section__title">{{ section.title }}</h2>
-            <div class="benefits-grid">
-              {% for item in section.items %}
-              <div class="benefit-card">
-                <h3 class="benefit-title">{{ item.title }}</h3>
-                <p class="benefit-desc">{{ item.description }}</p>
+            <div class="seo-card glass">
+              <h2 class="section__title">{{ section.title }}</h2>
+              <div class="benefits-grid">
+                {% for item in section.items %}
+                <div class="benefit-card">
+                  <h3 class="benefit-title">{{ item.title }}</h3>
+                  <p class="benefit-desc">{{ item.description }}</p>
+                </div>
+                {% endfor %}
               </div>
-              {% endfor %}
             </div>
           </div>
         </section>
@@ -506,29 +444,32 @@
         {% elif section.type == 'how_it_works' %}
         <section class="section" id="how-it-works">
           <div class="container">
-            <h2 class="section__title">{{ section.title }}</h2>
-            <div class="steps-grid">
-              {% for step in section.steps %}
-              <div class="step-card">
-                <span class="step-number">{{ loop.index }}</span>
-                <h3 class="step-title">{{ step.title }}</h3>
-                <p class="step-desc">{{ step.description }}</p>
+            <div class="seo-card glass">
+              <h2 class="section__title">{{ section.title }}</h2>
+              <div class="steps-grid">
+                {% for step in section.steps %}
+                <div class="step-card">
+                  <span class="step-number">{{ loop.index }}</span>
+                  <h3 class="step-title">{{ step.title }}</h3>
+                  <p class="step-desc">{{ step.description }}</p>
+                </div>
+                {% endfor %}
               </div>
-              {% endfor %}
             </div>
           </div>
         </section>
 
         {% else %}
-        <!-- Generic Text/Content Block -->
-        <section class="section">
+        <section class="section seo-section" {% if section.id %}id="{{ section.id }}"{% endif %}>
           <div class="container">
-             {% if section.title %}
-             <h2 class="section__title" style="margin-bottom: 1.5rem;">{{ section.title }}</h2>
-             {% endif %}
-             <div class="text-content">
-               <p>{{ section.content }}</p>
-             </div>
+            <div class="seo-card glass">
+              {% if section.title %}
+              <h2 class="section__title">{{ section.title }}</h2>
+              {% endif %}
+              <div class="seo-rich">
+                {{ section.content | safe }}
+              </div>
+            </div>
           </div>
         </section>
         {% endif %}
@@ -537,77 +478,277 @@
 
       <!-- PRICING -->
       {% if meta.pricingEmbed %}
-      <section class="section pricing" id="pricing">
+      <section class="section section--pricing" id="pricing">
         <div class="container">
-          <h2 class="section__title">{{ t_ui.pricing_title }}</h2>
-          <p class="section__subtitle">{{ t_ui.pricing_subtitle }}</p>
+          <div class="section__head">
+            <h2 class="section__title">{{ t_ui.pricing_title }}</h2>
+            <p class="section__subtitle">{{ t_ui.pricing_subtitle }}</p>
+          </div>
           
-          <div class="pricing__grid">
-            <!-- Free Plan -->
-            <div class="pricing__card">
-              <div class="pricing__header">
+          <div class="pricing__toggle-wrapper">
+            <div class="pricing__toggle">
+              <button class="pricing__toggle-btn active" data-target="personal">
+                <span class="pricing__toggle-icon">👤</span> {{ t_ui.toggle_personal or 'PERSONAL' }}
+              </button>
+              <button class="pricing__toggle-btn" data-target="studio">
+                <span class="pricing__toggle-icon">🏢</span> {{ t_ui.toggle_studio or 'STUDIO / COMMERCIAL' }}
+              </button>
+            </div>
+          </div>
+
+          <div class="pricing" data-tier-view="personal">
+            <!-- PERSONAL: Free -->
+            <article class="pricing__card" data-tier-group="personal">
+              <div class="pricing__top">
                 <h3 class="pricing__name">{{ t_ui.plan_free }}</h3>
-                <div class="pricing__price">{{ global.pricing.free.price }}<span class="pricing__period">/ {{ t_ui.pricing_forever }}</span></div>
+                <p class="pricing__price">{{ global.pricing.free.price }}<span class="pricing__period">/ {{ t_ui.pricing_forever }}</span></p>
               </div>
-              <ul class="pricing__features">
+              <ul class="pricing__list">
                 <li>{{ t_ui.feat_1080p }}</li>
                 <li>{{ t_ui.feat_5_downloads }}</li>
                 <li>{{ t_ui.feat_basic_speed }}</li>
               </ul>
-              <a href="/download/win" class="btn btn--secondary btn--full">{{ t_ui.pricing_btn_free }}</a>
-            </div>
+              <div class="pricing__btn-wrapper">
+                <a href="/download/win" class="btn btn--ghost btn--full">{{ t_ui.pricing_btn_free }}</a>
+              </div>
+            </article>
 
-            <!-- Pro Monthly -->
-            <div class="pricing__card pricing__card--popular">
-              <div class="pricing__badge">{{ t_ui.badge_flexible }}</div>
-              <div class="pricing__header">
+            <!-- PERSONAL: Monthly -->
+            <article class="pricing__card pricing__card--outlined" data-tier-group="personal">
+              <div class="pricing__top">
                 <h3 class="pricing__name">{{ t_ui.plan_pro_monthly }}</h3>
-                <div class="pricing__price">{{ global.pricing.monthly.price }}<span class="pricing__period">/ {{ t_ui.pricing_month }}</span></div>
+                <p class="pricing__price"><span class="pricing__amount">{{ global.pricing.monthly.price }}</span><span class="pricing__period">/ {{ t_ui.pricing_month }}</span></p>
               </div>
-              <ul class="pricing__features">
+              <ul class="pricing__list">
                 <li>{{ t_ui.feat_8k }}</li>
                 <li>{{ t_ui.feat_unlimited }}</li>
-                <li>{{ t_ui.feat_turbo }}</li>
                 <li>{{ t_ui.feat_clip }}</li>
               </ul>
-              <button class="btn btn--primary btn--full" data-paddle-checkout data-price-id="{{ global.pricing.monthly.id }}">{{ t_ui.pricing_btn_pro }}</button>
-            </div>
-            
-             <!-- Pro Yearly -->
-            <div class="pricing__card">
-              <div class="pricing__header">
-                <h3 class="pricing__name">{{ t_ui.plan_pro_yearly }}</h3>
-                <div class="pricing__price">{{ global.pricing.yearly.price }}<span class="pricing__period">/ {{ t_ui.pricing_year }}</span></div>
+              <div class="pricing__btn-wrapper">
+                <button class="btn btn--ghost btn--full" data-paddle-checkout data-price-id="{{ global.pricing.monthly.id }}">{{ t_ui.pricing_btn_pro }}</button>
               </div>
-              <ul class="pricing__features">
-                <li>{{ t_ui.feat_8k }}</li>
-                <li>{{ t_ui.feat_unlimited }}</li>
-                <li>{{ t_ui.feat_turbo }}</li>
-                <li>{{ t_ui.feat_clip }}</li>
-              </ul>
-              <button class="btn btn--primary btn--full" data-paddle-checkout data-price-id="{{ global.pricing.yearly.id }}">{{ t_ui.pricing_btn_pro }}</button>
-            </div>
+            </article>
 
-            <!-- Pro Lifetime -->
-            <div class="pricing__card">
-               <div class="pricing__badge">{{ t_ui.badge_best_value }}</div>
-              <div class="pricing__header">
-                <h3 class="pricing__name">{{ t_ui.plan_lifetime }}</h3>
-                <div class="pricing__price">{{ global.pricing.lifetime.price }}<span class="pricing__period">/ {{ t_ui.pricing_one_time }}</span></div>
+            <!-- PERSONAL: Yearly -->
+            <article class="pricing__card pricing__card--pro" data-tier-group="personal">
+              <div class="pricing__badge">{{ t_ui.badge_recommended or t_ui.badge_best_value }}</div>
+              <div class="pricing__top">
+                <h3 class="pricing__name">{{ t_ui.plan_pro_yearly }}</h3>
+                <p class="pricing__price"><span class="pricing__amount">{{ global.pricing.yearly.price }}</span><span class="pricing__period">/ {{ t_ui.pricing_year }}</span></p>
               </div>
-              <ul class="pricing__features">
+              <ul class="pricing__list">
+                <li>{{ t_ui.feat_8k }}</li>
+                <li>{{ t_ui.feat_unlimited }}</li>
+                <li>{{ t_ui.feat_turbo }}</li>
+              </ul>
+              <div class="pricing__btn-wrapper">
+                <button class="btn btn--primary btn--full" data-paddle-checkout data-price-id="{{ global.pricing.yearly.id }}">{{ t_ui.pricing_btn_pro }}</button>
+              </div>
+            </article>
+
+            <!-- PERSONAL: Lifetime -->
+            <article class="pricing__card pricing__card--outlined" data-tier-group="personal">
+              <div class="pricing__top">
+                <h3 class="pricing__name">{{ t_ui.plan_lifetime }}</h3>
+                <p class="pricing__price"><span class="pricing__amount">{{ global.pricing.lifetime.price }}</span><span class="pricing__period">/ {{ t_ui.pricing_one_time }}</span></p>
+              </div>
+              <ul class="pricing__list">
                 <li>{{ t_ui.feat_one_time }}</li>
                 <li>{{ t_ui.feat_all_pro }}</li>
                 <li>{{ t_ui.feat_updates }}</li>
               </ul>
-              <button class="btn btn--primary btn--full" data-paddle-checkout data-price-id="{{ global.pricing.lifetime.id }}">{{ t_ui.pricing_btn_pro }}</button>
-            </div>
+              <div class="pricing__btn-wrapper">
+                <button class="btn btn--ghost btn--full" data-paddle-checkout data-price-id="{{ global.pricing.lifetime.id }}">{{ t_ui.pricing_btn_pro }}</button>
+              </div>
+            </article>
 
+            <!-- STUDIO (hidden by default, ids as on main site) -->
+            <article class="pricing__card pricing__card--outlined" data-tier-group="studio" style="display: none;">
+              <div class="pricing__top">
+                <h3 class="pricing__name">{{ t_ui.plan_studio_monthly or 'PRO STUDIO Monthly' }}</h3>
+                <p class="pricing__price"><span class="pricing__amount">€9.99</span><span class="pricing__period">{{ t_ui.per_month_studio or '/ month' }}</span></p>
+              </div>
+              <ul class="pricing__list">
+                <li>{{ t_ui.studio_m_li_1 or 'Commercial use' }}</li>
+                <li>{{ t_ui.studio_m_li_2 or 'For studios and teams' }}</li>
+              </ul>
+              <div class="pricing__btn-wrapper">
+                <button class="btn btn--ghost btn--full" data-paddle-checkout data-price-id="pri_01kgncm68r0hja43zb33zhyc75">{{ t_ui.btn_get_pro or t_ui.pricing_btn_pro }}</button>
+              </div>
+            </article>
+
+            <article class="pricing__card pricing__card--pro" data-tier-group="studio" style="display: none;">
+              <div class="pricing__badge">{{ t_ui.badge_recommended or t_ui.badge_best_value }}</div>
+              <div class="pricing__top">
+                <h3 class="pricing__name">{{ t_ui.plan_studio_yearly or 'PRO STUDIO Yearly' }}</h3>
+                <p class="pricing__price"><span class="pricing__amount">€49</span><span class="pricing__period">{{ t_ui.per_year or '/ year' }}</span></p>
+              </div>
+              <ul class="pricing__list">
+                <li>{{ t_ui.studio_y_li_1 or '4€ per month' }}</li>
+                <li>{{ t_ui.studio_y_li_2 or 'Commercial use' }}</li>
+              </ul>
+              <div class="pricing__btn-wrapper">
+                <button class="btn btn--primary btn--full" data-paddle-checkout data-price-id="pri_01kgncq9frhehjtcp55adkehef">{{ t_ui.btn_get_pro or t_ui.pricing_btn_pro }}</button>
+              </div>
+            </article>
+
+            <article class="pricing__card pricing__card--outlined" data-tier-group="studio" style="display: none;">
+              <div class="pricing__top">
+                <h3 class="pricing__name">{{ t_ui.plan_studio_lifetime or 'PRO STUDIO Lifetime' }}</h3>
+                <p class="pricing__price"><span class="pricing__amount">€79</span><span class="pricing__period">{{ t_ui.per_lifetime_studio or '/ lifetime' }}</span></p>
+              </div>
+              <ul class="pricing__list">
+                <li>{{ t_ui.studio_life_li_1 or 'Commercial use' }}</li>
+                <li>{{ t_ui.studio_life_li_2 or 'Best for teams' }}</li>
+              </ul>
+              <div class="pricing__btn-wrapper">
+                <button class="btn btn--ghost btn--full" data-paddle-checkout data-price-id="pri_01kgnccpyj2zrdyqy35jqqm0de">{{ t_ui.btn_get_pro or t_ui.pricing_btn_pro }}</button>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="pricing-compare" data-tier-view="personal" aria-label="{{ t_ui.compare_title or ui['en'].compare_title }}">
+            <div class="pricing-compare__head">
+              <h3 class="pricing-compare__title">{{ t_ui.compare_title or ui['en'].compare_title }}</h3>
+              <p class="pricing-compare__subtitle">{{ t_ui.compare_subtitle or ui['en'].compare_subtitle }}</p>
+            </div>
+            <div class="pricing-compare__table">
+              <div class="pc-row pc-row--head">
+                <div class="pc-cell pc-cell--feature">{{ t_ui.compare_col_features or ui['en'].compare_col_features }}</div>
+                <div class="pc-cell pc-cell--plan">{{ t_ui.plan_free }}</div>
+                <div class="pc-cell pc-cell--plan">{{ t_ui.plan_pro_monthly }}</div>
+                <div class="pc-cell pc-cell--plan pc-cell--recommended">{{ t_ui.plan_pro_yearly }}</div>
+                <div class="pc-cell pc-cell--plan">{{ t_ui.plan_lifetime }}</div>
+                <div class="pc-cell pc-cell--plan">{{ t_ui.plan_studio_monthly or 'PRO Studio Monthly' }}</div>
+                <div class="pc-cell pc-cell--plan">{{ t_ui.plan_studio_yearly or 'PRO Studio Yearly' }}</div>
+                <div class="pc-cell pc-cell--plan">{{ t_ui.plan_studio_lifetime or 'PRO STUDIO Lifetime' }}</div>
+              </div>
+              <div class="pc-row">
+                <div class="pc-cell pc-cell--feature">{{ t_ui.compare_devices or ui['en'].compare_devices }}</div>
+                <div class="pc-cell">2</div>
+                <div class="pc-cell">2</div>
+                <div class="pc-cell pc-cell--recommended">2</div>
+                <div class="pc-cell">2</div>
+                <div class="pc-cell">10</div>
+                <div class="pc-cell">10</div>
+                <div class="pc-cell">10</div>
+              </div>
+              <div class="pc-row">
+                <div class="pc-cell pc-cell--feature">{{ t_ui.compare_quality or ui['en'].compare_quality }}</div>
+                <div class="pc-cell">{{ t_ui.compare_quality_free or 'up to 1080p' }}</div>
+                <div class="pc-cell">{{ t_ui.compare_quality_pro or 'up to 8K' }}</div>
+                <div class="pc-cell pc-cell--recommended">{{ t_ui.compare_quality_pro or 'up to 8K' }}</div>
+                <div class="pc-cell">{{ t_ui.compare_quality_pro or 'up to 8K' }}</div>
+                <div class="pc-cell">{{ t_ui.compare_quality_pro or 'up to 8K' }}</div>
+                <div class="pc-cell">{{ t_ui.compare_quality_pro or 'up to 8K' }}</div>
+                <div class="pc-cell">{{ t_ui.compare_quality_pro or 'up to 8K' }}</div>
+              </div>
+              <div class="pc-row">
+                <div class="pc-cell pc-cell--feature">{{ t_ui.compare_downloads_day or ui['en'].compare_downloads_day }}</div>
+                <div class="pc-cell">10</div>
+                <div class="pc-cell"><span class="pc-yes">{{ t_ui.unlimited }}</span></div>
+                <div class="pc-cell pc-cell--recommended"><span class="pc-yes">{{ t_ui.unlimited }}</span></div>
+                <div class="pc-cell"><span class="pc-yes">{{ t_ui.unlimited }}</span></div>
+                <div class="pc-cell"><span class="pc-yes">{{ t_ui.unlimited }}</span></div>
+                <div class="pc-cell"><span class="pc-yes">{{ t_ui.unlimited }}</span></div>
+                <div class="pc-cell"><span class="pc-yes">{{ t_ui.unlimited }}</span></div>
+              </div>
+              <div class="pc-row">
+                <div class="pc-cell pc-cell--feature">{{ t_ui.compare_convert_compress or ui['en'].compare_convert_compress }}</div>
+                <div class="pc-cell">{{ t_ui.compare_limit_3_day or '3 / day' }}</div>
+                <div class="pc-cell"><span class="pc-yes">{{ t_ui.unlimited }}</span></div>
+                <div class="pc-cell pc-cell--recommended"><span class="pc-yes">{{ t_ui.unlimited }}</span></div>
+                <div class="pc-cell"><span class="pc-yes">{{ t_ui.unlimited }}</span></div>
+                <div class="pc-cell"><span class="pc-yes">{{ t_ui.unlimited }}</span></div>
+                <div class="pc-cell"><span class="pc-yes">{{ t_ui.unlimited }}</span></div>
+                <div class="pc-cell"><span class="pc-yes">{{ t_ui.unlimited }}</span></div>
+              </div>
+              <div class="pc-row">
+                <div class="pc-cell pc-cell--feature">{{ t_ui.compare_file_size or ui['en'].compare_file_size }}</div>
+                <div class="pc-cell">{{ t_ui.compare_file_size_free or 'up to 500 MB' }}</div>
+                <div class="pc-cell"><span class="pc-yes">{{ t_ui.no_limits }}</span></div>
+                <div class="pc-cell pc-cell--recommended"><span class="pc-yes">{{ t_ui.no_limits }}</span></div>
+                <div class="pc-cell"><span class="pc-yes">{{ t_ui.no_limits }}</span></div>
+                <div class="pc-cell"><span class="pc-yes">{{ t_ui.no_limits }}</span></div>
+                <div class="pc-cell"><span class="pc-yes">{{ t_ui.no_limits }}</span></div>
+                <div class="pc-cell"><span class="pc-yes">{{ t_ui.no_limits }}</span></div>
+              </div>
+              <div class="pc-row">
+                <div class="pc-cell pc-cell--feature">{{ t_ui.compare_batch or ui['en'].compare_batch }}</div>
+                <div class="pc-cell"><span class="pc-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell pc-cell--recommended"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+              </div>
+              <div class="pc-row">
+                <div class="pc-cell pc-cell--feature">{{ t_ui.compare_fragments or ui['en'].compare_fragments }}</div>
+                <div class="pc-cell"><span class="pc-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell pc-cell--recommended"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+              </div>
+              <div class="pc-row">
+                <div class="pc-cell pc-cell--feature">{{ t_ui.compare_audio_only or ui['en'].compare_audio_only }}</div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell pc-cell--recommended"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+              </div>
+              <div class="pc-row">
+                <div class="pc-cell pc-cell--feature">{{ t_ui.compare_cookies or ui['en'].compare_cookies }}</div>
+                <div class="pc-cell"><span class="pc-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell pc-cell--recommended"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+              </div>
+              <div class="pc-row">
+                <div class="pc-cell pc-cell--feature">{{ t_ui.compare_history or ui['en'].compare_history }}</div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell pc-cell--recommended"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+              </div>
+              <div class="pc-row">
+                <div class="pc-cell pc-cell--feature">{{ t_ui.compare_priority_support or ui['en'].compare_priority_support }}</div>
+                <div class="pc-cell"><span class="pc-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></div>
+                <div class="pc-cell"><span class="pc-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></div>
+                <div class="pc-cell pc-cell--recommended"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+              </div>
+              <div class="pc-row pc-row--commercial">
+                <div class="pc-cell pc-cell--feature">{{ t_ui.compare_commercial or ui['en'].compare_commercial }}</div>
+                <div class="pc-cell"><span class="pc-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></div>
+                <div class="pc-cell"><span class="pc-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></div>
+                <div class="pc-cell pc-cell--recommended"><span class="pc-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+                <div class="pc-cell"><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
       {% endif %}
-
       <!-- FAQ -->
       {% if meta.faq %}
       <section class="section faq" id="faq">
@@ -675,6 +816,58 @@
             });
          });
       }
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggles = document.querySelectorAll(".pricing__toggle-btn");
+        const cards = document.querySelectorAll(".pricing__card[data-tier-group]");
+        const pricingContainer = document.querySelector(".pricing");
+        const compare = document.querySelector(".pricing-compare");
+        const compareRows = compare ? compare.querySelectorAll(".pc-row") : [];
+        function updateVisibility(target) {
+          if (pricingContainer) {
+            pricingContainer.setAttribute("data-tier-view", target);
+          }
+          if (compare) {
+            compare.setAttribute("data-tier-view", target);
+            compare.style.setProperty("--pc-cols", target === "studio" ? "3" : "4");
+            compareRows.forEach((row) => {
+              const cells = Array.from(row.children);
+              cells.forEach((cell, index) => {
+                if (index === 0) {
+                  cell.style.display = "";
+                  return;
+                }
+                if (target === "studio") {
+                  cell.style.display = index >= 5 ? "" : "none";
+                } else {
+                  cell.style.display = index <= 4 ? "" : "none";
+                }
+              });
+            });
+          }
+          cards.forEach((card) => {
+            const group = card.getAttribute("data-tier-group");
+            if (group === target) {
+              card.style.display = "";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        }
+        const activeToggle = document.querySelector(".pricing__toggle-btn.active");
+        if (activeToggle) {
+          updateVisibility(activeToggle.getAttribute("data-target"));
+        }
+        toggles.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            toggles.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+            const target = btn.getAttribute("data-target");
+            updateVisibility(target);
+          });
+        });
+      });
     </script>
   </body>
 </html>
