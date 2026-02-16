@@ -1,0 +1,853 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Download YouTube Videos in Original Quality — Avenor Downloader</title>
+    <meta name="description" content="Download YouTube videos locally on your PC. Choose quality, clip In/Out, keep privacy. Windows + macOS desktop app." />
+
+    
+    <meta property="og:title" content="Download YouTube Videos in Original Quality — Avenor Downloader" />
+    <meta property="og:description" content="Download YouTube videos locally on your PC. Choose quality, clip In/Out, keep privacy. Windows + macOS desktop app." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://avenordownload.app/download-youtube-video" />
+    <meta property="og:site_name" content="Avenor Downloader" />
+    
+    <meta property="og:image" content="https://avenordownload.app/assets/og/youtube2.png" />
+    
+
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Avenor Downloader",
+      "description": "Download YouTube videos locally on your PC. Choose quality, clip In/Out, keep privacy. Windows + macOS desktop app.",
+      "url": "https://avenordownload.app",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": ["Windows 10", "Windows 11", "macOS 10.14+", "macOS 11+", "macOS 12+"],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Download YouTube videos in original quality",
+        "Clip videos before download with In/Out points",
+        "Support for 4K, 1080p, 720p and other qualities",
+        "Local processing - no uploads to external servers",
+        "Available for Windows and macOS"
+      ]
+    }
+    </script>
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        
+        {
+          "@type": "Question",
+          "name": "Is this an online YouTube downloader?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, Avenor is a desktop application that you install on your Windows or macOS computer. Everything happens locally on your PC — no uploads to external servers."
+          }
+        },
+        
+        {
+          "@type": "Question",
+          "name": "Does Avenor store my videos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, we never store your videos. Downloads go directly to your computer, and we don't have access to your content at any point."
+          }
+        },
+        
+        {
+          "@type": "Question",
+          "name": "Can I clip a fragment before downloading?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Avenor's unique feature lets you set In/Out points and download only the specific part of the video you need."
+          }
+        },
+        
+        {
+          "@type": "Question",
+          "name": "What quality is supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We support all available YouTube qualities including 4K, 1080p, 720p, and more. You get the original quality when available."
+          }
+        },
+        
+        {
+          "@type": "Question",
+          "name": "Does it work on Windows and macOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Avenor YouTube Downloader is available for both Windows (10/11) and macOS (10.14+)."
+          }
+        },
+        
+        {
+          "@type": "Question",
+          "name": "Is it free to try?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can download Avenor and try it for free. Download the version for your operating system above."
+          }
+        }
+        
+      ]
+    }
+    </script>
+    
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <script defer src="/i18n.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+
+    
+    <link rel="canonical" href="https://avenordownload.app/download-youtube-video" />
+    
+      <link rel="alternate" hreflang="ru" href="https://avenordownload.app/ru/download-youtube-video" />
+    
+      <link rel="alternate" hreflang="en" href="https://avenordownload.app/download-youtube-video" />
+    
+      <link rel="alternate" hreflang="es" href="https://avenordownload.app/es/download-youtube-video" />
+    
+      <link rel="alternate" hreflang="pt" href="https://avenordownload.app/pt/download-youtube-video" />
+    
+      <link rel="alternate" hreflang="de" href="https://avenordownload.app/de/download-youtube-video" />
+    
+      <link rel="alternate" hreflang="fr" href="https://avenordownload.app/fr/download-youtube-video" />
+    
+      <link rel="alternate" hreflang="uk" href="https://avenordownload.app/uk/download-youtube-video" />
+    
+      <link rel="alternate" hreflang="x-default" href="https://avenordownload.app/download-youtube-video" />
+    
+
+    
+  </head>
+
+  <body>
+    <div class="page seo-page">
+      <div id="snow" class="snow" aria-hidden="true"></div>
+
+      <!-- HEADER -->
+      <header class="header">
+        <div class="container header__inner">
+          <div class="logo">
+            <a href="/"><img src="/assets/Logo.png" alt="Avenor Downloader" class="logo__img" /></a>
+          </div>
+
+          <nav class="nav">
+            <a href="#benefits" class="nav__link">Features</a>
+            <a href="#how-it-works" class="nav__link">How it works</a>
+            
+            <a href="#faq" class="nav__link">FAQ</a>
+          </nav>
+
+          <div class="header__right">
+            <div class="lang" data-lang>
+              <button class="lang__btn" type="button" data-lang-btn aria-expanded="false" aria-label="Language">
+                <span class="lang__flag" data-lang-flag>🌐</span>
+                <span class="lang__code" data-lang-code>EN</span>
+                <span class="lang__caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="lang__menu" data-lang-menu role="menu" aria-label="Choose language">
+                
+                <a href="https://avenordownload.app/ru/download-youtube-video" class="lang__item" data-set-lang="ru" aria-label="Русский"></a>
+                
+                <a href="https://avenordownload.app/download-youtube-video" class="lang__item" data-set-lang="en" aria-label="English"></a>
+                
+                <a href="https://avenordownload.app/es/download-youtube-video" class="lang__item" data-set-lang="es" aria-label="Español"></a>
+                
+                <a href="https://avenordownload.app/pt/download-youtube-video" class="lang__item" data-set-lang="pt" aria-label="Português"></a>
+                
+                <a href="https://avenordownload.app/de/download-youtube-video" class="lang__item" data-set-lang="de" aria-label="Deutsch"></a>
+                
+                <a href="https://avenordownload.app/fr/download-youtube-video" class="lang__item" data-set-lang="fr" aria-label="Français"></a>
+                
+                <a href="https://avenordownload.app/uk/download-youtube-video" class="lang__item" data-set-lang="uk" aria-label="Українська"></a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <video class="hero-bg-video lazy-video" muted loop playsinline preload="none" aria-hidden="true">
+          <source data-src="/assets/vid/hero-demo.webm" type="video/webm" />
+          <source data-src="/assets/vid/hero-demo.mp4" type="video/mp4" />
+        </video>
+        
+        <div class="container hero__inner two-col">
+          <div class="hero__content">
+            <h1 class="hero__title">
+              Download YouTube Videos in Original Quality
+            </h1>
+
+
+
+            <p class="hero__subtitle">
+              Download locally on your PC. Choose quality, clip In/Out, keep privacy.
+            </p>
+
+            
+            <div class="hero__badges">
+              
+              <span class="hero__badge hero__badge--primary">Clip before download</span>
+              
+              <span class="hero__badge hero__badge--primary">Works locally (private)</span>
+              
+              <span class="hero__badge hero__badge--primary">Original quality</span>
+              
+            </div>
+            
+
+            <div class="hero__actions hero__actions--os">
+              <a href="/download/win" class="btn btn--primary btn--os">
+                <img class="os-icon-img" src="/assets/icons/windows.svg" alt="" aria-hidden="true">
+                <span>Download for Windows</span>
+              </a>
+              <a href="https://avenordownload.app/#pricing" class="btn btn--light btn--os">
+                <span>Buy Now</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero__visual">
+             <img src="/assets/mockup1.png" alt="Avenor Interface" style="width: 125%; max-width: none; margin-left: -10%; display: block;" />
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- SECTIONS -->
+      
+        
+        
+
+        
+        <section class="section section--grey section--what-is" id="what-is" aria-label="What is Avenor YouTube Downloader">
+          <div class="container">
+            <div class="what-is__grid">
+              <div class="what-is__content">
+                <h2 class="what-is__title">What is Avenor YouTube Downloader</h2>
+                <div class="what-is__desc">
+                  <p>Avenor YouTube Downloader is a desktop application for Windows and macOS that lets you download YouTube videos directly to your computer.</p><p>Unlike online services, everything happens locally on your PC — no uploads to external servers, no privacy risks, and no quality loss.</p>
+                </div>
+              </div>
+              
+              <div class="what-is__badges">
+                
+                  
+                  <div class="feature-badge feature-badge--os">
+                    <span class="feature-badge__title">Windows &amp; MacOS</span>
+                    <div class="feature-badge__icons">
+                      
+                      <img src="/assets/icons/windows.svg" alt="windows" class="feature-badge__icon">
+                      
+                      <img src="/assets/icons/apple.svg" alt="apple" class="feature-badge__icon">
+                      
+                    </div>
+                  </div>
+                  
+                
+                  
+                  <div class="feature-badge feature-badge--security">
+                    <div class="feature-badge__icon-wrapper">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="security-icon">
+                        <path d="M12 2L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 2ZM10 17L6 13L7.41 11.59L10 14.17L16.59 7.58L18 9L10 17Z" fill="white"/>
+                      </svg>
+                    </div>
+                    <div class="feature-badge__text">
+                      <span class="feature-badge__highlight highlight-freemium">100%</span>
+                      <span class="feature-badge__subtitle">locally on your PC</span>
+                    </div>
+                  </div>
+                  
+                
+              </div>
+              
+            </div>
+
+            <!-- Decorative Icons -->
+            <img src="/assets/icons/seo-section/icon-decor-left.png" class="what-is__decor what-is__decor--left" alt="" aria-hidden="true">
+            <img src="/assets/icons/seo-section/icon-decor-right.png" class="what-is__decor what-is__decor--right" alt="" aria-hidden="true">
+          </div>
+        </section>
+
+        
+
+      
+        
+        
+
+        
+        <section class="section section--dark" id="benefits">
+          <div class="container">
+            <h2 class="section__title benefits-title">Why download YouTube videos with Avenor</h2>
+            <div class="benefits-layout">
+              <div class="benefits-grid">
+                
+                <div class="benefit-card">
+                  <div class="benefit-card__icon benefit-card__icon--quality">
+                    
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 2l2.6 5.3 5.9.9-4.2 4.1 1 5.9-5.3-2.8-5.3 2.8 1-5.9-4.2-4.1 5.9-.9L12 2z"/>
+                    </svg>
+                    
+                  </div>
+                  <div class="benefit-card__content">
+                    <h3 class="benefit-title">Original Quality</h3>
+                    <p class="benefit-desc">Download videos in their original quality when available — up to 4K, 1080p, or whatever the creator uploaded.</p>
+                  </div>
+                </div>
+                
+                <div class="benefit-card">
+                  <div class="benefit-card__icon benefit-card__icon--clip">
+                    
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M8.5 6.5l9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M15.5 6.5l-9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <circle cx="7" cy="7" r="3" stroke="currentColor" stroke-width="2"/>
+                      <circle cx="17" cy="17" r="3" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    
+                  </div>
+                  <div class="benefit-card__content">
+                    <h3 class="benefit-title">Clip Before Download</h3>
+                    <p class="benefit-desc">Unique feature: set In/Out points and download only the fragment you need. Perfect for clips, highlights, or specific segments.</p>
+                  </div>
+                </div>
+                
+                <div class="benefit-card">
+                  <div class="benefit-card__icon benefit-card__icon--nolimits">
+                    
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M4 12c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M2 12h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    
+                  </div>
+                  <div class="benefit-card__content">
+                    <h3 class="benefit-title">No Ads, No Limits</h3>
+                    <p class="benefit-desc">Clean interface without annoying ads. Download as many videos as you want, no artificial restrictions.</p>
+                  </div>
+                </div>
+                
+                <div class="benefit-card">
+                  <div class="benefit-card__icon benefit-card__icon--formats">
+                    
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M6 3h8l4 4v14H6z"/>
+                      <path d="M14 3v4h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    
+                  </div>
+                  <div class="benefit-card__content">
+                    <h3 class="benefit-title">Multiple Formats</h3>
+                    <p class="benefit-desc">Download as MP4 video or extract audio as MP3. Choose what works best for your needs.</p>
+                  </div>
+                </div>
+                
+              </div>
+              <aside class="benefits-media" aria-label="Видеопревью возможностей">
+                <video class="lazy-video" muted loop playsinline preload="none">
+                  <source data-src="/assets/vid/seo-preview.mp4" type="video/mp4" />
+                </video>
+              </aside>
+            </div>
+            <div class="qf-actions" style="margin-top: 24px;">
+              <a href="/download/win" class="btn btn--primary btn--os">
+                <img class="os-icon-img" src="/assets/icons/windows.svg" alt="" aria-hidden="true">
+                <span>Download for Windows</span>
+              </a>
+              <a href="https://avenordownload.app/#pricing" class="btn btn--light btn--os">
+                <span>Buy Now</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        
+
+      
+        
+        
+
+        
+        <section class="section seo-section section--grey" id="clip-feature">
+          <div class="container">
+            
+            <h2 class="section__title">Clip YouTube videos before download</h2>
+            
+            <div class="clip-feature">
+              <div class="clip-feature__media">
+                <video class="lazy-video" muted loop playsinline preload="none">
+                  <source data-src="/assets/vid/feature-fragments.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div class="clip-feature__text">
+                <p>Found the perfect moment in a 2-hour podcast? Need just a highlight from a gaming stream?</p><p>Avenor's unique clip feature lets you set precise In/Out points before downloading.</p><p>No need to download the entire video and then trim it — save time and storage space by downloading only what you need.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        
+
+      
+        
+        
+
+        
+        <section class="section seo-section section--dark" id="quality-formats">
+          <div class="container">
+            
+            <h2 class="section__title">Quality &amp; formats</h2>
+            <div class="qf-layout">
+              <div class="qf-text seo-card">
+                <div class="seo-rich">
+                  <p>Always the original quality when available — exactly as on YouTube.</p>
+                  <ul>
+                    <li>8K, 4K, 1440p, 1080p, 720p, 480p, 360p</li>
+                    <li>MP4 video or MP3 audio‑only</li>
+                  </ul>
+                  <p>Pick the format that fits your workflow and devices.</p>
+                </div>
+              </div>
+              <div class="qf-media">
+                <img src="/assets/mockup2.png" alt="Avenor Interface preview">
+              </div>
+            </div>
+            <div class="qf-actions" style="margin-top: 22px;">
+              <a href="/download/win" class="btn btn--primary btn--os">
+                <img class="os-icon-img" src="/assets/icons/windows.svg" alt="" aria-hidden="true">
+                <span>Download for Windows</span>
+              </a>
+              <a href="https://avenordownload.app/#pricing" class="btn btn--light btn--os">
+                <span>Buy Now</span>
+              </a>
+            </div>
+          </div>
+        </section>
+        
+
+      
+        
+        
+
+        
+        <section class="section section--grey" id="how-it-works">
+          <div class="container">
+            <h2 class="section__title">How it works</h2>
+            <div class="steps-grid">
+              
+              <div class="step-card">
+                <span class="step-number">1</span>
+                <h3 class="step-title">Copy YouTube URL</h3>
+                <p class="step-desc">Copy the link to any YouTube video you want to download.</p>
+              </div>
+              
+              <div class="step-card">
+                <span class="step-number">2</span>
+                <h3 class="step-title">Paste in Avenor</h3>
+                <p class="step-desc">Open Avenor Downloader and paste the URL. The app analyzes the video and shows available qualities.</p>
+              </div>
+              
+              <div class="step-card">
+                <span class="step-number">3</span>
+                <h3 class="step-title">Choose Quality &amp; Clip (Optional)</h3>
+                <p class="step-desc">Select video quality and optionally set In/Out points to download only a specific fragment.</p>
+              </div>
+              
+              <div class="step-card">
+                <span class="step-number">4</span>
+                <h3 class="step-title">Download to Your PC</h3>
+                <p class="step-desc">Click download and get your video saved locally on your computer.</p>
+              </div>
+              
+            </div>
+          </div>
+        </section>
+
+        
+
+      
+        
+        
+
+        
+        <section class="section seo-section section--grey section--bg-image" id="premiere-pro-audio">
+
+          <div class="container">
+            <h2 class="section__title">
+              Why does Premiere Pro import 4K YouTube videos without audio
+              <span class="ppro-sub">(VP9 / AV1 codec issue)</span>?
+            </h2>
+        
+            <div class="ppro-layout">
+              <!-- LEFT: “no player” preview -->
+              <aside class="ppro-media ppro-mockup">
+                <img src="/assets/mockup-error.png" alt="Premiere Pro AV1 unsupported compression error"
+                  class="ppro-mockup-img" loading="lazy" />
+              </aside>
+              
+              
+        
+              <!-- RIGHT: two cards -->
+              <div class="ppro-stack">
+                <div class="ppro-card">
+                  <h3 class="ppro-card__title">What’s actually happening</h3>
+                  <p>
+                    If you download a <span class="hl hl--accent">2K / 4K / 8K</span> video from YouTube and Premiere Pro
+                    imports <span class="hl hl--bad">video only</span> while the
+                    <span class="hl hl--bad">audio is missing</span> — it’s usually
+                    <span class="hl hl--accent">not a downloader problem</span>.
+                  </p>
+                  <p>
+                    YouTube often delivers high-resolution streams in
+                    <span class="hl hl--bad">VP9</span> or <span class="hl hl--bad">AV1</span>.
+                    These codecs are great for streaming, but not always fully supported by editing workflows —
+                    so Premiere/After Effects may show a codec error or import without sound.
+                  </p>
+        
+                  <div class="ppro-mini">
+                    Searches people type: <span class="ppro-chip">Premiere Pro no audio</span>
+                    <span class="ppro-chip">VP9 error</span>
+                    <span class="ppro-chip">AV1 not supported</span>
+                    <span class="ppro-chip">YouTube 4K no sound</span>
+                  </div>
+                </div>
+        
+                <div class="ppro-card ppro-card--good">
+                  <h3 class="ppro-card__title">Fix (recommended)</h3>
+                  <ol class="ppro-steps">
+                    <li>Open <span class="hl hl--good">Convert</span> tab in Avenor.</li>
+                    <li>Convert to <span class="hl hl--good">MP4 (H.264)</span>.</li>
+                    <li>Import the converted file into Premiere Pro / After Effects.</li>
+                  </ol>
+                  <p class="ppro-note">
+                    After conversion, <span class="hl hl--good">both video and audio</span> will import correctly.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        
+        <section class="section seo-section section--dark" id="privacy-safety">
+          <div class="container">
+            
+            <h2 class="section__title">Privacy &amp; safety</h2>
+            
+            <div class="seo-rich">
+              <p>Your privacy is our priority. Avenor YouTube Downloader works entirely on your computer — we never upload your videos to our servers, don't process them remotely, and don't collect personal information.</p><h3>Why local processing matters</h3><ul><li>No uploads to external servers</li><li>No account required</li><li>Full control over your content</li></ul><p>Downloaded videos are saved directly to your chosen folder.</p>
+            </div>
+          </div>
+        </section>
+        
+        <section class="section section--cta" id="final-cta">
+          <div class="container">
+            <div class="qf-actions">
+              <a href="/download/win" class="btn btn--primary btn--os">
+                <img class="os-icon-img" src="/assets/icons/windows.svg" alt="" aria-hidden="true">
+                <span>Download for Windows</span>
+              </a>
+              <a href="https://avenordownload.app/#pricing" class="btn btn--light btn--os">
+                <span>Buy Now</span>
+              </a>
+            </div>
+          </div>
+        </section>
+        
+
+      
+
+      
+      <div id="pricing"></div>
+      
+
+      <!-- PRICING -->
+      
+      <!-- FAQ -->
+      
+      <section class="section faq" id="faq">
+        <div class="container">
+          <h2 class="section__title">Frequently Asked Questions</h2>
+          <div class="faq__list" style="max-width: 800px; margin: 0 auto;">
+            
+            <div class="faq-item">
+              <details>
+                <summary class="faq-summary">Why can’t I just use an online YouTube downloader?</summary>
+                <div class="faq-answer">Because you lose quality, privacy, and control.
+
+                  Online tools:
+
+                  compress video automatically
+
+                  show ads and popups
+
+                  limit length
+
+                  sometimes inject watermarks
+
+                  Avenor works locally on your computer.
+                  No uploads. No ads. No quality loss. Just original video.</div>
+              </details>
+            </div>
+            
+            <div class="faq-item">
+              <details>
+                <summary class="faq-summary">Will I lose video quality after downloading?</summary>
+                <div class="faq-answer">No. Avenor downloads the original available quality from YouTube.
+                If the video is available in:
+                1080p
+                2K
+                4K
+                8K
+                You can download it in that exact quality. No recompression unless you choose to convert.</div>
+              </details>
+            </div>
+            
+            <div class="faq-item">
+              <details>
+                <summary class="faq-summary">Can I download only part of a YouTube video?</summary>
+                <div class="faq-answer">Yes — and this is where Avenor is different.
+                  Instead of downloading the full video and trimming later,
+                  you can:
+                  set In / Out points
+                  choose exact timestamps
+                  download only the fragment you need
+                  This saves time and disk space.</div>
+              </details>
+            </div>
+            
+            <div class="faq-item">
+              <details>
+                <summary class="faq-summary">Why does Premiere Pro import my 4K/8K video without audio (VP9 / AV1 error)?</summary>
+                <div class="faq-answer">YouTube often provides high-resolution videos in VP9 or AV1 codecs, which are highly compressed and optimized for streaming — but not always fully supported in video editors like:
+
+                Adobe Premiere Pro
+                After Effects
+                some older editing systems
+                💡 How to fix it?
+                Simply:
+                Open the Convert tab in Avenor
+                Convert the downloaded file to MP4 (H.264)
+                Import the converted file into Premiere or After Effects
+                After conversion, both video and audio will import correctly.</div>
+              </details>
+            </div>
+            
+            <div class="faq-item">
+              <details>
+                <summary class="faq-summary">Does Avenor store my videos on a server?</summary>
+                <div class="faq-answer">No.
+                There are no cloud servers.
+                No file uploads.
+                No tracking of downloaded videos.
+                Everything stays on your device.</div>
+              </details>
+            </div>
+            
+            <div class="faq-item">
+              <details>
+                <summary class="faq-summary">Is it really free?</summary>
+                <div class="faq-answer">You can try Avenor for free.
+
+                Free version allows:
+                basic downloads
+                limited features
+                Pro unlocks:
+                clipping
+                higher resolutions
+                advanced formats</div>
+              </details>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+      
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="container footer__inner">
+          <div class="footer__top">
+            <div class="footer__col">
+              <img src="/assets/Logo.png" alt="Avenor" class="footer__logo" style="height: 32px;">
+              <p class="footer__desc">
+                Avenor Downloader © 2024
+              </p>
+            </div>
+            <div class="footer__col">
+              <h4 class="footer__title">Legal</h4>
+              <a href="/privacy.html" class="footer__link">Privacy Policy</a>
+              <a href="/terms.html" class="footer__link">Terms of Service</a>
+              <a href="/refund.html" class="footer__link">Refund Policy</a>
+            </div>
+            <div class="footer__col">
+               <h4 class="footer__title">Support</h4>
+               <a href="mailto:support@avenordownload.app" class="footer__link">support@avenordownload.app</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script>
+      // Simple interaction for language menu if not using hover
+      document.querySelector('.lang__btn').addEventListener('click', function() {
+        this.parentNode.classList.toggle('active');
+      });
+      
+      // Paddle init if needed
+      const PADDLE_TOKEN_PROD = "live_3b49a2cdb0ce243817e7bf610ae"; 
+      if (window.Paddle) {
+         window.Paddle.Environment.set("production");
+         window.Paddle.Initialize({ token: PADDLE_TOKEN_PROD });
+         
+         document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              const priceId = btn.getAttribute("data-price-id");
+              if (!priceId) return;
+              window.Paddle.Checkout.open({
+                items: [{ priceId, quantity: 1 }],
+                settings: { displayMode: "overlay", theme: "dark" }
+              });
+            });
+         });
+      }
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggles = document.querySelectorAll(".pricing__toggle-btn");
+        const cards = document.querySelectorAll(".pricing__card[data-tier-group]");
+        const pricingContainer = document.querySelector(".pricing");
+        const compare = document.querySelector(".pricing-compare");
+        const compareRows = compare ? compare.querySelectorAll(".pc-row") : [];
+        function updateVisibility(target) {
+          if (pricingContainer) {
+            pricingContainer.setAttribute("data-tier-view", target);
+          }
+          if (compare) {
+            compare.setAttribute("data-tier-view", target);
+            compare.style.setProperty("--pc-cols", target === "studio" ? "3" : "4");
+            compareRows.forEach((row) => {
+              const cells = Array.from(row.children);
+              cells.forEach((cell, index) => {
+                if (index === 0) {
+                  cell.style.display = "";
+                  return;
+                }
+                if (target === "studio") {
+                  cell.style.display = index >= 5 ? "" : "none";
+                } else {
+                  cell.style.display = index <= 4 ? "" : "none";
+                }
+              });
+            });
+          }
+          cards.forEach((card) => {
+            const group = card.getAttribute("data-tier-group");
+            if (group === target) {
+              card.style.display = "";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        }
+        const activeToggle = document.querySelector(".pricing__toggle-btn.active");
+        if (activeToggle) {
+          updateVisibility(activeToggle.getAttribute("data-target"));
+        }
+        toggles.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            toggles.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+            const target = btn.getAttribute("data-target");
+            updateVisibility(target);
+          });
+        });
+      });
+    </script>
+    <script>
+      (function(){
+        const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const lazyVideos = Array.from(document.querySelectorAll('video.lazy-video'));
+        if (!('IntersectionObserver' in window)) {
+          // Fallback: load sources but do not autoplay if reduced motion
+          lazyVideos.forEach((video) => {
+            const sources = video.querySelectorAll('source[data-src]');
+            sources.forEach((s) => { s.src = s.dataset.src; s.removeAttribute('data-src'); });
+            try { video.load(); } catch(e) {}
+            if (!prefersReducedMotion) {
+              const p = video.play();
+              if (p && typeof p.then === 'function') p.catch(()=>{});
+            }
+          });
+          return;
+        }
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            const video = entry.target;
+            if (entry.intersectionRatio >= 0.4) {
+              const sources = video.querySelectorAll('source[data-src]');
+              let changed = false;
+              sources.forEach((s) => {
+                if (s.dataset.src) {
+                  s.src = s.dataset.src;
+                  s.removeAttribute('data-src');
+                  changed = true;
+                }
+              });
+              if (changed) {
+                try { video.load(); } catch(e) {}
+              }
+              if (!prefersReducedMotion) {
+                const p = video.play();
+                if (p && typeof p.then === 'function') p.catch(()=>{});
+              }
+            } else {
+              try { video.pause(); } catch(e) {}
+            }
+          });
+        }, { threshold: [0, 0.4, 1] });
+        lazyVideos.forEach((video) => {
+          // Ensure attributes
+          video.muted = true;
+          video.loop = true;
+          video.playsInline = true;
+          video.setAttribute('preload', 'none');
+          observer.observe(video);
+        });
+      })();
+    </script>
+  </body>
+</html>

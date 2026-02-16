@@ -1,0 +1,179 @@
+
+/* =========================================
+   WHAT IS SECTION (SEO REDESIGN)
+   ========================================= */
+:root {
+  --color-freemium: #92d83c;
+}
+
+.section--what-is {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.what-is__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.what-is__content {
+  max-width: 640px;
+}
+
+.what-is__title {
+  font-size: clamp(32px, 4vw, 42px);
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.15;
+  color: var(--text-main);
+}
+
+.what-is__desc {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+.what-is__desc p {
+  margin-bottom: 20px;
+}
+.what-is__desc p:last-child {
+  margin-bottom: 0;
+}
+
+.what-is__badges {
+  display: flex;
+  gap: 24px;
+  justify-content: flex-end;
+}
+
+.feature-badge {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 180px;
+  backdrop-filter: blur(10px);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.feature-badge:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.feature-badge--os {
+  align-items: center;
+  text-align: center;
+}
+
+.feature-badge--security {
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.feature-badge__title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.feature-badge__icons {
+  display: flex;
+  gap: 16px;
+}
+
+.feature-badge__icon {
+  width: 28px;
+  height: 28px;
+  /* Ensure icons are white if they are black svgs, or keep original colors */
+  /* Assuming windows/apple icons are colored or white. Usually white on dark bg. */
+}
+
+.feature-badge__icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.security-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.feature-badge__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-badge__highlight {
+  color: var(--color-freemium);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.feature-badge__subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.2;
+}
+
+/* Responsive Breakpoints */
+
+/* Tablet / Small Desktop */
+@media (max-width: 1024px) {
+  .what-is__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .what-is__badges {
+    justify-content: flex-start;
+  }
+  .what-is__content {
+    max-width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .section--what-is {
+    padding: 60px 0;
+  }
+  .what-is__badges {
+    flex-direction: column;
+    width: 100%;
+  }
+  .feature-badge {
+    width: 100%;
+    min-width: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+    padding: 20px;
+  }
+  .feature-badge--os {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .feature-badge__title {
+    margin-bottom: 0;
+    font-size: 16px;
+  }
+  .feature-badge__highlight {
+    font-size: 20px;
+  }
+}
