@@ -9,18 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Download YouTube Videos in Original Quality — Avenor Downloader</title>
-    <meta name="description" content="Download YouTube videos locally on your PC. Choose quality, clip In/Out, keep privacy. Windows + macOS desktop app." />
 
-    
+    <meta name="description" content="Download YouTube videos locally on your PC. Choose quality, clip In/Out, keep privacy. Windows + macOS desktop app." />
     <meta property="og:title" content="Download YouTube Videos in Original Quality — Avenor Downloader" />
     <meta property="og:description" content="Download YouTube videos locally on your PC. Choose quality, clip In/Out, keep privacy. Windows + macOS desktop app." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://avenordownload.app/download-youtube-video" />
     <meta property="og:site_name" content="Avenor Downloader" />
-    
     <meta property="og:image" content="https://avenordownload.app/assets/og/youtube2.png" />
-    
-
     
     <script defer src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js"></script>
     <script type="application/ld+json">
@@ -53,64 +49,58 @@
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
-        
         {
           "@type": "Question",
-          "name": "Is this an online YouTube downloader?",
+          "name": "Why can’t I just use an online YouTube downloader?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No, Avenor is a desktop application that you install on your Windows or macOS computer. Everything happens locally on your PC — no uploads to external servers."
+            "text": "Online tools often recompress video, add ads, limit length, and can be risky for privacy. Avenor is a desktop app: downloads run locally on your computer, without uploading your content."
           }
         },
-        
         {
           "@type": "Question",
-          "name": "Does Avenor store my videos?",
+          "name": "Will I lose video quality after downloading?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No, we never store your videos. Downloads go directly to your computer, and we don't have access to your content at any point."
+            "text": "No. Avenor downloads the best available YouTube quality when it exists (up to 1080p/1440p/4K/8K). No recompression happens unless you choose to convert."
           }
         },
-        
         {
           "@type": "Question",
-          "name": "Can I clip a fragment before downloading?",
+          "name": "Can I download only part of a YouTube video?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes! Avenor's unique feature lets you set In/Out points and download only the specific part of the video you need."
+            "text": "Yes. You can set In/Out timestamps and download only the fragment you need, instead of downloading the full video and trimming later."
           }
         },
-        
         {
           "@type": "Question",
-          "name": "What quality is supported?",
+          "name": "Why does Premiere Pro import my 4K/8K video without audio (VP9 / AV1 error)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We support all available YouTube qualities including 4K, 1080p, 720p, and more. You get the original quality when available."
+            "text": "High-resolution YouTube downloads are often delivered in VP9 or AV1. These codecs can be partially unsupported in some editing workflows, which may cause missing audio or codec errors. Fix: convert the file to MP4 (H.264) in Avenor’s Convert tab, then import again."
           }
         },
-        
         {
           "@type": "Question",
-          "name": "Does it work on Windows and macOS?",
+          "name": "Does Avenor store my videos on a server?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, Avenor YouTube Downloader is available for both Windows (10/11) and macOS (10.14+)."
+            "text": "No. Avenor doesn’t upload or store your files. Downloads are saved directly to your computer."
           }
         },
-        
         {
           "@type": "Question",
-          "name": "Is it free to try?",
+          "name": "Is it really free?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, you can download Avenor and try it for free. Download the version for your operating system above."
+            "text": "You can try Avenor for free. Some advanced features (higher resolutions, clipping, extra formats) may require a Pro plan."
           }
         }
-        
       ]
     }
     </script>
+
     
 
     <link rel="icon" href="/favicon.ico" sizes="any">
@@ -127,22 +117,9 @@
 
     
     <link rel="canonical" href="https://avenordownload.app/download-youtube-video" />
-    
-      <link rel="alternate" hreflang="ru" href="https://avenordownload.app/ru/download-youtube-video" />
-    
-      <link rel="alternate" hreflang="en" href="https://avenordownload.app/download-youtube-video" />
-    
-      <link rel="alternate" hreflang="es" href="https://avenordownload.app/es/download-youtube-video" />
-    
-      <link rel="alternate" hreflang="pt" href="https://avenordownload.app/pt/download-youtube-video" />
-    
-      <link rel="alternate" hreflang="de" href="https://avenordownload.app/de/download-youtube-video" />
-    
-      <link rel="alternate" hreflang="fr" href="https://avenordownload.app/fr/download-youtube-video" />
-    
-      <link rel="alternate" hreflang="uk" href="https://avenordownload.app/uk/download-youtube-video" />
-    
-      <link rel="alternate" hreflang="x-default" href="https://avenordownload.app/download-youtube-video" />
+    <link rel="alternate" hreflang="en" href="https://avenordownload.app/download-youtube-video" />
+    <link rel="alternate" hreflang="x-default" href="https://avenordownload.app/download-youtube-video" />
+
     
 
     
@@ -702,9 +679,7 @@
           <div class="footer__top">
             <div class="footer__col">
               <img src="/assets/Logo.png" alt="Avenor" class="footer__logo" style="height: 32px;">
-              <p class="footer__desc">
-                Avenor Downloader © 2024
-              </p>
+              <p class="footer__desc" id="seoCopyright">Avenor Downloader © 2026</p>
             </div>
             <div class="footer__col">
               <h4 class="footer__title">Legal</h4>
@@ -849,5 +824,17 @@
         });
       })();
     </script>
+
+
+    <script>
+      (function () {
+        const START_YEAR = 2025;
+        const y = new Date().getFullYear();
+        const yr = (y === START_YEAR) ? String(y) : `${START_YEAR}–${y}`;
+        const el = document.getElementById("seoCopyright");
+        if (el) el.textContent = `Avenor Downloader © ${yr}`;
+      })();
+    </script>
+
   </body>
 </html>
