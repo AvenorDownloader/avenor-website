@@ -53,6 +53,7 @@ html {
   border-radius: 16px;
   padding: 1.5rem;
   position: relative;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 .seo-page .step-number {
   font-size: 3rem;
@@ -75,10 +76,39 @@ html {
   line-height: 1.5;
 }
 
+.seo-page .step-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.08);
+}
+.seo-page .step-icon svg { width: 22px; height: 22px; display: block; }
+.seo-page .step-card--s1 { border-color: rgba(146, 216, 60, 0.45); box-shadow: 0 0 0 1px rgba(146, 216, 60, 0.35), 0 0 18px rgba(146, 216, 60, 0.12); }
+.seo-page .step-card--s1 .step-icon { color: #92d83c; background: rgba(146, 216, 60, 0.16); }
+.seo-page .step-card--s2 { border-color: rgba(122, 185, 255, 0.45); box-shadow: 0 0 0 1px rgba(122, 185, 255, 0.35), 0 0 18px rgba(122, 185, 255, 0.12); }
+.seo-page .step-card--s2 .step-icon { color: #7ab9ff; background: rgba(122, 185, 255, 0.16); }
+.seo-page .step-card--s3 { border-color: rgba(255, 122, 193, 0.45); box-shadow: 0 0 0 1px rgba(255, 122, 193, 0.35), 0 0 18px rgba(255, 122, 193, 0.12); }
+.seo-page .step-card--s3 .step-icon { color: #ff7ac1; background: rgba(255, 122, 193, 0.16); }
+.seo-page .step-card--s4 { border-color: rgba(255, 208, 0, 0.45); box-shadow: 0 0 0 1px rgba(255, 208, 0, 0.35), 0 0 18px rgba(255, 208, 0, 0.12); }
+.seo-page .step-card--s4 .step-icon { color: #ffd000; background: rgba(255, 208, 0, 0.16); }
+.seo-page .step-card:hover { transform: translateY(-2px); }
+
 .seo-page .benefits-title {
   text-align: center;
   font-size: clamp(32px, 4vw, 42px);
   margin-bottom: 8px;
+}
+.seo-page .benefits-subtitle {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 16px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 .seo-page .benefits-layout {
   display: grid;
@@ -87,10 +117,18 @@ html {
   align-items: stretch;
   margin-top: 28px;
 }
+.seo-page .benefits-layout--insta {
+  display: block;
+  margin-top: 28px;
+}
 .seo-page .benefits-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
+}
+.seo-page .benefits-grid--insta {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
 }
 .seo-page .clip-layout {
   display: grid;
@@ -128,6 +166,13 @@ html {
 .seo-page .clip-feature__text p:nth-of-type(2) {
   font-weight: 700;
   color: #fff;
+  font-size: 2rem;
+}
+.seo-page .clip-feature__text p:first-of-type {
+  font-size: 1.1rem;
+}
+.seo-page .clip-feature__text p:last-of-type {
+  font-size: 1.1rem;
 }
 .seo-page .benefit-card {
   background: var(--bg-card);
@@ -915,7 +960,7 @@ body {
 
 /* SEO Page Alternating Sections */
 .seo-page .hero {
-  padding-top: 10px; /* Reduced from default 56px */
+  padding-top: 3rem;
 }
 
 .seo-page .container { max-width: 1500px; } /* Wider container for impactful layout */
@@ -1104,6 +1149,20 @@ body {
   max-width: 900px;
   margin: 0 auto 18px;
 }
+.seo-page #quality-formats .qf-text .seo-rich{
+  text-align: left;
+}
+.seo-page #quality-formats .seo-rich p{
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+.seo-page #quality-formats .seo-rich ul{
+  margin-left: 1.25rem;
+}
+.seo-page #quality-formats .seo-rich li{
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
 .seo-page .qf-layout{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1112,10 +1171,10 @@ body {
   margin-top: 22px;
 }
 .seo-page .qf-text{
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: 18px;
-  padding: 22px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
 }
 .seo-page #quality-formats .qf-text .seo-rich{
   text-align: left;
@@ -3522,6 +3581,59 @@ body {
   opacity: .95;
 }
 
+.btn--mac {
+  position: relative;
+}
+.btn--mac .btn__text-wrap {
+  position: relative;
+  display: inline-block;
+}
+.btn--mac .btn__label {
+  transition: opacity 180ms ease, transform 180ms ease;
+  will-change: opacity, transform;
+}
+.btn--mac .btn__label--hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.btn--mac:hover .btn__label--default {
+  opacity: 0;
+  transform: translateY(-2px);
+}
+.btn--mac:hover .btn__label--hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+.btn--mac .btn__icon-wrap {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+.btn--mac .btn__icon-wrap .os-icon-img {
+  position: absolute;
+  inset: 0;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+.btn--mac .btn__icon-wrap .os-icon-tool {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  color: #ffffff;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+.btn--mac .btn__icon-wrap .os-icon-tool svg {
+  width: 18px; height: 18px; display: block;
+}
+.btn--mac:hover .btn__icon-wrap .os-icon-img {
+  opacity: 0;
+  transform: scale(0.96);
+}
+.btn--mac:hover .btn__icon-wrap .os-icon-tool {
+  opacity: .95;
+  transform: scale(1);
+}
 
 
 
@@ -4776,9 +4888,17 @@ details.hero__badge[open] {
 }
 
 .section--what-is {
-  padding: 100px 0;
+  padding: 60px 0;
   position: relative;
   overflow: hidden;
+}
+
+.seo-page .section.section--what-is {
+  padding: 60px 0;
+}
+
+.seo-page .section.section--what-is.section--insta {
+  padding: 32px 0 48px;
 }
 
 .what-is__grid {
@@ -4788,8 +4908,32 @@ details.hero__badge[open] {
   align-items: center;
 }
 
+.what-is__grid--insta {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 32px;
+  align-items: center;
+}
+
 .what-is__content {
   max-width: 640px;
+}
+
+.what-is__content--right {
+  text-align: right;
+  margin-left: auto;
+}
+
+.what-is__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.what-is__iphone {
+  max-width: 440px;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .what-is__title {
@@ -4893,6 +5037,11 @@ details.hero__badge[open] {
   margin-bottom: 6px;
 }
 
+.text-accent {
+  color: var(--color-freemium);
+  font-weight: 700;
+}
+
 .feature-badge__subtitle {
   font-size: 15px; /* Increased font size */
   color: var(--text-muted);
@@ -4920,6 +5069,16 @@ details.hero__badge[open] {
 @media (max-width: 640px) {
   .section--what-is {
     padding: 60px 0;
+  }
+  .what-is__grid--insta {
+    grid-template-columns: 1fr;
+  }
+  .what-is__content--right {
+    text-align: left;
+    margin-left: 0;
+  }
+  .what-is__iphone {
+    max-width: 320px;
   }
   .what-is__badges {
     flex-direction: column;
@@ -5241,4 +5400,40 @@ details.hero__badge[open] {
 /* subtle glow behind */
 .seo-page .ppro-mockup::before {
   content: none;
+}
+
+
+/* === FIX: Instagram "what-is" section layout (phone + wider text) === */
+.section--what-is {
+  /* нужно, чтобы телефон мог "уехать" вниз и обрезаться ровно по границе секции */
+  overflow: hidden;
+}
+
+.what-is__grid--insta {
+  /* чуть больше воздуха между колонками (как в рефе) */
+  gap: 56px;
+  align-items: center;
+}
+
+/* Убираем искусственное сужение текста */
+.what-is__grid--insta .what-is__content {
+  max-width: none;
+}
+
+/* Делаем колонку текста шире визуально */
+.what-is__grid--insta .what-is__content--right {
+  width: 100%;
+}
+
+/* Чтобы телефон стоял ниже и "обрезался" ровно по низу секции */
+.what-is__grid--insta .what-is__media {
+  align-items: flex-end;
+}
+
+.what-is__grid--insta .what-is__iphone {
+  /* опусти телефон вниз — секция уже overflow:hidden, обрежется красиво по границе */
+  transform: translateY(70px);
+  transform-origin: bottom;
+  /* если нужно крупнее — можно поднять max-width */
+  max-width: 380px;
 }

@@ -41,6 +41,7 @@
         
       hero_btn_win: "Скачать для Windows",
       hero_btn_mac: "Скачать для macOS",
+      hero_btn_mac_hover: "В разработке...",
       hero_btn_how: "Как это работает?",
       hero_meta_before: "Скачивая вы принимаете нашу",
       hero_meta_privacy: "политику конфиденциальности",
@@ -104,6 +105,7 @@
 
       yt_btn_win: "Скачать для Windows",
       yt_btn_mac: "Скачать для macOS",
+      yt_btn_mac_hover: "В разработке...",
       yt_btn_mac_soon: "Скоро для macOS",
       mac_unavailable_tooltip: "Версия для macOS временно недоступна. Оставьте email — мы сообщим о релизе.",
 
@@ -374,6 +376,7 @@
       
       hero_btn_win: "Download for Windows",
       hero_btn_mac: "Download for macOS",
+      hero_btn_mac_hover: "In development...",
       hero_btn_how: "How it works?",
       hero_meta_before: "By downloading you accept our",
       hero_meta_privacy: "Privacy Policy",
@@ -469,6 +472,7 @@
       // ===== Pricing cards =====
       yt_btn_win: "Download for Windows",
       yt_btn_mac: "Download for macOS",
+      yt_btn_mac_hover: "In development...",
       yt_btn_mac_soon: "Coming soon for macOS",
       mac_unavailable_tooltip: "The macOS version is temporarily unavailable. Leave your email — we’ll notify you when it’s ready.",
 
@@ -641,6 +645,7 @@
       
       hero_btn_win: "Descargar para Windows",
       hero_btn_mac: "Descargar para macOS",
+      hero_btn_mac_hover: "En desarrollo...",
 
       hero_btn_how: "¿Cómo funciona?",
       hero_meta_before: "Al descargar aceptas nuestra",
@@ -738,6 +743,7 @@
       // ===== Pricing cards =====
       yt_btn_win: "Descargar para Windows",
       yt_btn_mac: "Descargar para macOS",
+      yt_btn_mac_hover: "En desarrollo...",
 
       plan_free: "Free",
       plan_pro_monthly: "PRO Monthly",
@@ -904,6 +910,7 @@
       
       hero_btn_win: "Baixar para Windows",
       hero_btn_mac: "Baixar para macOS",
+      hero_btn_mac_hover: "Em desenvolvimento...",
 
       hero_btn_how: "Como funciona?",
       hero_meta_before: "Ao baixar, você aceita nossa",
@@ -999,6 +1006,7 @@
       // ===== Pricing cards =====
       yt_btn_win: "Baixar para Windows",
       yt_btn_mac: "Baixar para macOS",
+      yt_btn_mac_hover: "Em desenvolvimento...",
 
       plan_free: "Free",
       plan_pro_monthly: "PRO Monthly",
@@ -1163,6 +1171,7 @@
       
       hero_btn_win: "Für Windows herunterladen",
       hero_btn_mac: "Für macOS herunterladen",
+      hero_btn_mac_hover: "In Entwicklung...",
 
       hero_btn_how: "Wie funktioniert das?",
       hero_meta_before: "Mit dem Download akzeptierst du unsere",
@@ -1266,6 +1275,7 @@
       // ===== Pricing cards =====
       yt_btn_win: "Für Windows herunterladen",
       yt_btn_mac: "Für macOS herunterladen",
+      yt_btn_mac_hover: "In Entwicklung...",
 
       plan_free: "Free",
       plan_pro_monthly: "PRO Monthly",
@@ -1431,6 +1441,7 @@
       
       hero_btn_win: "Télécharger pour Windows",
       hero_btn_mac: "Télécharger pour macOS",
+      hero_btn_mac_hover: "En développement...",
 
       hero_btn_how: "Comment ça marche ?",
       hero_meta_before: "En téléchargeant, vous acceptez notre",
@@ -1531,6 +1542,7 @@
       // ===== Pricing cards =====
       yt_btn_win: "Télécharger pour Windows",
       yt_btn_mac: "Télécharger pour macOS",
+      yt_btn_mac_hover: "En développement...",
 
       plan_free: "Free",
       plan_pro_monthly: "PRO Monthly",
@@ -1699,6 +1711,7 @@
       
       hero_btn_win: "Завантажити для Windows",
       hero_btn_mac: "Завантажити для macOS",
+      hero_btn_mac_hover: "У розробці...",
 
       hero_btn_how: "Як це працює?",
       hero_meta_before: "Завантажуючи, ви приймаєте нашу",
@@ -1796,6 +1809,7 @@
       // ===== Pricing cards =====
       yt_btn_win: "Завантажити для Windows",
       yt_btn_mac: "Завантажити для macOS",
+      yt_btn_mac_hover: "У розробці...",
 
       plan_free: "Free",
       plan_pro_monthly: "PRO Monthly",

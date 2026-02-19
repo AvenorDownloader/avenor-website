@@ -1,23 +1,5 @@
 {
-  "version": 2,
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "redirects": [
-    { "source": "/en", "destination": "/", "permanent": true },
-    { "source": "/en/", "destination": "/", "permanent": true },
-    {
-      "source": "/download/win",
-      "destination": "https://download.avenordownload.app/latest/AvenorDownloader-Setup.exe",
-      "permanent": false
-    },
-    {
-      "source": "/download/mac",
-      "destination": "https://download.avenordownload.app/latest/AvenorDownloader-mac-v1.dmg",
-      "permanent": false
-    }
-  ],
-  "rewrites": [
-    { "source": "/:slug", "destination": "/:slug.html" },
-    { "source": "/:lang/:slug", "destination": "/:lang/:slug.html" }
-  ]
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": true
 }

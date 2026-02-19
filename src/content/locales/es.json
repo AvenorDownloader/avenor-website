@@ -1,0 +1,264 @@
+{
+  "languages": {
+    "en": "English",
+    "ru": "Русский",
+    "es": "Español",
+    "pt": "Português",
+    "de": "Deutsch",
+    "fr": "Français",
+    "uk": "Українська"
+  },
+  "nav": {
+    "features": "Funciones",
+    "how": "Cómo funciona",
+    "faq": "FAQ",
+    "language": "Idioma",
+    "chooseLang": "Elige idioma"
+  },
+  "head": {
+    "title": "Descarga videos de YouTube en calidad original — Avenor Downloader",
+    "description": "Descarga videos de YouTube localmente en tu PC. Elige calidad, recorta con In/Out y protege tu privacidad. App para Windows y macOS."
+  },
+  "hero": {
+    "title": "Descarga videos de YouTube en calidad original",
+    "subtitle": "Descarga local en tu PC. Elige calidad, marca In/Out y mantén la privacidad.",
+    "badges": [
+      "Recorta antes de descargar",
+      "Funciona localmente (privado)",
+      "Calidad original"
+    ]
+  },
+  "cta": {
+    "win": "Descargar para Windows",
+    "buy": "Comprar"
+  },
+  "whatIs": {
+    "ariaTitle": "Qué es Avenor YouTube Downloader",
+    "title": "Qué es Avenor YouTube Downloader",
+    "p1": "Avenor YouTube Downloader es una aplicación de escritorio para Windows y macOS que te permite descargar videos de YouTube directamente a tu computadora.",
+    "p2": "A diferencia de los servicios online, todo sucede localmente en tu PC: sin subidas a servidores externos, sin riesgos de privacidad y sin pérdida de calidad."
+  },
+  "featureBadge": {
+    "osTitle": "Windows y macOS",
+    "local": "localmente en tu PC"
+  },
+  "benefits": {
+    "title": "Por qué descargar videos de YouTube con Avenor",
+    "previewAria": "Vista previa en video de funciones",
+    "original": {
+      "title": "Calidad original",
+      "desc": "Descarga en la calidad original cuando esté disponible — hasta 4K, 1080p, o lo que haya subido el creador."
+    },
+    "clip": {
+      "title": "Recorta antes de descargar",
+      "desc": "Define puntos In/Out precisos y descarga solo el fragmento necesario. Perfecto para clips, destacados o segmentos específicos."
+    },
+    "nolimits": {
+      "title": "Sin anuncios ni límites",
+      "desc": "Interfaz limpia sin anuncios molestos. Descarga tantos videos como quieras, sin restricciones artificiales."
+    },
+    "formats": {
+      "title": "Varios formatos",
+      "desc": "Descarga como video MP4 o extrae audio en MP3. Elige lo que mejor se adapte a ti."
+    }
+  },
+  "clip": {
+    "title": "Recorta videos de YouTube antes de descargar",
+    "p1": "¿Encontraste el momento perfecto en un podcast de 2 horas? ¿Necesitas solo un highlight de un stream?",
+    "p2": "La función de recorte de Avenor te permite marcar puntos In/Out precisos antes de descargar.",
+    "p3": "No necesitas descargar el video completo y recortarlo después — ahorra tiempo y espacio descargando solo lo necesario."
+  },
+  "qf": {
+    "title": "Calidad y formatos",
+    "p1": "Siempre la calidad original cuando esté disponible — tal como en YouTube.",
+    "list": [
+      "8K, 4K, 1440p, 1080p, 720p, 480p, 360p",
+      "Video MP4 o solo audio MP3"
+    ],
+    "p2": "Elige el formato que encaje con tu flujo de trabajo y dispositivos."
+  },
+  "how": {
+    "title": "Cómo funciona",
+    "s1": { "title": "Copia la URL de YouTube", "desc": "Copia el enlace del video de YouTube que quieras descargar." },
+    "s2": { "title": "Pega en Avenor", "desc": "Abre Avenor Downloader y pega la URL. La app analiza el video y muestra las calidades disponibles." },
+    "s3": { "title": "Elige calidad y recorte (opcional)", "desc": "Selecciona la calidad que necesitas y, si hace falta, marca los tiempos In/Out antes de descargar." }
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "q1": "¿Por qué no usar simplemente un descargador online de YouTube?",
+    "a1": "Las herramientas online suelen recomprimir el video, añadir anuncios, limitar la duración y son riesgosas para la privacidad. Avenor es una app de escritorio: las descargas se ejecutan localmente en tu computadora sin subir tu contenido.",
+    "q2": "¿Perderé calidad al descargar?",
+    "a2": "No. Avenor descarga la mejor calidad disponible en YouTube cuando existe (hasta 1080p/1440p/4K/8K). No hay recomprensión a menos que elijas convertir.",
+    "q3": "¿Puedo descargar solo una parte del video?",
+    "a3": "Sí. Marca tiempos In/Out y descarga solo el fragmento que necesitas, en lugar de bajar el video completo y recortar luego.",
+    "q4": "¿Por qué Premiere Pro importa mi video 4K/8K sin audio (error VP9/AV1)?",
+    "a4": "Las descargas en alta resolución de YouTube suelen ir en VP9 o AV1. Estos códecs pueden no estar completamente soportados en algunos flujos de edición, causando audio faltante o errores. Convierte el archivo a MP4 (H.264) en la pestaña Convert de Avenor y vuelve a importarlo.",
+    "q5": "¿Avenor guarda mis videos en un servidor?",
+    "a5": "No. Avenor no sube ni almacena tus archivos. Las descargas se guardan directamente en tu computadora.",
+    "q6": "¿Es realmente gratis?",
+    "a6": "Puedes probar Avenor gratis. Algunas funciones avanzadas (resoluciones altas, recorte, formatos extra) pueden requerir un plan Pro."
+  },
+  "pages": {
+    "download-instagram-video": {
+      "head": {
+        "title": "Descarga videos y Reels de Instagram en tu PC — sin sitios web y sin pérdida de calidad",
+        "description": "Descarga Reels, Historias y videos de Instagram directamente en tu PC. Sin sitios web, sin anuncios, con recorte In/Out y procesamiento local."
+      },
+      "hero": {
+        "title": "Descarga <span class=\"text-accent\">Reels</span> y <span class=\"text-accent\">videos de Instagram</span> en tu PC — sin sitios y sin límites",
+        "subtitle": "Guarda en la mejor calidad disponible. Recorte antes de descargar, MP4/MP3 y flujo 100% local.",
+        "badges": ["Recorte antes de descargar", "Sin webs y sin anuncios", "Local y seguro"]
+      },
+      "cta": { "win": "Descargar para Windows", "buy": "Comprar" },
+      "whatIs": {
+        "ariaTitle": "Avenor: la forma segura de descargar videos de Instagram en PC",
+        "title": "<span class=\"text-accent\">Avenor</span>: la forma segura de descargar videos de <span class=\"text-accent\">Instagram</span> en PC",
+        "p1": "Avenor es una <span class=\"text-accent\">app de escritorio</span> para Windows y macOS que descarga Reels, Historias y publicaciones de video directamente a tu ordenador.",
+        "p2": "A diferencia de los sitios web, Avenor no envía tus enlaces a servidores de terceros ni procesa en el navegador. Todo ocurre en tu PC: más rápido, estable y sin publicidad."
+      },
+      "featureBadge": { "osTitle": "Windows y macOS", "local": "localmente en tu PC" },
+      "benefits": {
+        "title": "Por qué es mejor guardar videos de Instagram<br><span class=\"text-accent\">con Avenor</span> y no en sitios web",
+        "subtitle": "Los descargadores online comprimen, añaden publicidad y rompen el audio. Avenor funciona como una herramienta de edición — local y sin compromisos.",
+        "previewAria": "Vista previa en video de funciones",
+        "original": {
+          "title": "Sin recomprimir",
+          "desc": "Guarda la mejor calidad disponible de la publicación original (cuando sea posible), sin recomprimir."
+        },
+        "clip": {
+          "title": "Descarga solo el momento que importa",
+          "desc": "Marca In/Out antes de descargar y guarda solo el fragmento necesario — sin sobrantes ni recortes posteriores."
+        },
+        "nolimits": {
+          "title": "Sin sitios, popups ni límites",
+          "desc": "Nada de páginas con anuncios, extensiones ni límites arbitrarios de duración."
+        },
+        "formats": {
+          "title": "MP4 y MP3",
+          "desc": "Descarga video para edición o extrae el audio en MP3 cuando solo necesitas el sonido."
+        }
+      },
+      "clip": {
+          "title": "Descarga solo el <span class=\"text-accent\">fragmento necesario</span> — sin relleno",
+          "p1": "¿Necesitas una línea de una Historia o 5 segundos de un Reel para un montaje?",
+          "p2": "Usa <span class=\"text-accent\">In/Out</span> para seleccionar el <span class=\"text-accent\">fragmento exacto</span> antes de descargar.",
+        "p3": "Ahorra tiempo, espacio en disco y simplifica tu flujo de trabajo."
+      },
+      "qf": {
+        "title": "Calidad y formatos",
+        "p1": "Guarda contenido de Instagram en la <span class=\"text-accent\">mejor calidad disponible</span> de la publicación original, cuando sea posible.",
+        "list": ["Mejor resolución disponible para Reels y Historias", "Video MP4 o audio MP3 (si el origen lo permite)"],
+        "p2": "<span class=\"text-accent\">Elige el formato</span> para edición, publicación o archivo."
+      },
+      "how": {
+        "title": "Cómo funciona",
+        "s1": { "title": "Copia el enlace de Instagram", "desc": "Copia la URL del Reel, Historia o publicación de video." },
+        "s2": { "title": "Pégalo en Avenor", "desc": "La app analiza el contenido localmente — sin enviar datos a sitios externos." },
+        "s3": { "title": "Elige calidad y marca In/Out", "desc": "Selecciona el fragmento antes de descargar para guardar solo lo necesario." },
+        "s4": { "title": "Descarga a tu carpeta", "desc": "Haz clic en descargar — el archivo se guarda directamente en la carpeta elegida. Todo toma menos de un minuto." }
+      },
+      "privacy": {
+        "title": "Privacidad y seguridad",
+        "p1": "Avenor no es un servicio web. Las descargas se procesan en tu equipo, no en servidores ajenos.",
+        "h3": "Por qué importa el procesamiento local",
+        "list": ["Sin envío de enlaces a terceros", "Sin rastreadores publicitarios ni límites del navegador", "Tú controlas dónde se guardan los archivos"],
+        "p2": "Tus videos se quedan contigo."
+      },
+      "faq": {
+        "title": "Preguntas frecuentes",
+        "q1": "¿Cómo descargo Reels de Instagram en mi PC?",
+        "a1": "Copia el enlace del Reel y pégalo en Avenor. La descarga se realiza localmente en la mejor calidad disponible.",
+        "q2": "¿Puedo descargar Historias de Instagram?",
+        "a2": "Sí, cuando la Historia es accesible por URL. Marca In/Out para recortar el momento exacto.",
+        "q3": "¿Se pierde calidad al descargar?",
+        "a3": "No, Avenor guarda la mejor calidad disponible y no recomprime salvo que lo elijas.",
+        "q4": "¿Avenor añade marcas de agua?",
+        "a4": "No. No añadimos watermark propio. El resultado depende de la fuente original.",
+        "q5": "¿Por qué la app de escritorio es mejor que los sitios web?",
+        "a5": "No hay anuncios ni envíos a terceros; es más estable y rápido.",
+        "q6": "¿Dónde se guardan mis enlaces y videos?",
+        "a6": "En tu PC. Avenor no sube ni almacena tus datos en servidores externos."
+      }
+    },
+    "download-tiktok-video": {
+      "head": {
+        "title": "Descarga videos de TikTok en calidad HD — Avenor Downloader",
+        "description": "Descarga videos de TikTok localmente en tu PC. Obtén la mejor calidad disponible, recorta In/Out antes de descargar y guarda como MP4 o extrae MP3. Windows + macOS."
+      },
+      "hero": {
+        "title": "Descarga videos de TikTok en calidad HD",
+        "subtitle": "Descarga videos de TikTok localmente. Elige calidad, recorta highlights con In/Out y mantén la privacidad.",
+        "badges": ["Recorta antes de descargar", "Funciona localmente (privado)", "Mejor calidad disponible"]
+      },
+      "cta": { "win": "Descargar para Windows", "buy": "Comprar" },
+      "whatIs": {
+        "ariaTitle": "Qué es Avenor TikTok Downloader",
+        "title": "Qué es Avenor TikTok Downloader",
+        "p1": "Avenor es una aplicación de escritorio para Windows y macOS para guardar videos de TikTok directamente en tu computadora.",
+        "p2": "Todo se procesa localmente — sin anuncios, sin popups y sin servidores remotos."
+      },
+      "featureBadge": { "osTitle": "Windows y macOS", "local": "localmente en tu PC" },
+      "benefits": {
+        "title": "Por qué descargar videos de TikTok con Avenor",
+        "previewAria": "Vista previa en video de funciones",
+        "original": {
+          "title": "Mejor calidad disponible",
+          "desc": "Guarda videos en la mejor calidad proporcionada para ese TikTok — HD cuando esté disponible."
+        },
+        "clip": {
+          "title": "Recorta highlights antes de descargar",
+          "desc": "Usa In/Out para capturar y guardar solo el momento que quieres."
+        },
+        "nolimits": {
+          "title": "Sin anuncios, local",
+          "desc": "Sin publicidad ni popups intrusivos. El procesamiento se ejecuta en tu PC."
+        },
+        "formats": {
+          "title": "MP4 / MP3",
+          "desc": "Guarda como video MP4 o extrae audio en MP3."
+        }
+      },
+      "clip": {
+        "title": "Recorta videos de TikTok antes de descargar",
+        "p1": "¿Encontraste un momento perfecto que quieres guardar?",
+        "p2": "Marca tiempos In/Out para guardar un fragmento preciso.",
+        "p3": "Mantén las descargas rápidas y enfocadas guardando solo lo necesario."
+      },
+      "qf": {
+        "title": "Calidad y formatos",
+        "p1": "Siempre la mejor calidad disponible para el TikTok original.",
+        "list": ["Mejor resolución disponible (HD cuando esté)", "Video MP4 o solo audio MP3"],
+        "p2": "Elige el formato que se adapte a tus dispositivos y flujo de trabajo."
+      },
+      "how": {
+        "title": "Cómo funciona",
+        "s1": { "title": "Copia el enlace de TikTok", "desc": "Copia la URL del video de TikTok que quieres descargar." },
+        "s2": { "title": "Pega en Avenor", "desc": "Abre Avenor Downloader y pega la URL. La app analiza el video." },
+        "s3": { "title": "Elige calidad y recorte (opcional)", "desc": "Selecciona la calidad y marca In/Out para guardar solo un fragmento." },
+        "s4": { "title": "Descarga localmente", "desc": "Haz clic en descargar y el video se guardará en tu computadora." }
+      },
+      "privacy": {
+        "title": "Privacidad y seguridad",
+        "p1": "Avenor funciona completamente en tu computadora — no subimos tu contenido.",
+        "h3": "Por qué importa el procesamiento local",
+        "list": ["Sin subidas a servidores externos", "Sin cuenta requerida", "Tú controlas tus archivos"],
+        "p2": "Las descargas se guardan directamente en la carpeta elegida."
+      },
+      "faq": {
+        "title": "Preguntas frecuentes",
+        "q1": "¿Es esto un descargador online de TikTok?",
+        "a1": "No. Avenor es una app de escritorio — las descargas se ejecutan localmente en tu PC.",
+        "q2": "¿Puedo descargar videos de TikTok en HD?",
+        "a2": "Sí, cuando esté disponible. Avenor guarda la mejor calidad proporcionada para el video original.",
+        "q3": "¿Puedo guardar solo un fragmento (In/Out)?",
+        "a3": "Sí. Usa In/Out para guardar solo el highlight que necesitas.",
+        "q4": "¿Puedo extraer el audio como MP3?",
+        "a4": "Sí. Puedes guardar video MP4 o extraer el audio en MP3.",
+        "q5": "¿Avenor almacena mis videos?",
+        "a5": "No. Los archivos se guardan localmente en tu computadora.",
+        "q6": "¿Funciona en Windows y macOS?",
+        "a6": "Sí. Avenor soporta equipos de escritorio Windows y macOS."
+      }
+    }
+  }
+}

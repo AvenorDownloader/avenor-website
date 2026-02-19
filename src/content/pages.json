@@ -1,0 +1,45 @@
+[
+  {
+    "slug": "download-youtube-video",
+    "ogImage": "/assets/og/youtube2.png",
+    "assets": {
+      "heroVideoWebm": "/assets/vid/pro-ui-demo.webm",
+      "heroVideoMp4": "/assets/vid/hero-demo.mp4",
+      "heroMockup": "/assets/mockup1.png",
+      "qfMockup": "/assets/mockup2.png",
+      "benefitsPreviewVideo": "/assets/vid/seo-preview.mp4",
+      "clipFeatureVideo": "/assets/vid/feature-fragments.mp4",
+      "decorLeft": "/assets/icons/seo-section/icon-decor-left.png",
+      "decorRight": "/assets/icons/seo-section/icon-decor-right.png"
+    }
+  },
+  {
+    "slug": "download-instagram-video",
+    "ogImage": "/assets/platforms/instagram.png",
+    "assets": {
+      "heroVideoWebm": "/assets/vid/hero-demo-inst.webm",
+      "heroVideoMp4": "/assets/vid/hero-demo-inst.mp4",
+      "heroMockup": "/assets/mockup3.png",
+      "whatIsImage": "/assets/Mocup_iphone.png",
+      "qfMockup": "/assets/mockup2.png",
+      "benefitsPreviewVideo": "/assets/vid/seo-preview.mp4",
+      "clipFeatureVideo": "/assets/vid/feature-fragments.mp4",
+      "decorLeft": "/assets/icons/seo-section/icon-decor-left.png",
+      "decorRight": "/assets/icons/seo-section/icon-decor-right.png"
+    }
+  },
+  {
+    "slug": "download-tiktok-video",
+    "ogImage": "/assets/platforms/tiktok2.png",
+    "assets": {
+      "heroVideoWebm": "/assets/vid/pro-ui-demo.webm",
+      "heroVideoMp4": "/assets/vid/hero-demo.mp4",
+      "heroMockup": "/assets/mockup1.png",
+      "qfMockup": "/assets/mockup2.png",
+      "benefitsPreviewVideo": "/assets/vid/seo-preview.mp4",
+      "clipFeatureVideo": "/assets/vid/feature-fragments.mp4",
+      "decorLeft": "/assets/icons/seo-section/icon-decor-left.png",
+      "decorRight": "/assets/icons/seo-section/icon-decor-right.png"
+    }
+  }
+]

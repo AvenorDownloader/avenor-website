@@ -346,9 +346,21 @@
             }
           }
 
-
+          (function setupMacButtons() {
+            const macBtns = document.querySelectorAll(".btn--mac");
+            macBtns.forEach((btn) => {
+              btn.setAttribute("aria-disabled", "true");
+              btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+              });
+            });
+          })();
+ 
         });
+
       </script>
+
 
       <!-- ===== HEADER / НАВБАР ===== -->
       <header class="header">
@@ -459,8 +471,18 @@
                   rel="noopener noreferrer"
                   data-i18n="hero_btn_mac"
                 >
-                  <img class="os-icon-img" src="/assets/icons/apple.svg" alt="" aria-hidden="true">
-                  <span data-i18n-text>Скачать для macOS</span>
+                  <span class="btn__icon-wrap">
+                    <img class="os-icon-img" src="/assets/icons/apple.svg" alt="" aria-hidden="true">
+                    <span class="os-icon-tool" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 3l2 2-7 7-2-2 7-7zM18 9l3 3-6 6-3-3 6-6zM3 21l6-2-4-4-2 6z"></path>
+                      </svg>
+                    </span>
+                  </span>
+                  <span class="btn__text-wrap">
+                    <span class="btn__label btn__label--default" data-i18n-text>Скачать для macOS</span>
+                    <span class="btn__label btn__label--hover" data-i18n="hero_btn_mac_hover">В разработке...</span>
+                  </span>
                 </a>
               </div>
               
@@ -851,8 +873,18 @@
                       <span data-i18n="yt_btn_win">Скачать для Windows</span>
                     </a>
                     <a href="https://download.avenordownload.app/latest/AvenorDownloader-mac.dmg" class="btn btn--mac btn--full btn--os" target="_blank" rel="noopener noreferrer">
-                      <img class="os-icon-img" src="/assets/icons/apple.svg" alt="" aria-hidden="true" />
-                      <span data-i18n="yt_btn_mac">Скачать для macOS</span>
+                      <span class="btn__icon-wrap">
+                        <img class="os-icon-img" src="/assets/icons/apple.svg" alt="" aria-hidden="true" />
+                        <span class="os-icon-tool" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 3l2 2-7 7-2-2 7-7zM18 9l3 3-6 6-3-3 6-6zM3 21l6-2-4-4-2 6z"></path>
+                          </svg>
+                        </span>
+                      </span>
+                      <span class="btn__text-wrap">
+                        <span class="btn__label btn__label--default" data-i18n-text>Скачать для macOS</span>
+                        <span class="btn__label btn__label--hover" data-i18n="yt_btn_mac_hover">В разработке...</span>
+                      </span>
                     </a>
                   </div>
                 </article>
@@ -1201,8 +1233,18 @@
                   rel="noopener noreferrer"
                   data-i18n="hero_btn_mac"
                 >
-                  <img class="os-icon-img" src="/assets/icons/apple.svg" alt="" aria-hidden="true">
-                  <span data-i18n-text>Скачать для macOS</span>
+                  <span class="btn__icon-wrap">
+                    <img class="os-icon-img" src="/assets/icons/apple.svg" alt="" aria-hidden="true">
+                    <span class="os-icon-tool" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 3l2 2-7 7-2-2 7-7zM18 9l3 3-6 6-3-3 6-6zM3 21l6-2-4-4-2 6z"></path>
+                      </svg>
+                    </span>
+                  </span>
+                  <span class="btn__text-wrap">
+                    <span class="btn__label btn__label--default" data-i18n-text>Скачать для macOS</span>
+                    <span class="btn__label btn__label--hover" data-i18n="hero_btn_mac_hover">В разработке...</span>
+                  </span>
                 </a>
 
                 <span class="section__cta-meta">

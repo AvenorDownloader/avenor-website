@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ t.head.title }}</title>
+    <meta name="description" content="{{ t.head.description }}" />
+    <meta property="og:title" content="{{ t.head.title }}" />
+    <meta property="og:description" content="{{ t.head.description }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://avenordownload.app{{ langPrefix }}/{{ page.slug }}" />
+    <meta property="og:site_name" content="Avenor Downloader" />
+    <meta property="og:image" content="https://avenordownload.app{{ page.ogImage }}" />
+    <script defer src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Avenor Downloader",
+      "description": "{{ t.head.description }}",
+      "url": "https://avenordownload.app",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": ["Windows 10", "Windows 11", "macOS 10.14+", "macOS 11+", "macOS 12+"],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "{{ t.hero.title }}",
+        "{{ t.clip.title }}",
+        "{{ t.benefits.original.title }}",
+        "{{ t.benefits.formats.title }}"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "{{ t.faq.q1 }}", "acceptedAnswer": { "@type": "Answer", "text": "{{ t.faq.a1 }}" } },
+        { "@type": "Question", "name": "{{ t.faq.q2 }}", "acceptedAnswer": { "@type": "Answer", "text": "{{ t.faq.a2 }}" } },
+        { "@type": "Question", "name": "{{ t.faq.q3 }}", "acceptedAnswer": { "@type": "Answer", "text": "{{ t.faq.a3 }}" } },
+        { "@type": "Question", "name": "{{ t.faq.q4 }}", "acceptedAnswer": { "@type": "Answer", "text": "{{ t.faq.a4 }}" } },
+        { "@type": "Question", "name": "{{ t.faq.q5 }}", "acceptedAnswer": { "@type": "Answer", "text": "{{ t.faq.a5 }}" } },
+        { "@type": "Question", "name": "{{ t.faq.q6 }}", "acceptedAnswer": { "@type": "Answer", "text": "{{ t.faq.a6 }}" } }
+      ]
+    }
+    </script>
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script defer src="/i18n.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+    <link rel="canonical" href="https://avenordownload.app{{ langPrefix }}/{{ page.slug }}" />
+    <link rel="alternate" hreflang="x-default" href="https://avenordownload.app/{{ page.slug }}" />
+    {% for lng in languages %}
+      {% if lng == "en" %}
+        <link rel="alternate" hreflang="en" href="https://avenordownload.app/{{ page.slug }}" />
+      {% else %}
+        <link rel="alternate" hreflang="{{ lng }}" href="https://avenordownload.app/{{ lng }}/{{ page.slug }}" />
+      {% endif %}
+    {% endfor %}
+  </head>
+  <body>
+    <div class="page seo-page">
+      <div id="snow" class="snow" aria-hidden="true"></div>
+      <header class="header">
+        <div class="container header__inner">
+          <div class="logo">
+            <a href="/"><img src="/assets/Logo.png" alt="Avenor Downloader" class="logo__img" /></a>
+          </div>
+          <nav class="nav">
+            <a href="#benefits" class="nav__link">{{ g.nav.features }}</a>
+            <a href="#how-it-works" class="nav__link">{{ g.nav.how }}</a>
+            <a href="#faq" class="nav__link">{{ g.nav.faq }}</a>
+          </nav>
+          <div class="header__right">
+            <div class="lang" data-lang>
+              <button class="lang__btn" type="button" data-lang-btn aria-expanded="false" aria-label="{{ g.nav.language }}">
+                <span class="lang__flag" data-lang-flag>🌐</span>
+                <span class="lang__code" data-lang-code>{{ lang | upper }}</span>
+                <span class="lang__caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="lang__menu" data-lang-menu role="menu" aria-label="{{ g.nav.chooseLang }}">
+                {% for lng in languages %}
+                  <a href="{% if lng == 'en' %}https://avenordownload.app/{{ page.slug }}{% else %}https://avenordownload.app/{{ lng }}/{{ page.slug }}{% endif %}" class="lang__item" data-set-lang="{{ lng }}" aria-label="{{ g.languages[lng] }}"></a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section class="hero" id="top">
+        <video class="hero-bg-video lazy-video" muted loop playsinline preload="none" aria-hidden="true">
+          <source data-src="{{ page.assets.heroVideoWebm or '/assets/vid/hero-demo.webm' }}" type="video/webm" />
+          <source data-src="{{ page.assets.heroVideoMp4 or '/assets/vid/hero-demo.mp4' }}" type="video/mp4" />
+        </video>
+        <div class="container hero__inner two-col">
+          <div class="hero__content">
+            <h1 class="hero__title">{{ t.hero.title | safe }}</h1>
+            <p class="hero__subtitle">{{ t.hero.subtitle }}</p>
+            <div class="hero__badges">
+              <span class="hero__badge hero__badge--primary">{{ t.hero.badges[0] }}</span>
+              <span class="hero__badge hero__badge--primary">{{ t.hero.badges[1] }}</span>
+              <span class="hero__badge hero__badge--primary">{{ t.hero.badges[2] }}</span>
+            </div>
+            <div class="hero__actions hero__actions--os">
+              <a href="/download/win" class="btn btn--primary btn--os">
+                <img class="os-icon-img" src="/assets/icons/windows.svg" alt="" aria-hidden="true">
+                <span>{{ t.cta.win }}</span>
+              </a>
+              <a href="https://avenordownload.app/#pricing" class="btn btn--light btn--os">
+                <span>{{ t.cta.buy }}</span>
+              </a>
+            </div>
+          </div>
+          <div class="hero__visual">
+             <img src="{{ page.assets.heroMockup or '/assets/mockup1.png' }}" alt="Avenor Interface" style="width: 125%; max-width: none; margin-left: -10%; display: block;" />
+          </div>
+        </div>
+      </section>
+      <section class="section section--grey section--what-is {% if page.slug == 'download-instagram-video' %}section--insta{% endif %}" id="what-is" aria-label="{{ t.whatIs.ariaTitle }}">
+        <div class="container">
+          {% if page.slug == 'download-instagram-video' %}
+          <div class="what-is__grid what-is__grid--insta">
+            <div class="what-is__media">
+              <img src="{{ page.assets.whatIsImage or page.assets.heroMockup or '/assets/mockup3.png' }}" alt="Avenor iPhone preview" class="what-is__iphone">
+            </div>
+            <div class="what-is__content what-is__content--right">
+              <h2 class="what-is__title">{{ t.whatIs.title | safe }}</h2>
+              <div class="what-is__desc">
+                <p>{{ t.whatIs.p1 | safe }}</p>
+                <p>{{ t.whatIs.p2 }}</p>
+              </div>
+            </div>
+          </div>
+          {% else %}
+          <div class="what-is__grid">
+            <div class="what-is__content">
+              <h2 class="what-is__title">{{ t.whatIs.title }}</h2>
+              <div class="what-is__desc">
+                <p>{{ t.whatIs.p1 }}</p>
+                <p>{{ t.whatIs.p2 }}</p>
+              </div>
+            </div>
+            <div class="what-is__badges">
+              <div class="feature-badge feature-badge--os">
+                <span class="feature-badge__title">{{ t.featureBadge.osTitle }}</span>
+                <div class="feature-badge__icons">
+                  <img src="/assets/icons/windows.svg" alt="windows" class="feature-badge__icon">
+                  <img src="/assets/icons/apple.svg" alt="apple" class="feature-badge__icon">
+                </div>
+              </div>
+              <div class="feature-badge feature-badge--security">
+                <div class="feature-badge__icon-wrapper">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="security-icon">
+                    <path d="M12 2L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 2ZM10 17L6 13L7.41 11.59L10 14.17L16.59 7.58L18 9L10 17Z" fill="white"/>
+                  </svg>
+                </div>
+                <div class="feature-badge__text">
+                  <span class="feature-badge__highlight highlight-freemium">100%</span>
+                  <span class="feature-badge__subtitle">{{ t.featureBadge.local }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          <img src="{{ page.assets.decorLeft or '/assets/icons/seo-section/icon-decor-left.png' }}" class="what-is__decor what-is__decor--left" alt="" aria-hidden="true">
+          <img src="{{ page.assets.decorRight or '/assets/icons/seo-section/icon-decor-right.png' }}" class="what-is__decor what-is__decor--right" alt="" aria-hidden="true">
+        </div>
+      </section>
+      <section class="section section--dark" id="benefits">
+        <div class="container">
+          <h2 class="section__title benefits-title">{{ t.benefits.title | safe }}</h2>
+          {% if t.benefits.subtitle %}
+          <p class="benefits-subtitle">{{ t.benefits.subtitle }}</p>
+          {% endif %}
+          {% if page.slug == 'download-instagram-video' %}
+          <div class="benefits-layout benefits-layout--insta">
+            <div class="benefits-grid benefits-grid--insta">
+              <div class="benefit-card">
+                <div class="benefit-card__icon benefit-card__icon--quality">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2l2.6 5.3 5.9.9-4.2 4.1 1 5.9-5.3-2.8-5.3 2.8 1-5.9-4.2-4.1 5.9-.9L12 2z"/>
+                  </svg>
+                </div>
+                <div class="benefit-card__content">
+                  <h3 class="benefit-title">{{ t.benefits.original.title }}</h3>
+                  <p class="benefit-desc">{{ t.benefits.original.desc }}</p>
+                </div>
+              </div>
+              <div class="benefit-card">
+                <div class="benefit-card__icon benefit-card__icon--clip">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M8.5 6.5l9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M15.5 6.5l-9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="7" cy="7" r="3" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="17" cy="17" r="3" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </div>
+                <div class="benefit-card__content">
+                  <h3 class="benefit-title">{{ t.benefits.clip.title }}</h3>
+                  <p class="benefit-desc">{{ t.benefits.clip.desc }}</p>
+                </div>
+              </div>
+              <div class="benefit-card">
+                <div class="benefit-card__icon benefit-card__icon--nolimits">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 12c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M2 12h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="benefit-card__content">
+                  <h3 class="benefit-title">{{ t.benefits.nolimits.title }}</h3>
+                  <p class="benefit-desc">{{ t.benefits.nolimits.desc }}</p>
+                </div>
+              </div>
+              <div class="benefit-card">
+                <div class="benefit-card__icon benefit-card__icon--formats">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M6 3h8l4 4v14H6z"/>
+                    <path d="M14 3v4h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="benefit-card__content">
+                  <h3 class="benefit-title">{{ t.benefits.formats.title }}</h3>
+                  <p class="benefit-desc">{{ t.benefits.formats.desc }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% else %}
+          <div class="benefits-layout">
+            <div class="benefits-grid">
+              <div class="benefit-card">
+                <div class="benefit-card__icon benefit-card__icon--quality">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2l2.6 5.3 5.9.9-4.2 4.1 1 5.9-5.3-2.8-5.3 2.8 1-5.9-4.2-4.1 5.9-.9L12 2z"/>
+                  </svg>
+                </div>
+                <div class="benefit-card__content">
+                  <h3 class="benefit-title">{{ t.benefits.original.title }}</h3>
+                  <p class="benefit-desc">{{ t.benefits.original.desc }}</p>
+                </div>
+              </div>
+              <div class="benefit-card">
+                <div class="benefit-card__icon benefit-card__icon--clip">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M8.5 6.5l9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M15.5 6.5l-9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="7" cy="7" r="3" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="17" cy="17" r="3" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </div>
+                <div class="benefit-card__content">
+                  <h3 class="benefit-title">{{ t.benefits.clip.title }}</h3>
+                  <p class="benefit-desc">{{ t.benefits.clip.desc }}</p>
+                </div>
+              </div>
+              <div class="benefit-card">
+                <div class="benefit-card__icon benefit-card__icon--nolimits">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 12c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M2 12h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="benefit-card__content">
+                  <h3 class="benefit-title">{{ t.benefits.nolimits.title }}</h3>
+                  <p class="benefit-desc">{{ t.benefits.nolimits.desc }}</p>
+                </div>
+              </div>
+              <div class="benefit-card">
+                <div class="benefit-card__icon benefit-card__icon--formats">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M6 3h8l4 4v14H6z"/>
+                    <path d="M14 3v4h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="benefit-card__content">
+                  <h3 class="benefit-title">{{ t.benefits.formats.title }}</h3>
+                  <p class="benefit-desc">{{ t.benefits.formats.desc }}</p>
+                </div>
+              </div>
+            </div>
+            <aside class="benefits-media" aria-label="{{ t.benefits.previewAria }}">
+              <video class="lazy-video" muted loop playsinline preload="none">
+                <source data-src="{{ page.assets.benefitsPreviewVideo or '/assets/vid/seo-preview.mp4' }}" type="video/mp4" />
+              </video>
+            </aside>
+          </div>
+          {% endif %}
+          <div class="qf-actions" style="margin-top: 24px;">
+            <a href="/download/win" class="btn btn--primary btn--os">
+              <img class="os-icon-img" src="/assets/icons/windows.svg" alt="" aria-hidden="true">
+              <span>{{ t.cta.win }}</span>
+            </a>
+            <a href="https://avenordownload.app/#pricing" class="btn btn--light btn--os">
+              <span>{{ t.cta.buy }}</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="section seo-section section--grey" id="clip-feature">
+        <div class="container">
+          <h2 class="section__title">{{ t.clip.title | safe }}</h2>
+          <div class="clip-feature">
+            <div class="clip-feature__media">
+              <video class="lazy-video" muted loop playsinline preload="none">
+                <source data-src="{{ page.assets.clipFeatureVideo or '/assets/vid/feature-fragments.mp4' }}" type="video/mp4" />
+              </video>
+            </div>
+            <div class="clip-feature__text">
+              <p>{{ t.clip.p1 }}</p>
+              <p>{{ t.clip.p2 | safe }}</p>
+              <p>{{ t.clip.p3 }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section seo-section section--dark" id="quality-formats">
+        <div class="container">
+          <h2 class="section__title">{{ t.qf.title }}</h2>
+          <div class="qf-layout">
+            <div class="qf-text seo-card">
+              <div class="seo-rich">
+                <p>{{ t.qf.p1 | safe }}</p>
+                <ul>
+                  <li>{{ t.qf.list[0] }}</li>
+                  <li>{{ t.qf.list[1] }}</li>
+                </ul>
+                <p>{{ t.qf.p2 | safe }}</p>
+              </div>
+            </div>
+            <div class="qf-media">
+              <img src="{{ page.assets.qfMockup or '/assets/mockup2.png' }}" alt="Avenor Interface preview">
+            </div>
+          </div>
+          <div class="qf-actions" style="margin-top: 22px;">
+            <a href="/download/win" class="btn btn--primary btn--os">
+              <img class="os-icon-img" src="/assets/icons/windows.svg" alt="" aria-hidden="true">
+              <span>{{ t.cta.win }}</span>
+            </a>
+            <a href="https://avenordownload.app/#pricing" class="btn btn--light btn--os">
+              <span>{{ t.cta.buy }}</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="section section--grey" id="how-it-works">
+        <div class="container">
+          <h2 class="section__title">{{ t.how.title }}</h2>
+          <div class="steps-grid">
+            <div class="step-card step-card--s1">
+              <span class="step-number">1</span>
+              <div class="step-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M10 7h4a5 5 0 0 1 0 10h-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M14 17h-4a5 5 0 0 1 0-10h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="step-title">{{ t.how.s1.title }}</h3>
+              <p class="step-desc">{{ t.how.s1.desc }}</p>
+            </div>
+            <div class="step-card step-card--s2">
+              <span class="step-number">2</span>
+              <div class="step-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M3 9h18" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <h3 class="step-title">{{ t.how.s2.title }}</h3>
+              <p class="step-desc">{{ t.how.s2.desc }}</p>
+            </div>
+            <div class="step-card step-card--s3">
+              <span class="step-number">3</span>
+              <div class="step-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7 4v16M17 4v16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M3 8h4M17 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="step-title">{{ t.how.s3.title }}</h3>
+              <p class="step-desc">{{ t.how.s3.desc }}</p>
+            </div>
+            {% if t.how.s4 %}
+            <div class="step-card step-card--s4">
+              <span class="step-number">4</span>
+              <div class="step-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 3v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M8 9l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M4 19h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="step-title">{{ t.how.s4.title }}</h3>
+              <p class="step-desc">{{ t.how.s4.desc }}</p>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </section>
+      <section class="section seo-section section--dark" id="privacy-safety">
+        <div class="container">
+          <h2 class="section__title">{{ t.privacy.title }}</h2>
+          <div class="seo-rich">
+            <p>{{ t.privacy.p1 }}</p>
+            <h3>{{ t.privacy.h3 }}</h3>
+            <ul>
+              <li>{{ t.privacy.list[0] }}</li>
+              <li>{{ t.privacy.list[1] }}</li>
+              <li>{{ t.privacy.list[2] }}</li>
+            </ul>
+            <p>{{ t.privacy.p2 }}</p>
+          </div>
+        </div>
+      </section>
+      <div id="pricing"></div>
+      <section class="section faq" id="faq">
+        <div class="container">
+          <h2 class="section__title">{{ t.faq.title }}</h2>
+          <div class="faq__list" style="max-width: 800px; margin: 0 auto;">
+            <div class="faq-item">
+              <details>
+                <summary class="faq-summary">{{ t.faq.q1 }}</summary>
+                <div class="faq-answer">{{ t.faq.a1 }}</div>
+              </details>
+            </div>
+            <div class="faq-item">
+              <details>
+                <summary class="faq-summary">{{ t.faq.q2 }}</summary>
+                <div class="faq-answer">{{ t.faq.a2 }}</div>
+              </details>
+            </div>
+            <div class="faq-item">
+              <details>
+                <summary class="faq-summary">{{ t.faq.q3 }}</summary>
+                <div class="faq-answer">{{ t.faq.a3 }}</div>
+              </details>
+            </div>
+            <div class="faq-item">
+              <details>
+                <summary class="faq-summary">{{ t.faq.q4 }}</summary>
+                <div class="faq-answer">{{ t.faq.a4 }}</div>
+              </details>
+            </div>
+            <div class="faq-item">
+              <details>
+                <summary class="faq-summary">{{ t.faq.q5 }}</summary>
+                <div class="faq-answer">{{ t.faq.a5 }}</div>
+              </details>
+            </div>
+            <div class="faq-item">
+              <details>
+                <summary class="faq-summary">{{ t.faq.q6 }}</summary>
+                <div class="faq-answer">{{ t.faq.a6 }}</div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="container footer__inner">
+          <div class="footer__top">
+            <div class="footer__col">
+              <img src="/assets/Logo.png" alt="Avenor" class="footer__logo" style="height: 32px;">
+              <p class="footer__desc" id="seoCopyright">Avenor Downloader © 2026</p>
+            </div>
+            <div class="footer__col">
+              <h4 class="footer__title">Legal</h4>
+              <a href="/privacy.html" class="footer__link">Privacy Policy</a>
+              <a href="/terms.html" class="footer__link">Terms of Service</a>
+              <a href="/refund.html" class="footer__link">Refund Policy</a>
+            </div>
+            <div class="footer__col">
+               <h4 class="footer__title">Support</h4>
+               <a href="mailto:support@avenordownload.app" class="footer__link">support@avenordownload.app</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      document.querySelector('.lang__btn').addEventListener('click', function() {
+        this.parentNode.classList.toggle('active');
+      });
+      const PADDLE_TOKEN_PROD = "live_3b49a2cdb0ce243817e7bf610ae";
+      if (window.Paddle) {
+         window.Paddle.Environment.set("production");
+         window.Paddle.Initialize({ token: PADDLE_TOKEN_PROD });
+         document.querySelectorAll("[data-paddle-checkout]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              const priceId = btn.getAttribute("data-price-id");
+              if (!priceId) return;
+              window.Paddle.Checkout.open({
+                items: [{ priceId, quantity: 1 }],
+                settings: { displayMode: "overlay", theme: "dark" }
+              });
+            });
+         });
+      }
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggles = document.querySelectorAll(".pricing__toggle-btn");
+        const cards = document.querySelectorAll(".pricing__card[data-tier-group]");
+        const pricingContainer = document.querySelector(".pricing");
+        const compare = document.querySelector(".pricing-compare");
+        const compareRows = compare ? compare.querySelectorAll(".pc-row") : [];
+        function updateVisibility(target) {
+          if (pricingContainer) {
+            pricingContainer.setAttribute("data-tier-view", target);
+          }
+          if (compare) {
+            compare.setAttribute("data-tier-view", target);
+            compare.style.setProperty("--pc-cols", target === "studio" ? "3" : "4");
+            compareRows.forEach((row) => {
+              const cells = Array.from(row.children);
+              cells.forEach((cell, index) => {
+                if (index === 0) {
+                  cell.style.display = "";
+                  return;
+                }
+                if (target === "studio") {
+                  cell.style.display = index >= 5 ? "" : "none";
+                } else {
+                  cell.style.display = index <= 4 ? "" : "none";
+                }
+              });
+            });
+          }
+          cards.forEach((card) => {
+            const group = card.getAttribute("data-tier-group");
+            if (group === target) {
+              card.style.display = "";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        }
+        const activeToggle = document.querySelector(".pricing__toggle-btn.active");
+        if (activeToggle) {
+          updateVisibility(activeToggle.getAttribute("data-target"));
+        }
+        toggles.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            toggles.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+            const target = btn.getAttribute("data-target");
+            updateVisibility(target);
+          });
+        });
+      });
+    </script>
+    <script>
+      (function(){
+        const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const lazyVideos = Array.from(document.querySelectorAll('video.lazy-video'));
+        if (!('IntersectionObserver' in window)) {
+          lazyVideos.forEach((video) => {
+            const sources = video.querySelectorAll('source[data-src]');
+            sources.forEach((s) => { s.src = s.dataset.src; s.removeAttribute('data-src'); });
+            try { video.load(); } catch(e) {}
+            if (!prefersReducedMotion) {
+              const p = video.play();
+              if (p && typeof p.then === 'function') p.catch(()=>{});
+            }
+          });
+          return;
+        }
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            const video = entry.target;
+            if (entry.intersectionRatio >= 0.4) {
+              const sources = video.querySelectorAll('source[data-src]');
+              let changed = false;
+              sources.forEach((s) => {
+                if (s.dataset.src) {
+                  s.src = s.dataset.src;
+                  s.removeAttribute('data-src');
+                  changed = true;
+                }
+              });
+              if (changed) {
+                try { video.load(); } catch(e) {}
+              }
+              if (!prefersReducedMotion) {
+                const p = video.play();
+                if (p && typeof p.then === 'function') p.catch(()=>{});
+              }
+            } else {
+              try { video.pause(); } catch(e) {}
+            }
+          });
+        }, { threshold: [0, 0.4, 1] });
+        lazyVideos.forEach((video) => {
+          video.muted = true;
+          video.loop = true;
+          video.playsInline = true;
+          video.setAttribute('preload', 'none');
+          observer.observe(video);
+        });
+      })();
+    </script>
+    <script>
+      (function () {
+        const START_YEAR = 2025;
+        const y = new Date().getFullYear();
+        const yr = (y === START_YEAR) ? String(y) : `${START_YEAR}–${y}`;
+        const el = document.getElementById("seoCopyright");
+        if (el) el.textContent = `Avenor Downloader © ${yr}`;
+      })();
+    </script>
+  </body>
+</html>
