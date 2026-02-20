@@ -122,7 +122,7 @@
             </div>
           </div>
           <div class="hero__visual">
-             <img src="{{ page.assets.heroMockup or '/assets/mockup1.png' }}" alt="Avenor Interface" style="width: 125%; max-width: none; margin-left: -10%; display: block;" />
+             <img src="{{ page.assets.heroMockup or '/assets/mockup1.png' }}" alt="Avenor Interface" />
           </div>
         </div>
       </section>
@@ -144,7 +144,7 @@
           {% else %}
           <div class="what-is__grid">
             <div class="what-is__content">
-              <h2 class="what-is__title">{{ t.whatIs.title }}</h2>
+              <h2 class="what-is__title">{{ t.whatIs.title | safe }}</h2>
               <div class="what-is__desc">
                 <p>{{ t.whatIs.p1 }}</p>
                 <p>{{ t.whatIs.p2 }}</p>
@@ -319,7 +319,7 @@
             <div class="clip-feature__text">
               <p>{{ t.clip.p1 }}</p>
               <p>{{ t.clip.p2 | safe }}</p>
-              <p>{{ t.clip.p3 }}</p>
+              <p>{{ t.clip.p3 | safe }}</p>
             </div>
           </div>
         </div>

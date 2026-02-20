@@ -182,82 +182,86 @@
     },
     "download-tiktok-video": {
       "head": {
-        "title": "Descarga videos de TikTok en calidad HD — Avenor Downloader",
-        "description": "Descarga videos de TikTok localmente en tu PC. Obtén la mejor calidad disponible, recorta In/Out antes de descargar y guarda como MP4 o extrae MP3. Windows + macOS."
+        "title": "Descarga videos de TikTok en tu PC — Mejor calidad disponible, Clip y MP3",
+        "description": "Deja los descargadores online sospechosos. Guarda videos localmente en tu PC en la mejor calidad disponible (según la que proporcione TikTok), recorta el momento con In/Out antes de descargar y exporta MP4 o MP3. Windows + macOS."
       },
       "hero": {
-        "title": "Descarga videos de TikTok en calidad HD",
-        "subtitle": "Descarga videos de TikTok localmente. Elige calidad, recorta highlights con In/Out y mantén la privacidad.",
-        "badges": ["Recorta antes de descargar", "Funciona localmente (privado)", "Mejor calidad disponible"]
+        "title": "Deja los sitios sospechosos de descarga de TikTok — obtén los videos <span class=\"hl hl--good\">como corresponde</span>",
+        "subtitle": "Los descargadores online de TikTok están llenos de botones falsos, popups y enlaces rotos.\nAvenor es una app de escritorio: pega el enlace, elige calidad, recorta con In/Out si lo necesitas y descarga directamente a tu PC — listo para editar.",
+        "badges": [
+          "Recorta solo el highlight antes de descargar",
+          "Funciona localmente — más estable que herramientas de navegador",
+          "MP4 para edición + MP3 para sonidos en tendencia"
+        ]
       },
       "cta": { "win": "Descargar para Windows", "buy": "Comprar" },
       "whatIs": {
         "ariaTitle": "Qué es Avenor TikTok Downloader",
-        "title": "Qué es Avenor TikTok Downloader",
-        "p1": "Avenor es una aplicación de escritorio para Windows y macOS para guardar videos de TikTok directamente en tu computadora.",
-        "p2": "Todo se procesa localmente — sin anuncios, sin popups y sin servidores remotos."
+        "title": "¿Qué es <span class=\"hl hl--good\">Avenor TikTok Downloader</span>?",
+        "p1": "Avenor es un descargador de TikTok para Windows y macOS. Guarda videos en la mejor calidad disponible proporcionada por TikTok — sin caos de navegador.",
+        "p2": "Pensado para creadores, editores y social media managers que necesitan acceso fiable a contenido vertical 9:16 para compilaciones, investigación, borradores y edición offline."
       },
       "featureBadge": { "osTitle": "Windows y macOS", "local": "localmente en tu PC" },
       "benefits": {
-        "title": "Por qué descargar videos de TikTok con Avenor",
+        "title": "No es otro descargador — <span class=\"hl hl--good\">un flujo desktop estable</span>.<br>Por qué <span class=\"hl hl--good\">Avenor es mejor</span> que los descargadores online de TikTok",
         "previewAria": "Vista previa en video de funciones",
         "original": {
-          "title": "Mejor calidad disponible",
-          "desc": "Guarda videos en la mejor calidad proporcionada para ese TikTok — HD cuando esté disponible."
+          "title": "Mejor calidad disponible (de TikTok)",
+          "desc": "Guarda en la mejor resolución que TikTok proporcione — adecuado para ediciones verticales, planificación de repost y uso en archivo."
         },
         "clip": {
-          "title": "Recorta highlights antes de descargar",
-          "desc": "Usa In/Out para capturar y guardar solo el momento que quieres."
+          "title": "Descarga solo la parte que necesitas",
+          "desc": "Marca In/Out antes de descargar.\nGuarda un momento viral de 5 segundos en lugar del video completo de 60 segundos.\n\nArchivos más limpios. Flujo más rápido."
         },
         "nolimits": {
-          "title": "Sin anuncios, local",
-          "desc": "Sin publicidad ni popups intrusivos. El procesamiento se ejecuta en tu PC."
+          "title": "Sin popups. Sin botones falsos.",
+          "desc": "Sin bucles de redirección.\nSin trampas de “Download Now”.\nSin herramientas web inestables.\n\nAvenor se ejecuta localmente en tu computadora."
         },
         "formats": {
-          "title": "MP4 / MP3",
-          "desc": "Guarda como video MP4 o extrae audio en MP3."
+          "title": "MP4 para edición. MP3 para sonidos.",
+          "desc": "Exporta videos TikTok como MP4 para editar o extrae audio en MP3 cuando esté disponible — ideal para trabajar con sonidos en tendencia offline."
         }
       },
       "clip": {
-        "title": "Recorta videos de TikTok antes de descargar",
-        "p1": "¿Encontraste un momento perfecto que quieres guardar?",
-        "p2": "Marca tiempos In/Out para guardar un fragmento preciso.",
-        "p3": "Mantén las descargas rápidas y enfocadas guardando solo lo necesario."
+        "title": "<span class=\"hl hl--good\">Recorta</span> videos de TikTok <span class=\"hl hl--good\">antes de descargar</span>",
+        "p1": "No descargues el video entero si solo necesitas un highlight corto.",
+        "p2": "Marca tiempos <span class=\"hl hl--good\">In/Out antes de descargar</span> y conserva solo lo que realmente usarás.",
+        "p3": "Perfecto para:<br>• Compilaciones de YouTube<br>• Edits de reacción<br>• Borradores de repost en redes<br>• Flujos de edición short‑form"
       },
       "qf": {
         "title": "Calidad y formatos",
-        "p1": "Siempre la mejor calidad disponible para el TikTok original.",
-        "list": ["Mejor resolución disponible (HD cuando esté)", "Video MP4 o solo audio MP3"],
-        "p2": "Elige el formato que se adapte a tus dispositivos y flujo de trabajo."
+        "p1": "Avenor no vuelve a codificar tu archivo. <span class=\"hl hl--good\">Los videos se guardan tal como los proporciona TikTok.</span>",
+        "list": ["Mejor calidad disponible (según lo que proporcione TikTok)", "Video MP4 o solo audio MP3 (cuando esté disponible)"],
+        "p2": "Elige MP4 para edición y archivo, o MP3 cuando solo necesitas el sonido."
       },
       "how": {
         "title": "Cómo funciona",
-        "s1": { "title": "Copia el enlace de TikTok", "desc": "Copia la URL del video de TikTok que quieres descargar." },
-        "s2": { "title": "Pega en Avenor", "desc": "Abre Avenor Downloader y pega la URL. La app analiza el video." },
-        "s3": { "title": "Elige calidad y recorte (opcional)", "desc": "Selecciona la calidad y marca In/Out para guardar solo un fragmento." },
-        "s4": { "title": "Descarga localmente", "desc": "Haz clic en descargar y el video se guardará en tu computadora." }
+        "s1": { "title": "Copia el enlace de TikTok", "desc": "Copia la URL completa del video que quieres descargar." },
+        "s2": { "title": "Pégalo en Avenor", "desc": "Abre Avenor y pega el enlace — la app lo analiza localmente." },
+        "s3": { "title": "Elige calidad y recorta si hace falta", "desc": "Selecciona la calidad y marca In/Out si solo necesitas un fragmento." },
+        "s4": { "title": "Descarga directo a tu carpeta", "desc": "Haz clic en Descargar — el archivo se guarda en tu ordenador, no en la caché del navegador." }
       },
       "privacy": {
         "title": "Privacidad y seguridad",
-        "p1": "Avenor funciona completamente en tu computadora — no subimos tu contenido.",
-        "h3": "Por qué importa el procesamiento local",
-        "list": ["Sin subidas a servidores externos", "Sin cuenta requerida", "Tú controlas tus archivos"],
-        "p2": "Las descargas se guardan directamente en la carpeta elegida."
+        "p1": "Avenor no es un sitio web de descarga de TikTok. Funciona localmente en tu computadora.",
+        "h3": "Por qué importa descargar de forma local",
+        "list": ["Sin subidas a servidores de terceros", "Sin cuentas", "Tú controlas dónde se guardan los archivos"],
+        "p2": "Tus descargas van directamente a la carpeta elegida — más limpio, seguro y fiable."
       },
       "faq": {
         "title": "Preguntas frecuentes",
-        "q1": "¿Es esto un descargador online de TikTok?",
-        "a1": "No. Avenor es una app de escritorio — las descargas se ejecutan localmente en tu PC.",
-        "q2": "¿Puedo descargar videos de TikTok en HD?",
-        "a2": "Sí, cuando esté disponible. Avenor guarda la mejor calidad proporcionada para el video original.",
-        "q3": "¿Puedo guardar solo un fragmento (In/Out)?",
-        "a3": "Sí. Usa In/Out para guardar solo el highlight que necesitas.",
-        "q4": "¿Puedo extraer el audio como MP3?",
-        "a4": "Sí. Puedes guardar video MP4 o extraer el audio en MP3.",
-        "q5": "¿Avenor almacena mis videos?",
-        "a5": "No. Los archivos se guardan localmente en tu computadora.",
-        "q6": "¿Funciona en Windows y macOS?",
-        "a6": "Sí. Avenor soporta equipos de escritorio Windows y macOS."
+        "q1": "¿Por qué los descargadores online de TikTok son poco fiables?",
+        "a1": "Dependen de scripts web inestables y páginas cargadas de publicidad. Se rompen, muestran botones falsos o redirigen. Avenor evita eso al funcionar como app de escritorio.",
+        "q2": "¿El video conserva el formato vertical 9:16 original?",
+        "a2": "Sí. Los videos mantienen la relación de aspecto original según la que proporciona TikTok.",
+        "q3": "¿Puedo descargar solo un highlight corto?",
+        "a3": "Sí. Usa In/Out para guardar solo el fragmento que necesitas antes de descargar.",
+        "q4": "¿Avenor sube mis enlaces o guarda videos?",
+        "a4": "No. Todo se ejecuta localmente en tu computadora.",
+        "q5": "¿Puedo exportar MP3 desde un video de TikTok?",
+        "a5": "Sí. Cuando esté disponible, puedes extraer audio MP3 de videos de TikTok.",
+        "q6": "¿Qué hacer si un enlace de TikTok no funciona?",
+        "a6": "Copia correctamente la URL completa y asegúrate de que el video sea accesible para ti. Parte del contenido puede estar restringido por región o privacidad."
       }
     }
   }

@@ -32,9 +32,9 @@
     "slug": "download-tiktok-video",
     "ogImage": "/assets/platforms/tiktok2.png",
     "assets": {
-      "heroVideoWebm": "/assets/vid/pro-ui-demo.webm",
+      "heroVideoWebm": "/assets/vid/hero-demo-Tiktok.webm",
       "heroVideoMp4": "/assets/vid/hero-demo.mp4",
-      "heroMockup": "/assets/mockup1.png",
+      "heroMockup": "/assets/mockup4.png",
       "qfMockup": "/assets/mockup2.png",
       "benefitsPreviewVideo": "/assets/vid/seo-preview.mp4",
       "clipFeatureVideo": "/assets/vid/feature-fragments.mp4",
