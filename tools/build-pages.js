@@ -111,11 +111,29 @@ function copyStatics() {
   ];
   for (const f of rootFiles) maybeCopy(f);
 }
+function generateSitemap() {
+  const base = "https://avenordownload.app";
+  const pages = readJson(PAGES_JSON);
+  const urls = [];
+  for (const page of pages) {
+    for (const lang of LANGS) {
+      const langPrefix = lang === "en" ? "" : `/${lang}`;
+      urls.push(`${base}${langPrefix}/${page.slug}`);
+    }
+  }
+  const xml =
+    `<?xml version="1.0" encoding="UTF-8"?>\n` +
+    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+    urls.map((loc) => `  <url><loc>${loc}</loc></url>`).join("\n") +
+    `\n</urlset>\n`;
+  fs.writeFileSync(path.join(DIST, "sitemap.xml"), xml, "utf-8");
+}
 function buildAll() {
   removeDir(DIST);
   ensureDir(DIST);
   renderPages();
   copyStatics();
+  generateSitemap();
   console.log("Built to", DIST);
 }
 function startWatch() {
