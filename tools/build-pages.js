@@ -94,11 +94,22 @@ function copyStatics() {
   copyDir(path.join(ROOT, "public"), DIST);
   if (fs.existsSync(path.join(ROOT, "style.css"))) copyFile(path.join(ROOT, "style.css"), path.join(DIST, "style.css"));
   if (fs.existsSync(path.join(ROOT, "i18n.js"))) copyFile(path.join(ROOT, "i18n.js"), path.join(DIST, "i18n.js"));
-  const rootPages = ["index.html", "privacy.html", "terms.html", "thanks.html"];
-  for (const p of rootPages) {
-    const src = path.join(ROOT, p);
-    if (fs.existsSync(src)) copyFile(src, path.join(DIST, p));
-  }
+  const maybeCopy = (name) => {
+    const src = path.join(ROOT, name);
+    if (fs.existsSync(src)) copyFile(src, path.join(DIST, name));
+  };
+  const rootFiles = [
+    "index.html",
+    "privacy.html",
+    "terms.html",
+    "refund.html",
+    "thanks.html",
+    "sitemap.xml",
+    "robots.txt",
+    "favicon.ico",
+    "favicon.png"
+  ];
+  for (const f of rootFiles) maybeCopy(f);
 }
 function buildAll() {
   removeDir(DIST);
