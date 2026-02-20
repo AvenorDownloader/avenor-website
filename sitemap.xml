@@ -1,42 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset 
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  <!-- YOUTUBE -->
-  <url>
-    <loc>https://avenordownload.app/download-youtube-video</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://avenordownload.app/download-youtube-video"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://avenordownload.app/ru/download-youtube-video"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://avenordownload.app/es/download-youtube-video"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://avenordownload.app/pt/download-youtube-video"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://avenordownload.app/de/download-youtube-video"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://avenordownload.app/fr/download-youtube-video"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://avenordownload.app/uk/download-youtube-video"/>
-  </url>
-
-  <!-- INSTAGRAM -->
-  <url>
-    <loc>https://avenordownload.app/download-instagram-video</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://avenordownload.app/download-instagram-video"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://avenordownload.app/ru/download-instagram-video"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://avenordownload.app/es/download-instagram-video"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://avenordownload.app/pt/download-instagram-video"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://avenordownload.app/de/download-instagram-video"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://avenordownload.app/fr/download-instagram-video"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://avenordownload.app/uk/download-instagram-video"/>
-  </url>
-
-  <!-- TIKTOK -->
-  <url>
-    <loc>https://avenordownload.app/download-tiktok-video</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://avenordownload.app/download-tiktok-video"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://avenordownload.app/ru/download-tiktok-video"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://avenordownload.app/es/download-tiktok-video"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://avenordownload.app/pt/download-tiktok-video"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://avenordownload.app/de/download-tiktok-video"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://avenordownload.app/fr/download-tiktok-video"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://avenordownload.app/uk/download-tiktok-video"/>
-  </url>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://avenordownload.app/download-youtube-video</loc></url>
+  <url><loc>https://avenordownload.app/download-instagram-video</loc></url>
+  <url><loc>https://avenordownload.app/download-tiktok-video</loc></url>
+  <url><loc>https://avenordownload.app/ru/download-youtube-video</loc></url>
+  <url><loc>https://avenordownload.app/ru/download-instagram-video</loc></url>
+  <url><loc>https://avenordownload.app/ru/download-tiktok-video</loc></url>
+  <url><loc>https://avenordownload.app/es/download-youtube-video</loc></url>
+  <url><loc>https://avenordownload.app/es/download-instagram-video</loc></url>
+  <url><loc>https://avenordownload.app/es/download-tiktok-video</loc></url>
+  <url><loc>https://avenordownload.app/pt/download-youtube-video</loc></url>
+  <url><loc>https://avenordownload.app/pt/download-instagram-video</loc></url>
+  <url><loc>https://avenordownload.app/pt/download-tiktok-video</loc></url>
+  <url><loc>https://avenordownload.app/de/download-youtube-video</loc></url>
+  <url><loc>https://avenordownload.app/de/download-instagram-video</loc></url>
+  <url><loc>https://avenordownload.app/de/download-tiktok-video</loc></url>
+  <url><loc>https://avenordownload.app/fr/download-youtube-video</loc></url>
+  <url><loc>https://avenordownload.app/fr/download-instagram-video</loc></url>
+  <url><loc>https://avenordownload.app/fr/download-tiktok-video</loc></url>
+  <url><loc>https://avenordownload.app/uk/download-youtube-video</loc></url>
+  <url><loc>https://avenordownload.app/uk/download-instagram-video</loc></url>
+  <url><loc>https://avenordownload.app/uk/download-tiktok-video</loc></url>
 </urlset>
