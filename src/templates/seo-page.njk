@@ -67,6 +67,7 @@
         <link rel="alternate" hreflang="{{ lng }}" href="https://avenordownload.app/{{ lng }}/{{ page.slug }}" />
       {% endif %}
     {% endfor %}
+    {% set DOWNLOAD_WIN_URL = "https://download.avenordownload.app/latest/AvenorDownloader-Setup.exe" %}
   </head>
   <body>
     <div class="page seo-page">
@@ -112,7 +113,7 @@
               <span class="hero__badge hero__badge--primary">{{ t.hero.badges[2] }}</span>
             </div>
             <div class="hero__actions hero__actions--os">
-              <a href="/download/win" class="btn btn--primary btn--os">
+              <a href="{{ DOWNLOAD_WIN_URL }}" class="btn btn--primary btn--os" target="_blank" rel="noopener">
                 <img class="os-icon-img" src="/assets/icons/windows.svg" alt="" aria-hidden="true">
                 <span>{{ t.cta.win }}</span>
               </a>
@@ -297,7 +298,7 @@
           </div>
           {% endif %}
           <div class="qf-actions" style="margin-top: 24px;">
-            <a href="/download/win" class="btn btn--primary btn--os">
+            <a href="{{ DOWNLOAD_WIN_URL }}" class="btn btn--primary btn--os" target="_blank" rel="noopener">
               <img class="os-icon-img" src="/assets/icons/windows.svg" alt="" aria-hidden="true">
               <span>{{ t.cta.win }}</span>
             </a>
@@ -343,7 +344,7 @@
             </div>
           </div>
           <div class="qf-actions" style="margin-top: 22px;">
-            <a href="/download/win" class="btn btn--primary btn--os">
+            <a href="{{ DOWNLOAD_WIN_URL }}" class="btn btn--primary btn--os" target="_blank" rel="noopener">
               <img class="os-icon-img" src="/assets/icons/windows.svg" alt="" aria-hidden="true">
               <span>{{ t.cta.win }}</span>
             </a>
